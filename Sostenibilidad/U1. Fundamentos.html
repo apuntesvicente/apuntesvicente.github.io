@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>Configuración aula INFOCICLOS I</title>
+      <title>Fundamentos de la Sostenibilidad en FP</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -88,32 +88,70 @@
     
       <div class="crossnote markdown-preview  ">
       
-<h1 id="apuntes">Apuntes </h1>
-<p><a href="./InfoCiclos-I.pdf">Descargar estos apuntes</a></p>
+<h1 id="u1-fundamentos-de-la-sostenibilidad-en-fp">U1. Fundamentos de la Sostenibilidad en FP </h1>
+<p>[Descargar estos apuntes](./U1. Fundamentos.pdf)</p>
 <h2 id="índice">Índice </h2>
 
 <div class="md-toc">
-<details style="padding:0;;padding-left:0px;" open="">
+<div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#introducción" class="md-toc-link">
+            <p>Introducción</p>
+
+          </a></div><details style="padding:0;;padding-left:0px;" open="">
         <summary class="md-toc-link-wrapper">
-          <a href="#instalación" class="md-toc-link"><p>Instalación</p>
+          <a href="#1-aspectos-generales-del-real-decreto" class="md-toc-link"><ol>
+<li>ASPECTOS GENERALES DEL REAL DECRETO</li>
+</ol>
 </a>
           </summary>
         <div>
           <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#instalación-dual-windows-10-y-lliurex-21" class="md-toc-link">
-            <p>Instalación dual Windows 10 y LliureX 21</p>
+          <a href="#11-contexto-y-antecedentes" class="md-toc-link">
+            <p>1.1 Contexto y antecedentes</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#12-principales-cambios-y-directrices" class="md-toc-link">
+            <p>1.2. PRINCIPALES CAMBIOS Y DIRECTRICES</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#13-impacto-en-la-enseñanza-de-la-fp" class="md-toc-link">
+            <p>1.3. IMPACTO EN LA ENSEÑANZA DE LA FP</p>
+
+          </a></div><details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#2-conceptualización-del-módulo-sostenibilidad-aplicada-al-sistema-productivo" class="md-toc-link"><ol start="2">
+<li>CONCEPTUALIZACIÓN DEL MÓDULO "SOSTENIBILIDAD APLICADA AL SISTEMA PRODUCTIVO"</li>
+</ol>
+</a>
+          </summary>
+        <div>
+          <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#21-objetivos-competencias-y-metodología-recomendada" class="md-toc-link"><p>2.1 OBJETIVOS, COMPETENCIAS Y METODOLOGÍA RECOMENDADA</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#metodología-propuesta" class="md-toc-link">
+            <p>Metodología propuesta</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#22-contenidos-específicos-estructura-criterios-de-evaluación-y-resultados-de-aprendizaje" class="md-toc-link">
+            <p>2.2. CONTENIDOS ESPECÍFICOS, ESTRUCTURA, CRITERIOS DE EVALUACIÓN Y RESULTADOS DE APRENDIZAJE</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#configuración-de-lliurex" class="md-toc-link">
-            <p>Configuración de LliureX</p>
+          <a href="#23-trazabilidad-curricular" class="md-toc-link">
+            <p>2.3 TRAZABILIDAD CURRICULAR</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#configuración-de-windows-alumnos" class="md-toc-link">
-            <p>Configuración de Windows (alumnos)</p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#configuración-de-windows-profesor" class="md-toc-link">
-            <p>Configuración de Windows (profesor)</p>
+          <a href="#24-propuestas-para-la-evaluación" class="md-toc-link">
+            <p>2.4 PROPUESTAS PARA LA EVALUACIÓN</p>
 
           </a></div>
         </div>
@@ -155,71 +193,325 @@
     
 </div>
 <div style="\&quot;page-break-after:always;\&quot;"></div>
-<h2 id="instalación">Instalación </h2>
-<h3 id="instalación-dual-windows-10-y-lliurex-21">Instalación dual Windows 10 y LliureX 21 </h3>
-<p>En est última versión de la imagen se ha instalado y actualizado un W10 desde cero, dejando un espacio sin particionar al final del disco.</p>
-<p>Posteriormente, se ha instalado la versión de LliureX 21 en el espacio libre de disco, creando una partición de datos y una partición Swap.</p>
-<blockquote>
-<p>✋ <strong>Importante:</strong><br>
-El punto más importante de la instalación y configuración de ambos sistemas operativos es la elección de la partición donde se instala el cargador de arranque de LliureX, <strong>GRUB</strong>, que debe ser instalado en la partición de arranque de Windows, <em>hda(0,3) o sda3</em>, para permitir de esta forma el arranque dual del equipo desde el menú del GRUB</p>
-</blockquote>
-<p>Cuando se arranca el equipo, en la BIOS (<strong>F12</strong>) hay que configurar como partición de arranque la que aparece etiquetada como <strong>Ubuntu</strong>, para que en el arranque por defecto del equipo nos cargue el menú de GRUB y podamos elegir entre Windows y LliureX.</p>
-<span style="align: center;">
-<table align="center">
-<tbody><tr>
-<td>
-<div align="center">
-    <img height="" src="imagenes\bootdevice.jpg">
+<h2 id="introducción">Introducción </h2>
+<p><a href="https://www.youtube.com/watch?v=GvSJmdcjq-o">Vídeo: Aspectos relevantes del Real Decreto</a></p>
+<h2 id="1-aspectos-generales-del-real-decreto">1. ASPECTOS GENERALES DEL REAL DECRETO </h2>
+<p><a href="https://www.youtube.com/watch?v=GSFiprj9sLY">Vídeo: Contexto y antecedentes</a></p>
+<h3 id="11-contexto-y-antecedentes">1.1 Contexto y antecedentes </h3>
+<div class="contenedor">
+    <div class="fondo">
+        <div class="abre_comilla">"</div>
+        <div class="cierra_comilla">"</div>
+        <div class="cita">El Real Decreto1 responde a la necesidad de modernizar y adaptar el sistema de Formación Profesional (FP) en España, integrando la digitalización, la transición ecológica, y la sostenibilidad como ejes centrales para el desarrollo económico y el bienestar social.</div>
+        <div class="autor"></div>
+    </div>
 </div>
-</td>
-<td>
-<div align="center">
-    <img height="" src="imagenes\grubmenu.jpg">
-</div>
-</td>
-</tr>
-</tbody></table>
-</span>
-<h3 id="configuración-de-lliurex">Configuración de LliureX </h3>
-<p>El principal cambio en LliureX es la configuración del gestor de arranque GRUB, que se ha configurado para que inicie por defecto en Windows y con un tiempo de espera de 3 segundos.<br>
-Además, se ha modificado la configuración para que no guarde la última opción de arranque y siempre inicie por defecto en Windows.</p>
-<p>Para ello se ha modificado el archivo de configuración de GRUB <strong><code>/etc/default/grub</code></strong> cambiando las líneas del principio del archivo</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token assign-left variable">GRUB_DEFAULT</span><span class="token operator">=</span><span class="token number">3</span>
-<span class="token punctuation">..</span>. 
-<span class="token assign-left variable">GRUB_TIMEOUT</span><span class="token operator">=</span><span class="token number">3</span>
-<span class="token punctuation">..</span>.
-<span class="token assign-left variable">GRUB_SAVEDEFAULT</span><span class="token operator">=</span>false
-</code></pre><p>En LliureX, se ha configurado el entorno de trabajo con los siguientes elementos desde el <em>Zero Center</em>, tras la actualización del sistema a la última versión (21.240304) en el momento de la instalación</p>
-<ul>
-<li>Instalador de soporte para MIDI</li>
-<li>Instalador de soporte para DVD</li>
-<li>Instalador de tipografías extra</li>
-<li>Docker</li>
-<li>Instalador de Autofirma</li>
-<li>Instalador de Adobe Reader</li>
-<li>Instalador de OpenBoard</li>
-<li>Instalación del agente Fusion Inventory</li>
-<li>Instalación del navegador Google Chrome</li>
-</ul>
-<h3 id="configuración-de-windows-alumnos">Configuración de Windows (alumnos) </h3>
-<p>En Windows, una vez instalada y configurada la máquina siguiendo las instrucciones de los documentos <em>PREPARACIÖN win10-Pro-Edu ALUMNOS</em> y <em>POSTINSTALL win10-Pro-Edu ALUMNOS</em> que tenemos para equipos de Ciclos Formativos de Informática, hay que realizar varias modificaciones sobre la configuración de Windows para que pueda funcionar en un entorno bajo un LliureX Server.</p>
-<p>Para cumplir con las solicitudes de la máquina, instalamos el programa de control de aula Veyon, para un equipo cliente, siguiendo los pasos de instalación del documento <em>Manual de instalación Veyón</em>.</p>
 <blockquote>
-<p>💡 <strong>Veyon: Clave pública</strong></p>
-<p>Para que la instalación sea válida y el equipo se pueda controlar desde el ordenador del profesor debemos importar la clave pública <em>INFOCICLOS1_public_key.pem</em></p>
+<p>🚀 <strong>Ampliación:</strong></p>
+<p>Real Decreto 659/2023, de 18 de julio, por el que se desarrolla la ordenación del Sistema de Formación Profesional.</p>
 </blockquote>
-<ul>
-<li>Creatividad. El diseño e impresión en 3D propicia que los alumnos sean más creativos y originales.</li>
-<li>Aprendizaje cooperativo y colaborativo. Con el aprendizaje cooperativo no solo enseñamos a otros, sino que también consolidamos nuestro propio aprendizaje.</li>
-<li>Resolución de problemas. El diseño en 3D provoca un cambio de mentalidad en el alumno, que debe solventar los posibles obstáculos que surjan aplicando la creatividad, la imaginación y la metacognición para obtener el objetivo deseado.</li>
-<li>Participación y gamificación. Las impresoras 3D convierten la experiencia del aprendizaje en un proceso mucho más lúdico y participativo.</li>
-<li>Interés y Motivación. La posibilidad de aprender a través de la práctica y de ver el resultado real de sus diseños hace que los alumnos muestren más interés y se sientan más motivados.</li>
-<li>Inclusión educativa. Como veremos en el apartado específico de este NOOC, la impresión 3D ofrece numerosas posibilidades para apoyar al conjunto del alumnado en el proceso de enseñanza-aprendizaje.</li>
-<li>Facilita la comprensión de conceptos complejos: Para aclarar conceptos o dar explicaciones, las piezas tridimensionales pueden ser de gran ayuda ya que facilitan a los alumnos a entender mejor ciertos contenidos o procesos que sean complejos.</li>
-</ul>
+<p>El Real Decreto se inscribe en un contexto de transformaciones globales, donde la digitalización, la sostenibilidad y la transición ecológica emergen como imperativos ineludibles para el desarrollo económico y el bienestar social. Este marco normativo nace de la necesidad de adaptar la Formación Profesional en España a estas realidades, procurando dotar al sistema educativo de las herramientas necesarias para formar a profesionales capaces de enfrentar los retos actuales y futuros de los sectores productivos. La iniciativa se alinea con <a href="https://joint-research-centre.ec.europa.eu/greencomp-european-sustainability-competence-framework_en">compromisos internacionales</a> asumidos por España, como los <a href="https://www.un.org/sustainabledevelopment/es/objetivos-de-desarrollo-sostenible/">Objetivos de Desarrollo Sostenible (ODS)</a> de las Naciones Unidas y el <a href="https://unfccc.int/es/acerca-de-las-ndc/el-acuerdo-de-paris">Acuerdo de París</a> sobre cambio climático, reflejando la voluntad de integrar principios de sostenibilidad ambiental, equidad social y eficiencia económica en la formación de nuevos profesionales.</p>
+<blockquote>
+<p>💡 <strong>Tips:</strong></p>
+<p>Este Real Decreto es, por tanto, una respuesta a la urgencia de promover una economía más verde y digital, preparando a la población activa con las competencias y conocimientos necesarios para contribuir a una sociedad más justa, competitiva y sostenible.</p>
+</blockquote>
 <div style="page-break-after:always;"></div>
-<h3 id="configuración-de-windows-profesor">Configuración de Windows (profesor) </h3>
-<p>Aunque podamos pensar que la impresión 3D es una herramienta tecnológica muy reciente, los diferentes hallazgos y descubrimientos que la hicieron posible se remontan al siglo XIX. A través de esta infografía y el siguiente vídeo, queremos contarte los hitos más importantes de esta incipiente y revolucionaria tecnología con la intención de poner en valor todos los esfuerzos e intentos que han sido necesarios realizar para poder llegar a nuestra actual tecnología.</p>
+<h2 id="12-principales-cambios-y-directrices">1.2. PRINCIPALES CAMBIOS Y DIRECTRICES </h2>
+<div class="contenedor">
+    <div class="fondo">
+        <div class="abre_comilla">"</div>
+        <div class="cierra_comilla">"</div>
+        <div class="cita">Introduce un marco para una FP flexible y actualizada, que incluye competencias emergentes, innovación, y sostenibilidad. Busca mejorar la empleabilidad mediante competencias transversales y profesionales.</div>
+        <div class="autor"></div>
+    </div>
+</div>
+<p>Se introducen cambios significativos en el sistema de Formación Profesional (FP), diseñados para alinear la educación y formación profesional con las necesidades del mercado laboral moderno y los retos socioeconómicos actuales. Entre las directrices más destacadas se incluyen:</p>
+<ul>
+<li>Integración de la sostenibilidad y la transición ecológica</li>
+<li>Digitalización</li>
+<li>Flexibilidad y adaptabilidad</li>
+<li>Fomento del emprendimiento</li>
+<li>Competencias transversales para la empleabilidad</li>
+<li>Cooperación con el sector empresarial</li>
+</ul>
+<p>Estos cambios buscan modernizar la FP, haciéndola más relevante, flexible y orientada a las competencias requeridas en la nueva economía, preparando a los estudiantes no solo para los empleos actuales sino también para los desafíos futuros.</p>
+<div style="\&quot;page-break-after:always;\&quot;"></div>
+<h2 id="13-impacto-en-la-enseñanza-de-la-fp">1.3. IMPACTO EN LA ENSEÑANZA DE LA FP </h2>
+<div class="contenedor">
+    <div class="fondo">
+        <div class="abre_comilla">"</div>
+        <div class="cierra_comilla">"</div>
+        <div class="cita">El Real Decreto promueve una enseñanza más adaptada a las necesidades del mercado laboral y los desafíos contemporáneos, haciendo énfasis en la sostenibilidad y la digitalización.</div>
+        <div class="autor"> </div>
+    </div>
+</div>
+<p>La implementación del Real Decreto tiene un impacto profundo en la enseñanza de la Formación Profesional (FP), marcando un antes y un después en la forma en que se concibe la educación técnica y profesional en España. Este impacto se manifiesta en varias dimensiones clave:</p>
+<ul>
+<li>
+<p>Currículo orientado al futuro<br>
+La enseñanza de la FP se enriquece con un currículo que incorpora de manera explícita la sostenibilidad, la digitalización y el emprendimiento. Esto asegura que los estudiantes no solo adquieran conocimientos técnicos, sino también una comprensión profunda de los desafíos contemporáneos y futuros, preparándolos para contribuir de manera efectiva a la economía y la sociedad</p>
+</li>
+<li>
+<p>Enfoque práctico y aplicado<br>
+La estrecha colaboración con el sector empresarial y el énfasis en las prácticas profesionales transforman el aprendizaje en una experiencia más aplicada y relevante. Los estudiantes tienen la oportunidad de aprender en contextos reales, lo que mejora su comprensión de las materias y aumenta su empleabilidad.</p>
+</li>
+<li>
+<p>Adaptabilidad y flexibilidad<br>
+La flexibilidad introducida en los programas permite una adaptación rápida a los cambios tecnológicos y a las nuevas demandas del mercado laboral. La FP se convierte en un sistema de aprendizaje dinámico, capaz de actualizarse constantemente para ofrecer una formación alineada con las últimas tendencias y necesidades.</p>
+</li>
+<li>
+<p>Desarrollo de competencias transversales<br>
+El nuevo enfoque en competencias para la empleabilidad, como la comunicación, el trabajo en equipo y la resolución de problemas, prepara a los estudiantes para ser más versátiles y competentes en diversos entornos laborales. Esto no solo mejora su capacidad para integrarse en el mercado laboral actual, sino que también les proporciona herramientas para adaptarse a futuros cambios en sus carreras.</p>
+</li>
+<li>
+<p>Mayor inclusión y acceso<br>
+Al hacer hincapié en la sostenibilidad y al promover la formación en sectores clave para la transición ecológica, el decreto fomenta una mayor inclusión y apertura de la FP a nuevos perfiles de estudiantes, interesados en contribuir a los objetivos de desarrollo sostenible y en participar activamente en la nueva economía verde.</p>
+</li>
+</ul>
+<p>Se prevé un impacto transformador del Real Decreto en la enseñanza de la FP, alineando la educación profesional con las demandas del siglo XXI y equipando a los estudiantes con las competencias necesarias para enfrentar los desafíos actuales y futuros, tanto en el ámbito profesional como en el personal.</p>
+<div style="\&quot;page-break-after:always;\&quot;"></div>
+<h2 id="2-conceptualización-del-módulo-sostenibilidad-aplicada-al-sistema-productivo">2. CONCEPTUALIZACIÓN DEL MÓDULO "SOSTENIBILIDAD APLICADA AL SISTEMA PRODUCTIVO" </h2>
+<p><a href="https://www.youtube.com/watch?v=zVbBE6uxo8k">Vídeo: Principales cambios y directrices</a></p>
+<h3 id="21-objetivos-competencias-y-metodología-recomendada">2.1 OBJETIVOS, COMPETENCIAS Y METODOLOGÍA RECOMENDADA </h3>
+<div class="contenedor">
+    <div class="fondo">
+        <div class="abre_comilla">"</div>
+        <div class="cierra_comilla">"</div>
+        <div class="cita">Desarrollar conocimientos y competencias en economía verde, impacto ambiental y adaptación de los procesos productivos a la transición ecológica, preparando a los estudiantes para los desafíos de la sostenibilidad.</div>
+        <div class="autor">- </div>
+    </div>
+</div>
+<p>El módulo de "Sostenibilidad aplicada al sistema productivo" se diseña con el objetivo de integrar conocimientos y prácticas de sostenibilidad en el corazón de la formación profesional, preparando a los estudiantes para contribuir efectivamente a una economía sostenible y resiliente. Los objetivos y competencias de este módulo se articulan en torno a varios ejes fundamentales:</p>
+<ul>
+<li>
+<p><strong><code>OBJETIVOS</code></strong></p>
+<ul>
+<li><strong>Comprensión Integral de la sostenibilidad</strong><br>
+Dotar a los estudiantes de una comprensión sólida y multidimensional de la sostenibilidad, abarcando aspectos ambientales, sociales y económicos.</li>
+<li><strong>Análisis de impacto ambiental</strong><br>
+Capacitar a los estudiantes para evaluar y minimizar el impacto ambiental de la actividad productiva, fomentando un enfoque crítico y soluciones innovadoras.</li>
+<li><strong>Promoción de la economía verde</strong><br>
+Inculcar en los estudiantes los principios de la economía verde y circular, enfatizando la importancia de la eficiencia de recursos, la reducción de residuos y la innovación en los procesos productivos.</li>
+<li><strong>Desarrollo de competencias transversales</strong><br>
+Fomentar competencias transversales como el pensamiento crítico, la resolución de problemas, la capacidad de adaptación y la comunicación efectiva, esenciales para el éxito profesional en el contexto de la sostenibilidad.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>COMPETENCIAS</code></strong></p>
+<ul>
+<li><strong>Evaluación de sostenibilidad</strong><br>
+Capacidad para identificar, analizar y aplicar criterios de sostenibilidad (ambientales, sociales y de gobernanza) en el análisis de proyectos y procesos productivos.</li>
+<li><strong>Implementación de prácticas sostenibles</strong><br>
+Competencia para diseñar, implementar y evaluar prácticas sostenibles en el entorno laboral, promoviendo la mejora continua y la innovación.</li>
+<li><strong>Gestión de recursos</strong><br>
+Habilidad para optimizar el uso de recursos, aplicando principios de economía circular para maximizar la eficiencia y minimizar el impacto ambiental.</li>
+<li><strong>Comunicación y sensibilización</strong><br>
+Capacidad para comunicar efectivamente los valores y prácticas de la sostenibilidad a diferentes audiencias, fomentando una cultura de responsabilidad ambiental y social.</li>
+</ul>
+</li>
+</ul>
+<p>El módulo "Sostenibilidad aplicada al sistema productivo" debe, además, ampliar su enfoque hacia el desarrollo de  esenciales, preparando a los estudiantes para enfrentar y liderar los desafíos de la sostenibilidad. Se debería enfatizar la importancia de habilidades como la negociación, la toma de decisiones basada en evidencias, y el liderazgo en iniciativas de cambio sostenible. En el ámbito de la sostenibilidad, estas competencias permiten a los individuos abordar complejos desafíos ambientales, económicos y sociales de manera efectiva.</p>
+<p>Para ello, el módulo debería incluir el desarrollo de competencias como las que comentamos a continuación.</p>
+<ul>
+<li>Negociación<br>
+Desarrollo de habilidades para resolver conflictos y alcanzar acuerdos beneficiosos para todas las partes, esenciales en proyectos de sostenibilidad donde diferentes intereses deben armonizarse.</li>
+<li>Toma de decisiones basada en evidencias<br>
+Capacitación en el análisis crítico de datos e información para tomar decisiones informadas, una habilidad clave para evaluar impactos ambientales y sociales y elegir las mejores alternativas sostenibles.</li>
+<li>Liderazgo en iniciativas de cambio sostenible<br>
+Fomento del liderazgo ético y efectivo para guiar equipos y proyectos hacia objetivos de sostenibilidad, incluyendo la motivación de otros para adoptar prácticas sostenibles.</li>
+<li>Pensamiento crítico y solución de problemas<br>
+Enseñanza de cómo analizar situaciones complejas, identificar problemas de sostenibilidad y generar soluciones innovadoras y efectivas.</li>
+<li>Adaptabilidad y flexibilidad<br>
+Preparación para adaptarse a entornos cambiantes y afrontar los desafíos emergentes en sostenibilidad, impulsando la resiliencia personal y profesional.</li>
+<li>Comunicación efectiva<br>
+Mejora de la capacidad para comunicar ideas, proyectos y resultados de sostenibilidad de manera clara y persuasiva a diferentes audiencias, incluyendo la defensa de iniciativas de sostenibilidad ante stakeholders.</li>
+</ul>
+<p>Para integrar estas competencias transversales, el módulo debería emplear metodologías activas como proyectos colaborativos, debates guiados, simulaciones y casos de estudio, que no solo permiten la aplicación práctica de conocimientos técnicos, sino que también promueven el desarrollo de estas habilidades esenciales. Además, de implementar evaluaciones formativas que reflejen el progreso en estas competencias, tales como presentaciones de grupo, reflexiones personales y evaluaciones por pares.</p>
+<p>Esta ampliación en el enfoque de las competencias transversales garantiza que los estudiantes no solo estén preparados para enfrentar los desafíos actuales y futuros de la sostenibilidad, sino que también se conviertan en agentes de cambio positivo en sus comunidades y sectores profesionales, liderando el camino hacia un futuro más sostenible y resiliente.</p>
+<h4 id="metodología-propuesta">Metodología propuesta </h4>
+<p>Como ya habréis percibido, para maximizar el aprendizaje y la aplicabilidad de los conceptos de sostenibilidad, recomendamos incorporar metodologías de enseñanza innovadoras y activas. Esto incluirá el Aprendizaje Basado en Proyectos y Problemas (Retos), que anima a los estudiantes a resolver desafíos reales de sostenibilidad; el Flipped Classroom, para que exploren conceptos clave antes de la clase; el uso de Realidad Aumentada y Virtual, para experiencias inmersivas; y Plataformas de Aprendizaje en Línea, para acceder a recursos adicionales. También podemos integrar el Aprendizaje Servicio y el Aprendizaje Cooperativo, promoviendo el trabajo en equipo y el compromiso comunitario. Estas metodologías fomentarán una educación interactiva, profundizando la comprensión y la participación de los estudiantes en temas de sostenibilidad.</p>
+<ul>
+<li><strong>Aprendizaje Basado en Proyectos (ABP)</strong><br>
+Los estudiantes pueden trabajar en proyectos reales, como diseñar un plan de sostenibilidad para una empresa local, aplicando conceptos de economía circular y evaluación de impacto ambiental. Este enfoque promueve el aprendizaje práctico y la resolución de problemas complejos.</li>
+<li><strong>Flipped Classroom (FC)</strong><br>
+Podemos animar a los estudiantes a revisar materiales digitales, como documentales sobre cambio climático o artículos sobre tecnologías verdes, antes de las clases. En el aula, se dedicará tiempo a debates enriquecedores y a la aplicación práctica de estos conocimientos, como la simulación de auditorías energéticas.</li>
+<li><strong>Realidad Aumentada y Virtual (RA y RV)</strong><br>
+Podemos utilizar tecnologías de RA y RV para simular escenarios como la gestión de residuos en una ciudad o el impacto de la deforestación, ofreciendo una experiencia inmersiva que refuerza la comprensión de los desafíos de sostenibilidad. (Por ejemplo “El reto de la sostenibilidad. Competencias y conceptos clave” libro de RA en formato iOS y Android).</li>
+<li><strong>Plataformas de Aprendizaje en Línea (LMS) (tipo Moodle)</strong><br>
+Podemos integrar cursos complementarios de plataformas reconocidas, que ofrezcan especializaciones en temas de sostenibilidad, permitiendo a los estudiantes profundizar en áreas específicas de interés y aplicar este conocimiento en proyectos de clase, por ejemplo a través de píldoras formativas.</li>
+<li><strong>Aprendizaje Servicio (APs)</strong><br>
+Podemos fomentar la colaboración con organizaciones locales para proyectos que beneficien a la comunidad, como campañas de reforestación o programas de educación ambiental en escuelas primarias, conectando el aprendizaje con la acción social.</li>
+<li><strong>Aprendizaje Cooperativo (AC)</strong><br>
+Podemos promover el trabajo en equipo en tareas como el diseño colaborativo de una estrategia de sostenibilidad para reducir la huella de carbono de la escuela, desarrollando habilidades sociales y de colaboración</li>
+</ul>
+<blockquote>
+<p>🎓 <strong>Caso de estudio:</strong></p>
+<p>Puedes ver ejemplos de todas estas metodologías en el apartado 3.3. de esta unidad.</p>
+</blockquote>
+<div style="\&quot;page-break-after:always;\&quot;"></div>
+<h3 id="22-contenidos-específicos-estructura-criterios-de-evaluación-y-resultados-de-aprendizaje">2.2. CONTENIDOS ESPECÍFICOS, ESTRUCTURA, CRITERIOS DE EVALUACIÓN Y RESULTADOS DE APRENDIZAJE </h3>
+<div class="contenedor">
+    <div class="fondo">
+        <div class="abre_comilla">"</div>
+        <div class="cierra_comilla">"</div>
+        <div class="cita">.</div>
+        <div class="autor">- </div>
+    </div>
+</div>
+<p>El módulo de "Sostenibilidad aplicada al sistema productivo" está estructurado para proporcionar una formación integral y práctica en sostenibilidad, adaptada a las necesidades de los distintos sectores productivos. Se organiza en torno a contenidos específicos que abarcan las dimensiones clave de la sostenibilidad, asegurando que los estudiantes adquieran tanto conocimientos teóricos como habilidades aplicables. La estructura del módulo y sus contenidos se detallan a continuación.</p>
+<ul>
+<li><strong><code>Estructura del módulo</code></strong>
+<ul>
+<li><strong>Introducción a la sostenibilidad</strong>
+<ul>
+<li>Definición y principios de la sostenibilidad.</li>
+<li>Historia y evolución del concepto de desarrollo sostenible.</li>
+</ul>
+</li>
+<li><strong>Dimensiones de la sostenibilidad</strong>
+<ul>
+<li>Sostenibilidad ambiental: manejo de recursos, protección de ecosistemas, cambio climático.</li>
+<li>Sostenibilidad económica: economía verde y circular, eficiencia de recursos, innovación sostenible.</li>
+<li>Sostenibilidad social: equidad, bienestar social, inclusión.</li>
+</ul>
+</li>
+<li><strong>Impacto ambiental de la actividad productiva</strong>
+<ul>
+<li>Evaluación del impacto ambiental.</li>
+<li>Estrategias para la reducción del impacto en diferentes sectores.</li>
+</ul>
+</li>
+<li><strong>Economía verde y circular</strong>
+<ul>
+<li>Principios y prácticas de la economía circular.</li>
+<li>Gestión de residuos y reciclaje.</li>
+</ul>
+</li>
+<li><strong>Sostenibilidad en el sector productivo</strong>
+<ul>
+<li>Casos de estudio sectoriales.</li>
+<li>Adaptación de los procesos productivos a criterios de sostenibilidad.</li>
+</ul>
+</li>
+<li><strong>Herramientas y metodologías para la sostenibilidad</strong>
+<ul>
+<li>Herramientas de evaluación y gestión de la sostenibilidad.</li>
+<li>Normativas y estándares internacionales.</li>
+</ul>
+</li>
+<li><strong>Proyecto de aplicación práctica</strong>
+<ul>
+<li>Diseño y desarrollo de un proyecto aplicando los conocimientos adquiridos.</li>
+<li>Análisis y presentación de resultados.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code>Contenidos específicos</code></strong></li>
+<li><strong>Aspectos ambientales, sociales y de gobernanza (ASG)</strong><br>
+Comprensión profunda de cómo estos aspectos influyen en la sostenibilidad de las organizaciones y su relevancia para la consecución de los Objetivos de Desarrollo Sostenible (ODS).</li>
+<li><strong>Innovación y emprendimiento sostenible</strong><br>
+Fomento de la capacidad para desarrollar proyectos e iniciativas empresariales que contribuyan a la sostenibilidad.</li>
+<li><strong>Digitalización y sostenibilidad</strong><br>
+Exploración de cómo la digitalización puede ser un aliado en la promoción de prácticas sostenibles en el ámbito productivo.</li>
+</ul>
+<p>Este módulo está diseñado para ser dinámico y adaptativo, permitiendo actualizaciones y modificaciones para incorporar los últimos avances y tendencias en el campo de la sostenibilidad. Su estructura facilita una comprensión holística de la sostenibilidad, promoviendo una aplicación práctica de los conocimientos en el entorno profesional.</p>
+<p>En el siguiente cuadro interactivo, puedes ver algunos resultados de aprendizaje y los criterios de evaluación asociados a cada uno:</p>
+<table>
+<thead>
+<tr>
+<th>Resultado de aprendizaje</th>
+<th>Criterios de evaluación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 Identifica los aspectos ASG relativos a la sostenibilidad</td>
+<td><code>a) Descripción del concepto de sostenibilidad y marcos internacionales asociados.</code><br><code>b) Identificación de asuntos ASG en organizaciones empresariales.</code><br><code>c) Relación de los ODS con la Agenda 2030.</code><br><code>d) Análisis de aspectos ASG relevantes para grupos de interés y su impacto en la organización.</code><br><code>e) Identificación de estándares de métricas para la sostenibilidad.</code><br><code>f) Descripción de la inversión socialmente responsable y su influencia en la sostenibilidad.</code></td>
+</tr>
+<tr>
+<td>2 Caracteriza los retos ambientales y sociales</td>
+<td><code>a) Identificación de retos ambientales y sociales.</code> <br><code>b) Descripción de los principales retos ambientales y sociales en la actualidad.</code><br><code>c) Análisis de impactos en personas y sectores productivos.</code><br><code>d) Medidas para minimizar impactos ambientales y sociales.</code><br><code>e) Importancia de alianzas y trabajo transversal para abordar retos</code></td>
+</tr>
+<tr>
+<td>3 Aplica criterios de sostenibilidad en desempeño profesional y personal</td>
+<td><code>a) Identificación de ODS relevantes para la actividad profesional.</code><br><code>b) Análisis de riesgos y oportunidades de los ODS.</code><br><code>c) Identificación de acciones para retos ambientales y sociales.</code></td>
+</tr>
+<tr>
+<td>4 Propone productos y servicios responsables</td>
+<td><code>a) Caracterización del modelo de producción y consumo actual.</code> <br><code>b) Identificación de principios de economía verde y circular.</code><br><code>c) Contraste de beneficios de la economía verde frente al modelo tradicional.</code><br><code>d) Aplicación de principios de ecodiseño.</code><br><code>e) Análisis del ciclo de vida del producto.</code><br><code>f) Identificación de procesos de producción y criterios de sostenibilidad aplicados.</code></td>
+</tr>
+<tr>
+<td>5 Realiza actividades sostenibles</td>
+<td><code>a) Se ha evaluado y gestionado el impacto ambiental de las actividades, implementando medidas para su reducción.</code> <br><code>b) Se han aplicado principios de la economía circular en el manejo de recursos y residuos.</code><br><code>c) Se ha promovido el uso eficiente de recursos, optimizando el consumo de energía y agua.</code><br><code>d) Se han implementado acciones para proteger y promover la biodiversidad en el entorno de las actividades.</code><br><code>e) Se han realizado acciones de sensibilización sobre los efectos del cambio climático y la importancia de la acción climática.</code><br><code>f) Análisis de ciclo de vida.</code><br><code>g) Identificación de procesos de producción.</code><br><code>h) Aplicación de la normativa ambiental.</code></td>
+</tr>
+<tr>
+<td>6 Analiza un plan de sostenibilidad de una empresa</td>
+<td><code>a) Identificación de grupos de interés.</code> <br><code>b) Análisis de aspectos ASG materiales y expectativas.</code><br><code>c) Definición de acciones para minimizar impactos y aprovechar oportunidades.</code><br><code>d) Determinación de métricas de evaluación del desempeño.</code><br><code>e) Elaboración de informe de sostenibilidad.</code></td>
+</tr>
+</tbody>
+</table>
+<div style="\&quot;page-break-after:always;\&quot;"></div>
+<h3 id="23-trazabilidad-curricular">2.3 TRAZABILIDAD CURRICULAR </h3>
+<div class="contenedor">
+    <div class="fondo">
+        <div class="abre_comilla">"</div>
+        <div class="cierra_comilla">"</div>
+        <div class="cita">La inclusión de metodologías activas garantiza la adquisición de competencias en sostenibilidad para los estudiantes de FP.</div>
+        <div class="autor">- </div>
+    </div>
+</div>
+<p>En las siguientes imágenes puedes ver la conexión directa que se establece entre los resultados de aprendizaje y los demás elementos curriculares, asegurando una coherencia y alineación completa en el diseño del módulo "Sostenibilidad aplicada al sistema productivo". La inclusión de metodologías activas y recomendaciones específicas para cada resultado de aprendizaje no solo enriquece la experiencia educativa, sino que también asegura que los estudiantes adquieran las competencias necesarias para enfrentar los desafíos de la sostenibilidad en sus futuros entornos profesionales.</p>
+<p><img src="./imagenes/cuadroRA1.png" alt="1 Identifica los aspectos ASG relativos a la sostenibilidad
+"><br>
+<img src="./imagenes/cuadroRA2.png" alt="1 Identifica los aspectos ASG relativos a la sostenibilidad
+"><br>
+<img src="./imagenes/cuadroRA3.png" alt="1 Identifica los aspectos ASG relativos a la sostenibilidad
+"><br>
+<img src="./imagenes/cuadroRA4.png" alt="1 Identifica los aspectos ASG relativos a la sostenibilidad
+"><br>
+<img src="./imagenes/cuadroRA5.png" alt="1 Identifica los aspectos ASG relativos a la sostenibilidad
+"><br>
+<img src="./imagenes/cuadroRA6.png" alt="1 Identifica los aspectos ASG relativos a la sostenibilidad
+"></p>
+<div style="\&quot;page-break-after:always;\&quot;"></div>
+<h3 id="24-propuestas-para-la-evaluación">2.4 PROPUESTAS PARA LA EVALUACIÓN </h3>
+<div class="contenedor">
+    <div class="fondo">
+        <div class="abre_comilla">"</div>
+        <div class="cierra_comilla">"</div>
+        <div class="cita">Ante la complejidad de enseñar y evaluar la sostenibilidad en la educación, es crucial adoptar métodos de evaluación innovadores y comprensivos. Estos métodos deben ser capaces de medir no solo el conocimiento adquirido sino también la habilidad de aplicarlo prácticamente. Proponemos una variedad de herramientas de evaluación alternativas, desde portafolios hasta simulaciones, para capturar de manera holística el aprendizaje y desarrollo de los estudiantes en el dominio de la sostenibilidad..</div>
+        <div class="autor">- </div>
+    </div>
+</div>
+<p>La evaluación en el ámbito educativo, especialmente en temas tan complejos y multidimensionales como la sostenibilidad, requiere de un enfoque diversificado que vaya más allá de los métodos tradicionales. Reconociendo la importancia de equipar a los estudiantes no solo con conocimientos sino también con habilidades aplicables en el mundo real, proponemos la implementación de herramientas de evaluación alternativa que permitan una apreciación completa de su aprendizaje y desarrollo.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">HERRAMIENTA</th>
+<th>DESCRIPCIÓN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>Portafolios</strong></td>
+<td>Los portafolios son una herramienta de evaluación integral, permitiendo a los estudiantes recopilar y presentar evidencia de su aprendizaje a lo largo del módulo. A través de esta herramienta, podemos incluir proyectos, reflexiones escritas, presentaciones, evaluaciones entre pares, y cualquier otro material que demuestre su comprensión y aplicación de los conceptos de sostenibilidad. Los portafolios promueven la auto-reflexión y permiten a los docentes evaluar el progreso del estudiante en diversos aspectos, desde el conocimiento técnico hasta las habilidades transversales como la comunicación y el pensamiento crítico.</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>Evaluación entre pares y autoevaluación</strong></td>
+<td>Fomentar la evaluación entre pares y la autoevaluación permite a los estudiantes desarrollar una visión crítica de su propio trabajo y el de sus compañeros. Estas estrategias no solo contribuyen al aprendizaje autónomo sino que también promueven habilidades interpersonales importantes. Mediante la coevaluación, los estudiantes pueden ofrecer y recibir retroalimentación constructiva, mientras que la autoevaluación les insta a reflexionar sobre sus propios logros y áreas de mejora.</td>
+</tr>
+<tr>
+<td style="text-align:center">Rúbricas específicas</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">Diarios de aprendizaje y reflexiones</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>| <strong>Simulaciones</strong> | Se pueden utilizar simulaciones interactivas para evaluar la capacidad de los estudiantes para aplicar conceptos de sostenibilidad en situaciones prácticas, como la gestión de residuos o la evaluación de impacto ambiental. |</p>
 <h2 id="aplicaciones">Aplicaciones </h2>
 <p>La impresión 3D se ha convertido en una potente herramienta para apoyar la inclusión educativa. En primer lugar, favorece la compresión de ciertos conceptos complejos de algunas asignaturas al poder manipular y visualizar objetos y, de esta forma, hacerlos más significativos. En segundo lugar, la impresión 3D se ha convertido en una de las principales herramientas para potenciar el aprendizaje en estudiantes con discapacidad visual. Por último, favorece la inclusión de personas con diversidad funcional al poder realizar adaptaciones a medida que les dan la oportunidad de participar de manera activa en la sociedad e incluso en el deporte. A continuación, vamos a conocer alguno de estos proyectos que nos van a dar una idea del potencial de la impresión 3D en el desarrollo de las competencias clave.</p>
 <ol>
@@ -368,7 +660,7 @@ Para usarlos, una vez abierto un fichero con extensión markdown escribiremos <s
 </div>
 <p>Importar código <strong>renderizado al vuelo</strong> a gráfico vectorial.</p>
 <pre data-role="codeBlock" data-info="txt" class="language-txt txt"><code>@import "assets/linux_kernel.dot" {align="center", style="zoom:0.4"}
-</code></pre><p></p><pre class="language-text">EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, open 'c:\Users\Vicente\Apuntes\apuntesvicente\apuntesprivados\assets\linux_kernel.dot'</pre>  <p></p>
+</code></pre><p></p><pre class="language-text">EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, open 'c:\Users\Vicente\Apuntes\apuntesvicente\apuntesprivados\Sostenibilidad\assets\linux_kernel.dot'</pre>  <p></p>
 <div style="page-break-after:always;"></div>
 <h2 id="flujo-de-trabajo-y-configuraciones">Flujo de trabajo y configuraciones </h2>
 <ol>
