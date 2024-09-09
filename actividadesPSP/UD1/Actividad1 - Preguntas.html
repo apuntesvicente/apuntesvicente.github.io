@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>Módulo Proyecto Intermodular - 1r curso</title>
+      <title>PSP - Actividades U1</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -88,128 +88,114 @@
     
       <div class="crossnote markdown-preview  ">
       
-<h1 id="proyecto-intermodular">Proyecto intermodular </h1>
+<h1 id="actividades-unidad-1">Actividades Unidad 1 </h1>
+<h2 id="a-ejecución-paralela-de-código">A. Ejecución paralela de código </h2>
+<p>Si observamos el siguiente ejemplo de pseudocódigo</p>
+<pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">TestClass</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-int">int</span> x<span class="token punctuation">;</span>
 
-<div class="md-toc">
-<details style="padding:0;;padding-left:0px;" open="">
-        <summary class="md-toc-link-wrapper">
-          <a href="#1-marco-normativo" class="md-toc-link"><ol>
-<li>Marco normativo</li>
-</ol>
-</a>
-          </summary>
-        <div>
-          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#11-ley-de-ordenación-e-integración-de-la-formación-profesional" class="md-toc-link">
-            <p>1.1. Ley de Ordenación e Integración de la Formación Profesional</p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#12-rd-de-desarrollo-de-la-ordenación-del-sistema-de-formación-profesional" class="md-toc-link">
-            <p>1.2. RD de desarrollo de la ordenación del Sistema de Formación Profesional</p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#13-orden-de-inicio-de-curso" class="md-toc-link">
-            <p>1.3. Orden de inicio de curso</p>
-
-          </a></div>
-        </div>
-      </details>
-    <details style="padding:0;;padding-left:0px;" open="">
-        <summary class="md-toc-link-wrapper">
-          <a href="#2-propuesta-encontradas" class="md-toc-link"><ol start="2">
-<li>Propuesta encontradas</li>
-</ol>
-</a>
-          </summary>
-        <div>
-          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#primer-trimestre-y-parte-del-segundo" class="md-toc-link">
-            <p>Primer trimestre y parte del segundo</p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#resto-del-segundo-trimestre-al-final" class="md-toc-link">
-            <p>Resto del segundo trimestre al final</p>
-
-          </a></div>
-        </div>
-      </details>
-    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#3-scrum" class="md-toc-link">
-            <ol start="3">
-<li>Scrum</li>
-</ol>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#4-retos" class="md-toc-link">
-            <ol start="4">
-<li>Retos</li>
-</ol>
-
-          </a></div>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-void">void</span> <span class="token function">testMethod1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">5</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            x<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-void">void</span> <span class="token function">testMethod2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> j<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> <span class="token number">5</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            x<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-void">void</span> <span class="token function">sequential</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token function">testMethod1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">testMethod2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-void">void</span> <span class="token function">parallel</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token comment">// cobegin-coend means that both methods are run simultaneously</span>
+        <span class="token comment">// These sentences doesn't exist in Java. They are used for </span>
+        <span class="token comment">// sample purposes</span>
+        cobegin
+            <span class="token function">testMethod1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">testMethod2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        coend
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="admonition question">
+<p class="admonition-title">Responde a las siguientes preguntas respecto al código anterior</p>
+<p>¿Qué valor tendrá x tras ejecutar el método sequential?<br>
+¿Qué valor tendrá x tras ejecutar el método parallel?</p>
 </div>
-<div style="\&quot;page-break-after:always;\&quot;"></div>
-<h2 id="1-marco-normativo">1. Marco normativo </h2>
-<h3 id="11-ley-de-ordenación-e-integración-de-la-formación-profesional">1.1. Ley de Ordenación e Integración de la Formación Profesional </h3>
-<p>Según se determina en la Ley Orgánica 3/2022, de 31 de marzo, de ordenación e integración de la Formación Profesional, concretamente dentro de la <em>sección 4ª Grado D. Ciclos formativos de formación profesional</em>, establece la organización de los CFGS y CFGM.</p>
-<p>En el <strong>artículo 40.</strong> <em>Organización y estructura</em> y en el <strong>artículo 45</strong> <em>Ciclos formativos de grado medio y grado superior</em>,  se establece que el módulo de Proyecto Interdisciplinar es un módulo obligatorio en todos los ciclos formativos de grado medio y grado superior de Formación Profesional.</p>
-<p>Este módulo tiene como objetivo integrar los conocimientos y competencias adquiridos en los distintos módulos profesionales del ciclo formativo, así como fomentar el trabajo en equipo y la resolución de problemas de forma autónoma.</p>
-<blockquote>
-<p>Artículo 41.  Proyecto intermodular.</p>
-<p>1 El proyecto intermodular tendrá carácter integrador de los conocimientos incorporados en los módulos profesionales que configuran el ciclo formativo, con especial atención a los elementos de búsqueda de información, innovación, investigación aplicada y emprendimiento, vinculados a los resultados de aprendizaje de aquél. Existirá un seguimiento y tutorización individual y colectiva del proyecto, que se desarrollará de forma simultánea al resto de los módulos profesionales a lo largo de la duración del ciclo formativo.</p>
-<p>2 En el caso de los ciclos formativos de grado básico, se tratará de un único proyecto colaborativo para toda la duración del ciclo formativo.</p>
-<p>3 En el caso de los ciclos formativos de grado medio y superior, el proyecto intermodular podrá tener carácter anual o bienal, con una duración mínima de 25 horas en cada curso y deberá defenderse ante el equipo docente, al que, en su caso, podrá incorporarse el tutor o tutora de empresa. 4. No obstante lo dispuesto en los apartados anteriores, todo el currículo podrá organizarse en proyectos intermodulares, a través de diferentes metodologías, por decisión del equipo docente, respetando siempre todos los resultados de aprendizaje incluidos en el ciclo formativo.</p>
-</blockquote>
-<h3 id="12-rd-de-desarrollo-de-la-ordenación-del-sistema-de-formación-profesional">1.2. RD de desarrollo de la ordenación del Sistema de Formación Profesional </h3>
-<p>En el Real Decreto 659/2023, de 18 de julio, <em>modificado por el RD 658/2024, de 9 de julio</em> se detallan aspectos de la Ley 3/2022. En este RD se concretan las enseñanzas mínimas de los nuevos módulos, pero no del proyecto integrador. Aquí se dan unas pinceladas sobre cómo debe ser el proyecto integrador, pero no se detalla en profundidad.</p>
-<blockquote>
-<p>Artículo 96.3. Estructura CFGM y CFGS</p>
-<p>El Proyecto intermodular tendrá carácter integrador de las competencias adquiridas, y será uno durante el ciclo formativo. Existirá un seguimiento y tutorización individual y colectiva del proyecto, que se desarrollará de forma simultánea al resto de los módulos profesionales a lo largo de la duración del ciclo formativo. Los centros determinarán el momento en el que debe iniciarse el Proyecto, en función de las características del ciclo formativo.</p>
-</blockquote>
-<h3 id="13-orden-de-inicio-de-curso">1.3. Orden de inicio de curso </h3>
-<p>En la Resolución de 8 de agosto de 2024, de la Secretaria Autonómica de Educación, por la que se dictan instrucciones sobre ordenación académica y de organización de los centros que imparten Formación Profesional durante el curs 2024-2025 en la Comunidad Valenciana, en el punto 6 trata sobre el proyecto integrador.</p>
-<blockquote>
-<p>Punto 6. Proyecto intermodular</p>
-<p>6.1. El Proyecto intermodular de aprendizaje colaborativo se impartirá en los ciclos formativos de grado básico y estará vinculado a sus tres ámbitos (ámbito de Comunicación y Ciencias Sociales, ámbito de Ciencias Aplicadas y ámbito profesional). El Proyecto intermodular de aprendizaje colaborativo de grado básico se llevará a cabo mediante una metodología basada en retos, Cada equipo docente diseñará uno o varios retos que impliquen la activación de varios resultados de aprendizaje contenidos en más de un módulo profesional del ciclo. Se trabajarán transversalmente los resultados de aprendizaje y criterios de evaluación.</p>
-<p>6.2. El Proyecto intermodular en los ciclos formativos de grado medio y superior tendrá un carácter integrador, de acuerdo con el art. 96 del Real decreto 659/2023, de 18 de julio.</p>
-<p>6.3. Dado el carácter integrador del proyecto intermodular la nota final del proyecto (segundo curso) tendrá en cuenta la valoración del trabajo realizado por el alumno o alumna en el primer y segundo curso. En la evaluación de primer curso, se reflejará en el acta de cada sesión de evaluación una valoración del aprovechamiento y el grado de consecución del desarrollo del módulo con una calificación orientativa que formará parte de la calificación final en segundo. En la evaluación del proyecto en el segundo curso se contemplará la nota final  del proyecto que será la nota media de primero y segundo. Esta nota final de proyecto formará parte del cálculo de la nota media del ciclo formativo.</p>
-<p>6.4. Los contenidos mínimos del proyecto intermodular que establece el Real decreto 659/2023, de 18 de julio, tendrán la consideración de orientativos. Corresponderá a los equipos docentes la actualización de los contenidos en las programaciones didácticas.</p>
-<p>6.5. Los centros docentes determinarán en el marco de la programación didáctica de cada módulo las especificaciones, los trabajos que se realizarán, el formato y la evaluación del módulo de proyecto, procesos que serán supervisados por los correspondientes departamentos de familia profesional para su posterior presentación al alumnado.</p>
-</blockquote>
-<p>Lo curioso de estas instrucciones es que en el punto 6.4 hace referencia a unos contenidos mínimos en el RD 659/2023 que no aparecen por ningún lado en dicho RD.</p>
-<div class="admonition info">
-<p class="admonition-title">Normativa aplicable</p>
-<p>Como se puede deducir de todo lo anterior, no hay una normativa actualizada para el proyecto interdisciplinar.<br>
-Se puede aplicar la normativa (RA, contenidos y orientaciones pedagógicas del módulo de proyecto que se sigue realizando en los módulos de segundo curso) de los RD de título y órdenes de currículo de los distintos ciclos formativos.</p>
-<p>Para poder ver esa normativa podemos consultar, a modo de ejemplo, la programación de este módulo que Vicente Rico ha creado y que tenemos en el Drive del Departamento <a href="https://docs.google.com/document/d/1hSDJDSDXBeeaKi-j041HKOjXQD6b1AaSQxjfnFFXpd4/edit?usp=drive_link">Programación módulo Proyecto 2 DAM</a>.</p>
+<div style="page-break-after:always;"></div>
+<h2 id="b-concurrencia-hardware">B. Concurrencia hardware </h2>
+<p>Si habéis comprado un procesador hace poco, o estáis al día en cuanto al hardware, sabréis que una de las características de los procesadores es su número de núcleos (4, 8, 16).</p>
+<p>Pero además, al número de núcleos lo acompaña otra característica que es el número de hilos o threads, que suele ser el doble que el de núcleos.</p>
+<div class="admonition question">
+<p class="admonition-title">Núcleos vs Threads</p>
+<p>¿Qué implicación tienen los threads de un procesador con respecto a la concurrencia?<br>
+¿Si un equipo tiene 8 núcleos / 16 hilos significa eso que puede ejecutar 16 procesos a la vez?</p>
 </div>
-<h2 id="2-propuesta-encontradas">2. Propuesta encontradas </h2>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Esto es información que se ha encontrado en la red y que puede ser de utilidad para el desarrollo del proyecto intermodular.</p>
+<h2 id="c-escalado-de-sistemas">C. Escalado de sistemas </h2>
+<p>La capacidad de procesamiento de los sistemas se puede ampliar de diferentes formas. Todo va a depender de si estamos trabajando con sistemas on-premise o con sistemas en la nube.</p>
+<p>Con escalado nos referimos a la posibilidad de incrementar las capacidades de un sistema.</p>
+<div class="admonition question">
+<p class="admonition-title">Escalado horizontal vs vertical</p>
+<p>Explica brevemente qué es el escalado horizontal y qué es el escalado vertical.<br>
+Investiga las diferencias, ventajas e inconvenientes del escalado horizontal y el escalado vertical.<br>
+¿A qué tipo de sistemas (on-premise vs cloud) se aplica cada uno de ellos?</p>
 </div>
-<h3 id="primer-trimestre-y-parte-del-segundo">Primer trimestre y parte del segundo </h3>
-<p>Aprender a documentar un proyecto muy simple, con los puntos esperados y con un ejemplo bien hecho nuestro.</p>
-<p>Aquí podemos usar el guión que tenemos para los proyectos de segundo.</p>
-<h3 id="resto-del-segundo-trimestre-al-final">Resto del segundo trimestre al final </h3>
-<p>Proyecto de más envergadura, pero menos que el proyecto final, pero ya con idea de que pueda servirles para el proyecto del segundo curso.</p>
-<p>Por ejemplo, se puede hacer una pequeña aplicación en modo consola y cosas, rollo la investigación inicial de la aplicación, DAFO/CAME, etc. o cosas como el diseño de la base de datos, les pueden valer ya.</p>
-<h2 id="3-scrum">3. Scrum </h2>
-<p>Guías para conocer Scrum<br>
-<a href="https://www.scrum.org/learning-series/what-is-scrum/">https://www.scrum.org/learning-series/what-is-scrum/</a><br>
-<a href="https://scrumguides.org/">https://scrumguides.org/</a> para descargar la guía "oficial" de Scrum en varios idiomas.</p>
-<p>Sitio para una simulación online de Scrum<br>
-<a href="https://scrumcardgame.com/">https://scrumcardgame.com/</a></p>
-<p>Materiales SCRUM Reis<br>
-<a href="https://scrumenelaula.github.io/">https://scrumenelaula.github.io/</a></p>
-<p>De aquí se pueden sacar actividades para ir pidiéndoles semana a semana</p>
-<h2 id="4-retos">4. Retos </h2>
-<p>ETHAZI Gunea<br>
-<a href="https://ethazi.tknika.eus/es/propuestas-de-reto-0/">https://ethazi.tknika.eus/es/propuestas-de-reto-0/</a></p>
-<p>Banco de Retos de la familia deInformática de Ethazi (País Vasco)<br>
-<a href="https://drive.google.com/drive/folders/0BzyZFMYvx0owMEhKVU5ZNTcwVmc?resourcekey=0-4NguwvEoPSSKbqOTzHiuEQ">https://drive.google.com/drive/folders/0BzyZFMYvx0owMEhKVU5ZNTcwVmc?resourcekey=0-4NguwvEoPSSKbqOTzHiuEQ</a></p>
-<p>ABP en FP<br>
-<a href="https://sites.google.com/view/abp-en-fp/inicio?authuser=0">https://sites.google.com/view/abp-en-fp/inicio?authuser=0</a><br>
-<a href="http://fpeando.es">fpeando.es</a></p>
+<h2 id="d-planificación-de-procesos">D. Planificación de procesos </h2>
+<p>Dados los tres procesos que se ponen como ejemplo en la unidad</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Proceso</th>
+<th style="text-align:center">Tiempo de llegada</th>
+<th style="text-align:center">Tiempo uso CPU</th>
+<th style="text-align:center">Prioridad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">P1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">P2</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">10</td>
+</tr>
+<tr>
+<td style="text-align:center">P3</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">7</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition question">
+<p class="admonition-title">Planificador combinado</p>
+<p>En realidad, nunca se usa una única estrategia de planificación, sino que lo más común es que se combinen varias de ellas. De hecho en Round-Robin hemos usado también FCFS.<br>
+¿Te atreves a ver cómo sería una planificación Round-Robin con prioridad? Ten en cuenta que funcionará con el quantum y a la hora de escoger el siguiente proceso a ejecutar, se basará en la prioridad de los que haya en la lista.<br>
+¿Y la misma planificación con 2 procesadores?</p>
+</div>
+<h2 id="e-condiciones-de-bernstein">E. Condiciones de Bernstein </h2>
+<p>Dadas las siguientes instrucciones de código, queremos saber cuáles pueden ejecutarse de forma simultánea sin tener porblemas de concurrencia.</p>
+<pre class="language-text">1. cuad := x * x;
+2. m1 := a * cuad;
+3. m2 := b * x;
+4. z := m1 + m2;
+5. y := z + c;
+</pre>
+<div class="admonition question">
+<p class="admonition-title">Condiciones de Bernstein</p>
+<p>Aplica las condiciones de Bernstein para identificar qué instrucciones de las siguientes pueden ser ejecutadas de forma simultánea sin problemas de concurrencia.<br>
+Indicar, para cada par de instrucciones, si son independientes, o están acopladas.</p>
+</div>
 
       </div>
       

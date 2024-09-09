@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>Módulo Proyecto Intermodular - 1r curso</title>
+      <title>PSP - Actividades U1</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -88,128 +88,89 @@
     
       <div class="crossnote markdown-preview  ">
       
-<h1 id="proyecto-intermodular">Proyecto intermodular </h1>
-
-<div class="md-toc">
-<details style="padding:0;;padding-left:0px;" open="">
-        <summary class="md-toc-link-wrapper">
-          <a href="#1-marco-normativo" class="md-toc-link"><ol>
-<li>Marco normativo</li>
-</ol>
-</a>
-          </summary>
-        <div>
-          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#11-ley-de-ordenación-e-integración-de-la-formación-profesional" class="md-toc-link">
-            <p>1.1. Ley de Ordenación e Integración de la Formación Profesional</p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#12-rd-de-desarrollo-de-la-ordenación-del-sistema-de-formación-profesional" class="md-toc-link">
-            <p>1.2. RD de desarrollo de la ordenación del Sistema de Formación Profesional</p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#13-orden-de-inicio-de-curso" class="md-toc-link">
-            <p>1.3. Orden de inicio de curso</p>
-
-          </a></div>
-        </div>
-      </details>
-    <details style="padding:0;;padding-left:0px;" open="">
-        <summary class="md-toc-link-wrapper">
-          <a href="#2-propuesta-encontradas" class="md-toc-link"><ol start="2">
-<li>Propuesta encontradas</li>
-</ol>
-</a>
-          </summary>
-        <div>
-          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#primer-trimestre-y-parte-del-segundo" class="md-toc-link">
-            <p>Primer trimestre y parte del segundo</p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#resto-del-segundo-trimestre-al-final" class="md-toc-link">
-            <p>Resto del segundo trimestre al final</p>
-
-          </a></div>
-        </div>
-      </details>
-    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#3-scrum" class="md-toc-link">
-            <ol start="3">
-<li>Scrum</li>
-</ol>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#4-retos" class="md-toc-link">
-            <ol start="4">
-<li>Retos</li>
-</ol>
-
-          </a></div>
+<h1 id="unidad-1---reto-de-programación">Unidad 1 - Reto de Programación </h1>
+<h2 id="colecciones-en-java---cómo-almacenar-datos-en-memoria">Colecciones en Java - ¿Cómo almacenar datos en memoria? </h2>
+<p>La idea es muy simple, cuando queremos trabajar con un conjunto de elementos, necesitamos un almacén donde poder guardarlos.</p>
+<p>En Java, se emplea la interface genérica <strong>Collection</strong> para este propósito. Gracias a esta interface, podemos almacenar cualquier tipo de objeto y podemos usar una serie de métodos comunes, como pueden ser: añadir, eliminar, obtener el tamaño de la colección… ya que se trata de métodos definidos por la interface que obligatoriamente han de implementar las subinterfaces o clases que hereden de ella.</p>
+<pre class="language-text">Llamamos Colección a un grupo de objetos individuales que se representan como una única unidad.
+</pre>
+<h2 id="punto-de-partida--recursos-en-internet">Punto de partida – Recursos en Internet </h2>
+<p>Existen multitud de páginas con código de ejemplo para el uso de las colecciones en Java. A la hora de buscar debéis ser cuidadosos, porque hay sitios con código antiguo y obsoleto, por lo que tenéis que centrar la búsqueda en páginas actualizadas recientemente.</p>
+<p>Un buen ejemplo, con gran cantidad de código de ejemplo y con una explicación detallada del framework Collection de Java es el siguiente:</p>
+<ul>
+<li><a href="https://www.geeksforgeeks.org/collections-in-java-2/">GeeksForGeeks</a></li>
+</ul>
+<p>Aunque está en inglés (hay que ir acostumbrándose a leer documentación técnica en la lengua de Shakespeare), puedes encontrar otros recursos interesantes en castellano.</p>
+<p>Este artículo no ofrece únicamente una visión global de las colecciones y las clases que componen el framework, sino que al final del artículo podrás ver una buena lista de enlaces bajo el epígrafe <em>What You Should Learn in Java Collections?</em> que te ayudarán a completar este reto.</p>
+<h2 id="programación-funcional---java-api-stream">Programación funcional  – Java API Stream </h2>
+<p>Los streams (de la API Stream, no confundir con los relacionados con ficheros) nos dan la posibilidad  de realizar operaciones funcionales sobre los elementos de las colecciones, siguiendo la filosofía de la denominada “programación funcional”.</p>
+<p>En este artículo tienes una breve introducción al uso del API Stream en Java:</p>
+<ul>
+<li><a href="https://www.aprenderaprogramar.com/index.php?option=com_content&amp;view=article&amp;id=596:interface-collection-api-java-add-remove-size-ejemplo-arraylist-diferencia-con-list-streams-cu00917c&amp;catid=58&amp;Itemid=180">aprenderaprogramar.com - Uso de API Stream</a></li>
+</ul>
+<h2 id="expresiones-lambda---java-api-stream">Expresiones lambda  – Java API Stream </h2>
+<p>Las expresiones lambda te permiten reflejar de forma compacta clases o interfaces simples que contienen un único método.</p>
+<p>En este caso vamos a echar mano de la documentación oficial de Oracle para tener una primera aproximación a las expresiones lambda y de otro artículo para ver una aplicación más concreta a las colecciones y los streams.</p>
+<ul>
+<li><a href="https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html">Oracle - Expresiones lambda</a></li>
+<li><a href="https://www.javatpoint.com/java-lambda-expressions">Javatpoint - Expresiones lambda</a></li>
+</ul>
+<p>No es un tipo de programación trivial, aunque sí es bastante efectiva y rápida una vez que se controla. En este reto sólo pretendo que busquéis cómo hacer determinadas acciones con el uso de expresiones lambda, partiendo de ejemplos que encontréis.</p>
+<h2 id="reto-usar-colecciones-con-soltura">Reto: Usar colecciones con soltura </h2>
+<p>En este reto os voy a proponer que escojáis una de las dos colecciones más usadas e investiguéis cómo usarlas en Java.</p>
+<p>ArrayList	HashMap</p>
+<p>En AULES compartiré las mejores soluciones para cada una de las colecciones.</p>
+<div class="admonition note">
+<p class="admonition-title">¿En qué consiste entonces el reto?</p>
+<p>Pues tenéis que realizar un breve manual técnico, que os servirá de referencia para las actividades que desarrolléis a lo largo del curso.<br>
+Complementadlo con ejemplos de código y descripciones sencillas de la funcionalidad de ese código.</p>
+<p>Intenta que la colección contenga un objeto, mejor que tipos primitivos o sus clases Wrapper (envolturas). Por ejemplo un objeto persona con nombre, apellidos, edad, altura, peso, sexo, etc.</p>
 </div>
-<div style="\&quot;page-break-after:always;\&quot;"></div>
-<h2 id="1-marco-normativo">1. Marco normativo </h2>
-<h3 id="11-ley-de-ordenación-e-integración-de-la-formación-profesional">1.1. Ley de Ordenación e Integración de la Formación Profesional </h3>
-<p>Según se determina en la Ley Orgánica 3/2022, de 31 de marzo, de ordenación e integración de la Formación Profesional, concretamente dentro de la <em>sección 4ª Grado D. Ciclos formativos de formación profesional</em>, establece la organización de los CFGS y CFGM.</p>
-<p>En el <strong>artículo 40.</strong> <em>Organización y estructura</em> y en el <strong>artículo 45</strong> <em>Ciclos formativos de grado medio y grado superior</em>,  se establece que el módulo de Proyecto Interdisciplinar es un módulo obligatorio en todos los ciclos formativos de grado medio y grado superior de Formación Profesional.</p>
-<p>Este módulo tiene como objetivo integrar los conocimientos y competencias adquiridos en los distintos módulos profesionales del ciclo formativo, así como fomentar el trabajo en equipo y la resolución de problemas de forma autónoma.</p>
-<blockquote>
-<p>Artículo 41.  Proyecto intermodular.</p>
-<p>1 El proyecto intermodular tendrá carácter integrador de los conocimientos incorporados en los módulos profesionales que configuran el ciclo formativo, con especial atención a los elementos de búsqueda de información, innovación, investigación aplicada y emprendimiento, vinculados a los resultados de aprendizaje de aquél. Existirá un seguimiento y tutorización individual y colectiva del proyecto, que se desarrollará de forma simultánea al resto de los módulos profesionales a lo largo de la duración del ciclo formativo.</p>
-<p>2 En el caso de los ciclos formativos de grado básico, se tratará de un único proyecto colaborativo para toda la duración del ciclo formativo.</p>
-<p>3 En el caso de los ciclos formativos de grado medio y superior, el proyecto intermodular podrá tener carácter anual o bienal, con una duración mínima de 25 horas en cada curso y deberá defenderse ante el equipo docente, al que, en su caso, podrá incorporarse el tutor o tutora de empresa. 4. No obstante lo dispuesto en los apartados anteriores, todo el currículo podrá organizarse en proyectos intermodulares, a través de diferentes metodologías, por decisión del equipo docente, respetando siempre todos los resultados de aprendizaje incluidos en el ciclo formativo.</p>
-</blockquote>
-<h3 id="12-rd-de-desarrollo-de-la-ordenación-del-sistema-de-formación-profesional">1.2. RD de desarrollo de la ordenación del Sistema de Formación Profesional </h3>
-<p>En el Real Decreto 659/2023, de 18 de julio, <em>modificado por el RD 658/2024, de 9 de julio</em> se detallan aspectos de la Ley 3/2022. En este RD se concretan las enseñanzas mínimas de los nuevos módulos, pero no del proyecto integrador. Aquí se dan unas pinceladas sobre cómo debe ser el proyecto integrador, pero no se detalla en profundidad.</p>
-<blockquote>
-<p>Artículo 96.3. Estructura CFGM y CFGS</p>
-<p>El Proyecto intermodular tendrá carácter integrador de las competencias adquiridas, y será uno durante el ciclo formativo. Existirá un seguimiento y tutorización individual y colectiva del proyecto, que se desarrollará de forma simultánea al resto de los módulos profesionales a lo largo de la duración del ciclo formativo. Los centros determinarán el momento en el que debe iniciarse el Proyecto, en función de las características del ciclo formativo.</p>
-</blockquote>
-<h3 id="13-orden-de-inicio-de-curso">1.3. Orden de inicio de curso </h3>
-<p>En la Resolución de 8 de agosto de 2024, de la Secretaria Autonómica de Educación, por la que se dictan instrucciones sobre ordenación académica y de organización de los centros que imparten Formación Profesional durante el curs 2024-2025 en la Comunidad Valenciana, en el punto 6 trata sobre el proyecto integrador.</p>
-<blockquote>
-<p>Punto 6. Proyecto intermodular</p>
-<p>6.1. El Proyecto intermodular de aprendizaje colaborativo se impartirá en los ciclos formativos de grado básico y estará vinculado a sus tres ámbitos (ámbito de Comunicación y Ciencias Sociales, ámbito de Ciencias Aplicadas y ámbito profesional). El Proyecto intermodular de aprendizaje colaborativo de grado básico se llevará a cabo mediante una metodología basada en retos, Cada equipo docente diseñará uno o varios retos que impliquen la activación de varios resultados de aprendizaje contenidos en más de un módulo profesional del ciclo. Se trabajarán transversalmente los resultados de aprendizaje y criterios de evaluación.</p>
-<p>6.2. El Proyecto intermodular en los ciclos formativos de grado medio y superior tendrá un carácter integrador, de acuerdo con el art. 96 del Real decreto 659/2023, de 18 de julio.</p>
-<p>6.3. Dado el carácter integrador del proyecto intermodular la nota final del proyecto (segundo curso) tendrá en cuenta la valoración del trabajo realizado por el alumno o alumna en el primer y segundo curso. En la evaluación de primer curso, se reflejará en el acta de cada sesión de evaluación una valoración del aprovechamiento y el grado de consecución del desarrollo del módulo con una calificación orientativa que formará parte de la calificación final en segundo. En la evaluación del proyecto en el segundo curso se contemplará la nota final  del proyecto que será la nota media de primero y segundo. Esta nota final de proyecto formará parte del cálculo de la nota media del ciclo formativo.</p>
-<p>6.4. Los contenidos mínimos del proyecto intermodular que establece el Real decreto 659/2023, de 18 de julio, tendrán la consideración de orientativos. Corresponderá a los equipos docentes la actualización de los contenidos en las programaciones didácticas.</p>
-<p>6.5. Los centros docentes determinarán en el marco de la programación didáctica de cada módulo las especificaciones, los trabajos que se realizarán, el formato y la evaluación del módulo de proyecto, procesos que serán supervisados por los correspondientes departamentos de familia profesional para su posterior presentación al alumnado.</p>
-</blockquote>
-<p>Lo curioso de estas instrucciones es que en el punto 6.4 hace referencia a unos contenidos mínimos en el RD 659/2023 que no aparecen por ningún lado en dicho RD.</p>
 <div class="admonition info">
-<p class="admonition-title">Normativa aplicable</p>
-<p>Como se puede deducir de todo lo anterior, no hay una normativa actualizada para el proyecto interdisciplinar.<br>
-Se puede aplicar la normativa (RA, contenidos y orientaciones pedagógicas del módulo de proyecto que se sigue realizando en los módulos de segundo curso) de los RD de título y órdenes de currículo de los distintos ciclos formativos.</p>
-<p>Para poder ver esa normativa podemos consultar, a modo de ejemplo, la programación de este módulo que Vicente Rico ha creado y que tenemos en el Drive del Departamento <a href="https://docs.google.com/document/d/1hSDJDSDXBeeaKi-j041HKOjXQD6b1AaSQxjfnFFXpd4/edit?usp=drive_link">Programación módulo Proyecto 2 DAM</a>.</p>
+<p class="admonition-title">Esta guía debe contener, al menos los siguientes elementos</p>
+<p>a) Definición y creación de una colección<br>
+◦ Diferentes constructores que consideréis útiles</p>
+<p>b) Poner ejemplos de métodos / propiedas generales<br>
+◦ tamaño<br>
+◦ Acceso por índice / clave<br>
+◦ ...</p>
+<p>c) Añadir datos a la colección<br>
+◦ Añadir elementos desde el constructor.<br>
+◦ Añadir elementos a partir de otras colecciones.<br>
+◦ Añadir elementos mediante código.<br>
+◦ Eliminar elementos mediante código.</p>
+<p>d) Recorrer la colección<br>
+◦ Con un bucle for<br>
+◦ Con un bucle foreach de Java<br>
+◦ Usando Iterator<br>
+◦ Con expresiones lambda<br>
+<em>Aquí hay un caso especial, que es cuando se quiere modificar (añadir/eliminar/actualizar)<br>
+la colección mientras se está recorriendo. En este caso no todas las formas de recorrerla son válidas. Investígalo.</em></p>
+<p>e) Búsqueda de elementos por clave/valor o por alguna propiedad del objeto<br>
+◦ Con un bucle (for / foreach / Iterator)<br>
+◦ Con expresiones lambda<br>
+◦ Con API Stream</p>
+<p>f) Obtención de subcolecciones<br>
+◦ Con un bucle (for / foreach / Iterator)<br>
+◦ Con expresiones lambda<br>
+◦ Con API Stream (filtrado / collect)</p>
+<p>g) Ordenación de elementos<br>
+◦ Con funciones de Collection<br>
+◦ Con expresiones lambda<br>
+◦ Con API Stream</p>
+<p>h) Cualquier otro aspecto que quieras añadir</p>
 </div>
-<h2 id="2-propuesta-encontradas">2. Propuesta encontradas </h2>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Esto es información que se ha encontrado en la red y que puede ser de utilidad para el desarrollo del proyecto intermodular.</p>
+<p>La guía debe ser un documento “vivo” por lo que en cualquier momento del curso podéis modificarla y completarla con nuevos apartados o ejemplos.</p>
+<h2 id="recursos-adicionales">Recursos adicionales </h2>
+<p>Hay un site muy interesante con recursos muy buenos a la hora de saber cómo hacer algo concreto en Java. Os dejo el enlace a los artículos relacionados con Colecciones.</p>
+<ul>
+<li><a href="https://www.baeldung.com/category/java/java-collections/">Baeldung</a></li>
+</ul>
+<div style="page-break-after:always;"></div>
+<h2 id="rúbrica-de-evaluación">Rúbrica de evaluación </h2>
+<div style="display: flex; justify-content: center; align-items: center; margin-top: 15px; margin-bottom: 15px">
+    <img height="" src="./Soluciones/RubricaReto1.png">
 </div>
-<h3 id="primer-trimestre-y-parte-del-segundo">Primer trimestre y parte del segundo </h3>
-<p>Aprender a documentar un proyecto muy simple, con los puntos esperados y con un ejemplo bien hecho nuestro.</p>
-<p>Aquí podemos usar el guión que tenemos para los proyectos de segundo.</p>
-<h3 id="resto-del-segundo-trimestre-al-final">Resto del segundo trimestre al final </h3>
-<p>Proyecto de más envergadura, pero menos que el proyecto final, pero ya con idea de que pueda servirles para el proyecto del segundo curso.</p>
-<p>Por ejemplo, se puede hacer una pequeña aplicación en modo consola y cosas, rollo la investigación inicial de la aplicación, DAFO/CAME, etc. o cosas como el diseño de la base de datos, les pueden valer ya.</p>
-<h2 id="3-scrum">3. Scrum </h2>
-<p>Guías para conocer Scrum<br>
-<a href="https://www.scrum.org/learning-series/what-is-scrum/">https://www.scrum.org/learning-series/what-is-scrum/</a><br>
-<a href="https://scrumguides.org/">https://scrumguides.org/</a> para descargar la guía "oficial" de Scrum en varios idiomas.</p>
-<p>Sitio para una simulación online de Scrum<br>
-<a href="https://scrumcardgame.com/">https://scrumcardgame.com/</a></p>
-<p>Materiales SCRUM Reis<br>
-<a href="https://scrumenelaula.github.io/">https://scrumenelaula.github.io/</a></p>
-<p>De aquí se pueden sacar actividades para ir pidiéndoles semana a semana</p>
-<h2 id="4-retos">4. Retos </h2>
-<p>ETHAZI Gunea<br>
-<a href="https://ethazi.tknika.eus/es/propuestas-de-reto-0/">https://ethazi.tknika.eus/es/propuestas-de-reto-0/</a></p>
-<p>Banco de Retos de la familia deInformática de Ethazi (País Vasco)<br>
-<a href="https://drive.google.com/drive/folders/0BzyZFMYvx0owMEhKVU5ZNTcwVmc?resourcekey=0-4NguwvEoPSSKbqOTzHiuEQ">https://drive.google.com/drive/folders/0BzyZFMYvx0owMEhKVU5ZNTcwVmc?resourcekey=0-4NguwvEoPSSKbqOTzHiuEQ</a></p>
-<p>ABP en FP<br>
-<a href="https://sites.google.com/view/abp-en-fp/inicio?authuser=0">https://sites.google.com/view/abp-en-fp/inicio?authuser=0</a><br>
-<a href="http://fpeando.es">fpeando.es</a></p>
 
       </div>
       
