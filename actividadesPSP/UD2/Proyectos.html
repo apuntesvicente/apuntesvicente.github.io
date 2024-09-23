@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>PSP - Actividades U1</title>
+      <title>PSP - U2 Proyectos</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -88,162 +88,109 @@
     
       <div class="crossnote markdown-preview  ">
       
-<h1 id="actividades-unidad-1">Actividades Unidad 1 </h1>
+<h1 id="psp---u2-proyectos">PSP - U2 Proyectos </h1>
+<h2 id="1-clase-pspproyectosu2p1_lanzadorprogramas">1. Clase psp.proyectos.U2P1_LanzadorProgramas </h2>
+<p>Realiza un programa en Java que, usando la librería gráfica <strong>Swing</strong>, nos muestre un panel de control para ejecutar distintas aplicaciones.</p>
+<p><a href="https://www.youtube.com/watch?v=B6q4Bk3trPM">Videotutorial creación proyecto Swing en Netbeans</a></p>
+<p><a href="https://dcodingames.com/interfaz-grafica-de-usuario-con-netbeans/">Guía de programación de proyecto Swing en Netbeans(1)(2)</a><br>
+(1) Es una guía muy completa y breve. Sólo debéis tener en cuenta que el primer paso que hace realmente debería estar entre los pasos 4 y 5, tal y como se explica en el videotutorial.<br>
+(2) Es muy interesante el proceso que explica antes de la Figura 8 para cambiar el nombre de los campos sin que nos de problemas.</p>
+<p>Puedes crear todas las clases auxiliares que consideres necesarias. Todas ellas deben estar dentro del paquete psp.proyectos.</p>
+<p>Este lanzador tendrá un aspecto similar a la pantalla de un móvil.</p>
+<span style="align: center;">
+<table align="center">
+<tbody><tr>
+<td>
+<div align="center">
+    <img height="" src="./Soluciones/Lanzador1.png">
+</div>
+</td>
+<td>
+<div align="center">
+    <img height="" src="./Soluciones/Lanzador2.png">
+</div>
+</td>
+</tr>
+</tbody></table>
+</span>
+<p>No es necesario que nuestro Lanzador incorpore menús y el diseño os lo dejo a vuestra elección, aunque no será un apartado calificable en la actividad, por lo tanto, no dediquéis mucho tiempo a esto.</p>
+<p>El tamaño de la ventana será fijo. Así que el JFrame que usemos no será “Resizable”. Cada aplicación estará representada por un JButton que contendrá una imagen de la aplicación y, opcionalmente un texto (Ver imágenes de ejemplo).</p>
+<p>Podemos lanzar tanto aplicaciones gráficas como comandos del sistema. Para mostrar la posible salida que generen las aplicaciones que creemos nuestro lanzador tendrá un JTextArea en la parte inferior, al estilo de la consola que aparece en Netbeans, donde mostraremos la salida y los errores que produzcan las aplicaciones.</p>
+<p>Debéis incluir al menos tres aplicaciones gráficas y un botón para ejecutar comandos de consola.</p>
+<p>Para indicar el comando de consola que queremos ejecutar, incluiremos en el diseño un JTextField donde introduciremos el comando, sus argumentos y sus parámetros. La salida del comando se visualizará en el JTextArea de la parte inferior.</p>
 <div class="admonition warning">
-<p class="admonition-title">Plantilla para actividades</p>
-<p>Usa la hoja de cálculo con la plantilla que se proporciona en la actividad.<br>
-Fíjate bien en la primera hoja de la plantilla, donde se explica cómo se deben representar los procesos en cada caso.<br>
-Haz la Actividad A1 y A2 en la segunda hoja de la plantilla.<br>
-Haz la Actividad B en la tercera hoja de la plantilla.</p>
+<p class="admonition-title">Control de procesos activos</p>
+<p>Para evitar que se lance más de una instancia de cada aplicación, cada vez que se pulse un botón, este se deshabilitará.</p>
+<p>Para volver a habilitar todos los botones deshabilitados, añadiremos otro botón más, “Actualizar”, que comprobará si el proceso lanzado por cada uno de los botones sigue activo (seguirá dejando el botón deshabilitado) o si por el contrario el proceso ha terminado (volverá a habilitar el botón).</p>
+<p>Este control se debe hacer de forma dinámica. No se valorará el uso de variables por botón, ya que en cualquier momento se pueden añadir nuevas aplicaciones al lanzador y esto no debe afectar al código ya escrito.</p>
 </div>
-<h2 id="a1-planificación-de-procesos-monoprocesador-y-monoalgoritmo">A.1 Planificación de procesos (monoprocesador y monoalgoritmo) </h2>
-<p>Dada la información de los procesos de la siguiente tabla, por favor contesta las siguientes preguntas</p>
-<p><code>Se supone que todos los procesos llegan a la vez a la cola de preparados (t=0) y que no llegan más procesos a la cola mientras se están ejecutando los procesos de la A a la E.</code></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Proceso</th>
-<th style="text-align:center">Tiempo de uso CPU</th>
-<th style="text-align:center">Prioridad</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">A</td>
-<td style="text-align:center">10</td>
-<td style="text-align:center">3</td>
-</tr>
-<tr>
-<td style="text-align:center">B</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">C</td>
-<td style="text-align:center">2</td>
-<td style="text-align:center">3</td>
-</tr>
-<tr>
-<td style="text-align:center">D</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">4</td>
-</tr>
-<tr>
-<td style="text-align:center">E</td>
-<td style="text-align:center">5</td>
-<td style="text-align:center">2</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition question">
-<p class="admonition-title">Para el algoritmo FCFS</p>
-<p>a) Dibuja el diagrama de Gantt correspondiente a la planificación de los procesos en en la tabla<br>
-b) Obtén el tiempo de espera de cada proceso.<br>
-c) Obtén el tiempo de salida de cada proceso.<br>
-d) Obtén el porcentaje de uso de la CPU para el conjunto de procesos.<br>
-e) Obtén el número de procesos por unidad de tiempo (throughput) para el conjunto de procesos.</p>
+<p>Vamos a dar la opción de que la salida, en vez de mostrarse en el JTextArea, se guarde en un archivo. Para indicar esta posibilidad vamos a añadir un <code>JCheckBox</code> a nuestra aplicación de forma que si no está marcado la salida se muestra en la ventana y si está marcado, la salida (estándar y de error) se irá guardando en el archivo <code>salida.txt</code>, de forma incremental, en el directorio raíz del proyecto.</p>
+<p>La forma de añadir imágenes en nuestra aplicación Swing es incluyéndolas en una carpeta dentro del directorio src</p>
+<div style="display: flex; justify-content: center; align-items: center; margin-top: 15px; margin-bottom: 15px">
+    <img height="" src="./Soluciones/carpetas.png">
 </div>
-<div class="admonition question">
-<p class="admonition-title">Repite los pasos anteriores (de la <strong>a)</strong> a la <strong>e)</strong>) para cada los siguientes algoritmos de planificación:</p>
+<p>y después las añadimos a los controles y a la ventana usando el siguiente código. Las propiedades que controlan el posicionamiento dentro del botón de la imagen y el texto son:</p>
 <ul>
-<li>SJF,</li>
-<li>Prioridad (p=0 mayor prioridad , p=5 menos prioridad),</li>
-<li>Round Robin (q=1).</li>
+<li>horizontalAlignment/verticalAlignment: Alineación horizontal y vertical del icono y el texto dentro del botón</li>
+<li>horizontalTextPosition/verticalTextPosition: Posición horizontal/vertical del texto en relación con la imagen</li>
 </ul>
+<p>Para añadir el icono de la aplicación (al JFrame)</p>
+<pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token class-name">URL</span> url1 <span class="token operator">=</span> <span class="token class-name">MainFrame</span><span class="token punctuation">.</span><span class="token keyword keyword-class">class</span><span class="token punctuation">.</span><span class="token function">getResource</span><span class="token punctuation">(</span><span class="token string">"/imagenes/play.png"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">ImageIcon</span> image1 <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">ImageIcon</span><span class="token punctuation">(</span>url1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token function">setIconImage</span><span class="token punctuation">(</span>image1<span class="token punctuation">.</span><span class="token function">getImage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p>Para añadir el icono a un botón</p>
+<pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token class-name">URL</span> url2 <span class="token operator">=</span> <span class="token class-name">MainFrame</span><span class="token punctuation">.</span><span class="token keyword keyword-class">class</span><span class="token punctuation">.</span><span class="token function">getResource</span><span class="token punctuation">(</span><span class="token string">"/imagenes/open.png"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">ImageIcon</span> image2 <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">ImageIcon</span><span class="token punctuation">(</span>url2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+jButton1<span class="token punctuation">.</span><span class="token function">setIcon</span><span class="token punctuation">(</span>image2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//Versión con redimensionado de imagen, por ejemplo a 32x32</span>
+<span class="token comment">//jButton1.setIcon(new ImageIcon(image2.getImage().getScaledInstance(32, 32, Image.SCALE_DEFAULT)));</span>
+</code></pre><blockquote>
+<p><strong>MainFrame</strong> debe sustituirse por el nombre de nuestra clase que hereda de JFrame.</p>
+</blockquote>
+<p>Todo el código de carga de imágenes debe hacerse en el constructor de nuestro JFrame, justo después de haber inicializado los componentes, es decir, podemos llamar a un método creado por nosotros justo después de la llamada a initComponents().</p>
+<pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">MainFrame</span> <span class="token keyword keyword-extends">extends</span> <span class="token class-name"><span class="token namespace">javax<span class="token punctuation">.</span>swing<span class="token punctuation">.</span></span>JFrame</span> 
+<span class="token keyword keyword-public">public</span> <span class="token class-name">MainFrame</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">initComponents</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">addComponentImages</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Método que añade las imágenes a los componentes</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="admonition question">
+<p class="admonition-title">Control de eventos</p>
+<p>¿Podríamos hacer un waitFor() en el evento de pulsación del botón? Explica qué ocurriría y por qué.<br>
+¿Cómo podrías solucionarlo?</p>
 </div>
-<h2 id="a2-planificación-de-procesos-multiprocesador-y-con-dos-algoritmos-de-planificación">A.2 Planificación de procesos (multiprocesador y con dos algoritmos de planificación) </h2>
-<div class="admonition warning">
-<p class="admonition-title">Asignación de procesos a los procesadores</p>
-<p>En este caso, se asignan los procesos a los procesadores de forma secuencial, es decir, el primer proceso a ejecutar se asigna al primer procesador, el segundo proceso al segundo procesador y así sucesivamente.<br>
-Cuando se le tiene que asignar procesador a un nuevo proceso, se le asigna el primer procesador, en orden, que esté libre. Así, si los dos procesadores están libres, el siguiente proceso se asignará al primer procesador. Si el primer procesador está ocupado, se asignará al segundo procesador.</p>
-</div>
-<p>Repite la actividad (para Round Robin como primer algoritmo de elección, y otro algoritmo que tú elijas como segundo criterio del planificador) para un sistema con dos procesadores o núcleos.</p>
-<div class="admonition question">
-<p class="admonition-title">Para el algoritmo Round-Robin + <em>(uno de los otros que tu elijas)</em></p>
-<p>a) Dibuja el diagrama de Gantt correspondiente a la planificación de los procesos en en la tabla<br>
-b) Obtén el tiempo de espera de cada proceso.<br>
-c) Obtén el tiempo de salida de cada proceso.<br>
-d) Obtén el porcentaje de uso de la CPU para el conjunto de procesos.<br>
-e) Obtén el número de procesos por unidad de tiempo (throughput) para el conjunto de procesos.</p>
+<p>Un ejemplo de como podría ser el aspecto de nuestro lanzador es el siguiente:</p>
+<div style="display: flex; justify-content: center; align-items: center; margin-top: 15px; margin-bottom: 15px">
+    <img height="300" src="./Soluciones/Lanzador.png">
 </div>
 <div style="page-break-after:always;"></div>
-<h2 id="b-planificación-de-procesos-con-es">B. Planificación de procesos con E/S </h2>
-<p>Una CPU tiene que planificar la ejecución de los procesos A, B y C . Aunque la llegada de los tres procesos a la cola de preparados es simultánea, nosotros suponemos que llegan en el orden A, B y C.</p>
-<p>Los procesos A, B y C tienen los siguientes tiempos de uso de CPU y de E/S:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Proceso</th>
-<th style="text-align:center">Tiempo de CPU</th>
-<th style="text-align:center">Tiempo de E/S</th>
-<th style="text-align:center">Tiempo de CPU</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">A</td>
-<td style="text-align:center">5</td>
-<td style="text-align:center">4</td>
-<td style="text-align:center">2</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition tip">
-<p class="admonition-title">Secuencia de ejecución del proceso</p>
-<p>La tabla anterior nos proporciona información de la secuencia de ejecución del proceso A.</p>
-<ul>
-<li><strong>Ejecución de CPU</strong>: Cuando el proceso consigue ejecutarse, necesita completar 5 unidades de tiempo de CPU.</li>
-<li><strong>Tiempo de E/S</strong>: Una vez completado el tiempo de CPU, el proceso tiene que esperar 4 unidades de tiempo en estado de <em>BLOQUEADO</em> esperando a que se complete una operación de E/S. Durante ese tiempo, el proceso no puede ejecutarse ni ocupa la CPU. Tampoco tiene que esperar en la cola de preparados.</li>
-<li>Ejecución de CPU. Una vez completado el tiempo de E/S, el proceso vuelve a la cola de preparados y necesita completar 2 unidades de tiempo de CPU, cuando el planificador le asigne la CPU.</li>
-</ul>
+<h2 id="2-clase-pspproyectosu2p2_apiresttester">2. Clase psp.proyectos.U2P2_ApiRestTester </h2>
+<p>Realiza un programa en Java que, usando la librería gráfica <strong>Swing</strong>, nos muestre un entorno gráfico para poder ejecutar el comando <code>curl</code> con todas las opciones que hay en el Anexo II del tema 2.</p>
+<p>En la lista de APIs para probar puedes incluir las que se ven en los apuntes o cualquier otra de las que se proponen en este <a href="https://ichi.pro/es/una-lista-seleccionada-de-100-api-publicas-geniales-y-divertidas-para-inspirar-su-proximo-proyecto-8109114517939">listado de API REST “diferentes”</a>. Si quieres usar la API de traducción de Azure, escríbeme un correo para pedirme la secret key de acceso. Debes incluir un mínimo de 2 API REST en el desplegable para probar.</p>
+<p>En la documentación de las API podrás encontrar las rutas que puedes usar para tus pruebas. Las rutas al ser dinámicas, se escribirán de forma manual.</p>
+<p>Tienes que seleccionar el método de envío (GET / POST) que se utilizará en tu petición</p>
+<p>En los TextArea de Header y Data se añadirá una línea por cada encabezado o pareja clave-valor de datos que se quiera enviar en la solicitud.</p>
+<p>Si el envío es información en formato JSON, habrá que indicarlo marcando el checkbox, de forma que todo el contenido de TextArea Data se enviará como información JSON. Además, al marcar el checkbox debes generar un evento que añada la cabecera de content-type JSON al TextArea Header.</p>
+<p>Cuando se pulse el botón “Enviar”, se recogerá toda la información de la pantalla y se preparará el comando <code>curl</code> a ejecutar. El comando completo se mostrará en el TextField y se ejecutará.</p>
+<p>La salida (estándar y error) que produzca el comando curl se recogerá y se mostrará en el TextArea de la parte inferior.</p>
+<blockquote>
+<p>Cuando entregues la actividad, debes indicarme qué rutas puedo probar para el API que hayas seleccionado.</p>
+</blockquote>
+<span style="align: center;">
+<table align="center">
+<tbody><tr>
+<td>
+<div align="center">
+    <img height="" src="./Soluciones/curl1.png">
 </div>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Proceso</th>
-<th style="text-align:center">Tiempo de CPU</th>
-<th style="text-align:center">Tiempo de E/S</th>
-<th style="text-align:center">Tiempo de CPU</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">B</td>
-<td style="text-align:center">2</td>
-<td style="text-align:center">7</td>
-<td style="text-align:center">5</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Proceso</th>
-<th style="text-align:center">Tiempo de E/S</th>
-<th style="text-align:center">Tiempo de CPU</th>
-<th style="text-align:center">Tiempo de E/S</th>
-<th style="text-align:center">Tiempo de CPU</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">C</td>
-<td style="text-align:center">3</td>
-<td style="text-align:center">6</td>
-<td style="text-align:center">3</td>
-<td style="text-align:center">3</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition question">
-<p class="admonition-title">Para el algoritmo FCFS</p>
-<p>a) Dibuja el diagrama de Gantt correspondiente a la planificación de las tablas.<br>
-b) Obtén el tiempo de espera y tiempo de salida de cada proceso. Después obtén el porcentaje de uso de la CPU y la tasa de tareas para los dos procesadores.</p>
+</td>
+<td>
+<div align="center">
+    <img height="" src="./Soluciones/curl2.png">
 </div>
-<div class="admonition question">
-<p class="admonition-title">Repite la actividad para el siguiente algoritmo de planificación</p>
-<p>• Round Robin (q=4)</p>
-</div>
+</td>
+</tr>
+</tbody></table>
+</span>
 
       </div>
       

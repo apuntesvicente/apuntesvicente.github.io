@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>PSP - Actividades U1</title>
+      <title>PSP - U2 Actividades</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -88,162 +88,141 @@
     
       <div class="crossnote markdown-preview  ">
       
-<h1 id="actividades-unidad-1">Actividades Unidad 1 </h1>
-<div class="admonition warning">
-<p class="admonition-title">Plantilla para actividades</p>
-<p>Usa la hoja de cálculo con la plantilla que se proporciona en la actividad.<br>
-Fíjate bien en la primera hoja de la plantilla, donde se explica cómo se deben representar los procesos en cada caso.<br>
-Haz la Actividad A1 y A2 en la segunda hoja de la plantilla.<br>
-Haz la Actividad B en la tercera hoja de la plantilla.</p>
+<h1 id="psp---u2-actividades">PSP - U2 Actividades </h1>
+<h2 id="1-clase-pspactividadesu2a8_leernombre">1. Clase psp.actividades.U2A8_LeerNombre </h2>
+<p>Realiza un programa en Java que reciba como argumentos, a través del main(), un nombre y lo visualice en pantalla.</p>
+<div class="admonition info">
+<p class="admonition-title">Prueba de la clase de forma independiente</p>
+<p>Puedes probar el funcionamiento de la clase de forma independiente, pulsado Shift + F6.<br>
+Sin embargo, si quieres que la clase reciba argumentos a través del main, para probarla tendrás que ponerla como "Main Class" en la sección "Run" de las propiedades del proyecto.</p>
 </div>
-<h2 id="a1-planificación-de-procesos-monoprocesador-y-monoalgoritmo">A.1 Planificación de procesos (monoprocesador y monoalgoritmo) </h2>
-<p>Dada la información de los procesos de la siguiente tabla, por favor contesta las siguientes preguntas</p>
-<p><code>Se supone que todos los procesos llegan a la vez a la cola de preparados (t=0) y que no llegan más procesos a la cola mientras se están ejecutando los procesos de la A a la E.</code></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Proceso</th>
-<th style="text-align:center">Tiempo de uso CPU</th>
-<th style="text-align:center">Prioridad</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">A</td>
-<td style="text-align:center">10</td>
-<td style="text-align:center">3</td>
-</tr>
-<tr>
-<td style="text-align:center">B</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">C</td>
-<td style="text-align:center">2</td>
-<td style="text-align:center">3</td>
-</tr>
-<tr>
-<td style="text-align:center">D</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">4</td>
-</tr>
-<tr>
-<td style="text-align:center">E</td>
-<td style="text-align:center">5</td>
-<td style="text-align:center">2</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition question">
-<p class="admonition-title">Para el algoritmo FCFS</p>
-<p>a) Dibuja el diagrama de Gantt correspondiente a la planificación de los procesos en en la tabla<br>
-b) Obtén el tiempo de espera de cada proceso.<br>
-c) Obtén el tiempo de salida de cada proceso.<br>
-d) Obtén el porcentaje de uso de la CPU para el conjunto de procesos.<br>
-e) Obtén el número de procesos por unidad de tiempo (throughput) para el conjunto de procesos.</p>
+<h3 id="clase-pspactividadesu2a8_lanzador">Clase psp.actividades.U2A8_Lanzador </h3>
+<p>A continuación haz un programa que lance LeerNombre. Utiliza waitFor() para comprobar el valor de salida del proceso que se ejecuta.</p>
+<div class="admonition info">
+<p class="admonition-title">Clase principal vs ejecutar clase</p>
+<p>Si quieres que al pulsar el botón <code>Play</code> o <code>F6</code> en Netbeans se ejecute la clase LeerNombre, tendrás que ponerla como "Main Class" en la sección "Run" de las propiedades del proyecto.</p>
+<p>Si por el contrario, esta clase no necesita recibir parámetros en su ejecución, también puedes ejecutarla pulsando <code>Shift + F6</code> teniéndola seleccionada en el explorador de proyectos.</p>
 </div>
 <div class="admonition question">
-<p class="admonition-title">Repite los pasos anteriores (de la <strong>a)</strong> a la <strong>e)</strong>) para cada los siguientes algoritmos de planificación:</p>
-<ul>
-<li>SJF,</li>
-<li>Prioridad (p=0 mayor prioridad , p=5 menos prioridad),</li>
-<li>Round Robin (q=1).</li>
-</ul>
-</div>
-<h2 id="a2-planificación-de-procesos-multiprocesador-y-con-dos-algoritmos-de-planificación">A.2 Planificación de procesos (multiprocesador y con dos algoritmos de planificación) </h2>
-<div class="admonition warning">
-<p class="admonition-title">Asignación de procesos a los procesadores</p>
-<p>En este caso, se asignan los procesos a los procesadores de forma secuencial, es decir, el primer proceso a ejecutar se asigna al primer procesador, el segundo proceso al segundo procesador y así sucesivamente.<br>
-Cuando se le tiene que asignar procesador a un nuevo proceso, se le asigna el primer procesador, en orden, que esté libre. Así, si los dos procesadores están libres, el siguiente proceso se asignará al primer procesador. Si el primer procesador está ocupado, se asignará al segundo procesador.</p>
-</div>
-<p>Repite la actividad (para Round Robin como primer algoritmo de elección, y otro algoritmo que tú elijas como segundo criterio del planificador) para un sistema con dos procesadores o núcleos.</p>
-<div class="admonition question">
-<p class="admonition-title">Para el algoritmo Round-Robin + <em>(uno de los otros que tu elijas)</em></p>
-<p>a) Dibuja el diagrama de Gantt correspondiente a la planificación de los procesos en en la tabla<br>
-b) Obtén el tiempo de espera de cada proceso.<br>
-c) Obtén el tiempo de salida de cada proceso.<br>
-d) Obtén el porcentaje de uso de la CPU para el conjunto de procesos.<br>
-e) Obtén el número de procesos por unidad de tiempo (throughput) para el conjunto de procesos.</p>
+<p class="admonition-title">Valor de retorno</p>
+<p>Prueba la ejecución del proceso LeerNombre dando valor a los argumentos del main() y sin darle valor.<br>
+¿Qué devuelve waitFor() en un caso y en otro?</p>
+<p>Si pruebas la clase de forma independiente, qué se muestra por consola si no le pasas argumentos y qué se muestra si le pasas argumentos.</p>
 </div>
 <div style="page-break-after:always;"></div>
-<h2 id="b-planificación-de-procesos-con-es">B. Planificación de procesos con E/S </h2>
-<p>Una CPU tiene que planificar la ejecución de los procesos A, B y C . Aunque la llegada de los tres procesos a la cola de preparados es simultánea, nosotros suponemos que llegan en el orden A, B y C.</p>
-<p>Los procesos A, B y C tienen los siguientes tiempos de uso de CPU y de E/S:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Proceso</th>
-<th style="text-align:center">Tiempo de CPU</th>
-<th style="text-align:center">Tiempo de E/S</th>
-<th style="text-align:center">Tiempo de CPU</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">A</td>
-<td style="text-align:center">5</td>
-<td style="text-align:center">4</td>
-<td style="text-align:center">2</td>
-</tr>
-</tbody>
-</table>
+<h2 id="2-clase-pspactividadesu2a9_lanzadorcomandos2">2. Clase psp.actividades.U2A9_LanzadorComandos2 </h2>
+<p>Realiza un programa en Java que reciba como parámetro un comando para ejecutar en una consola (shell).</p>
+<p>Haz que tu programa ejecute el comando como un nuevo proceso y que muestre por pantalla la salida del comando (precedida por “&gt; “) y los errores del comando (precedidos por “ERROR&gt; “).</p>
+<div class="admonition info">
+<p class="admonition-title">Ejecución de comandos shell</p>
+<p>Recuerda que los comandos shell, para ejecutarse como un proceso y que devuelvan el control al padre cuando acaben de ejecutarse, deben ser lanzados como</p>
+<blockquote>
+<p>cmd /c comando</p>
+</blockquote>
+</div>
+<p>Ejecuta comandos que existan y comandos que no existan, con parámetros correctos y con parámetros incorrectos.</p>
 <div class="admonition tip">
-<p class="admonition-title">Secuencia de ejecución del proceso</p>
-<p>La tabla anterior nos proporciona información de la secuencia de ejecución del proceso A.</p>
+<p class="admonition-title">Recogida de la salida del proceso hijo</p>
+<p>La clase U2A9_LanzadorComandos2 debe recoger la salida del proceso hijo y mostrarla por pantalla. Para ello, usa los método <code>getInputStream()</code> y <code>getErrorStream</code> de la clase <code>Process</code> que te devolverán un <code>InputStream</code> que puedes leer con un <code>BufferedReader</code>.</p>
+</div>
+<div style="page-break-after:always;"></div>
+<h2 id="3-clase-pspactividadesu2a10_sumador">3. Clase psp.actividades.U2A10_Sumador </h2>
+<p>Realiza un programa en Java que lea dos números desde la entrada estándar <code>(stdin)</code> y muestre por pantalla el resultado de la suma.</p>
+<p>Controla que lo introducido por teclado sean dos números.</p>
+<h3 id="clase-pspactividadesu2a10_lanzador">Clase psp.actividades.U2A10_Lanzador </h3>
+<p>A continuación haz un programa que lance Sumador, le proporcione las entradas necesarias y muestre el resultado por pantalla</p>
+<blockquote>
+<p>La suma de 5 + 8 = 13</p>
+</blockquote>
+<p><strong>Opcional</strong>: Haz que se ejecute varias veces el programa Sumador. Para eso desde Lanzador deberás solicitar los números por la entrada estándar.</p>
+<div class="admonition tip">
+<p class="admonition-title">Pista</p>
+<p>¿Cómo puede un proceso pasarle información al proceso que lanza? ¿Cómo puede un proceso recibir información de otro proceso?</p>
+</div>
+<div style="page-break-after:always;"></div>
+<h3 id="4-clase-pspactividadesu2a11_sumador2">4. Clase psp.actividades.U2A11_Sumador2 </h3>
+<p>Modifica el programa anterior para que la Clase Sumador2 lea los números, de 2 en 2, desde la entrada estándar y muestre por consola el resultado de cada una de las sumas.</p>
+<blockquote>
+<p>La suma de 5 + 8 = 13<br>
+La suma de 9 + 34 = 43<br>
+...</p>
+</blockquote>
+<p>Si en algún caso el número de dígitos que lee no es par, el que falte lo sustituirá por 0.</p>
+<p>Hay que controlar los posibles errores que se produzcan en la lectura de los números y generar mensajes de error para avisar al usuario.</p>
+<h3 id="clase-pspactividadesu2a11_lanzador">Clase psp.actividades.U2A11_Lanzador </h3>
+<p>Crea un lanzador que modifique el comportamiento de Sumador2 para que lea los números desde un fichero de texto (datos/numeros.txt).</p>
+<p>La clase lanzadora será la encargada de mostrar por consola la información del proceso Sumador 2 (siguiendo el formato de la actividad 3: “&gt;” y “ERROR&gt;”).</p>
+<div class="admonition warning">
+<p class="admonition-title">Lectura del fichero de texto</p>
+<p>Fíjate que se pide que el lanzador modifique el comportamiento de Sumador2 para que lea del fichero.</p>
+<p>En ningún caso hay que modificar Sumador 2 para que acceda al fichero datos/numeros.txt.</p>
+<p>Tampoco hay que hacer que Lanzador lea el fichero y pase los datos a Sumador2. Sumador2 debe leer el fichero por sí mismo.</p>
+</div>
+<div style="page-break-after:always;"></div>
+<h2 id="5-clase-pspactividadesu2a12_argumentos">5. Clase psp.actividades.U2A12_Argumentos </h2>
+<p>Realiza un programa en Java que reciba argumentos a través del main y devuelva con <code>System.exit()</code> los siguientes valores:</p>
 <ul>
-<li><strong>Ejecución de CPU</strong>: Cuando el proceso consigue ejecutarse, necesita completar 5 unidades de tiempo de CPU.</li>
-<li><strong>Tiempo de E/S</strong>: Una vez completado el tiempo de CPU, el proceso tiene que esperar 4 unidades de tiempo en estado de <em>BLOQUEADO</em> esperando a que se complete una operación de E/S. Durante ese tiempo, el proceso no puede ejecutarse ni ocupa la CPU. Tampoco tiene que esperar en la cola de preparados.</li>
-<li>Ejecución de CPU. Una vez completado el tiempo de E/S, el proceso vuelve a la cola de preparados y necesita completar 2 unidades de tiempo de CPU, cuando el planificador le asigne la CPU.</li>
+<li>Si el número de argumentos es &lt; 1 debe devolver -1</li>
+<li>Si el argumento es una cadena debe devolver 2</li>
+<li>Si el argumento es un número entero menor que 0 debe devolver 3.</li>
+<li>Si no se cumple ninguna de las situaciones anteriores, debe devolver 0</li>
 </ul>
+<h3 id="clase-pspactividadesu2a12_lanzador">Clase psp.actividades.U2A12_Lanzador </h3>
+<p>Realiza un programa que ejecute el anterior como un proceso. Este segundo programa deberá mostrar en pantalla un mensaje indicando lo que pasa en función del valor devuelto.</p>
+<p>Es decir, tendrá que mostrar un mensaje diferente indicando qué tipo de argumento ha recibido Argumentos, en función del valor devuelto por el proceso lanzado.</p>
+<div style="page-break-after:always;"></div>
+<h2 id="6-clase-pspactividadesu2a13_shell">6. Clase psp.actividades.U2A13_Shell </h2>
+<p>Haz un programa que emule a la shell de un sistema operativo.</p>
+<p>El programa pedirá, por la entrada estándar, la introducción de un comando.<br>
+El comando se parseará y dividirá en trozos y se pasará a <code>Interprete</code>.</p>
+<p>Se esperará a que el proceso <code>Interprete</code> termine y se recuperará la información de salida y de error, mostrándola por pantalla (igual que en la actividad 3).</p>
+<p>Se repetirá el proceso hasta que se introduzca el comando "exit", momento en el que el proceso padre mostrará un mensaje indicando que la ejecución ha acabado y finalizará su ejecución.</p>
+<h3 id="clase-pspactividadesu2a13_interprete">Clase psp.actividades.U2A13_Interprete </h3>
+<p>Crea un programa que reciba la información del proceso Shell, y ejecute el comando de shell recibido. Se creará un proceso hijo al que se le pasará toda la información del comando para que la ejecute.</p>
+<div class="admonition tip">
+<p class="admonition-title">Abuelo, Padre, Hijo</p>
+<p>En esta actividad, tenemos un proceso abuelo (Shell) que lanza un proceso padre (Interprete) que lanza un proceso hijo (la consola con el comando que se quiere ejecutar).</p>
+<p>Por lo tanto, para que la información llegue al abuelo, el padre debe recoger la información de salida y error del hijo antes de pasársela al abuelo. Y el abuelo debe esperar a que el padre termine para poder recoger su información de salida y error.</p>
 </div>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Proceso</th>
-<th style="text-align:center">Tiempo de CPU</th>
-<th style="text-align:center">Tiempo de E/S</th>
-<th style="text-align:center">Tiempo de CPU</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">B</td>
-<td style="text-align:center">2</td>
-<td style="text-align:center">7</td>
-<td style="text-align:center">5</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Proceso</th>
-<th style="text-align:center">Tiempo de E/S</th>
-<th style="text-align:center">Tiempo de CPU</th>
-<th style="text-align:center">Tiempo de E/S</th>
-<th style="text-align:center">Tiempo de CPU</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">C</td>
-<td style="text-align:center">3</td>
-<td style="text-align:center">6</td>
-<td style="text-align:center">3</td>
-<td style="text-align:center">3</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition question">
-<p class="admonition-title">Para el algoritmo FCFS</p>
-<p>a) Dibuja el diagrama de Gantt correspondiente a la planificación de las tablas.<br>
-b) Obtén el tiempo de espera y tiempo de salida de cada proceso. Después obtén el porcentaje de uso de la CPU y la tasa de tareas para los dos procesadores.</p>
+<div style="page-break-after:always;"></div>
+<h3 id="7-clase-pspactividadesu2a14_controlador">7. Clase psp.actividades.U2A14_Controlador </h3>
+<p>Haz un programa que calcule</p>
+<p><img src="./Soluciones/Sumatorio.png" alt="Sumatorio de raíces cuadradas"></p>
+<p>El programa controlador recibe como parámetro el valor de n y, de forma opcional, también se le puede pasar la cantidad de operaciones a realizar por el proceso hijo (por defecto, si no se indica nada, 100).</p>
+<p>Va a dividir equitativamente el reparto entre (n/100)+1 procesos hijos.</p>
+<ul>
+<li>Al primer proceso le asignará el cálculo desde 0 hasta 99,</li>
+<li>al 2º desde 100 hasta 199,</li>
+<li>al 3º desde 200 hasta 299,</li>
+<li>...</li>
+<li>al último le asignará los que queden hasta n.</li>
+</ul>
+<p>El programa recogerá el resultado que muestre cada proceso hijo, los irá sumando y cuando todos hayan acabado, mostrará el resultado final.</p>
+<p>Todos los procesos se lanzarán antes de bloquear al Controlador.</p>
+<blockquote>
+<p>La suma total de las raíces cuadradas desde 0 hasta 10875 es: 756105.62767</p>
+</blockquote>
+<h3 id="clase-pspactividadesu2a14_calculador">Clase psp.actividades.U2A14_Calculador </h3>
+<p>Esta clase recibirá como parámetro el número de proceso hijo que es, el valor inferior del cálculo que debe realizar y el valor superior.</p>
+<p>La clase, utilizando la salida de error, añadirá a un archivo (ResultadosParciales.txt) el resultado del sumatorio parcial que realiza:</p>
+<blockquote>
+<p>Hijo 1: La suma de las raíces cuadradas desde 0 hasta 99 es: 661.46294<br>
+Hijo 2: La suma de las raíces cuadradas desde 100 hasta 199 es: 1202.77239<br>
+…<br>
+Hijo 109: La suma de las raíces cuadradas desde 10800 hasta 10875 es: ….</p>
+</blockquote>
+<p>A través de la salida estándar enviará el resultado numérico al proceso padre.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Para que Calculador guarde la información en un archivo, el controlador deberá configurar el proceso hijo de forma adecuada.</p>
+<p>Nunca Calculador debe escribir directamente en el archivo, siempre debe hacerlo escribiendo en la salida de error.</p>
 </div>
-<div class="admonition question">
-<p class="admonition-title">Repite la actividad para el siguiente algoritmo de planificación</p>
-<p>• Round Robin (q=4)</p>
-</div>
+<div style="page-break-after:always;"></div>
+<h2 id="8-clase-pspactividadesu2a15_conversor">8. Clase psp.actividades.U2A15_Conversor </h2>
+<p>Investiga cómo se puede convertir un documento (.odt o .docx) a PDF usando LibreOffice desde línea de comandos.</p>
+<p>La clase Conversor recibe el nombre (puede incluir una ruta) de un documento como parámetro y crea un proceso hijo <code>psp.actividades.U2A15_Doc2Pdf</code> que se encarga de realizar la conversión a PDF de ese documento.</p>
+<p>La clase padre mostrará el resultado de la conversión (satisfactorio o fallido).</p>
+<p>Los archivos generados se guardarán en una carpeta <code>PDF</code> en la raíz del proyecto.</p>
 
       </div>
       

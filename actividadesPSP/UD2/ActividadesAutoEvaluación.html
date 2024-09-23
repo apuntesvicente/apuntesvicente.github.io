@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>PSP - Actividades U1</title>
+      <title>PSP - U2 Actividades auto evaluación</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -88,162 +88,122 @@
     
       <div class="crossnote markdown-preview  ">
       
-<h1 id="actividades-unidad-1">Actividades Unidad 1 </h1>
-<div class="admonition warning">
-<p class="admonition-title">Plantilla para actividades</p>
-<p>Usa la hoja de cálculo con la plantilla que se proporciona en la actividad.<br>
-Fíjate bien en la primera hoja de la plantilla, donde se explica cómo se deben representar los procesos en cada caso.<br>
-Haz la Actividad A1 y A2 en la segunda hoja de la plantilla.<br>
-Haz la Actividad B en la tercera hoja de la plantilla.</p>
-</div>
-<h2 id="a1-planificación-de-procesos-monoprocesador-y-monoalgoritmo">A.1 Planificación de procesos (monoprocesador y monoalgoritmo) </h2>
-<p>Dada la información de los procesos de la siguiente tabla, por favor contesta las siguientes preguntas</p>
-<p><code>Se supone que todos los procesos llegan a la vez a la cola de preparados (t=0) y que no llegan más procesos a la cola mientras se están ejecutando los procesos de la A a la E.</code></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Proceso</th>
-<th style="text-align:center">Tiempo de uso CPU</th>
-<th style="text-align:center">Prioridad</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">A</td>
-<td style="text-align:center">10</td>
-<td style="text-align:center">3</td>
-</tr>
-<tr>
-<td style="text-align:center">B</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">C</td>
-<td style="text-align:center">2</td>
-<td style="text-align:center">3</td>
-</tr>
-<tr>
-<td style="text-align:center">D</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">4</td>
-</tr>
-<tr>
-<td style="text-align:center">E</td>
-<td style="text-align:center">5</td>
-<td style="text-align:center">2</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition question">
-<p class="admonition-title">Para el algoritmo FCFS</p>
-<p>a) Dibuja el diagrama de Gantt correspondiente a la planificación de los procesos en en la tabla<br>
-b) Obtén el tiempo de espera de cada proceso.<br>
-c) Obtén el tiempo de salida de cada proceso.<br>
-d) Obtén el porcentaje de uso de la CPU para el conjunto de procesos.<br>
-e) Obtén el número de procesos por unidad de tiempo (throughput) para el conjunto de procesos.</p>
-</div>
-<div class="admonition question">
-<p class="admonition-title">Repite los pasos anteriores (de la <strong>a)</strong> a la <strong>e)</strong>) para cada los siguientes algoritmos de planificación:</p>
+<h1 id="psp---u2-actividades-auto-evaluación">PSP - U2 Actividades auto evaluación </h1>
+<div class="admonition note">
+<p class="admonition-title">Cómo ponerle nombre a los proyectos, paquetes y clases en Netbeans</p>
+<p>Si tenemos un enunciado como este</p>
+<p><img src="./Soluciones/instructions.jpg" alt="Enunciado de una actividad"></p>
+<p>Esto significa que</p>
 <ul>
-<li>SJF,</li>
-<li>Prioridad (p=0 mayor prioridad , p=5 menos prioridad),</li>
-<li>Round Robin (q=1).</li>
+<li>El <strong>nombre del proyecto</strong> en Netbeans debería ser <strong>U2A13_Shell</strong> (el nombre de la primera clase que aparece en el enunciado de la actividad).</li>
+<li>El <strong>paquete</strong> para cada clase que creemos tiene que ser <strong>psp.actividades</strong>.</li>
+<li>El <strong>nombre de las clases</strong> debería ser <strong>U2A13_Shell</strong> para la primera y <strong>U2A13_Interprete</strong> para la segunda.</li>
 </ul>
+<p>Por lo tanto, en Netbeans configuramos el proyecto de la siguiente forma</p>
+<p><img src="./Soluciones/netbeans.jpg" alt="Creación de proyecto en Netbeans"></p>
+<p>Hay que recordar que en Java, el nombre de una clase es un nombre cualificado. Esto significa que podemos tener dos clases con el mismo nombre en paquetes diferentes. Así existe la clase java.lang.String y podríamos crear una clase psp.actividades.String, donde la parte final es igual pero el nombre (cualificado se entiende) es diferente para cada una y sirve para diferenciarlas. Por lo tanto, en el ejemplo anterior, el nombre que usamos para la clase es su nombre cualificados, esto es, psp.actividades.U2A13_Shell</p>
 </div>
-<h2 id="a2-planificación-de-procesos-multiprocesador-y-con-dos-algoritmos-de-planificación">A.2 Planificación de procesos (multiprocesador y con dos algoritmos de planificación) </h2>
-<div class="admonition warning">
-<p class="admonition-title">Asignación de procesos a los procesadores</p>
-<p>En este caso, se asignan los procesos a los procesadores de forma secuencial, es decir, el primer proceso a ejecutar se asigna al primer procesador, el segundo proceso al segundo procesador y así sucesivamente.<br>
-Cuando se le tiene que asignar procesador a un nuevo proceso, se le asigna el primer procesador, en orden, que esté libre. Así, si los dos procesadores están libres, el siguiente proceso se asignará al primer procesador. Si el primer procesador está ocupado, se asignará al segundo procesador.</p>
+<h2 id="1-clase-pspactividadesu2a1_lanzadorprograma">1. Clase psp.actividades.U2A1_LanzadorPrograma </h2>
+<p>Realiza un programa en Java que abra el bloc de notas (notepad) de Windows (la aplicación equivalente si estás en Linux/Mac) y muestre el mensaje <em>“La aplicación se ha cerrado con éxito.”</em> al cerrar la aplicación ejecutada si ésta ha terminado con <strong>código 0</strong>. En otro caso, que la aplicación muestre el mensaje <em>"La aplicación ha finalizado con código xxx"</em> donde se muestre <strong>el código devuelto por el proceso lanzado</strong>.</p>
+<div class="admonition info">
+<p class="admonition-title">PATH del sistema</p>
+<p>Recuerda que para poder ejecutar un programa indicando solo su nombre, éste debe estar en los directorios configurados en la variable PATH del sistema.<br>
+En otro caso, deberás indicar la ruta completa del ejecutable.</p>
 </div>
-<p>Repite la actividad (para Round Robin como primer algoritmo de elección, y otro algoritmo que tú elijas como segundo criterio del planificador) para un sistema con dos procesadores o núcleos.</p>
 <div class="admonition question">
-<p class="admonition-title">Para el algoritmo Round-Robin + <em>(uno de los otros que tu elijas)</em></p>
-<p>a) Dibuja el diagrama de Gantt correspondiente a la planificación de los procesos en en la tabla<br>
-b) Obtén el tiempo de espera de cada proceso.<br>
-c) Obtén el tiempo de salida de cada proceso.<br>
-d) Obtén el porcentaje de uso de la CPU para el conjunto de procesos.<br>
-e) Obtén el número de procesos por unidad de tiempo (throughput) para el conjunto de procesos.</p>
+<p class="admonition-title">casos de prueba</p>
+<p>¿Qué ocurre si intentas abrir una aplicación del sistema que no está en la variable PATH?<br>
+¿Qué ocurre si intentas abrir una aplicación que no existe en el sistema?<br>
+¿Qué ocurre si intentas abrir un archivo que no es ejecutable?</p>
+<p>Es importante que compruebes qué ocurre en cada uno de los casos anteriores para que, cuando te pase en otros programas, sepas qué está ocurriendo.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Aplicaciones de Windows</p>
+<p>¿Has probado a ejecutar notepad o calc desde el programa?<br>
+Deja la ventana de la aplicación abierta y comprueba la salida de la consola de tu programa. ¿Es normal ese comportamiento?</p>
+<blockquote>
+<p>Algunas aplicaciones de Windows no funcionan como procesos, más bien son "pseudo-procesos" que no tienen el comportamiento esperado.</p>
+</blockquote>
+<p>Puedes probar con otras apps como mspaint, wordpad, msinfo32.exe, etc.</p>
+</div>
+<h3 id="claves-para-resolver-la-actividad">Claves para resolver la actividad </h3>
+<p>En esta actividad, el programa que vamos a realizar va a lanzar un proceso externo. Para ello, vamos a usar la clase <code>ProcessBuilder</code> que nos permite lanzar un proceso externo y controlar su ejecución.</p>
+<p>Para poder controlar la salida del proceso, vamos a usar el método <code>waitFor()</code> que nos permite esperar a que el proceso termine y obtener el código de salida del proceso.</p>
+<div class="admonition danger">
+<p class="admonition-title">Normas de nomenclatura</p>
+<p>Es muy importante acostumbrarse a seguir las convenciones en programación, no sólo en cuanto a cómo nombrar clases, propiedades, métodos, ... sino también en cuanto a cómo llamar a los proyectos, paquetes y clases. Cuando trabajamos con un equipo de desarrolladores, debemos seguir todos las mismas normas. Y estas son las que propongo para PSP, a no ser que indique lo contrario en alguna actividad concreta.</p>
+<p><strong>El incumplimiento de estas reglas supondrá la reducción de la nota o la calificación como <code>Incorrecta</code> de las prácticas sin comprobar su funcionamiento ni su código.</strong></p>
 </div>
 <div style="page-break-after:always;"></div>
-<h2 id="b-planificación-de-procesos-con-es">B. Planificación de procesos con E/S </h2>
-<p>Una CPU tiene que planificar la ejecución de los procesos A, B y C . Aunque la llegada de los tres procesos a la cola de preparados es simultánea, nosotros suponemos que llegan en el orden A, B y C.</p>
-<p>Los procesos A, B y C tienen los siguientes tiempos de uso de CPU y de E/S:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Proceso</th>
-<th style="text-align:center">Tiempo de CPU</th>
-<th style="text-align:center">Tiempo de E/S</th>
-<th style="text-align:center">Tiempo de CPU</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">A</td>
-<td style="text-align:center">5</td>
-<td style="text-align:center">4</td>
-<td style="text-align:center">2</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition tip">
-<p class="admonition-title">Secuencia de ejecución del proceso</p>
-<p>La tabla anterior nos proporciona información de la secuencia de ejecución del proceso A.</p>
+<h2 id="2-clase-pspactividadesu2a2_lanzadorejecutable">2. Clase psp.actividades.U2A2_LanzadorEjecutable </h2>
+<p>A partir del ejercicio anterior, modifica el programa para que acepte un argumento que será el nombre del ejecutable a lanzar. El programa ejecutará el nuevo proceso y mostrará el mensaje "Aplicación finalizada" cuando el proceso haya terminado.</p>
+<div class="admonition info">
+<p class="admonition-title">Argumentos de un programa</p>
+<p>A diferencia de la primera clase, en la que tenemos que volver a compilar y ejecutar para probar a lanzar un proceso diferente, en este caso hemos <strong>parametrizado</strong> nuestro programa para que pueda recibir el nombre como <code>argumento</code>, permitiendo lanzar cualquier proceso sin tener que recompilar el programa.</p>
+<p>Cuando una clase recibe un parámetro, estos le llegan en el parámetro <strong>args</strong> de la función <code>main</code>, un array de Strings que contiene todos los parámetros que se le han pasado.</p>
+<p>Por ejemplo, cuando ejecutamos:</p>
+<blockquote>
+<p>java paquete.pruebas.Clase1 5 hola</p>
+</blockquote>
+<p>Lo que estamos haciéndole es pasar los valores 5 y “hola” como parámetros a la clase.</p>
+<p>Para poder pasar argumentos a un programa Java desde Netbeans, tenemos que configurar los argumentos que queremos pasar al programa desde la propiedades del proyecto (<code>File &gt; Project properties</code>) en el menú de ejecución del proyecto.</p>
+<p><img src="./Soluciones/argumentos.png" alt="Argumentos de la línea de comandos en Netbeans"></p>
+</div>
+<h3 id="claves-para-resolver-la-actividad-1">Claves para resolver la actividad </h3>
+<p>En este caso, nuestra aplicación debe comprobar si ha recibido un parámetro o no.</p>
+<p>En caso de haberlo recibido, el parámetro tendrá que usarse para crear el proceso. En caso de no haberlo recibido, la aplicación deberá mostrar un mensaje de error y finalizar.</p>
+<div class="admonition question">
+<p class="admonition-title">Rutas en los nombres</p>
 <ul>
-<li><strong>Ejecución de CPU</strong>: Cuando el proceso consigue ejecutarse, necesita completar 5 unidades de tiempo de CPU.</li>
-<li><strong>Tiempo de E/S</strong>: Una vez completado el tiempo de CPU, el proceso tiene que esperar 4 unidades de tiempo en estado de <em>BLOQUEADO</em> esperando a que se complete una operación de E/S. Durante ese tiempo, el proceso no puede ejecutarse ni ocupa la CPU. Tampoco tiene que esperar en la cola de preparados.</li>
-<li>Ejecución de CPU. Una vez completado el tiempo de E/S, el proceso vuelve a la cola de preparados y necesita completar 2 unidades de tiempo de CPU, cuando el planificador le asigne la CPU.</li>
+<li>¿Qué ocurre si el nombre del ejecutable que pasamos como argumento tiene una ruta? ¿Funciona correctamente tu programa?</li>
+<li>¿Qué ocurre si el programa que pasamos como argumento incluye otros argumentos o parámetros? ¿Funciona correctamente tu programa?</li>
+<li>¿Puedes solucionar estos problemas? ¿Cómo? En el tema está la solución.</li>
 </ul>
 </div>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Proceso</th>
-<th style="text-align:center">Tiempo de CPU</th>
-<th style="text-align:center">Tiempo de E/S</th>
-<th style="text-align:center">Tiempo de CPU</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">B</td>
-<td style="text-align:center">2</td>
-<td style="text-align:center">7</td>
-<td style="text-align:center">5</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Proceso</th>
-<th style="text-align:center">Tiempo de E/S</th>
-<th style="text-align:center">Tiempo de CPU</th>
-<th style="text-align:center">Tiempo de E/S</th>
-<th style="text-align:center">Tiempo de CPU</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">C</td>
-<td style="text-align:center">3</td>
-<td style="text-align:center">6</td>
-<td style="text-align:center">3</td>
-<td style="text-align:center">3</td>
-</tr>
-</tbody>
-</table>
+<div style="page-break-after:always;"></div>
+<h2 id="3-clase-pspactividadesu2a3_lanzadorejecutablessimple">3. Clase psp.actividades.U2A3_LanzadorEjecutablesSimple </h2>
+<p>Modifica el programa anterior para que admita como parámetros de entrada más de una aplicación, las lance todas y espere a que todas terminen para mostrar el mensaje por pantalla "Aplicaciones finalizadas".</p>
+<h3 id="claves-para-resolver-la-actividad-2">Claves para resolver la actividad </h3>
+<p>Como tiene que esperar a que todas terminen, no nos vamos a complicar y haremos un waitFor() por cada proceso que hayamos lanzado. De momento no nos interesa saber cuál acaba primero y cuál acaba más tarde, haremos la espera en el orden en el que las hayamos lanzado.</p>
 <div class="admonition question">
-<p class="admonition-title">Para el algoritmo FCFS</p>
-<p>a) Dibuja el diagrama de Gantt correspondiente a la planificación de las tablas.<br>
-b) Obtén el tiempo de espera y tiempo de salida de cada proceso. Después obtén el porcentaje de uso de la CPU y la tasa de tareas para los dos procesadores.</p>
+<p class="admonition-title">Ejecución secuencial o concurrente</p>
+<ul>
+<li>¿Cómo estás haciendo que se ejecuten los procesos, secuencialmente o concurrentemente?</li>
+<li>¿Lanzas un proceso, lo esperas, luego lanzas otro, lo esperas, ... y así sucesivamente? ¿O lanzas todos los procesos y después los esperas a todos?</li>
+<li>¿Cómo haces para poder acceder a los procesos lanzados, para esperarlos después?</li>
+</ul>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">Pista</p>
+<p>¡Bienvenidos al uso de las colecciones!</p>
+</div>
+<div style="page-break-after:always;"></div>
+<h2 id="4-clase-pspactividadesu2a4_lanzadorejecutablescompleto">4. Clase psp.actividades.U2A4_LanzadorEjecutablesCompleto </h2>
+<p>Modifica el programa anterior para que nos pregunte, una a una, qué aplicaciones queremos cerrar desde nuestro programa en Java y cuáles dejar abiertas antes de terminar nuestro programa. La app dirá qué aplicaciones están cerradas, porque las hayamos cerrado desde nuestro programa o ya se hayan cerrado y cuáles están todavía abiertas antes de finalizar nuestro programa.</p>
+<h3 id="claves-para-resolver-la-actividad-3">Claves para resolver la actividad </h3>
+<p>El programa, debe preguntar una vez, para cada proceso lanzado, si queremos cerrarlo o no.</p>
+<p>Si decidimos cerrarlo, nuestro programa se encargará de finalizar el proceso, en otro caso, no hará nada.</p>
+<p>Una vez haya preguntado por todos los procesos, nuestro programa mostrará una lista de los procesos lanzados, indicando si todavía está activo, o ya se ha cerrado (porque lo hayamos cerrado nosotros cuando nos ha preguntado o porque se haya cerrrado de forma manual). Después nuestro programa finalizará.</p>
 <div class="admonition question">
-<p class="admonition-title">Repite la actividad para el siguiente algoritmo de planificación</p>
-<p>• Round Robin (q=4)</p>
+<p class="admonition-title">¿Cómo sabemos si un proceso se ha cerrado?</p>
+<ul>
+<li>¿Cómo podemos saber si un proceso se ha cerrado o no?</li>
+<li>¿Podemos saber si un proceso se ha cerrado de forma manual o lo hemos cerrado nosotros?</li>
+<li>¿Cómo podemos saber si un proceso se ha cerrado de forma manual o se ha cerrado porque ha terminado su ejecución?</li>
+</ul>
+<p>Haz pruebas con procesos que se cierren de forma manual y otros que terminen su ejecución. Evita que salten excepciones en tu programa. Captúralas y trátalas de forma adecuada.</p>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">Pista</p>
+<p>En este ejercicio debes pensar muy bien qué estructuras de datos vas a usar para almacenar los procesos que has lanzado y cómo vas a acceder a ellos para poder cerrarlos o comprobar si siguen abiertos.</p>
+</div>
+<div style="page-break-after:always;"></div>
+<h3 id="5-clase-pspactividadesu2a5_lanzadoripconfig">5. Clase psp.actividades.U2A5_LanzadorIpconfig </h3>
+<p>Realiza un programa en Java que ejecute el comando ipconfig a través de la consola del sistema operativo y muestre su resultado por pantalla.</p>
+<h3 id="6-clase-pspactividadesu2a6_lanzadorcomandos">6. Clase psp.actividades.U2A6_LanzadorComandos </h3>
+<p>Realiza un programa en Java que admita como parámetro de entrada el comando a ejecutar en la consola del sistema operativo y muestre en pantalla el resultado.</p>
+<h3 id="7-clase-pspactividadesu2a7_obtenerdireccionesip">7. Clase psp.actividades.U2A7_ObtenerDireccionesIP </h3>
+<p>Modificar el ejercicio 5 para mostrar por pantalla únicamente las direcciones IPv4 que aparezcan en la salida del comando ipconfig. Deberás utilizar todos los métodos de String necesarios para extraer la información solicitada.</p>
 
       </div>
       
