@@ -94,6 +94,18 @@
 
 <div class="md-toc">
 <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#10-clase-pspactividadesu3a10_menu" class="md-toc-link">
+            <ol start="10">
+<li>Clase psp.actividades.U3A10_Menu</li>
+</ol>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#11-clase-pspactividadesu3a11_vector" class="md-toc-link">
+            <ol start="11">
+<li>Clase psp.actividades.U3A11_Vector</li>
+</ol>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
           <a href="#12-clase-pspactividadesu3a12_controlador" class="md-toc-link">
             <ol start="12">
 <li>Clase psp.actividades.U3A12_Controlador</li>
@@ -116,9 +128,138 @@
 <div style="\&quot;page-break-after:always;\&quot;"></div>
 <div class="admonition info">
 <p class="admonition-title">Nombre del proyecto</p>
-<p>En estas actividades seguimos usando la nomenclatura de clases y proyectos explicada en la hoja de <a href="https://apuntesvicente.github.io/actividadesPSP/UD2/ActividadesAutoEvaluaci%C3%B3n.html">actividades de autoevaluación de la U2</a></p>
+<p>En estas actividades volvemos a usar la nomenclatura de clases y proyectos explicada en la hoja de <a href="https://apuntesvicente.github.io/actividadesPSP/UD2/ActividadesAutoEvaluaci%C3%B3n.html">actividades de autoevaluación de la U2</a></p>
 </div>
+<h2 id="10-clase-pspactividadesu3a10_menu">10. Clase psp.actividades.U3A10_Menu </h2>
+<p>Vamos a programar en Java la lectura del menú de un restaurante (menu.txt) que ofrece varios primeros, varios segundos y varios postres. Para ello, tendremos 3 hilos que formarán parte de un grupo de hilos (Threadrgoup) llamado “Menu diario” y que trabajarán del siguiente modo:</p>
+<ul>
+<li>Un hilo que lee de menu.txt solo los primeros (que vienen precedidos de la marca 1-) y los vuelca al archivo primeros.txt</li>
+<li>Un hilo que lee de menu.txt solo los segundos (que vienen precedidos de la marca 2-) y los vuelca al archivo segundos.txt</li>
+<li>Un hilo que lee de menu.txt solo los postres (que vienen precedidos de la marca 3-) y los vuelca al archivo postres.txt</li>
+</ul>
+<p>Antes de codificar la solución en Java, tómate un tiempo en diseñar tu propio menú que debería tener el siguiente formato:</p>
+<p><img src="./Soluciones/menu.png" alt="menu"></p>
+<p>El objetivo es que cada hilo trabaje solo una parte del menú y que acabe escribiendo en su fichero pero sin el rótulo correspondiente y sin el número y el guión que precede a cada plato.<br>
+Es decir, en el fichero “primeros.txt” solo debería aparecer las siguientes lineas:</p>
+<blockquote>
+<p>Macarrones carbonara<br>
+Paella valenciana<br>
+Gazpacho<br>
+Crema de verduras</p>
+</blockquote>
+<p>Además, el programa imprimirá en cada momento el hilo que está actuando y qué está escribiendo. Un ejemplo de ejecución sería el siguiente, que utiliza el menú.txt de arriba:<br>
+En la consola, al finalizar el programa, se mostrarán las siguientes acciones:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>El hilo <span class="token number">1</span> escribe<span class="token punctuation">..</span>. Macarrones carbonara
+El hilo <span class="token number">1</span> escribe<span class="token punctuation">..</span>. Paella valenciana
+El hilo <span class="token number">1</span> escribe<span class="token punctuation">..</span>. Gazpacho
+El hilo <span class="token number">2</span> escribe<span class="token punctuation">..</span>. Cachopo asturiano
+El hilo <span class="token number">1</span> escribe<span class="token punctuation">..</span>. Crema de verduras
+El hilo <span class="token number">2</span> escribe<span class="token punctuation">..</span>. Chuletón gallego
+El hilo <span class="token number">3</span> escribe<span class="token punctuation">..</span>. Tiramisú
+El hilo <span class="token number">2</span> escribe<span class="token punctuation">..</span>. Bacalao a la vizcaina
+El hilo <span class="token number">2</span> escribe<span class="token punctuation">..</span>. Surtido de croquetas
+El hilo <span class="token number">3</span> escribe<span class="token punctuation">..</span>. Coulant de chocolate
+El hilo <span class="token number">3</span> escribe<span class="token punctuation">..</span>. Brownie
+El hilo <span class="token number">3</span> escribe<span class="token punctuation">..</span>. Tarta de queso y arandanos
+</code></pre><p>Que habrá generado los siguientes ficheros:</p>
+<table>
+<thead>
+<tr>
+<th>primeros.txt</th>
+<th>segundos.txt</th>
+<th>postres.txt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Macarrones carbonara</td>
+<td>Cachopo asturiano</td>
+<td>Tiramisú</td>
+</tr>
+<tr>
+<td>Paella valenciana</td>
+<td>Chuletón gallego</td>
+<td>Coulant de chocolate</td>
+</tr>
+<tr>
+<td>Gazpacho</td>
+<td>Bacalao a la vizcaina</td>
+<td>Brownie</td>
+</tr>
+<tr>
+<td>Crema de verduras</td>
+<td>Surtido de croquetas</td>
+<td>Tarta de queso y arandanos</td>
+</tr>
+</tbody>
+</table>
+<div style="\&quot;page-break-after:always;\&quot;"></div>
+<h2 id="11-clase-pspactividadesu3a11_vector">11. Clase psp.actividades.U3A11_Vector </h2>
+<p>Vamos a programar en Java la gestión de 2 hilos que accederán por turnos a un vector de 10 posiciones para ir completándolo con valores aleatorios.</p>
+<p>Tendremos un primer hilo que comenzará a completarlo de izquierda a derecha (hilo1) y otro segundo hilo que lo completará de derecha a izquierda (hilo2). Ambos lo irán informando con valores aleatorios cuyos límites inferior y superior se solicitarán al principio del programa.</p>
+<p>Cada vez que uno de los hilos inserte un valor, esperaremos un tiempo para de esa forma ir viendo en tiempo real como se va informando el vector.</p>
+<p>Se mostrarán las 10 posiciones del vector, que inicialmente estarán informadas a 0 y que poco a poco se irán informando hasta que todo el vector esté completo. Cuando un hilo complete una posición, lo marcará con su identificador (1 si lo ha informado el hilo1 o 2 si lo ha informado el hilo2).</p>
+<p>Un ejemplo de ejecución sería el siguiente:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>Introduzca limite inferior:
+<span class="token number">10</span>
+Introduzca limite superior:
+<span class="token number">500</span>
+<span class="token number">0</span>       <span class="token number">1</span>       <span class="token number">2</span>       <span class="token number">3</span>       <span class="token number">4</span>       <span class="token number">5</span>       <span class="token number">6</span>       <span class="token number">7</span>       <span class="token number">8</span>       <span class="token number">9</span>
+---------------------------------------------------------------------------
+<span class="token number">288</span>     <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>
+<span class="token number">1</span>
+
+<span class="token number">0</span>       <span class="token number">1</span>       <span class="token number">2</span>       <span class="token number">3</span>       <span class="token number">4</span>       <span class="token number">5</span>       <span class="token number">6</span>       <span class="token number">7</span>       <span class="token number">8</span>       <span class="token number">9</span>
+---------------------------------------------------------------------------
+<span class="token number">288</span>     <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">464</span>
+<span class="token number">1</span>                                                                       <span class="token number">2</span>
+
+<span class="token number">0</span>       <span class="token number">1</span>       <span class="token number">2</span>       <span class="token number">3</span>       <span class="token number">4</span>       <span class="token number">5</span>       <span class="token number">6</span>       <span class="token number">7</span>       <span class="token number">8</span>       <span class="token number">9</span>
+---------------------------------------------------------------------------
+<span class="token number">288</span>     <span class="token number">116</span>     <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">464</span>
+<span class="token number">1</span>       <span class="token number">1</span>                                                               <span class="token number">2</span>
+
+<span class="token number">0</span>       <span class="token number">1</span>       <span class="token number">2</span>       <span class="token number">3</span>       <span class="token number">4</span>       <span class="token number">5</span>       <span class="token number">6</span>       <span class="token number">7</span>       <span class="token number">8</span>       <span class="token number">9</span>
+---------------------------------------------------------------------------
+<span class="token number">288</span>     <span class="token number">116</span>     <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">493</span>     <span class="token number">464</span>
+<span class="token number">1</span>       <span class="token number">1</span>                                                       <span class="token number">2</span>       <span class="token number">2</span>
+
+<span class="token number">0</span>       <span class="token number">1</span>       <span class="token number">2</span>       <span class="token number">3</span>       <span class="token number">4</span>       <span class="token number">5</span>       <span class="token number">6</span>       <span class="token number">7</span>       <span class="token number">8</span>       <span class="token number">9</span>
+---------------------------------------------------------------------------
+<span class="token number">288</span>     <span class="token number">116</span>     <span class="token number">251</span>     <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">493</span>     <span class="token number">464</span>
+<span class="token number">1</span>       <span class="token number">1</span>       <span class="token number">1</span>                                               <span class="token number">2</span>       <span class="token number">2</span>
+
+<span class="token number">0</span>       <span class="token number">1</span>       <span class="token number">2</span>       <span class="token number">3</span>       <span class="token number">4</span>       <span class="token number">5</span>       <span class="token number">6</span>       <span class="token number">7</span>       <span class="token number">8</span>       <span class="token number">9</span>
+---------------------------------------------------------------------------
+<span class="token number">288</span>     <span class="token number">116</span>     <span class="token number">251</span>     <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">103</span>     <span class="token number">493</span>     <span class="token number">464</span>
+<span class="token number">1</span>       <span class="token number">1</span>       <span class="token number">1</span>                                       <span class="token number">2</span>       <span class="token number">2</span>       <span class="token number">2</span>
+
+<span class="token number">0</span>       <span class="token number">1</span>       <span class="token number">2</span>       <span class="token number">3</span>       <span class="token number">4</span>       <span class="token number">5</span>       <span class="token number">6</span>       <span class="token number">7</span>       <span class="token number">8</span>       <span class="token number">9</span>
+---------------------------------------------------------------------------
+<span class="token number">288</span>     <span class="token number">116</span>     <span class="token number">251</span>     <span class="token number">165</span>     <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">103</span>     <span class="token number">493</span>     <span class="token number">464</span>
+<span class="token number">1</span>       <span class="token number">1</span>       <span class="token number">1</span>       <span class="token number">1</span>                               <span class="token number">2</span>       <span class="token number">2</span>       <span class="token number">2</span>
+
+<span class="token number">0</span>       <span class="token number">1</span>       <span class="token number">2</span>       <span class="token number">3</span>       <span class="token number">4</span>       <span class="token number">5</span>       <span class="token number">6</span>       <span class="token number">7</span>       <span class="token number">8</span>       <span class="token number">9</span>
+---------------------------------------------------------------------------
+<span class="token number">288</span>     <span class="token number">116</span>     <span class="token number">251</span>     <span class="token number">165</span>     <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">360</span>     <span class="token number">103</span>     <span class="token number">493</span>     <span class="token number">464</span>
+<span class="token number">1</span>       <span class="token number">1</span>       <span class="token number">1</span>       <span class="token number">1</span>                       <span class="token number">2</span>       <span class="token number">2</span>       <span class="token number">2</span>       <span class="token number">2</span>
+
+<span class="token number">0</span>       <span class="token number">1</span>       <span class="token number">2</span>       <span class="token number">3</span>       <span class="token number">4</span>       <span class="token number">5</span>       <span class="token number">6</span>       <span class="token number">7</span>       <span class="token number">8</span>       <span class="token number">9</span>
+---------------------------------------------------------------------------
+<span class="token number">288</span>     <span class="token number">116</span>     <span class="token number">251</span>     <span class="token number">165</span>     <span class="token number">224</span>     <span class="token number">0</span>       <span class="token number">360</span>     <span class="token number">103</span>     <span class="token number">493</span>     <span class="token number">464</span>
+<span class="token number">1</span>       <span class="token number">1</span>       <span class="token number">1</span>       <span class="token number">1</span>       <span class="token number">1</span>               <span class="token number">2</span>       <span class="token number">2</span>       <span class="token number">2</span>       <span class="token number">2</span>
+
+<span class="token number">0</span>       <span class="token number">1</span>       <span class="token number">2</span>       <span class="token number">3</span>       <span class="token number">4</span>       <span class="token number">5</span>       <span class="token number">6</span>       <span class="token number">7</span>       <span class="token number">8</span>       <span class="token number">9</span>
+---------------------------------------------------------------------------
+<span class="token number">288</span>     <span class="token number">116</span>     <span class="token number">251</span>     <span class="token number">165</span>     <span class="token number">224</span>     <span class="token number">433</span>     <span class="token number">360</span>     <span class="token number">103</span>     <span class="token number">493</span>     <span class="token number">464</span>
+<span class="token number">1</span>       <span class="token number">1</span>       <span class="token number">1</span>       <span class="token number">1</span>       <span class="token number">1</span>       <span class="token number">2</span>       <span class="token number">2</span>       <span class="token number">2</span>       <span class="token number">2</span>       <span class="token number">2</span>
+</code></pre><div style="\&quot;page-break-after:always;\&quot;"></div>
 <h2 id="12-clase-pspactividadesu3a12_controlador">12. Clase psp.actividades.U3A12_Controlador </h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>La actividad 12 se hace a partir de la actividad <code>psp.actividades.U2A14_Controlador</code> que os he dejado como solución del tema 2.</p>
+<p>Debéis ver qué cambios son necesarios para cambiar el funcionamiento y pasar del uso de procesos al uso de hilos y adaptarla a la nueva actividad.</p>
+</div>
 <p>Haz un programa que calcule</p>
 <p><img src="./Soluciones/Sumatorio.png" alt="Sumatorio de raíces cuadradas"></p>
 <p>El programa controlador recibe como parámetro el valor de n y, de forma opcional, también se le puede pasar la cantidad de operaciones a realizar por cada hilo (por defecto, si no se indica nada, 100).</p>
@@ -143,8 +284,8 @@
 <p>Con el número de hilo, se pondrá a sí misma un nombre (Calculador-X)</p>
 <div class="admonition question">
 <p class="admonition-title">Comunicación entre hilos</p>
-</div>
 <p>¿Cómo podemos hacer que el hilo devuelva la información al hilo principal?</p>
+</div>
 <p>Calculad el tiempo que tarda en realizar los cálculos variando la cantidad de hilos creados.</p>
 <div class="admonition note">
 <p class="admonition-title">Tiempo de ejecución</p>
