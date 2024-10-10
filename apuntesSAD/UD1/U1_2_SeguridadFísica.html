@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>SAD - U1 Seguridad Física</title>
+      <title>SAD - U1.2 Seguridad Física</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -88,7 +88,7 @@
     
       <div class="crossnote markdown-preview  ">
       
-<h1 id="sad---u1-seguridad-física">SAD - U1 Seguridad Física </h1>
+<h1 id="sad---u12-seguridad-física">SAD - U1.2 Seguridad Física </h1>
 <p><a href="./U1_2_SeguridadF%C3%ADsica.pdf">Descargar estos apuntes</a></p>
 <h2 id="índice">Índice </h2>
 
@@ -106,27 +106,15 @@
 </ol>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#2-conceptos-básicos-en-materia-de-seguridad" class="md-toc-link">
-            <ol start="2">
-<li>Conceptos básicos en materia de seguridad</li>
-</ol>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#3-principios-de-la-seguridad-informática" class="md-toc-link">
+          <a href="#3-protección-física-de-los-servidores" class="md-toc-link">
             <ol start="3">
-<li>Principios de la seguridad informática</li>
+<li>Protección física de los servidores</li>
 </ol>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#4-políticas-de-seguridad" class="md-toc-link">
-            <ol start="4">
-<li>Políticas de seguridad</li>
-</ol>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#5-planes-de-contingencia" class="md-toc-link">
-            <ol start="5">
-<li>Planes de contingencia</li>
+          <a href="#3-centros-de-proceso-de-datos-cpd" class="md-toc-link">
+            <ol start="3">
+<li>Centros de proceso de datos (CPD)</li>
 </ol>
 
           </a></div>
@@ -185,7 +173,7 @@ Indica, respecto a cada uno, si puede evitarse o no y, en su caso, cómo podría
 </tr>
 <tr>
 <td>Campos magnéticos</td>
-<td>Los imanes y electroimanes alteran los campos magnéticos y pueden provocar la pérdida de datos en dispositivos de almacenamiento como el disco duro. Algunos de los dispositivos susceptibles de causar averías de este tipo son: destornilladores imantados, altavoces, motores eléct ricos, etc.</td>
+<td>Los imanes y electroimanes alteran los campos magnéticos y pueden provocar la pérdida de datos en dispositivos de almacenamiento como el disco duro. Algunos de los dispositivos susceptibles de causar averías de este tipo son: destornilladores imantados, altavoces, motores eléctricos, etc.</td>
 </tr>
 <tr>
 <td>Vibraciones y golpes</td>
@@ -221,250 +209,187 @@ informáticos se desarrollaron los sistemas de alimentación ininterrumpida (SAI
 <p>Si bien en los incendios de líquidos inflamables, equipos eléctricos y electrónicos el uso del agua a chorro está totalmente contraindicado, en los últimos tiempos se está extendiendo el empleo del agua nebulizada como agente extintor válido para este tipo de incendios.</p>
 <p>Como veremos en el epígrafe dedicado a los CPD, en caso de incendio de componentes electrónicos, este sistema es muy recomendable, pues no solo extingue el fuego, sino que combate uno de los mayores enemigos de los sistemas electrónicos, como es el humo.</p>
 </div>
-<h2 id="2-conceptos-básicos-en-materia-de-seguridad">2. Conceptos básicos en materia de seguridad </h2>
-<p>En el mundo de la seguridad de la información e informática, es habitual manejar una terminología específica (activos, vulnerabilidades, amenazas, ataques, riesgos, impacto, desastre, contingencias, etc.) que explicaremos a lo largo de este epígrafe.</p>
-<h3 id="21-activos">2.1. Activos </h3>
-<p>Un activo se define como aquel recurso del sistema (informático o no) necesario para que la organización alcance los objetivos propuestos; es decir, todo aquello que tenga valor y que deba ser protegido frente a un eventual percance, ya sea intencionado o no. Según esta definición, consideraremos como activos: los trabajadores, el software, los datos, los archivos, el hardware, las comunicaciones, etc.</p>
-<p>La seguridad informática tiene como objetivo proteger dichos activos, por lo que la primera labor será identificarlos para establecer los mecanismos necesarios para su protección y analizar la relevancia de los mismos en el proceso de negocio de la organización. No tiene sentido gastar miles de euros en proteger activos no importantes para el negocio o que no tengan un valor que justifique ese gasto.</p>
-<p>Desde el punto de vista de la informática, los principales activos de una empresa son los siguientes:</p>
-<ul>
-<li>Información: todo aquel elemento que contenga datos almacenados en cualquier tipo de soporte. Como por ejemplo, documentos, libros, patentes, correspondencia, estudios de mercado, datos de los empleados, manuales de usuario, etc.</li>
-<li>Software: programas o aplicaciones que utiliza la organización para su buen funcionamiento o para automatizar los procesos de su negocio. Entre estos se pueden encontrar las aplicaciones comerciales, los sistemas operativos, etc.</li>
-<li>Físicos: toda la infraestructura tecnológica utilizada para almacenar, procesar, gestionar o transmitir toda la información necesaria para el buen funcionamiento de la organización. También estaría incluida en esta categoría la estructura física de la organización, tal como la sala de servidores, los armarios, etc.</li>
-<li>Personal de la organización que utilice la estructura tecnológica y de comunicación para el manejo de la información.</li>
-</ul>
-<h3 id="22-vulnerabilidades">2.2. Vulnerabilidades </h3>
-<p>En el campo de la seguridad informática se considera como vulnerabilidad a cualquier debilidad de un activo que pueda repercutir de alguna forma sobre el correcto funcionamiento del sistema informático. Estas debilidades, también conocidas como “agujeros de seguridad”, pueden estar asociadas a fallos en la implementación de las aplicaciones o en la configuración del sistema operativo, a descuidos en la utilización de los sistemas, etc.</p>
-<p>Por ejemplo, no utilizar ningún tipo de protección frente a fallos eléctricos o carecer de mecanismos de protección frente a ataques informáticos, como antivirus o cortafuegos.</p>
-<p>Es muy importante corregir cualquier vulnerabilidad detectada o descubierta, porque constituye un peligro potencial para la estabilidad y seguridad del sistema en general.</p>
-<p>Las vulnerabilidades de algunas aplicaciones pueden permitir una escalada de privilegios, con lo que un atacante podría conseguir más privilegios de los previstos. Esto podría implicar que en algunos casos llegaran a tener los mismos que los administradores, pudiendo controlar el sistema. Un ejemplo sería cuando una vulnerabilidad produce un fallo en un servidor web que permite que un atacante acabe accediendo al sistema como si se tratara de un administrador, con lo que podría realizar acciones reservadas a estos.</p>
-<p>Para minimizarlas, los administradores de los sistemas informáticos deben actualizar periódicamente el sistema operativo y las aplicaciones y mantenerse actualizados en temas relacionados con la seguridad informática. Para ello pueden visitar páginas web especializadas en materia de seguridad informática, como los equipos de respuesta a incidentes de seguridad de la información (CERT o CSIRT) o páginas web de seguridad, como <a href="http://www.hispasec.com">www.hispasec.com</a>, grupos de Telegram, etc.</p>
-<h3 id="23-amenazas">2.3. Amenazas </h3>
-<p>Una amenaza es cualquier entidad o circunstancia que atente contra el buen funcionamiento de un sistema informático. Aunque hay amenazas que afectan a los sistemas de forma involuntaria, como, por ejemplo, un desastre natural, en la mayoría de casos es necesaria una intención de producir daño.</p>
-<p>Las amenazas se suelen dividir en pasivas y activas, en función de las acciones realizadas por parte del atacante:</p>
-<ul>
-<li>Amenazas pasivas, también conocidas como “escuchas”. Su objetivo es obtener información relativa a una comunicación. Por ejemplo, los equipos informáticos portátiles que utilizan programas especializados para monitorizar el tráfico de una red WiFi.</li>
-<li>Amenazas activas, que tratan de realizar algún cambio no autorizado en el estado del sistema, por lo que son más peligrosas que las anteriores. Como ejemplos se encuentran la inserción de mensajes ilegítimos, la usurpación de identidad, etc.</li>
-</ul>
-<p>Otra posible clasificación, en función de su ámbito de acción, sería diferenciar entre amenazas sobre la seguridad física, lógica, las comunicaciones o los usuarios de la organización.</p>
-<p>MAGERIT presenta la siguiente clasificación de amenazas:</p>
-<table>
-<thead>
-<tr>
-<th>Grupo de amenazas</th>
-<th>Ejemplos</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Desastres naturales</td>
-<td>Fuego, daños por agua, desastres naturales.</td>
-</tr>
-<tr>
-<td>Desastres industriales</td>
-<td>Fuego, daños por agua, desastres industriales, contaminación mecánica, contaminación electromagnética, etc.</td>
-</tr>
-<tr>
-<td>Errores y fallos no intencionados</td>
-<td>Errores de usuarios, errores de configuración, etc.</td>
-</tr>
-<tr>
-<td>Ataques deliberados</td>
-<td>Manipulación de la configuración, suplantación de la identidad del usuario, Difusión de software dañino, etc.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="24-ataques">2.4. Ataques </h3>
-<p>Un ataque es una acción que trata de aprovechar una vulnerabilidad de un sistema informático para provocar un impacto sobre él e incluso tomar el control del mismo. Se trata de acciones tanto intencionadas como fortuitas que pueden llegar a poner en riesgo un sistema. De hecho, en alguna metodología como MAGERIT se distingue entre ataques (acciones intencionadas) y errores (acciones fortuitas).</p>
-<p>Como ejemplos de ataques, que desarrollaremos a lo largo del curso, podemos citar la utilización de programas para conseguir acceso al servidor de forma ilegítima o la realización de ataques de denegación de servicio para colapsar el servidor.</p>
-<div style="display: flex; justify-content: center; align-items: center; margin-top: 15px; margin-bottom: 15px">
-    <img height="" src="./recursos/brechasSeguridad.jpg">
-</div>
-<p>Normalmente un ataque informático pasa por las siguientes fases:<br>
-– Reconocimiento. Consiste en obtener toda la información necesaria de la víctima, que puede ser una persona o una organización.<br>
-– Exploración. Se trata de conseguir información sobre el sistema a atacar, como por ejemplo, direcciones IP, nombres de host, datos de autenticación, etc.<br>
-– Obtención de acceso. A partir de la información descubierta en la fase anterior, se intenta explotar alguna vulnerabilidad detectada en la víctima para llevar a cabo el ataque.<br>
-– Mantener el acceso. Después de acceder al sistema, se buscará la forma de implantar herramientas que permitan el acceso de nuevo al sistema en futuras ocasiones.<br>
-– Borrar las huellas. Finalmente, se intentarán borrar las huellas que se hayan podido dejar durante la intrusión para evitar ser detectado.</p>
-<p>En el mercado existen una gran variedad de herramientas de seguridad que permiten conseguir un nivel óptimo de seguridad, pero hay estrategias de ataque que hacen ineficaces a estas herramientas, como las orientadas a explotar las debilidades del factor humano.</p>
-<p>Es el caso de la ingeniería social, que consiste en la obtención de información confidencial y/o sensible de un usuario mediante métodos que son propios de la condición humana. El ataque más simple sería el de engañar al usuario haciéndose pasar por el administrador del sistema de su organización para obtener alguna información de relevancia.</p>
-<div class="admonition question">
-<p class="admonition-title">Ataques, vulnerabilidades, amenazas</p>
-<p>Actividad U1.3: Lee el siguiente artículo <a href="https://www.europapress.es/portaltic/software/noticia-etiquetas-fotos-picantes-facebook-nuevo-gancho-fraude-online-20110413163910.html">Etiquetas en fotos de Facebook</a> y responde a las preguntas</p>
-<ul>
-<li>a. ¿De qué tipo de ataque se trata?</li>
-<li>b. Analiza las vulnerabilidades y amenazas de este sistema</li>
-<li>c. ¿Qué recomendaciones darías para evitar esta situación?</li>
-</ul>
-<p>Actividad U1.4: Cuál es el activo más valioso para una empresa?</p>
-<ul>
-<li>a. ¿Qué vulnerabilidades podrían afectarle?</li>
-<li>b. ¿Qué amenazas son las que podrían afectarle? Clasifícalas.</li>
-</ul>
-</div>
-<h3 id="25-riesgos">2.5. Riesgos </h3>
-<p>Existen diversas definiciones para definir el término riesgo; entre todas ellas destacamos las siguientes:</p>
-<ul>
-<li>Según la UNE-71504:2008, un riesgo es la estimación del grado de exposición a que una amenaza se materialice sobre uno o más activos causando daños o perjuicios a la organización.</li>
-<li>El Centro Criptológico Nacional define el riesgo como la probabilidad de que una amenaza se materialice aprovechando una vulnerabilidad y causando daño (impacto) en un proceso o sistema.</li>
-</ul>
-<p>El riesgo es, por tanto, una medida de la probabilidad de que se materialice una amenaza. Por ejemplo, si la instalación eléctrica del edificio es antigua, existirá un riesgo elevado de sufrir una interrupción del servicio en caso de producirse una subida de tensión.</p>
-<p>El coste asociado a la reducción de esa cifra aumenta de manera exponencial frente a la necesidad de minimizar el riesgo, por lo que se debe tratar de obtener un factor coste/riesgo que sea asumible por la organización. Ningún sistema de seguridad debería tener un coste superior al del sistema en conjunto o al de la información que protege.</p>
-<p>Para poder establecer unos procedimientos de seguridad adecuados, será necesario realizar una clasificación de los datos y un análisis de riegos, con el fin de establecer prioridades y realizar una administración más eficiente de los recursos de la organización.</p>
-<p>En el <strong>análisis de riesgos</strong> hay que tener en cuenta qué activos hay que proteger, sus vulnerabilidades y amenazas, así como la probabilidad de que estas se produzcan junto con el impacto de las mismas. Además, habrá que tener también en cuenta durante cuánto tiempo y qué esfuerzo y dinero se está dispuesto a invertir.</p>
-<p>Los resultados del análisis de riesgos permiten recomendar qué medidas se deberán tomar para conocer, prevenir, impedir, reducir o controlar los riesgos previamente identificados y así poder reducir al mínimo su potencialidad o sus posibles daños.</p>
-<p>Existen diferentes niveles de riesgo a los que puede estar expuesto un activo. El nivel dependerá de la probabilidad de que se materialice una amenaza y al grado de impacto producido. Por ejemplo:</p>
-<table>
-<thead>
-<tr>
-<th>Nivel</th>
-<th>Tipo de riesgo</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Alto</td>
-<td>Robo de información, robo de hardware</td>
-</tr>
-<tr>
-<td>Medio</td>
-<td>Accesos no autorizados</td>
-</tr>
-<tr>
-<td>Muy bajo</td>
-<td>Inundaciones</td>
-</tr>
-</tbody>
-</table>
-<p>Hay que tener en cuenta que el riesgo cero no existe, ya que no es posible prever y evitar todas las posibles situaciones que podrían afectar a nuestros sistemas.</p>
-<div class="admonition info">
-<p class="admonition-title">MAGERIT v.3</p>
-<p>MAGERIT es la metodología de análisis y gestión de riesgos desarrollada por el Consejo Superior de Administración Electrónica. Es un método formal adoptado por las Administraciones Públicas para investigar los riesgos que  soportan los sistemas de información y recomendar las medidas adecuadas que deberán adoptarse para poder controlar dichos riesgos.</p>
-<p>PILAR Es una aplicación implementada por la metodología MAGERIT, para el análisis y gestión de riesgos de un sistema de información. Ha sido desarrollada por el <a href="https://www.ccn-cert.cni.es/es/">Centro Criptológico Nacional (CCN)</a> y es de amplia utilización en la Administración Pública española.</p>
-</div>
-<h3 id="26-impacto">2.6. Impacto </h3>
-<p>Una organización se ve afectada cuando se produce una situación que atenta contra su funcionamiento normal; estas consecuencias para la empresa reciben el nombre de impacto. Dicho de otra forma, el impacto sería el alcance producido o daño causado en caso de que una amenaza se materialice.</p>
-<p>Dos organizaciones pueden verse afectadas en diferente medida ante la materialización de la misma amenaza si han adoptado estrategias diferentes para solucionarla. Así, el impacto del borrado del disco duro ocasionado por un virus informático será muy escaso en una empresa que realiza periódicamente copias de seguridad de la información importante, pero será bastante grave en una empresa que no lleva a cabo copias de seguridad regularmente.</p>
-<p>Un impacto leve no afecta prácticamente al funcionamiento de la empresa y se produce en organizaciones que han identificado las amenazas y han establecido las pautas a seguir en el caso de que se materialicen. Por otro lado, un impacto grave afecta seriamente a la empresa pudiendo ocasionar su quiebra y se produce en organizaciones que no han considerado las consecuencias que supone para ellas la materialización de esa amenaza.</p>
-<p>Las empresas deben, por tanto, identificar los impactos para la organización en el caso de que las posibles amenazas se produzcan. Esta tarea es uno de los objetivos del análisis de riesgos que debe realizar toda organización.</p>
-<h3 id="27-desastres">2.7. Desastres </h3>
-<p>Según ISO 27001, un desastre es cualquier evento accidental, natural o malintencionado que interrumpe las operaciones o servicios habituales de una organización. Por ejemplo, la caída de un servidor como consecuencia de una subida de tensión o un ataque.</p>
-<p>Un evento de este tipo puede destruir los activos de la empresa. Tradicionalmente se planteaba únicamente la destrucción de recursos físicos, como sillas, edificios, etc. pero hoy día las organizaciones se enfrentan a una nueva forma de desastre que afecta a los recursos lógicos, que constituye uno de sus principales activos: la información. Un desastre de este tipo podría ocasionar grandes pérdidas e incluso el cese de la actividad económica.</p>
-<p>Las organizaciones deben estar preparadas ante cualquier tipo de desastre de manera que se reduzca el impacto que pueda ocasionar. Para ello, desarrollan e implantan planes de contingencia que permiten la prevención y recuperación de desastres informáticos.</p>
-<div class="admonition question">
-<p class="admonition-title">Evaluación de riesgos</p>
-<p>Actividad U1.5: ¿Crees que la evaluación de riesgos será igual para todas las empresas? ¿Por qué?<br>
-Actividad U1.6: Enumera posibles preguntas que podrían hacerse en la realización de una evaluación de riesgos.<br>
-Actividad U1.7: Busca en Internet aplicaciones comerciales que permitan realizar una evaluación de riesgos (de seguridad informática). Indica si son software libre o de pago y busca el precio de las licencias.</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Premios Pwnies</p>
-<p><a href="https://pwnies.com/">https://pwnies.com/</a> es la página web de los premios Pwnies, distinción que reconoce lo mejor y lo peor de la seguridad informática durante el último año.</p>
-</div>
-<h2 id="3-principios-de-la-seguridad-informática">3. Principios de la seguridad informática </h2>
-<p>Aunque la mayoría de expertos coinciden en que no existe ningún sistema totalmente seguro e infalible al 100%, se debe tratar de proteger la información y el sistema que la utiliza para ofrecer un nivel de seguridad razonable<br>
-a los usuarios.</p>
-<p>Para que un sistema se pueda considerar razonablemente seguro se debe garantizar que se cumplen los principios básicos de la seguridad informática: <code>integridad, confidencialidad y disponibilidad</code>.</p>
-<h3 id="31-integridad">3.1. Integridad </h3>
-<p>La integridad es un principio básico de la seguridad informática que consiste en garantizar que la información solo pueda ser alterada por las personas autorizadas o usuarios legítimos, independientemente de si esa modificación se produce de forma intencionada o no. Así, por ejemplo, no se viola la integridad cuando usuarios autorizados modifican un registro de una base de datos o cuando un usuario que trabaja con la base de datos borra un registro que no debería por error.</p>
-<p>La vulneración de la integridad tiene distinto significado según se produzca en un equipo o en una red de comunicaciones:</p>
-<ul>
-<li><strong>Equipo de trabajo</strong>. Se produce violación de la integridad cuando un usuario no legítimo modifica información del sistema sin tener autorización para ello.</li>
-<li><strong>Red de comunicaciones</strong>. Existe violación de la integridad cuando un atacante actúa como intermediario en una comunicación, recibe los datos enviados por un usuario, los modifica y se los envía al receptor (<em><code>ataques man-in-the-middle</code></em>). Un mecanismo que nos protege frente a este tipo de ataques es la firma electrónica, que se estudiará con más detalle en unidades posteriores.</li>
-</ul>
-<h3 id="32-confidencialidad">3.2. Confidencialidad </h3>
-<p>La confidencialidad es otro de los principios básicos de la seguridad informática que garantiza que la información solo es accesible e interpretada por personas o sistemas autorizados.</p>
-<p>La vulneración de la confidencialidad también afecta de forma diferente a equipos y redes:</p>
-<p>– <strong>Equipo de trabajo</strong>. Se produce una violación de la confidencialidad cuando un atacante consigue acceso a un equipo sin autorización, controlando sus recursos. Un ejemplo sería la obtención de las claves de acceso. Otro ejemplo, mucho más simple, se produce cuando un usuario abandona momentáneamente su puesto de trabajo, dejando su equipo sin bloquear y con información mostrándose en la pantalla.<br>
-– <strong>Red de comunicaciones</strong>. Se vulnera la confidencialidad de una red cuando un atacante accede a los mensajes que circulan por ella sin tener autorización para ello. Existen mecanismos que permiten protegerse frente este tipo de ataques, como el cifrado de la información o el uso de protocolos de comunicación.</p>
-<h3 id="33-disponibilidad">3.3. Disponibilidad </h3>
-<p>El tercer pilar básico de un sistema seguro es la disponibilidad, esto es, asegurar que la información es accesible en el momento adecuado para los usuarios legítimos.</p>
-<p>La violación de la disponibilidad también se da de forma distinta en equipos y redes:</p>
-<ul>
-<li><strong>Equipos informáticos</strong>. Se vulnera la disponibilidad de un equipo cuando los usuarios que tienen acceso a él no pueden utilizarlo. Por ejemplo, podría ser un virus que ha paralizado el sistema.</li>
-<li><strong>Redes de comunicaciones</strong>. Se produce un ataque contra la disponibilidad cuando se consigue que un recurso deje de estar disponible para otros usuarios que acceden a él a través de la red. Existen una gran variedad de ataques que atentan contra la disponibilidad de un recurso en una red, como los ataques de denegación de servicio. Estos ataques, así como las técnicas que podemos utilizar para proteger las redes, se estudiarán en la unidad dedicada a la seguridad en redes.</li>
-</ul>
-<h3 id="34-otras-características-deseables-en-un-sistema-seguro">3.4. Otras características deseables en un sistema seguro </h3>
-<p>Además de los principios básicos que acabamos de ver, existen otros principios de seguridad que se consideran como deseables en todo sistema informático.</p>
-<p>Estos principios son los siguientes:</p>
-<ul>
-<li>
-<p><strong>No repudio</strong>. Este principio consiste en probar la participación de ambas partes en una comunicación. Por ejemplo, cuando se entrega la declaración de la renta telemáticamente, se firma con un certificado digital que solo puede poseer la persona que la presenta. La firma digital es una prueba irrefutable, de forma que impide que el ciudadano pueda<br>
-negar o repudiar el trámite realizado. Este principio está estandarizado en la ISO-7498-2. Existen dos clases:</p>
-<ul>
-<li><em>No repudio de origen</em>: protege al destinatario del envío, ya que este recibe una prueba de que el emisor es quien dice ser.</li>
-<li><em>No repudio de destino</em>: protege al emisor del envío, ya que el destinatario no puede negar haber recibido el mensaje del emisor.</li>
-</ul>
-</li>
-<li>
-<p><strong>Autenticación</strong>. Permite comprobar la identidad de los participantes en una comunicación y garantizar que son quienes dicen ser. Esta característica asegura el origen de la información. Existen ataques que atentan contra este principio, como la suplantación de la identidad o los de robos de contraseñas.</p>
-</li>
-</ul>
-<div class="admonition question">
-<p class="admonition-title">Actividades propuestas</p>
-<p>Actividad U1.8: A partir de los principios expresados en este epígrafe:<br>
-a) Plantea un posible ataque contra cada uno de estos principios.<br>
-b) Indica una posible solución para cada uno de los ataques planteados.<br>
-c) Busca más información sobre los sniffers en Internet. ¿Qué son? ¿Qué utilidad tienen?</p>
-</div>
-<h2 id="4-políticas-de-seguridad">4. Políticas de seguridad </h2>
-<p>La RFC 1244 define la política de seguridad como:</p>
+<h3 id="23-sistemas-de-alimentación-ininterrumpida">2.3. Sistemas de alimentación ininterrumpida </h3>
+<p>Como hemos visto en el apartado anterior, una de las principales fuentes de riesgo para los sistemas informáticos es la corriente eléctrica. Esta corriente no es perfecta, sino que está sometida a anomalías (apagones, caídas y picos de tensión, sobrevoltajes, ruido eléctrico, etc.) que hacen que el funcionamiento de los equipos no sea el idóneo y que, en los casos más graves, pueden ocasionar importantes daños a los mismos.</p>
+<p>Para prevenir estos riesgos se han desarrollado los <strong>sistemas de alimentación ininterrumpida (SAI)</strong>,  conocidos también por su nombre en inglés, <em>Uninterrupted Power Supply (UPS)</em>.</p>
 <blockquote>
-<p>Una declaración de intenciones de alto nivel que cubre la seguridad de los sistemas informáticos y que proporciona las bases para definir y delimitar responsabilidades para las diversas actuaciones técnicas y organizativas que se requieran.</p>
+<p>Un SAI es un dispositivo cuya finalidad es proporcionar suministro eléctrico a los equipos conectados a él cuando se produce un corte en la corriente eléctrica.</p>
 </blockquote>
-<p>En otras palabras, las políticas de seguridad informática detallan una serie de normas y protocolos a seguir donde se definen las medidas a tomar para la protección de la seguridad del sistema, así como la definición de los mecanismos para controlar su correcto funcionamiento.</p>
+<p>Los SAI no tienen capacidad para suministrar corriente durante mucho tiempo, por ello, no están pensados para que los equipos conectados a ellos sigan funcionando a pleno rendimiento, sino que su función es ganar<br>
+tiempo para realizar un apagado ordenado de los equipos. Además de esta función principal, sirven como estabilizadores de la tensión eléctrica, filtrándola y reduciendo el efecto nocivo que producen los picos de tensión y el ruido eléctrico.</p>
+<p>El uso de estos dispositivos es beneficioso para todo tipo de equipos, aunque, debido a su elevado coste, tradicionalmente solo se instalaban en sistemas críticos como servidores, grandes bases de datos,  hospitales, etc., donde su uso no solo era beneficioso sino imprescindible. Actualmente su precio ha bajado bastante y existen modelos asequibles para ser instalados en cualquier ordenador.</p>
+<h4 id="tipos-de-sai">Tipos de SAI </h4>
+<p>Dependiendo de su modo de funcionamiento, podemos distinguir varios tipos de SAI:</p>
+<ul>
+<li><strong>Offline pasivos</strong>. Se ponen en funcionamiento cuando falla la alimentación eléctrica. Entre el fallo y su activación se produce un corte de energía muy pequeño que no es detectado por la mayoría de los equipos conectados a él. Son los más habituales para proteger ordenadores domésticos, televisores, etc.</li>
+<li><strong>Offline interactivos In-Line</strong>. Están conectados con la corriente eléctrica y siempre se encuentran activos. Además de su función principal, disponen de filtros activos que estabilizan la señal. Son de mejor calidad que los anteriores y se suelen utilizar para proteger equipos de pequeñas empresas (ordenadores, pequeños servidores, etc.).</li>
+<li><strong>Online</strong>. Se colocan entre el suministro normal de corriente y los equipos a proteger, cumpliendo también con la función de estabilización y filtrado de la señal. Las baterías se van cargando mientras se suministra<br>
+energía a los equipos, por lo que, en caso de apagón, en ningún momento deja de suministrarse energía. Esto tiene como consecuencia el progresivo deterioro de las baterías y la necesidad de su sustitución. Son los más caros y de mayor calidad.</li>
+</ul>
+<p>Un SAI está compuesto por las siguientes partes o bloques funcionales:</p>
+<ul>
+<li><strong>Batería y cargador</strong>: son los elementos que almacenan la carga eléctrica que se usará en caso de necesidad.</li>
+<li><strong>Filtro</strong>: elemento destinado a limpiar la señal.</li>
+<li><strong>Conversor</strong>: es un transformador que convierte la tensión de 12 v de su batería en corriente continua.</li>
+<li><strong>Inversor</strong>: convierte la corriente continua en corriente alterna a 220 v.</li>
+<li><strong>Conmutador</strong>: elemento que permite cambiar entre el suministro proporcionado por la red eléctrica y el generado por la batería del SAI.</li>
+</ul>
+<div style="display: flex; justify-content: center; align-items: center; margin-top: 15px; margin-bottom: 15px">
+    <img height="" src="./recursos/EsquemaSAI_Interactivo.png">
+</div>
+<p><strong>Características de los SAI</strong></p>
+<p>Los SAI tienen dos características que permiten diferenciarlos:</p>
+<ul>
+<li>Autonomía: es el tiempo que el SAI puede seguir alimentando a un equipo en caso de fallo eléctrico. Se mide en minutos.</li>
+<li>Potencia: mide el consumo de energía de un SAI y se expresa en dos unidades distintas:
+<ul>
+<li><em>Vatios (<strong>W</strong>)</em>: es la potencia real consumida por el dispositivo.</li>
+<li><em>Voltiamperios (<strong>VA</strong>)</em>: es la potencia aparente, que se halla multiplicando la tensión de la corriente en voltios por la intensidad en amperios. Normalmente, en las especificaciones técnicas de los SAI, la potencia va expresada en esta unidad.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>La relación entre VA y W se denomina <em>factor de potencia</em> y su valor está siempre entre 0 y 1 (normalmente alrededor de 0,6), ya que la potencia real siempre es mayor que la aparente.</p>
+</blockquote>
+<div class="admonition question">
+<p class="admonition-title">Sistemas de alimentación ininterrumpida</p>
+<p>Actividad U2.1: Busca en Internet un SAI y responde a las siguientes preguntas:</p>
+<ul>
+<li>a. ¿Qué tipo de SAI es?</li>
+<li>b. ¿Cuál es su autonomía?</li>
+<li>c. ¿Cuál es su potencia en VA y en W?</li>
+<li>d. ¿Cuál es su precio?</li>
+</ul>
+<p>Actividad U2.2: Cálculo de la potencia de un SAI<br>
+Un equipo informático doméstico está compuesto por un ordenador (200 W de consumo), un monitor (50 W), un router (10 W) y una impresora (10 W).<br>
+Queremos instalar un SAI que proteja toda esa instalación y vamos a una tienda donde nos enseñan un modelo de 300 VA por 78 € y otro de 500 VA por 118 €. Ambos tienen un factor de potencia del 60%.</p>
+<p>¿Cuál deberíamos elegir?</p>
+<p>Actividad U2.3: Buscador de SAI<br>
+Dos de las marcas más conocidas de SAI son APC y Salicru. Ambas ofrecen calculadoras o recomendadores de SAIs en función de las características de consumo que necesitemos.</p>
+<p>Busca un SAI de cada marca adecuado para el caso anterior y compara sus características.<br>
+¿Cuál elegirías y por qué?</p>
+<p>Actividad U2.4: Dispones de un SAI de 300 VA con el que quieres proteger un ordenador que tiene instalada una fuente de alimentación de 250 W. ¿Sería suficiente?</p>
+<p>Actividad U2.5: En una instalación local en la que tenemos dos ordenadores, dos monitores, dos teclados inalámbricos y un router ADSL, pretendemos añadir un SAI. ¿Qué dispositivos deberíamos conectar al SAI?<br>
+Justifica tu respuesta.</p>
+</div>
+<h4 id="instalación-y-gestión-de-un-sai">Instalación y gestión de un SAI </h4>
+<p>Independientemente del tipo de SAI que estemos utilizando, la instalación y gestión de todos ellos se lleva a cabo siguiendo un procedimiento similar.</p>
+<ol>
+<li>En primer lugar, hay que buscar aquella ubicación para el dispositivo que permita un funcionamiento óptimo. Una base estable y una ventilación adecuada, sin objetos encima o alrededor, harán que el SAI rinda mucho mejor.</li>
+<li>El siguiente paso es la <strong>conexión del SAI</strong>. Estos equipos requieren dos tipos de conexión:
+<ul>
+<li><strong>Conexión eléctrica</strong>: para cumplir su función, estos dispositivos tienen<br>
+que ir conectados por un lado a la red eléctrica y por otro al equipo informático<br>
+al que van a proteger.</li>
+<li><strong>Conexión de datos</strong>: conectar el cable de datos al sistema informático para poder gestionar el SAI, bien por el ordenador local o a través de una red (conexión de comunicaciones). Esta última conexión se suele realizar por alguno de los puertos serie o la interfaz de red. Los SAI permiten varios esquemas de conexión de datos:
+<ul>
+<li><em>Conexión monopuesto local</em>: un único SAI va conectado a un único<br>
+equipo local. En estos casos la conexión entre el ordenador y el SAI se<br>
+realiza a través de los puertos serie: USB o RS-232C.</li>
+<li><em>Conexión de la batería del SAI a una LAN</em>: la batería del SAI se conecta,<br>
+a través de un switch, a la red por TCP/IP y se gestiona mediante<br>
+un servidor de la red o bien de equipos remotos de Internet.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>Para mejorar su uso lo mejor es utilizar los drivers del fabricante. Los SAI disponen de diversos avisos sonoros y/o luminosos para llamar la atención acerca de las incidencias que pueden suceder al encenderlos (aviso de batería baja, sobrecarga, etc.).</p>
+<p>Además, suelen disponer de un software de gestión que permite monitorizar el estado del SAI y de los equipos conectados, así como configurar las opciones de funcionamiento del SAI, programar las labores de encendido y apagado de los equipos conectados a la red para una mejor eficiencia y ahorro energéticos y el envío de mensajes de alerta e informes al administrador de la red a través de SMS, email, etc.</p>
+<h3 id="24-controles-de-presencia-y-acceso">2.4. Controles de presencia y acceso </h3>
+<p>El primer punto débil de un sistema informático, hablando en términos de seguridad física, es la puerta de entrada al recinto o edificio. Debemos evitar que personal no autorizado tenga acceso físico a la sala donde se encuentran los ordenadores.</p>
+<p>Un intruso podría robar los equipos o los soportes de almacenamiento internos (discos duros, tarjetas de memoria...) o externos (cintas, DVD, unidades de disco externas, etc.). Asimismo podría sabotear los equipos físicos o, lo que puede ser más grave para una empresa, acceder a la información contenida en los equipos.</p>
+<h4 id="control-de-acceso-en-los-entornos-físicos">Control de acceso en los entornos físicos </h4>
+<table>
+<thead>
+<tr>
+<th>Medidas de seguridad</th>
+<th>Funcionamiento</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sistemas de vigilancia</td>
+<td>Personal de vigilancia que se encarga de evitar accesos no autorizados y alarmas y sistemas de detección de intrusos (cámaras, sensores de temperatura o movimiento, etc.) que complementan su trabajo.</td>
+</tr>
+<tr>
+<td>Código de seguridad</td>
+<td>Los usuarios deben recordar un código numérico o contraseña de seguridad para acceder al recinto o al sistema. La contraseña puede ser individual o común a un grupo de usuarios. Sus inconvenientes son la necesidad de recordar el código y la posibilidad de que un intruso acceda a las contraseñas de acceso.</td>
+</tr>
+<tr>
+<td>Acceso mediante dispositivos</td>
+<td>El acceso al área restringida o a los sistemas se realiza utilizando un instrumento de seguridad (llave, tarjeta, etc.). El inconveniente de estos sistemas es que el dispositivo de acceso debe custodiarse adecuadamente.</td>
+</tr>
+<tr>
+<td>Sistemas biométricos</td>
+<td>Estos sistemas se basan en la identificación de ciertos rasgos físicos únicos del sujeto para identificarlo (huella dactilar, reconocimiento facial, escáner del iris, reconocimiento facial, etc.). Sus ventajas son que no es necesario conservar ni recordar nada. Tampoco es necesario cargar con ningún dispositivo. Su principal inconveniente viene de que hay un incremento del coste, tanto económico como computacional, conforme aumenta su sofisticación.</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition note">
-<p class="admonition-title">RFC</p>
-<p>Son las siglas de <strong>Request For Comments</strong> (petición de comentarios). Son unas notas emitidas por una organización de normalización (la <code>IETF</code>, <em>Internet Engineering Task Force</em>), con la intención de establecer estándares en Internet.</p>
-<p>Cada RFC tiene un título y un número asignado.</p>
-</div>
-<p>Tienen como objetivo concienciar a los miembros de una organización sobre la importancia y sensibilidad de la información y servicios críticos. Se puede decir que son una descripción de todo aquello que se quiere proteger.</p>
-<p>Las políticas de seguridad deben cubrir aspectos relacionados con la protección física, lógica, humana y de comunicación, tener en cuenta todos los componentes de la organización y no dejar de lado el entorno del sistema.</p>
-<p>¿Qué aspectos se deben tener en cuenta a la hora de elaborar las políticas de seguridad?</p>
+<p class="admonition-title">Métodos de control de acceso físico</p>
+<p>Los sistemas de control de acceso basan su funcionamiento en tres posibles métodos:</p>
 <ul>
-<li>Elaborar las reglas y procedimientos para los servicios críticos.</li>
-<li>Definir las acciones que habrá que ejecutar y el personal que deberá estar involucrado.</li>
-<li>Sensibilizar al personal del departamento encargado de la administración del sistema informático de los posibles problemas relacionados con la seguridad que pueden producirse.</li>
-<li>Establecer una clasificación de los activos a proteger en función de su nivel de criticidad, de forma que los sistemas vitales sean los más protegidos y no se gasten recursos en proteger aquellos activos con menor importancia.</li>
+<li>Algo que sé (una clave).</li>
+<li>Algo que tengo (una tarjeta o dispositivo de acceso).</li>
+<li>Algo que soy (características biométricas).</li>
 </ul>
-<p>Las medidas de control deben ser efectivas, fáciles de usar, actualizadas periódicamente y, por supuesto, apropiadas a la situación. No hay que olvidar que deben funcionar en el momento adecuado.</p>
-<p>Numerosas organizaciones internacionales han desarrollado documentos, directrices y recomendaciones con información relacionada con el uso adecuado de las nuevas tecnologías para sacarle el máximo provecho y evitar el uso inadecuado de las mismas.</p>
+<p>Los sistemas más seguros emplean combinaciones de estos tres tipos.</p>
+</div>
 <div class="admonition question">
-<p class="admonition-title">Políticas de seguridad</p>
-<p>Actividad U1.10: ¿Crees que establecer normas a los usuarios de una organización para que tengan una contraseña de acceso segura es una buena política de seguridad?<br>
-Actividad U1.11·· Indica qué políticas de seguridad establecerías para evitar la caída de los servidores de la organización.</p>
+<p class="admonition-title">Sistemas de control de presencia y acceso</p>
+<p>Actividad U2.6 Averigua qué sistemas de control de presencia y de acceso se utilizan en los equipos informáticos de los siguientes centros de trabajo: un banco, un ayuntamiento, un hospital, un supermercado.<br>
+Responde a las siguientes cuestiones para cada uno de ellos</p>
+<ul>
+<li>a. ¿Qué tipo de sistema es?</li>
+<li>b. ¿Qué ventajas e inconvenientes tiene?</li>
+<li>c. ¿Cuál es su precio?</li>
+</ul>
+<p>Actividad U2.7: Imagina que tienes que instalar un sistema de control de acceso en un centro educativo. ¿Qué tipo de sistema instalarías y por qué?</p>
 </div>
-<h2 id="5-planes-de-contingencia">5. Planes de contingencia </h2>
-<p>Las políticas de seguridad contemplan la parte de prevención de un sistema, pero no hay que desechar la posibilidad de que, aun a pesar de las medidas tomadas, pueda ocasionarse un desastre. Hay que recordar que ningún sistema es completamente seguro. Es en este caso cuando entran en juego los planes de contingencia.</p>
-<p><strong>El plan de contingencia contiene medidas detalladas para conseguir la recuperación del sistema</strong>, es decir, creadas para ser utilizadas cuando el sistema falle, no con la intención de que no falle.</p>
-<p>La creación de un plan de contingencia debe abarcar las siguientes fases:</p>
-<ul>
-<li><strong>Evaluación</strong>: en esta etapa hay que crear el grupo que desarrollará el plan. Se deberán identificar los elementos considerados como críticos para la organización, analizar el impacto que pueda producirse ante un desastre y definir cuáles deberán ser las soluciones alternativas a cada uno de los problemas que se puedan producir.</li>
-<li><strong>Planificación</strong>: en esta fase se deberá documentar y validar el plan de contingencia por parte de los responsables de las áreas involucradas de la organización.</li>
-<li><strong>Realización de pruebas</strong> para comprobar la viabilidad del plan.</li>
-<li><strong>Ejecución del plan</strong> para comprobar que efectivamente asegurará la continuidad de las tareas críticas de la organización en caso de posible catástrofe.</li>
-<li>Recuperación: tras el incidente o ataque, deberá restablecerse el orden en la organización.</li>
-</ul>
-<p>El plan de contingencia deberá ser revisado periódicamente para que siempre pueda estar de acuerdo con las necesidades de la organización. Entre las numerosas medidas que debe recoger, podemos indicar las siguientes:</p>
-<ul>
-<li>Tener <strong>redundancia</strong>: es decir, tener duplicado el hardware para el almacenamiento de la información, de forma que quede asegurada la continuidad de la actividad diaria en caso de problemas con dicho hardware.</li>
-<li>Tener la <strong>información almacenada de manera distribuida</strong>, es decir, no tener almacenada en el mismo lugar toda la información considerada como crítica para la organización.</li>
-<li>Tener un <strong>plan de recuperación</strong> que contemple las medidas necesarias para restaurar el estado de los recursos tal y como estaban antes de la materialización de la amenaza. Por ejemplo, tener un buen plan para la realización de copias de seguridad.</li>
-<li>Tener a todo el <strong>personal de la organización formado y preparado</strong> ante cualquier situación de emergencia.</li>
-</ul>
+<h2 id="3-protección-física-de-los-servidores">3. Protección física de los servidores </h2>
+<p>Los servidores son los equipos informáticos que se encargan de gestionar los recursos de una red. Son los encargados de almacenar y gestionar los datos, de controlar el acceso a la red, de gestionar los recursos compartidos, etc. Por ello, su seguridad física es vital para el buen funcionamiento de la red.</p>
+<h3 id="31-ubicación-de-los-servidores">3.1. Ubicación de los servidores </h3>
+<p>Los servidores deben estar ubicados en un lugar seguro, con las condiciones ambientales adecuadas y con las medidas de protección necesarias. En este sentido, se suelen instalar en salas especiales denominadas <strong>centros de proceso de datos (CPD)</strong>.</p>
+<h2 id="3-centros-de-proceso-de-datos-cpd">3. Centros de proceso de datos (CPD) </h2>
+<p>Las empresas de tamaño mediano o grande cuentan con gran cantidad de equipos informáticos y necesitan servidores y otros dispositivos que realicen el control de todo el parque informático y de comunicaciones.</p>
+<p>Los servidores son los equipos informáticos que se encargan de gestionar los recursos de una red. Son los encargados de almacenar y gestionar los datos, de controlar el acceso a la red, de gestionar los recursos compartidos, etc. Por ello, su seguridad física es vital para el buen funcionamiento de la red.</p>
+<p>Estos sistemas, que centralizan bases de datos, servicios de correo electrónico, gestión de usuarios, etc., precisan de unas instalaciones físicas y de unos requerimientos de hardware peculiares y reciben, en su conjunto, el nombre de <strong>centro de proceso de datos (CPD)</strong> o su denominación inglesa, <em><code>data center</code></em>.</p>
+<p>Los sistemas informáticos a esta escala requieren servidores con varios procesadores y unidades de disco, sistemas de comunicaciones avanzados (con varios routers, switches, etc.), equipos de alimentación redundantes, dispositivos para copias de seguridad, etc.</p>
+<p>Estos equipos deben trabajar a una temperatura ambiente baja (unos 17-19 ºC) y generan mucho ruido,<br>
+por lo que deben ser confinados en un espacio físico diferenciado del trabajo con unas condiciones ambientales y de aislamiento acústico y térmico especiales. Además, esta situación de confinamiento permite adoptar respecto de estos equipos unas medidas de seguridad especiales.</p>
+<p>Dado su cometido, los CPD deben estar operativos, ininterrumpidamente, las 24 h de todos los días del año, si bien no requieren la presencia de operadores en su interior. Dentro únicamente hay máquinas <code>– servidores, equipos de comunicaciones, dispositivos de almacenamiento, equipos de climatización, sensores, etc.–</code> que son controladas desde fuera de la sala, desde dentro del mismo edificio a través de la red local o bien remotamente a través de Internet.</p>
 <div class="admonition info">
-<p class="admonition-title">Soluciones de alta disponibilidad</p>
-<p>Una solución de alta disponibilidad permite que los sistemas de información de la organización estén disponibles las 24 horas de los 7 días de la semana. Con esta solución las empresas pueden tener la posibilidad de no perder información debido a fallos en los sistemas.</p>
-<p>La <strong>alta disponibilidad o redundancia</strong> es importante cuando nos encontramos con un <em><code>punto único de fallo</code></em>.<br>
-El punto único de fallo o SPOF (Single Point of Failure) puede ser un componente hardware, software o electrónico. Un fallo en él puede ocasionar un fallo general en el sistema. Para evitarlo, se utiliza la redundancia de  elementos para evitar la caída del sistema si uno de ellos falla.</p>
+<p class="admonition-title">CPD externo</p>
+<p>Las pequeñas empresas, que no dispongan de medios económicos ni espacio para tener un CPD propio, pueden utilizar uno ya existente de otra empresa o bien crear uno nuevo entre varias pequeñas empresas y compartirlo. Con ello se consigue tener un CPD a menor precio con prácticamente la misma funcionalidad.</p>
 </div>
-<div class="admonition question">
-<p class="admonition-title">Planes de contingencia</p>
-<p>Actividad U1.12: ¿Qué medidas de contingencia se podrían tomar para evitar la pérdida de información en un sistema informático?<br>
-Actividad U1.13: ¿Qué medidas de contingencia se podrían tomar para evitar la caída de un servidor de una organización?<br>
-Avtividad U1.11: ¿Quiénes crees que deben elaborar el plan de contingencia para una empresa?<br>
-Actividad U1.12: ¿Crees que un plan de contingencia, una vez creado, es ya para toda la vida?</p>
-</div>
+<h3 id="31-características-constructivas-y-de-disposición">3.1. Características constructivas y de disposición </h3>
+<p>De todo lo expuesto se deduce que los centros de proceso de datos necesitan cumplir ciertos requisitos constructivos y de disposición de sus distintos elementos (cableado, instalación, aislamientos, etc.) que les permitan llevar a cabo su función con eficacia y seguridad.</p>
+<p>A la hora de configurar un CPD habrá que tener en cuenta el tipo de datos que van a manejarse, el número de equipos que va a contener y su tipología. Por ello, cada empresa, en función de su volumen y su actividad,<br>
+dimensionará el CPD de acuerdo a sus necesidades.</p>
+<p>Por tanto, hay que diferenciar los supuestos de que el CPD ocupe un edificio específico del supuesto en que ocupe una parte del edificio en el que se ubican las oficinas de la empresa.</p>
+<ul>
+<li><strong>Edificio dedicado</strong>: debe encontrarse en una zona lo más segura posible frente a catástrofes naturales (incendios, inundaciones, terremotos, etc.). La zona debe presentar escasa o nula actividad sísmica o, de lo contrario, debe contar con características técnicas preparadas para este tipo de sucesos. Todo el centro de proceso de datos suele rodearse de un encofrado que lo aísla de fenómenos ambientales externos y asegura sus propiedades ignífugas.</li>
+<li><strong>Ubicación del CPD en una sala dentro de un edificio</strong>: los requerimientos de esta ubicación son los siguientes:
+<ul>
+<li>Como los CPD se suelen rodear de un encofrado de hormigón, metal o ambos, requieren un reforzamiento importante de la estructura arquitectónica del edificio. La zona donde se ubique el centro debe soportar el peso de este y por eso <strong>no se suelen ubicar en los pisos superiores</strong>. Sin embargo, la ubicación en sótanos debe realizarse teniendo en cuenta el mayor riesgo de humedades e inundaciones para proveer las medidas necesarias para evitarlos.</li>
+<li>El cofre, por dentro, presenta generalmente falso suelo para el cableado y el sistema de refrigeración, así como falso techo para albergar los sistemas de detección y extinción de incendios y conducciones extra<br>
+del sistema de refrigeración.</li>
+<li>Deben tenerse en cuenta los accesos exteriores, salidas de emergencia, cercanía de material inflamable o peligroso, etc.</li>
+<li>Habrá que asegurarse de que las dimensiones de la sala son las adecuadas, así como de la distribución de la sala en sí, con la presencia de columnas u otros factores que limiten el espacio.</li>
+<li>Debe estar en una zona libre de inundaciones. En caso de que hubiera cierta probabilidad de humedad dentro de la sala, es necesaria la instalación de equipos especiales para la extracción de la misma.</li>
+<li>La sala debe contar con sistemas de control de acceso y presencia que garanticen la seguridad de la información y equipos.</li>
+</ul>
+</li>
+</ul>
+<h3 id="32-sistemas-de-seguridad-del-cpd">3.2. Sistemas de seguridad del CPD </h3>
+<p>Además de contar con unas características constructivas y de ubicación especiales, la sala o edificio dedicado a CPD debe contar con medidas de seguridad adecuadas frente a cualquier tipo de riesgos.</p>
+<p><strong>Sistemas contra incendios</strong></p>
+<p>El CPD debe disponer de medidas para su protección frente a incendios (detectores, extintores, mangueras, etc.). En salas informáticas y CPD el material debe ser ignífugo en la medida de lo posible.</p>
+<p>El material de extinción de incendios debe ser adecuado a los equipos existentes; se estima que los sistemas más adecuados son los que <strong>utilizan el agua como agente extintor y el nitrógeno como agente impulsor (sistemas de agua nebulizada)</strong>, frente a los agentes extintores gaseosos.</p>
+<blockquote>
+<p>Además de ser más respetuosos con el medio ambiente, la extinción de incendios mediante agua nebulizada es inocua para los equipos protegidos y únicamente elimina el oxígeno en la zona de contacto directo con la llama, por lo que no supone un riesgo para el personal que se encuentre en la sala.</p>
+</blockquote>
 
       </div>
       
