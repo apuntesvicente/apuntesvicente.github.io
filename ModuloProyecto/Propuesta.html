@@ -1,0 +1,473 @@
+<!DOCTYPE html><html><head>
+      <title>Módulo Proyecto Intermodular - 1r curso</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}@font-face{font-family:"Material Icons";font-style:normal;font-weight:400;src:local("Material Icons"),local("MaterialIcons-Regular"),url("data:application/x-font-woff;charset=utf-8;base64,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") format("woff")}.admonition{box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12),0 3px 1px -2px rgba(0,0,0,.2);position:relative;margin:1.5625em 0;padding:0 1.2rem;border-left:.4rem solid rgba(68,138,255,.8);border-radius:.2rem;background-color:rgba(255,255,255,.05);overflow:auto}.admonition>p{margin-top:.8rem}.admonition>.admonition-title{margin:0 -1.2rem;padding:.8rem 1.2rem .8rem 3.6rem;border-bottom:1px solid rgba(68,138,255,.2);background-color:rgba(68,138,255,.1);font-weight:700}.admonition>.admonition-title:before{position:absolute;left:1.2rem;font-size:1.5rem;color:rgba(68,138,255,.8);content:"\E3C9"}.admonition>.admonition-title:before{font-family:Material Icons;font-style:normal;font-variant:normal;font-weight:400;line-height:2rem;text-transform:none;white-space:nowrap;speak:none;word-wrap:normal;direction:ltr}.admonition.abstract,.admonition.summary,.admonition.tldr{border-left-color:rgba(0,176,255,.8)}.admonition.abstract>.admonition-title,.admonition.summary>.admonition-title,.admonition.tldr>.admonition-title{background-color:rgba(0,176,255,.1);border-bottom-color:rgba(0,176,255,.2)}.admonition.abstract>.admonition-title:before,.admonition.summary>.admonition-title:before,.admonition.tldr>.admonition-title:before{color:#00b0ff;content:"\E8D2"}.admonition.hint,.admonition.tip{border-left-color:rgba(0,191,165,.8)}.admonition.hint>.admonition-title,.admonition.tip>.admonition-title{background-color:rgba(0,191,165,.1);border-bottom-color:rgba(0,191,165,.2)}.admonition.hint>.admonition-title:before,.admonition.tip>.admonition-title:before{color:#00bfa5;content:"\E80E"}.admonition.info,.admonition.todo{border-left-color:rgba(0,184,212,.8)}.admonition.info>.admonition-title,.admonition.todo>.admonition-title{background-color:rgba(0,184,212,.1);border-bottom-color:rgba(0,184,212,.2)}.admonition.info>.admonition-title:before,.admonition.todo>.admonition-title:before{color:#00b8d4;content:"\E88E"}.admonition.check,.admonition.done,.admonition.success{border-left-color:rgba(0,200,83,.8)}.admonition.check>.admonition-title,.admonition.done>.admonition-title,.admonition.success>.admonition-title{background-color:rgba(0,200,83,.1);border-bottom-color:rgba(0,200,83,.2)}.admonition.check>.admonition-title:before,.admonition.done>.admonition-title:before,.admonition.success>.admonition-title:before{color:#00c853;content:"\E876"}.admonition.faq,.admonition.help,.admonition.question{border-left-color:rgba(100,221,23,.8)}.admonition.faq>.admonition-title,.admonition.help>.admonition-title,.admonition.question>.admonition-title{background-color:rgba(100,221,23,.1);border-bottom-color:rgba(100,221,23,.2)}.admonition.faq>.admonition-title:before,.admonition.help>.admonition-title:before,.admonition.question>.admonition-title:before{color:#64dd17;content:"\E887"}.admonition.attention,.admonition.caution,.admonition.warning{border-left-color:rgba(255,145,0,.8)}.admonition.attention>.admonition-title,.admonition.caution>.admonition-title,.admonition.warning>.admonition-title{background-color:rgba(255,145,0,.1);border-bottom-color:rgba(255,145,0,.2)}.admonition.attention>.admonition-title:before{color:#ff9100;content:"\E417"}.admonition.caution>.admonition-title:before,.admonition.warning>.admonition-title:before{color:#ff9100;content:"\E002"}.admonition.fail,.admonition.failure,.admonition.missing{border-left-color:rgba(255,82,82,.8)}.admonition.fail>.admonition-title,.admonition.failure>.admonition-title,.admonition.missing>.admonition-title{background-color:rgba(255,82,82,.1);border-bottom-color:rgba(255,82,82,.2)}.admonition.fail>.admonition-title:before,.admonition.failure>.admonition-title:before,.admonition.missing>.admonition-title:before{color:#ff5252;content:"\E14C"}.admonition.bug,.admonition.danger,.admonition.error{border-left-color:rgba(255,23,68,.8)}.admonition.bug>.admonition-title,.admonition.danger>.admonition-title,.admonition.error>.admonition-title{background-color:rgba(255,23,68,.1);border-bottom-color:rgba(255,23,68,.2)}.admonition.danger>.admonition-title:before{color:#ff1744;content:"\E3E7"}.admonition.error>.admonition-title:before{color:#ff1744;content:"\E14C"}.admonition.bug>.admonition-title:before{color:#ff1744;content:"\E868"}.admonition.example,.admonition.snippet{border-left-color:rgba(0,184,212,.8)}.admonition.example>.admonition-title,.admonition.snippet>.admonition-title{background-color:rgba(0,184,212,.1);border-bottom-color:rgba(0,184,212,.2)}.admonition.example>.admonition-title:before,.admonition.snippet>.admonition-title:before{color:#00b8d4;content:"\E242"}.admonition.cite,.admonition.quote{border-left-color:rgba(158,158,158,.8)}.admonition.cite>.admonition-title,.admonition.quote>.admonition-title{background-color:rgba(158,158,158,.1);border-bottom-color:rgba(158,158,158,.2)}.admonition.cite>.admonition-title:before,.admonition.quote>.admonition-title:before{color:#9e9e9e;content:"\E244"}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+@font-face {
+  font-family: 'Catamaran';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/catamaran/v19/o-0bIpQoyXQa2RxT7-5B6Ryxs2E_6n1iPHjd5a7dvg.ttf) format('truetype');
+}
+.markdown-preview.markdown-preview .contenedor {
+  display: flex;
+  justify-content: center;
+  margin: 30px auto 30px auto;
+}
+.markdown-preview.markdown-preview .fondo {
+  background: url(https://programacioniesbalmis.github.io/Imagenes/BannersMoodle/banner.png);
+  background-size: cover;
+  width: 75%;
+  height: 160px;
+  border-radius: 10px;
+  position: relative;
+}
+.markdown-preview.markdown-preview .cita {
+  font-family: Arial;
+  font-style: italic;
+  font-weight: 600;
+  text-align: justify;
+  line-height: 1.5rem;
+  opacity: 0.6;
+  color: white;
+  padding: 5rem;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  font-size: 1.3rem;
+  transform: translate(-50%, -50%);
+}
+.markdown-preview.markdown-preview .abre_comilla {
+  font-family: "Catamaran";
+  font-weight: 600;
+  color: white;
+  padding-left: 30px;
+  position: absolute;
+  font-size: 6rem;
+  transform: translate(0%, -15%);
+}
+.markdown-preview.markdown-preview .cierra_comilla {
+  font-family: "Catamaran";
+  font-weight: 600;
+  color: white;
+  padding-right: 30px;
+  right: 0%;
+  position: absolute;
+  font-size: 6rem;
+  transform: translate(0%, 55%);
+}
+.markdown-preview.markdown-preview .autor {
+  font-family: Arial;
+  color: white;
+  margin: 0px;
+  padding-left: 30px;
+  position: absolute;
+  top: 83%;
+  font-size: 1rem;
+}
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="proyecto-intermodular">Proyecto intermodular </h1>
+
+<div class="md-toc">
+<details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#1-marco-normativo" class="md-toc-link"><ol>
+<li>Marco normativo</li>
+</ol>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#11-ley-de-ordenación-e-integración-de-la-formación-profesional" class="md-toc-link">
+            <p>1.1. Ley de Ordenación e Integración de la Formación Profesional</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#12-rd-de-desarrollo-de-la-ordenación-del-sistema-de-formación-profesional" class="md-toc-link">
+            <p>1.2. RD de desarrollo de la ordenación del Sistema de Formación Profesional</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#13-orden-de-inicio-de-curso" class="md-toc-link">
+            <p>1.3. Orden de inicio de curso</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#2-propuesta-encontradas" class="md-toc-link"><ol start="2">
+<li>Propuesta encontradas</li>
+</ol>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#ies-el-caminás" class="md-toc-link">
+            <p>IES El Caminás</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#primer-trimestre-y-parte-del-segundo" class="md-toc-link">
+            <p>Primer trimestre y parte del segundo</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#resto-del-segundo-trimestre-al-final" class="md-toc-link">
+            <p>Resto del segundo trimestre al final</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#3-scrum" class="md-toc-link">
+            <ol start="3">
+<li>Scrum</li>
+</ol>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#4-retos" class="md-toc-link">
+            <ol start="4">
+<li>Retos</li>
+</ol>
+
+          </a></div>
+</div>
+<div style="\&quot;page-break-after:always;\&quot;"></div>
+<h2 id="1-marco-normativo">1. Marco normativo </h2>
+<h3 id="11-ley-de-ordenación-e-integración-de-la-formación-profesional">1.1. Ley de Ordenación e Integración de la Formación Profesional </h3>
+<p>Según se determina en la Ley Orgánica 3/2022, de 31 de marzo, de ordenación e integración de la Formación Profesional, concretamente dentro de la <em>sección 4ª Grado D. Ciclos formativos de formación profesional</em>, establece la organización de los CFGS y CFGM.</p>
+<p>En el <strong>artículo 40.</strong> <em>Organización y estructura</em> y en el <strong>artículo 45</strong> <em>Ciclos formativos de grado medio y grado superior</em>,  se establece que el módulo de Proyecto Interdisciplinar es un módulo obligatorio en todos los ciclos formativos de grado medio y grado superior de Formación Profesional.</p>
+<p>Este módulo tiene como objetivo integrar los conocimientos y competencias adquiridos en los distintos módulos profesionales del ciclo formativo, así como fomentar el trabajo en equipo y la resolución de problemas de forma autónoma.</p>
+<blockquote>
+<p>Artículo 41.  Proyecto intermodular.</p>
+<p>1 El proyecto intermodular tendrá carácter integrador de los conocimientos incorporados en los módulos profesionales que configuran el ciclo formativo, con especial atención a los elementos de búsqueda de información, innovación, investigación aplicada y emprendimiento, vinculados a los resultados de aprendizaje de aquél. Existirá un seguimiento y tutorización individual y colectiva del proyecto, que se desarrollará de forma simultánea al resto de los módulos profesionales a lo largo de la duración del ciclo formativo.</p>
+<p>2 En el caso de los ciclos formativos de grado básico, se tratará de un único proyecto colaborativo para toda la duración del ciclo formativo.</p>
+<p>3 En el caso de los ciclos formativos de grado medio y superior, el proyecto intermodular podrá tener carácter anual o bienal, con una duración mínima de 25 horas en cada curso y deberá defenderse ante el equipo docente, al que, en su caso, podrá incorporarse el tutor o tutora de empresa. 4. No obstante lo dispuesto en los apartados anteriores, todo el currículo podrá organizarse en proyectos intermodulares, a través de diferentes metodologías, por decisión del equipo docente, respetando siempre todos los resultados de aprendizaje incluidos en el ciclo formativo.</p>
+</blockquote>
+<h3 id="12-rd-de-desarrollo-de-la-ordenación-del-sistema-de-formación-profesional">1.2. RD de desarrollo de la ordenación del Sistema de Formación Profesional </h3>
+<p>En el Real Decreto 659/2023, de 18 de julio, <em>modificado por el RD 658/2024, de 9 de julio</em> se detallan aspectos de la Ley 3/2022. En este RD se concretan las enseñanzas mínimas de los nuevos módulos, pero no del proyecto integrador. Aquí se dan unas pinceladas sobre cómo debe ser el proyecto integrador, pero no se detalla en profundidad.</p>
+<blockquote>
+<p>Artículo 96.3. Estructura CFGM y CFGS</p>
+<p>El Proyecto intermodular tendrá carácter integrador de las competencias adquiridas, y será uno durante el ciclo formativo. Existirá un seguimiento y tutorización individual y colectiva del proyecto, que se desarrollará de forma simultánea al resto de los módulos profesionales a lo largo de la duración del ciclo formativo. Los centros determinarán el momento en el que debe iniciarse el Proyecto, en función de las características del ciclo formativo.</p>
+</blockquote>
+<p>En el RD 499/2024, en su Anexo II se fija el currículo básico del módulo de Proyecto Intermodular de Grado Medio.</p>
+<pre class="language-text">ANEXO II
+Currículo básico módulo de Proyecto intermodular de grado medio
+Módulo Profesional: Proyecto intermodular.
+Duración: 50 horas.
+Código: 1713.
+
+Resultados de aprendizaje y criterios de evaluación.
+
+1. Caracteriza las empresas del sector atendiendo a su organización y al tipo de producto o servicio que ofrecen.
+
+Criterios de evaluación:
+
+    a) Se han identificado las empresas tipo más representativas del sector.
+
+    b) Se ha descrito la estructura organizativa de las empresas.
+
+    c) Se han caracterizado los principales departamentos.
+
+    d) Se han determinado las funciones de cada departamento.
+
+    e) Se ha evaluado el volumen de negocio de acuerdo a las necesidades de los clientes.
+
+    f) Se ha definido la estrategia para dar respuesta a las demandas.
+
+    g) Se han valorado los recursos humanos y materiales necesarios.
+
+    h) Se ha realizado el seguimiento de los resultados de acuerdo a la estrategia aplicada.
+
+    i) Se han relacionado los productos o servicios con su posible contribución a los ODS (Objetivos de Desarrollo Sostenible).
+
+2. Plantea soluciones a las necesidades del sector teniendo en cuenta la viabilidad de las mismas, los costes asociados y elaborando un pequeño proyecto.
+
+Criterios de evaluación:
+
+    a) Se han identificado las necesidades.
+
+    b) Se han planteado en grupo posibles soluciones.
+
+    c) Se ha obtenido la información relativa a las soluciones planteadas.
+
+    d) Se han identificado aspectos innovadores que puedan ser de aplicación.
+
+    e) Se ha realizado el estudio de viabilidad técnica.
+
+    f) Se han identificado las partes que componen el proyecto.
+
+    g) Se han previsto los recursos materiales y humanos para realizarlo.
+
+    h) Se ha realizado el presupuesto económico correspondiente.
+
+    i) Se ha definido y elaborado la documentación para su diseño.
+
+    j) Se han identificado los aspectos relacionados con la calidad del proyecto.
+
+    k) Se han presentado en público las ideas más relevantes de los proyectos propuestos.
+
+3. Planifica la ejecución de las actividades propuestas a la solución planteada, determinando el plan de intervención y elaborando la documentación correspondiente.
+
+Criterios de evaluación:
+
+    a) Se han temporizado las secuencias de las actividades.
+
+    b) Se han determinado los recursos y la logística de cada actividad.
+
+    c) Se han identificado permisos y autorizaciones en caso de ser necesarios.
+
+    d) Se han identificado las actividades que implican riesgos en su ejecución.
+
+    e) Se ha tenido en cuenta el plan de prevención de riesgos y los medios y equipos necesarios.
+
+    f) Se han asignado recursos materiales y humanos a cada actividad.
+
+    g) Se han tenido en cuenta posibles imprevistos.
+
+    h) Se han propuesto soluciones a los posibles imprevistos.
+
+    i) Se ha elaborado la documentación necesaria.
+
+4. Realiza el seguimiento de la ejecución de las actividades planteadas, verificando que se cumple con la planificación.
+
+Criterios de evaluación:
+
+    a) Se ha definido el procedimiento de seguimiento de las actividades.
+
+    b) Se ha verificado la calidad de los resultados de las actividades.
+
+    c) Se han identificado posibles desviaciones de la planificación y/o los resultados esperados.
+
+    d) Se ha informado de las desviaciones en caso de ser necesario.
+
+    e) Se han solucionado las desviaciones y se han documentado las intervenciones.
+
+    f) Se ha definido y elaborado la documentación necesaria para la evaluación de las actividades y del proyecto en su conjunto.
+
+5. Transmite información con claridad, de manera ordenada y estructurada.
+
+Criterios de evaluación:
+
+    a) Se ha mantenido una actitud ordenada y metódica en la transmisión de la información.
+
+    b) Se ha transmitido información verbal tanto horizontal como verticalmente.
+
+    c) Se ha transmitido información entre los miembros del grupo utilizando medios informáticos.
+
+    d) Se han conocido los términos técnicos en otras lenguas que sean estándares del sector.
+</pre>
+<p>En el RD 500/2024 de 21 de mayo, en la disposición adicional séptima, <code>Referencias al módulo de "Proyecto"</code> indica que</p>
+<pre class="language-text">En todos los reales decretos objeto de la presente norma, las referencias contenidas en el articulado al módulo de «Proyecto», con la denominación específica que corresponda, pasa a denominarse «Proyecto intermodular», manteniendo el resto de la denominación y número de código específico que tuviera en cada uno de los reales decretos afectados.
+</pre>
+<p>Por lo que usaremos el currículo del módulo de Proyecto existente en los RD de título y órdenes de currículo de los distintos ciclos formativos para el módulo profesional de Proyecto intermodular.</p>
+<p>ORDEN 36/2012, de 22 de junio, de la Conselleria de Educación, Formación y Empleo, por la que se establece para la Comunitat Valenciana el currículo del ciclo formativo de grado superior correspondiente al título de Técnico Superior en Administración de Sistemas Informáticos en Red. <a href="http://www.dogv.gva.es/datos/2012/06/25/pdf/2012_6644.pdf">2012/6644</a></p>
+<p>Real Decreto 405/2023, de 29 de mayo, por el que se actualizan los títulos de la formación profesional del sistema educativo de Técnico Superior en Desarrollo de Aplicaciones Multiplataforma y Técnico Superior en Desarrollo de Aplicaciones Web, de la familia profesional Informática y Comunicaciones, y se fijan sus enseñanzas mínimas.</p>
+<pre class="language-text">Módulo profesional: Proyecto de desarrollo de aplicaciones multiplataforma.
+
+Equivalencia en créditos ECTS: 5.
+
+Código: 0492.
+
+Resultados de aprendizaje y criterios de evaluación.
+
+1. Identifica necesidades del sector productivo, relacionándolas con proyectos tipo que puedan satisfacerlas.
+
+    Criterios de evaluación:
+
+    a) Se han clasificado las empresas del sector por sus características organizativas y el tipo de producto o servicio que ofrecen.
+
+    b) Se han caracterizado las empresas tipo indicando la estructura organizativa y las funciones de cada departamento.
+
+    c) Se han identificado las necesidades más demandadas a las empresas.
+
+    d) Se han valorado las oportunidades de negocio previsibles en el sector.
+
+    e) Se ha identificado el tipo de proyecto requerido para dar respuesta a las demandas previstas.
+
+    f) Se han determinado las características específicas del proyecto según los requerimientos.
+
+    g) Se han determinado las obligaciones fiscales, laborales y de prevención de riesgos y sus condiciones de aplicación.
+
+    h) Se han identificado posibles ayudas o subvenciones para la incorporación de las nuevas tecnologías de producción o de servicio propuestas.
+
+    i) Se ha elaborado el guión de trabajo que se va a seguir para la elaboración del proyecto.
+
+2. Diseña proyectos relacionados con las competencias expresadas en el título, desarrollando explícitamente las fases que lo componen.
+
+    Criterios de evaluación:
+
+    a) Se ha recopilado información relativa a los aspectos que van a ser tratados en el proyecto.
+
+    b) Se ha realizado el estudio de viabilidad técnica del proyecto.
+
+    c) Se han identificado las fases del proyecto especificando su contenido y plazos de ejecución.
+
+    d) Se han establecido los objetivos que se pretenden conseguir identificando su alcance.
+
+    e) Se han determinado las actividades necesarias para el desarrollo del proyecto.
+
+    f) Se han previsto los recursos materiales y personales necesarios para realizar el proyecto.
+
+    g) Se han identificado las necesidades de financiación para la puesta en marcha del proyecto.
+
+    h) Se ha definido y elaborado la documentación necesaria para su diseño.
+
+    i) Se han identificado los aspectos que se deben controlar para garantizar la calidad del proyecto.
+
+3. Planifica la ejecución del proyecto, determinando el plan de intervención y la documentación asociada.
+
+    Criterios de evaluación:
+
+    a) Se han secuenciado las tareas en función de las necesidades de implementación.
+
+    b) Se han determinado los recursos y la logística necesaria para cada tarea.
+
+    c) Se han identificado las necesidades de permisos y autorizaciones para llevar a cabo las tareas.
+
+    d) Se han determinado los procedimientos para ejecución de las tareas.
+
+    e) Se han identificado los riesgos inherentes a la ejecución del proyecto, definiendo el plan de prevención de riesgos y los medios necesarios.
+
+    f) Se ha planificado la asignación de recursos materiales y humanos según los tiempos de ejecución.
+
+    g) Se ha hecho la valoración económica que da respuesta a las condiciones de la ejecución del proyecto.
+
+    h) Se ha definido y elaborado la documentación necesaria para la ejecución del proyecto.
+
+4. Define los procedimientos para el seguimiento y control en la ejecución del proyecto, justificando la selección de variables e instrumentos empleados.
+
+    Criterios de evaluación:
+
+    a) Se ha definido el procedimiento de evaluación de las actividades o intervenciones realizadas durante la ejecución del proyecto.
+
+    b) Se han definido los indicadores de calidad para realizar la evaluación del proyecto.
+
+    c) Se ha definido el procedimiento para el registro y evaluación de las incidencias que puedan presentarse durante la ejecución del proyecto.
+
+    d) Se ha definido el procedimiento para la solución de las incidencias registradas.
+
+    e) Se ha definido el procedimiento para la gestión y registro de los cambios en los recursos y en las tareas.
+
+    f) Se ha establecido el procedimiento para la participación en la evaluación de los usuarios y se han elaborado documentos específicos.
+
+    g) Se ha establecido un sistema para garantizar el cumplimiento del pliego de condiciones del proyecto cuando este existe.
+</pre>
+<p>Orden 58/2021, de 30 de junio, de la Conselleria de Educación, Cultura y Deporte, por la que se establece el currículo del ciclo formativo de grado superior correspondiente al título de Técnico Superior en Desarrollo de Aplicaciones Multiplataforma en la Comunitat Valenciana.</p>
+<pre class="language-text">Módulo profesional: 
+Proyecto de Desarrollo de Aplicaciones Multiplataforma 
+Código: 0492 
+Duración: 40 horas 
+Contenidos: 
+Identificación de necesidades del sector productivo, y de la organización de la empresa:
+    – Identificación de las funciones de los puestos de trabajo.
+    – Estructura y organización empresarial del sector.
+    – Actividad de la empresa y su ubicación en el sector.
+    – Organigrama de la empresa. Relación funcional entre departamentos.
+    – Tendencias del sector: productivas, económicas, organizativas, de empleo y otras.
+    – Procedimientos de trabajo en el ámbito de la empresa. Sistemas y métodos de trabajo.
+    – Determinación de las relaciones laborales excluidas y relaciones laborales especiales.
+    – Convenio colectivo aplicable al ámbito profesional.
+    – La cultura de la empresa: imagen corporativa.
+    – Sistemas de calidad y seguridad aplicables en el sector. 
+Diseño de proyectos relacionados con el sector de desarrollo de aplicaciones informáticas:
+    – Análisis de la realidad local, de la oferta empresarial del sector en la zona y del contexto en el que se va a desarrollar el módulo profesional de formación en centros de trabajo.
+    – Recopilación de información.
+    – Estructura general de un proyecto.
+    – Elaboración de un guión de trabajo.
+    – Planificación de la ejecución del proyecto: objetivos, contenidos, recursos, metodología, actividades, secuenciación y evaluación.
+    – Viabilidad y oportunidad del proyecto.
+    – Revisión de la normativa aplicable.
+    – Planificación de la ejecución del proyecto:
+    – Elaboración de instrucciones de trabajo.
+    – Elaboración de un plan de prevención de riesgos.
+    – Documentación necesaria para la planificación de la ejecución del proyecto.
+    – Cumplimiento de normas de seguridad y ambientales.
+    – Indicadores de garantía de la calidad de proyectos. 
+Definición de procedimientos de control y evaluación de la ejecución del proyecto: 
+    – Propuesta de soluciones a los objetivos planteados en el proyecto y justificación de las seleccionadas.
+    – Definición del procedimiento de evaluación del proyecto.
+    – Determinación de las variables susceptibles de evaluación.
+    – Documentación necesaria para la evaluación del proyecto.
+    – Control de calidad de proceso y producto final.
+    – Registro de resultados.
+</pre>
+<h3 id="13-orden-de-inicio-de-curso">1.3. Orden de inicio de curso </h3>
+<p>En la Resolución de 8 de agosto de 2024, de la Secretaria Autonómica de Educación, por la que se dictan instrucciones sobre ordenación académica y de organización de los centros que imparten Formación Profesional durante el curs 2024-2025 en la Comunidad Valenciana, en el punto 6 trata sobre el proyecto integrador.</p>
+<blockquote>
+<p>Punto 6. Proyecto intermodular</p>
+<p>6.1. El Proyecto intermodular de aprendizaje colaborativo se impartirá en los ciclos formativos de grado básico y estará vinculado a sus tres ámbitos (ámbito de Comunicación y Ciencias Sociales, ámbito de Ciencias Aplicadas y ámbito profesional). El Proyecto intermodular de aprendizaje colaborativo de grado básico se llevará a cabo mediante una metodología basada en retos, Cada equipo docente diseñará uno o varios retos que impliquen la activación de varios resultados de aprendizaje contenidos en más de un módulo profesional del ciclo. Se trabajarán transversalmente los resultados de aprendizaje y criterios de evaluación.</p>
+<p>6.2. El Proyecto intermodular en los ciclos formativos de grado medio y superior tendrá un carácter integrador, de acuerdo con el art. 96 del Real decreto 659/2023, de 18 de julio.</p>
+<p>6.3. Dado el carácter integrador del proyecto intermodular la nota final del proyecto (segundo curso) tendrá en cuenta la valoración del trabajo realizado por el alumno o alumna en el primer y segundo curso. En la evaluación de primer curso, se reflejará en el acta de cada sesión de evaluación una valoración del aprovechamiento y el grado de consecución del desarrollo del módulo con una calificación orientativa que formará parte de la calificación final en segundo. En la evaluación del proyecto en el segundo curso se contemplará la nota final  del proyecto que será la nota media de primero y segundo. Esta nota final de proyecto formará parte del cálculo de la nota media del ciclo formativo.</p>
+<p>6.4. Los contenidos mínimos del proyecto intermodular que establece el Real decreto 659/2023, de 18 de julio, tendrán la consideración de orientativos. Corresponderá a los equipos docentes la actualización de los contenidos en las programaciones didácticas.</p>
+<p>6.5. Los centros docentes determinarán en el marco de la programación didáctica de cada módulo las especificaciones, los trabajos que se realizarán, el formato y la evaluación del módulo de proyecto, procesos que serán supervisados por los correspondientes departamentos de familia profesional para su posterior presentación al alumnado.</p>
+</blockquote>
+<p>Lo curioso de estas instrucciones es que en el punto 6.4 hace referencia a unos contenidos mínimos en el RD 659/2023 que no aparecen por ningún lado en dicho RD.</p>
+<div class="admonition info">
+<p class="admonition-title">Normativa aplicable</p>
+<p>Como se puede deducir de todo lo anterior, no hay una normativa actualizada para el proyecto interdisciplinar.<br>
+Se puede aplicar la normativa (RA, contenidos y orientaciones pedagógicas del módulo de proyecto que se sigue realizando en los módulos de segundo curso) de los RD de título y órdenes de currículo de los distintos ciclos formativos.</p>
+<p>Para poder ver esa normativa podemos consultar, a modo de ejemplo, la programación de este módulo que Vicente Rico ha creado y que tenemos en el Drive del Departamento <a href="https://docs.google.com/document/d/1hSDJDSDXBeeaKi-j041HKOjXQD6b1AaSQxjfnFFXpd4/edit?usp=drive_link">Programación módulo Proyecto 2 DAM</a>.</p>
+</div>
+<h2 id="2-propuesta-encontradas">2. Propuesta encontradas </h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Esto es información que se ha encontrado en la red y que puede ser de utilidad para el desarrollo del proyecto intermodular.</p>
+</div>
+<h3 id="ies-el-caminás">IES El Caminás </h3>
+<p>Presentación muy completa de cómo debe ser el módulo de Proyecto<br>
+<a href="https://prezi.com/p/7a-8wzhwe2vj/proyecto-intermodular-primer-curso/">https://prezi.com/p/7a-8wzhwe2vj/proyecto-intermodular-primer-curso/</a></p>
+<h3 id="primer-trimestre-y-parte-del-segundo">Primer trimestre y parte del segundo </h3>
+<p>Aprender a documentar un proyecto muy simple, con los puntos esperados y con un ejemplo bien hecho nuestro.</p>
+<p>Aquí podemos usar el guión que tenemos para los proyectos de segundo.</p>
+<h3 id="resto-del-segundo-trimestre-al-final">Resto del segundo trimestre al final </h3>
+<p>Proyecto de más envergadura, pero menos que el proyecto final, pero ya con idea de que pueda servirles para el proyecto del segundo curso.</p>
+<p>Por ejemplo, se puede hacer una pequeña aplicación en modo consola y cosas, rollo la investigación inicial de la aplicación, DAFO/CAME, etc. o cosas como el diseño de la base de datos, les pueden valer ya.</p>
+<h2 id="3-scrum">3. Scrum </h2>
+<p>Guías para conocer Scrum<br>
+<a href="https://www.scrum.org/learning-series/what-is-scrum/">https://www.scrum.org/learning-series/what-is-scrum/</a><br>
+<a href="https://scrumguides.org/">https://scrumguides.org/</a> para descargar la guía "oficial" de Scrum en varios idiomas.</p>
+<p>Sitio para una simulación online de Scrum<br>
+<a href="https://scrumcardgame.com/">https://scrumcardgame.com/</a></p>
+<p>Materiales SCRUM Reis<br>
+<a href="https://scrumenelaula.github.io/">https://scrumenelaula.github.io/</a></p>
+<p>De aquí se pueden sacar actividades para ir pidiéndoles semana a semana</p>
+<h2 id="4-retos">4. Retos </h2>
+<p>ETHAZI Gunea<br>
+<a href="https://ethazi.tknika.eus/es/propuestas-de-reto-0/">https://ethazi.tknika.eus/es/propuestas-de-reto-0/</a></p>
+<p>Banco de Retos de la familia deInformática de Ethazi (País Vasco)<br>
+<a href="https://drive.google.com/drive/folders/0BzyZFMYvx0owMEhKVU5ZNTcwVmc?resourcekey=0-4NguwvEoPSSKbqOTzHiuEQ">https://drive.google.com/drive/folders/0BzyZFMYvx0owMEhKVU5ZNTcwVmc?resourcekey=0-4NguwvEoPSSKbqOTzHiuEQ</a></p>
+<p>ABP en FP<br>
+<a href="https://sites.google.com/view/abp-en-fp/inicio?authuser=0">https://sites.google.com/view/abp-en-fp/inicio?authuser=0</a><br>
+<a href="http://fpeando.es">fpeando.es</a></p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

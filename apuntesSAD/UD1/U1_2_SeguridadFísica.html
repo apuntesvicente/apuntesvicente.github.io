@@ -390,6 +390,217 @@ del sistema de refrigeración.</li>
 <blockquote>
 <p>Además de ser más respetuosos con el medio ambiente, la extinción de incendios mediante agua nebulizada es inocua para los equipos protegidos y únicamente elimina el oxígeno en la zona de contacto directo con la llama, por lo que no supone un riesgo para el personal que se encuentre en la sala.</p>
 </blockquote>
+<p><strong>Sistemas eléctricos</strong></p>
+<p>En primer lugar, las instalaciones eléctricas deben ser adecuadas a la carga estimada que van a soportar, teniendo en cuenta cierta previsión de futuro para posibles nuevas exigencias.</p>
+<p>Pero una instalación muy completa genera mucho cableado; por ello, el diseño de las <strong>canalizaciones</strong> es vital para, por un lado, aislar adecuadamente los cables y, por otro, que estos no ocasionen un problema en sí mismos al estar visibles y poder ocasionar caídas u otro accidente.<br>
+La <strong>canalización, tanto vertical como horizontal</strong>, debe realizarse a través de falsos techos y falsos suelos, que no hagan visibles los cables.</p>
+<p>Además, los servidores van provistos de fuentes de alimentación redundadas para evitar que un fallo en una fuente de alimentación deje al servicio sin energía. Por ello, es básico que los CPD cuenten con dos acometidas de potencia diferentes en cada rack.</p>
+<h3 id="33-climatización">3.3. Climatización </h3>
+<p>Dadas las especiales características de los equipos existentes en un CPD y su sensibilidad a las condiciones climáticas (temperatura y humedad), estos centros deben contar con unos sistemas de climatización que garanticen que dichas condiciones sean las óptimas.</p>
+<p>La climatización de un CPD no consiste en la mera instalación de equipos de aire acondicionado. Dado que se trata de una sala cerrada y llena de ordenadores y equipos que producen calor, hay que pensar en algún sistema que elimine todo este calor, inyecte aire libre de partículas y mantenga también unas condiciones óptimas de temperatura (17-19 ºC) y humedad, recomendándose una humedad relativa del 45% (±5%). Para ello, hay que cuantificar y estimar la carga térmica de la sala con el fin de dimensionar bien el sistema de refrigeración.</p>
+<p>Existen varias formas de inyectar aire dentro de la sala formando lo que se llaman <code>pasillos fríos</code>. De la misma forma,<br>
+las salidas de aire caliente de los equipos se deben disponer de forma que se puedan direccionar hacia un mismo sitio con el fin de ser recogido por extractores de aire para su enfriamiento y filtrado. La zona donde se mueve todo este aire cálido se denomina <code>pasillos calientes</code>.</p>
+<div class="admonition info">
+<p class="admonition-title">Gasto energético de la climatización</p>
+<p>Más de la mitad del consumo de energía de un CPD procede de los sistemas de refrigeración, la iluminación y otros equipos auxiliares, por lo que la elección del sistema de climatización es algo muy importante, así como la óptima configuración del mismo (una excesiva refrigeración supondría un gasto innecesario y además perjudicaría a los equipos).</p>
+</div>
+<h3 id="34-datos">3.4. Datos </h3>
+<p>Un centro de proceso de datos debe contar con redes y equipos robustos, los cuales deben poder soportar sistemas de comunicación de alta velocidad y altas prestaciones capaces de atender al tráfico de <strong>redes SAN</strong> (<code>Storage Area Networks</code>), <strong>NAS</strong> (<code>Network Attached Storage</code>), granjas de distintos tipos de servidores, <strong>servidores blade</strong> y otros dispositivos diversos.</p>
+<p>Los cables de datos serán tanto de tipo Ethernet como de fibra óptica y la primera medida de aislamiento es mantenerlos convenientemente separados de los cables eléctricos para evitar interferencias electromagnéticas que afecten a su eficacia.</p>
+<p>En segundo término, al igual que los cables eléctricos, los cables de datos deben quedar ocultos por falsos techos y suelos, pero a la vez deben ser fácilmente accesibles para los técnicos y dejar espacio suficiente para su manipulación y sustitución. Las canalizaciones deben estar diseñadas de forma que los técnicos no tengan opciones a la hora de llevar el cableado de un punto a otro, sino que el camino esté claramente definido.</p>
+<h3 id="35-centros-de-respaldo">3.5. Centros de respaldo </h3>
+<p>Por muchas medidas que se adopten, siempre puede ocurrir algún suceso imprevisto y desastroso que lo destruya absolutamente todo (terremoto, ataque terrorista, etc.). Esto hace, que, de forma adicional a todas las medidas expuestas, muchas empresas mantengan o contraten centros o salas de respaldo (en inglés <strong>DRS</strong>, <code>Disaster Recovery Sites</code>), que son réplicas, más o menos exactas, del CPD principal, diseñadas para que, en caso de fallo de este, puedan tomar el control del sistema, evitando la pérdida de datos.</p>
+<p>La primera medida a la hora de diseñar uno de estos centros es la separación<br>
+física. Se estima que la distancia óptima se encuentra en torno a 20-40 km, ya que tiene en cuenta los condicionantes<br>
+de seguridad y las limitaciones impuestas por las líneas de comunicación existentes entre ambas.</p>
+<p>En cuanto al diseño del centro de respaldo y a los equipos con que debe contar, hay que tener en cuenta que los costes son un factor fundamental en la seguridad. Así, a la hora de plantear un centro de respaldo hay que tener siempre en mente durante cuánto tiempo es asumible que los sistemas de la organización estén parados en caso de desastre y cuántos recursos estamos dispuestos a invertir para minimizar ese tiempo de parada.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cold site o sala fría</td>
+<td>CPD <strong>externo a la organización</strong> con toda la infraestructura necesaria en cuanto a climatización, potencia eléctrica, etc., para poner en marcha un CPD semejante al nuestro. En caso de contingencia, habría que trasladar allí los servidores y reinstalar todo el sistema a partir de copias de seguridad, por lo que la <strong>puesta en funcionamiento es de más de una semana</strong>, si bien es la solución más barata.</td>
+</tr>
+<tr>
+<td>Hot site o sala caliente</td>
+<td>CPD con comunicaciones, sistemas y software <strong>análogo al principal</strong> (aunque puede estar dimensionado a la mitad de capacidad de cálculo y memoria para ahorrar). En caso de contingencia, solo hay que restaurar los datos al último momento disponible en los backups, por lo que la <strong>puesta en funcionamiento es inferior a un día</strong>, pero su coste de mantenimiento es mayor, puesto que cualquier modificación que se haga en el principal debe realizarse también en el centro de respaldo.</td>
+</tr>
+<tr>
+<td>Mutual backup</td>
+<td>Se llega a un acuerdo con otra organización para ejercer de centro de backup mutuo entre sí. En este sentido, cada organización reserva un espacio de su CPD para los servidores de respaldo de la otra organización. Estos pueden estar apagados (con lo que <strong>la solución se aproxima a la de la sala fría</strong>) o bien estar encendidos funcionando al modo de una sala caliente.</td>
+</tr>
+<tr>
+<td>Mirror site o centro espejo</td>
+<td>Evolución de la sala caliente en la que los <strong>datos son replicados en tiempo real</strong> de un CPD a otro, por lo que el paso de un CPD a otro es bastante rápido al no tener que realizarse restauración de datos.</td>
+</tr>
+<tr>
+<td>Configuraciones activo-activo</td>
+<td>Las configuraciones anteriores son de tipo <strong>activo-pasivo</strong>. Para organizaciones que <strong>no pueden permitirse un solo momento de parada se utilizan configuraciones de tipo activo-activo</strong> entre CPD en las que los sistemas están configurados en clústeres geográficos repartidos en ambos CPD. Los usuarios trabajan indistintamente y de forma transparente con los sistemas de uno u otro en todo momento y, en caso de caída total de un CPD, el servicio no se ve afectado debido a que el otro puede funcionar de forma autónoma.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="36-clasificación-de-los-cpd-por-su-disponibilidad">3.6. Clasificación de los CPD por su disponibilidad </h3>
+<p>Podemos clasificar los data center, gracias a los estándares TIA-942 que incluyen información sobre los grados de disponibilidad (TIER).</p>
+<p>Los Tiers se basan en información desarrollada por el Uptime Institute, un consorcio dedicado a promover las mejores prácticas para la planificación y gestión de centros de datos.</p>
+<p>Para cada uno de los Tiers que existen se detallan las recomendaciones para la infraestructura de seguridad, eléctrica y mecánica y telecomunicaciones. Cuando mayor Tier disponemos, mayor grado de disponibilidad.</p>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>% disponibilidad</th>
+<th>% de indisponibilidad</th>
+<th>Tiempo de indisponibilidad al año</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tier I</td>
+<td>99.671 %</td>
+<td>0.329 %</td>
+<td>28.82 horas</td>
+</tr>
+<tr>
+<td>Tier II</td>
+<td>99.741 %</td>
+<td>0.251 %</td>
+<td>22.68 horas</td>
+</tr>
+<tr>
+<td>Tier III</td>
+<td>99.982 %</td>
+<td>0.018 %</td>
+<td>1.57 horas</td>
+</tr>
+<tr>
+<td>Tier IV</td>
+<td>99.995 %</td>
+<td>0.005 %</td>
+<td>26.28 minutos</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition question">
+<p class="admonition-title">Sistemas de control de presencia y acceso</p>
+<p>Actividad U2.8 Relaciona cada elemento con el tipo de seguridad con el que está relacionado</p>
+<table>
+<thead>
+<tr>
+<th>Elemento</th>
+<th>Seguridad Física / Lógica (F / L)</th>
+<th>Seguridad Activa / Pasiva (A/P)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cámaras de vigilancia</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Control de acceso biométrico</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Detectores de incendio</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Contraseña de acceso</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>SAI</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Firewall en Ubuntu</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Sistema de detección de intrusos</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Sistema de extinción de incendios</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Ventiladores de un equipo</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Actividad U2.9: Busca información sobre las configuraciones de los TIER de los CPD e indica, de las siguientes configuraciones, cuáles están en un CPD según su clasificación por TIERs.</p>
+<table>
+<thead>
+<tr>
+<th>Configuraciones</th>
+<th>TIER I</th>
+<th>TIER II</th>
+<th>TIER III</th>
+<th>TIER IV</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Suelo técnico</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Componentes redundantes</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Tiempo de implementación</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Múltiples líneas de corriente</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Google Data Centers</p>
+<p>En el sitio web Google Centros de Datos puedes encontrar información y material gráfico sobre los data centers de Google.</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=kd33UVZhnAA">Google Data Center Security</a></li>
+<li><a href="https://www.youtube.com/watch?v=XZmGGAbHqa0">Google Data Center 360° Tour</a></li>
+<li><a href="https://www.youtube.com/watch?v=XZmGGAbHqa0">Google Data Center Security</a></li>
+</ul>
+<p>Y como añadido os dejo un artículo y un vídeo del CPD mas grande de España, el de Interxion en Madrid.</p>
+<ul>
+<li><a href="https://www.xataka.com/servicios/asi-cpd-dentro-fuera-visitamos-instalacion-grande-espana">Así es un CPD por dentro y por fuera</a></li>
+</ul>
+</div>
+<h3 id="resumen-del-apartado-12">Resumen del apartado 1.2 </h3>
+<p><img src="./recursos/ResumenU1.2.png" alt="Resumen"></p>
 
       </div>
       
