@@ -113,6 +113,18 @@
           <a href="#13-herramientas-de-análisis-forense" class="md-toc-link">
             <p>1.3. Herramientas de análisis forense</p>
 
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#caine" class="md-toc-link">
+            <p>C.A.I.N.E.</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#perito-informático" class="md-toc-link">
+            <p>Perito informático</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#resumen" class="md-toc-link">
+            <p>Resumen</p>
+
           </a></div>
         </div>
       </details>
@@ -160,9 +172,110 @@ En este paso <strong>se duplican o clonan los dispositivos</strong> para trabaja
 <p>No confundir el análisis forense con el pentesting. El pentesting es una técnica de seguridad informática que consiste en simular un ataque informático para identificar vulnerabilidades en un sistema. El análisis forense, en cambio, consiste en analizar un sistema después de que ha ocurrido un incidente de seguridad para determinar qué ha ocurrido.<br>
 Algunas herramientas de pentesting también pueden ser utilizadas en análisis forense, pero no todas las herramientas de pentesting son adecuadas para análisis forense. Este es el caso de Kali Linux, que es una distribución de Linux que incluye herramientas de pentesting y de análisis forense.</p>
 </div>
+<h3 id="caine">C.A.I.N.E. </h3>
+<p>CAINE (Computer Aided Investigative Environment) es una distribución de Linux que incluye herramientas de análisis forense. CAINE es una distribución de Linux basada en Ubuntu que incluye herramientas de análisis forense, como The Sleuth Kit, Autopsy, etc.</p>
+<p>Dentro de las herramientas que proporciona CAINE, se encuentran las herramientas de adquisición de datos, como dd, dcfldd, etc., que permiten realizar una copia de un dispositivo de almacenamiento. Estas herramientas permiten realizar una copia exacta de un dispositivo de almacenamiento para trabajar con la copia y no con el original.</p>
+<p>Para hacer la copia el dispositivo de almacenamiento se monta en modo de solo lectura para evitar que se modifiquen los datos originales. La copia se realiza con una herramienta de adquisición de datos. Tenemos herramientas de consola como dd, dcfldd aunque también tenemos herramientas gráficas como Guymager o FTK-Imager.</p>
+<p>Aquí tenemos un <a href="https://proyectoa.com/adquisicion-de-disco-duro-de-equipo-windows-10-con-caine-para-analisis-forense/">tutorial de cómo realizar una adquisición de imagen con CAINE</a></p>
 <h4 id="autopsy">Autopsy </h4>
 <p>Autopsy es una herramienta de análisis forense que permite recuperar y analizar datos almacenados en dispositivos electrónicos. Autopsy es una interfaz gráfica para The Sleuth Kit que facilita la recuperación y el análisis de datos almacenados en dispositivos.</p>
 <p>Autopsy permite recuperar y analizar datos almacenados en dispositivos electrónicos, como discos duros, memorias USB, tarjetas de memoria, etc. Autopsy permite recuperar y analizar datos eliminados, buscar archivos por palabras clave, analizar logs de sistemas, etc.</p>
+<p>Dentro de las fases de análisis forense, Autopsy se utiliza en la fase de análisis (fase 3) de las evidencias digitales. Autopsy permite analizar los datos recuperados para determinar qué ha ocurrido y quién es el responsable de un delito informático. Además, nos permite generar un informe forense que será utilizado en un proceso judicial.</p>
+<p>Puedes ver un <a href="https://security.packt.com/why-using-the-autopsy-tool-is-best-for-digital-forensics/?utm_source=substack&amp;utm_medium=email">breve tutorial de Autopsy</a></p>
+<h3 id="perito-informático">Perito informático </h3>
+<p>El perito informático es un profesional especializado en informática forense que se encarga de realizar análisis forenses de sistemas informáticos. El perito informático es un profesional con conocimientos técnicos y legales que se encarga de recuperar, preservar, analizar y presentar evidencias digitales en un proceso judicial.</p>
+<p>El perito informático debe ser imparcial y objetivo en su análisis forense. El perito informático debe seguir un protocolo de actuación para garantizar la integridad de las evidencias digitales y la validez del informe forense.</p>
+<p>El perito informático puede ser contratado por una empresa, un particular o un organismo público para realizar un análisis forense de sistemas informáticos. El perito informático puede ser llamado a declarar como testigo en un proceso judicial para explicar su informe forense y responder a las preguntas de las partes.</p>
+<p><a href="https://www.laboratoriodeinformaticaforense.com/perito-informatico/">Perito informático</a></p>
+<h3 id="resumen">Resumen </h3>
+<p><a href="https://www.youtube.com/watch?v=SGYBMZ32oWA">INCIBE: Forense en Windows</a></p>
+<div class="admonition note">
+<p class="admonition-title">Descubriendo evidencias</p>
+<p>Caso práctico 1. Encontrar imágenes ocultas en un disco duro.</p>
+<p>En la imagen de disco 8-jpeg-search se pueden descubrir evidencias ocultas en las imágenes digitales.</p>
+<p>Por ejemplo, se pueden descubrir metadatos en las imágenes digitales que indiquen la fecha y la hora en que se tomó la foto, la ubicación geográfica en la que se tomó la foto, etc.</p>
+<p>Pero no solo es eso, vemos como con ayuda de una herramienta de análisis forense como Autopsy se pueden descubrir imágenes ocultas en un archivo comprimido, imágenes que fueron eliminadas del sistema, o incluso imágenes dentro de documentos.</p>
+<p>La búsqueda de evidencias digitales en un sistema informático puede ser una tarea compleja y laboriosa, pero con las herramientas adecuadas se pueden descubrir evidencias ocultas que permitan determinar qué ha ocurrido y quién es el responsable de un delito informático.</p>
+<p>Hay muchos indicadores, como los <em><code>magic numbers</code></em> que nos pueden dar pistas de la existencia de archivos ocultos o de la existencia de archivos que han sido modificados.</p>
+<p><a href="https://en.wikipedia.org/wiki/List_of_file_signatures">Magic numbers</a></p>
+<p>Para esa imagen de disco, completa la siguiente tabla indicando donde se ha encontrado cada tipo de archivo y qué modificación u ocultación se ha realizado sobre el mismo.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Archivo (Ubicación)</th>
+<th>Modificación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
 
       </div>
       
