@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>PSP - U3 Actividades</title>
+      <title>PSP - U3 Proyectos</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -88,232 +88,132 @@
     
       <div class="crossnote markdown-preview  ">
       
-<h1 id="psp---u3-actividades">PSP - U3 Actividades </h1>
-<p><a href="./Actividades.pdf">Descargar estos apuntes</a></p>
+<h1 id="psp---u3-proyectos">PSP - U3 Proyectos </h1>
+<p><a href="./Proyectos.pdf">Descargar estos apuntes</a></p>
 <h2 id="índice">Índice </h2>
 
 <div class="md-toc">
 <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#10-clase-pspactividadesu3a10_menu" class="md-toc-link">
-            <ol start="10">
-<li>Clase psp.actividades.U3A10_Menu</li>
+          <a href="#1-clase-pspproyectosu3p1_juegoadivinanumero" class="md-toc-link">
+            <ol>
+<li>Clase psp.proyectos.U3P1_JuegoAdivinaNumero</li>
 </ol>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#11-clase-pspactividadesu3a11_vector" class="md-toc-link">
-            <ol start="11">
-<li>Clase psp.actividades.U3A11_Vector</li>
+          <a href="#2-clase-pspproyectosu3p2_ascensor" class="md-toc-link">
+            <ol start="2">
+<li>Clase psp.proyectos.U3P2_Ascensor</li>
 </ol>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#12-clase-pspactividadesu3a12_controlador" class="md-toc-link">
-            <ol start="12">
-<li>Clase psp.actividades.U3A12_Controlador</li>
+          <a href="#3-clase-pspproyectosu3p3_galaxia" class="md-toc-link">
+            <ol start="3">
+<li>Clase psp.proyectos.U3P3_Galaxia</li>
 </ol>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#13-clase-pspactividadesu3a13_contador" class="md-toc-link">
-            <ol start="13">
-<li>Clase psp.actividades.U3A13_Contador</li>
-</ol>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#14-clase-pspactividadesu3a14_cronometro" class="md-toc-link">
-            <ol start="14">
-<li>Clase psp.actividades.U3A14_Cronometro</li>
+          <a href="#4-clase-pspproyectosu3p4_carrera" class="md-toc-link">
+            <ol start="4">
+<li>Clase psp.proyectos.U3P4_Carrera</li>
 </ol>
 
           </a></div>
 </div>
+<div style="page-break-after:always;"></div>
+<h2 id="1-clase-pspproyectosu3p1_juegoadivinanumero">1. Clase psp.proyectos.U3P1_JuegoAdivinaNumero </h2>
+<p>En este  ejercicio  tendrás  que  implementar  el típico juego para  adivinar un número entre 1 y N pensado al azar por la máquina.</p>
+<p>La diferencia respecto al juego tradicional es que ahora hay varios jugadores, en concreto jugaremos con 7 jugadores, que quieren participar todos a la vez. La  simulación será parecida a si se jugase en clase, es decir, alguien piensa un número y después todos quieren decir el número, pero se tienen que seguir unas reglas:</p>
+<ul>
+<li>Los jugadores estarán identificados por un número, que formará parte de su nombre: Jugador 1, Jugador 2, Jugador 3, ...</li>
+<li>Todos deben tomarse un tiempo entre 1 y 2 segundos para pensar el número que quieren decir.</li>
+<li>Se jugará por turnos, empezando por el Jugador 1 y terminando por el Jugador 7, volviendo entonces a empezar con el Jugador 1</li>
+<li>El juego acaba cuando uno de los jugadores acierta el número, momento a partir del cual el resto de jugadores ya no proponen más números y finalizan la ejecución.</li>
+</ul>
+<p>Un ejemplo de ejecución del programa podría ser:</p>
+<blockquote>
+<p>Jugador 1 dice: 9<br>
+Jugador 2 dice: 2 &lt;-<br>
+Jugador 3 dice: 6<br>
+Jugador 4 dice: 7<br>
+Jugador 5 dice: 2 &lt;-<br>
+Jugador 6 dice: 8<br>
+Jugador 7 dice: 4<br>
+Jugador 1 dice: 3<br>
+Jugador 2 dice: 5<br>
+Jugador 2 gana!!!</p>
+</blockquote>
 <div class="admonition info">
-<p class="admonition-title">Nombre del proyecto</p>
-<p>En estas actividades volvemos a usar la nomenclatura de clases y proyectos explicada en la hoja de <a href="https://apuntesvicente.github.io/actividadesPSP/UD2/ActividadesAutoEvaluaci%C3%B3n.html">actividades de autoevaluación de la U2</a></p>
+<p class="admonition-title">Orden de los jugadores</p>
+<p>Los jugadores tienen pensado su número, pero solo lo podrán decir cuando sea su turno. El orden de los jugadores es fijo y no cambia.</p>
+<p>Es importante tener en cuenta que, si un jugador ha acertado el número, los demás jugadores ya no pueden seguir diciendo números. Por lo tanto, el juego termina cuando un jugador acierta el número.</p>
+<p>Ningún jugador se puede quedar colgado cuando acabe la partida. Si es necesario, indica con un mensaje en la consola cómo los jugadores van abandonando la partida.</p>
+<p>Si realizamos una simulación sin tiempos de espera, el juego debería seguir funcionando correctamente.</p>
 </div>
-<div style="page-break-after:always;"></div>
-<h2 id="10-clase-pspactividadesu3a10_menu">10. Clase psp.actividades.U3A10_Menu </h2>
-<p>Vamos a programar en Java la lectura del menú de un restaurante (menu.txt) que ofrece varios primeros, varios segundos y varios postres. Para ello, tendremos 3 hilos que formarán parte de un grupo de hilos (Threadrgoup) llamado “Menu diario” y que trabajarán del siguiente modo:</p>
-<ul>
-<li>Un hilo que lee de menu.txt solo los primeros (que vienen precedidos de la marca 1-) y los vuelca al archivo primeros.txt</li>
-<li>Un hilo que lee de menu.txt solo los segundos (que vienen precedidos de la marca 2-) y los vuelca al archivo segundos.txt</li>
-<li>Un hilo que lee de menu.txt solo los postres (que vienen precedidos de la marca 3-) y los vuelca al archivo postres.txt</li>
-</ul>
-<p>Antes de codificar la solución en Java, tómate un tiempo en diseñar tu propio menú que debería tener el siguiente formato:</p>
-<p><img src="./Soluciones/menu.png" alt="menu"></p>
-<p>El objetivo es que cada hilo trabaje solo una parte del menú y que acabe escribiendo en su fichero pero sin el rótulo correspondiente y sin el número y el guión que precede a cada plato.<br>
-Es decir, en el fichero “primeros.txt” solo debería aparecer las siguientes lineas:</p>
-<blockquote>
-<p>Macarrones carbonara<br>
-Paella valenciana<br>
-Gazpacho<br>
-Crema de verduras</p>
-</blockquote>
-<p>Además, el programa imprimirá en cada momento el hilo que está actuando y qué está escribiendo. Un ejemplo de ejecución sería el siguiente, que utiliza el menú.txt de arriba:<br>
-En la consola, al finalizar el programa, se mostrarán las siguientes acciones:</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>El hilo <span class="token number">1</span> escribe<span class="token punctuation">..</span>. Macarrones carbonara
-El hilo <span class="token number">1</span> escribe<span class="token punctuation">..</span>. Paella valenciana
-El hilo <span class="token number">1</span> escribe<span class="token punctuation">..</span>. Gazpacho
-El hilo <span class="token number">2</span> escribe<span class="token punctuation">..</span>. Cachopo asturiano
-El hilo <span class="token number">1</span> escribe<span class="token punctuation">..</span>. Crema de verduras
-El hilo <span class="token number">2</span> escribe<span class="token punctuation">..</span>. Chuletón gallego
-El hilo <span class="token number">3</span> escribe<span class="token punctuation">..</span>. Tiramisú
-El hilo <span class="token number">2</span> escribe<span class="token punctuation">..</span>. Bacalao a la vizcaina
-El hilo <span class="token number">2</span> escribe<span class="token punctuation">..</span>. Surtido de croquetas
-El hilo <span class="token number">3</span> escribe<span class="token punctuation">..</span>. Coulant de chocolate
-El hilo <span class="token number">3</span> escribe<span class="token punctuation">..</span>. Brownie
-El hilo <span class="token number">3</span> escribe<span class="token punctuation">..</span>. Tarta de queso y arándanos
-</code></pre><p>Que habrá generado los siguientes ficheros:</p>
-<table>
-<thead>
-<tr>
-<th>primeros.txt</th>
-<th>segundos.txt</th>
-<th>postres.txt</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Macarrones carbonara</td>
-<td>Cachopo asturiano</td>
-<td>Tiramisú</td>
-</tr>
-<tr>
-<td>Paella valenciana</td>
-<td>Chuletón gallego</td>
-<td>Coulant de chocolate</td>
-</tr>
-<tr>
-<td>Gazpacho</td>
-<td>Bacalao a la vizcaina</td>
-<td>Brownie</td>
-</tr>
-<tr>
-<td>Crema de verduras</td>
-<td>Surtido de croquetas</td>
-<td>Tarta de queso y arándanos</td>
-</tr>
-</tbody>
-</table>
-<div style="page-break-after:always;"></div>
-<h2 id="11-clase-pspactividadesu3a11_vector">11. Clase psp.actividades.U3A11_Vector </h2>
-<p>Vamos a programar en Java la gestión de 2 hilos que accederán por turnos a un vector de 10 posiciones para ir completándolo con valores aleatorios.</p>
-<p>Tendremos un primer hilo que comenzará a completarlo de izquierda a derecha (hilo1) y otro segundo hilo que lo completará de derecha a izquierda (hilo2). Ambos lo irán informando con valores aleatorios cuyos límites inferior y superior se solicitarán al principio del programa.</p>
-<p>Cada vez que uno de los hilos inserte un valor, esperaremos un tiempo para de esa forma ir viendo en tiempo real como se va informando el vector.</p>
-<p>Se mostrarán las 10 posiciones del vector, que inicialmente estarán informadas a 0 y que poco a poco se irán informando hasta que todo el vector esté completo. Cuando un hilo complete una posición, lo marcará con su identificador (1 si lo ha informado el hilo1 o 2 si lo ha informado el hilo2).</p>
-<p>Un ejemplo de ejecución sería el siguiente:</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>Introduzca limite inferior:
-<span class="token number">10</span>
-Introduzca limite superior:
-<span class="token number">500</span>
-<span class="token number">0</span>       <span class="token number">1</span>       <span class="token number">2</span>       <span class="token number">3</span>       <span class="token number">4</span>       <span class="token number">5</span>       <span class="token number">6</span>       <span class="token number">7</span>       <span class="token number">8</span>       <span class="token number">9</span>
----------------------------------------------------------------------------
-<span class="token number">288</span>     <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>
-<span class="token number">1</span>
-
-<span class="token number">0</span>       <span class="token number">1</span>       <span class="token number">2</span>       <span class="token number">3</span>       <span class="token number">4</span>       <span class="token number">5</span>       <span class="token number">6</span>       <span class="token number">7</span>       <span class="token number">8</span>       <span class="token number">9</span>
----------------------------------------------------------------------------
-<span class="token number">288</span>     <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">464</span>
-<span class="token number">1</span>                                                                       <span class="token number">2</span>
-
-<span class="token number">0</span>       <span class="token number">1</span>       <span class="token number">2</span>       <span class="token number">3</span>       <span class="token number">4</span>       <span class="token number">5</span>       <span class="token number">6</span>       <span class="token number">7</span>       <span class="token number">8</span>       <span class="token number">9</span>
----------------------------------------------------------------------------
-<span class="token number">288</span>     <span class="token number">116</span>     <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">464</span>
-<span class="token number">1</span>       <span class="token number">1</span>                                                               <span class="token number">2</span>
-
-<span class="token number">0</span>       <span class="token number">1</span>       <span class="token number">2</span>       <span class="token number">3</span>       <span class="token number">4</span>       <span class="token number">5</span>       <span class="token number">6</span>       <span class="token number">7</span>       <span class="token number">8</span>       <span class="token number">9</span>
----------------------------------------------------------------------------
-<span class="token number">288</span>     <span class="token number">116</span>     <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">493</span>     <span class="token number">464</span>
-<span class="token number">1</span>       <span class="token number">1</span>                                                       <span class="token number">2</span>       <span class="token number">2</span>
-
-<span class="token number">0</span>       <span class="token number">1</span>       <span class="token number">2</span>       <span class="token number">3</span>       <span class="token number">4</span>       <span class="token number">5</span>       <span class="token number">6</span>       <span class="token number">7</span>       <span class="token number">8</span>       <span class="token number">9</span>
----------------------------------------------------------------------------
-<span class="token number">288</span>     <span class="token number">116</span>     <span class="token number">251</span>     <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">493</span>     <span class="token number">464</span>
-<span class="token number">1</span>       <span class="token number">1</span>       <span class="token number">1</span>                                               <span class="token number">2</span>       <span class="token number">2</span>
-
-<span class="token number">0</span>       <span class="token number">1</span>       <span class="token number">2</span>       <span class="token number">3</span>       <span class="token number">4</span>       <span class="token number">5</span>       <span class="token number">6</span>       <span class="token number">7</span>       <span class="token number">8</span>       <span class="token number">9</span>
----------------------------------------------------------------------------
-<span class="token number">288</span>     <span class="token number">116</span>     <span class="token number">251</span>     <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">103</span>     <span class="token number">493</span>     <span class="token number">464</span>
-<span class="token number">1</span>       <span class="token number">1</span>       <span class="token number">1</span>                                       <span class="token number">2</span>       <span class="token number">2</span>       <span class="token number">2</span>
-
-<span class="token number">0</span>       <span class="token number">1</span>       <span class="token number">2</span>       <span class="token number">3</span>       <span class="token number">4</span>       <span class="token number">5</span>       <span class="token number">6</span>       <span class="token number">7</span>       <span class="token number">8</span>       <span class="token number">9</span>
----------------------------------------------------------------------------
-<span class="token number">288</span>     <span class="token number">116</span>     <span class="token number">251</span>     <span class="token number">165</span>     <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">103</span>     <span class="token number">493</span>     <span class="token number">464</span>
-<span class="token number">1</span>       <span class="token number">1</span>       <span class="token number">1</span>       <span class="token number">1</span>                               <span class="token number">2</span>       <span class="token number">2</span>       <span class="token number">2</span>
-
-<span class="token number">0</span>       <span class="token number">1</span>       <span class="token number">2</span>       <span class="token number">3</span>       <span class="token number">4</span>       <span class="token number">5</span>       <span class="token number">6</span>       <span class="token number">7</span>       <span class="token number">8</span>       <span class="token number">9</span>
----------------------------------------------------------------------------
-<span class="token number">288</span>     <span class="token number">116</span>     <span class="token number">251</span>     <span class="token number">165</span>     <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">360</span>     <span class="token number">103</span>     <span class="token number">493</span>     <span class="token number">464</span>
-<span class="token number">1</span>       <span class="token number">1</span>       <span class="token number">1</span>       <span class="token number">1</span>                       <span class="token number">2</span>       <span class="token number">2</span>       <span class="token number">2</span>       <span class="token number">2</span>
-
-<span class="token number">0</span>       <span class="token number">1</span>       <span class="token number">2</span>       <span class="token number">3</span>       <span class="token number">4</span>       <span class="token number">5</span>       <span class="token number">6</span>       <span class="token number">7</span>       <span class="token number">8</span>       <span class="token number">9</span>
----------------------------------------------------------------------------
-<span class="token number">288</span>     <span class="token number">116</span>     <span class="token number">251</span>     <span class="token number">165</span>     <span class="token number">224</span>     <span class="token number">0</span>       <span class="token number">360</span>     <span class="token number">103</span>     <span class="token number">493</span>     <span class="token number">464</span>
-<span class="token number">1</span>       <span class="token number">1</span>       <span class="token number">1</span>       <span class="token number">1</span>       <span class="token number">1</span>               <span class="token number">2</span>       <span class="token number">2</span>       <span class="token number">2</span>       <span class="token number">2</span>
-
-<span class="token number">0</span>       <span class="token number">1</span>       <span class="token number">2</span>       <span class="token number">3</span>       <span class="token number">4</span>       <span class="token number">5</span>       <span class="token number">6</span>       <span class="token number">7</span>       <span class="token number">8</span>       <span class="token number">9</span>
----------------------------------------------------------------------------
-<span class="token number">288</span>     <span class="token number">116</span>     <span class="token number">251</span>     <span class="token number">165</span>     <span class="token number">224</span>     <span class="token number">433</span>     <span class="token number">360</span>     <span class="token number">103</span>     <span class="token number">493</span>     <span class="token number">464</span>
-<span class="token number">1</span>       <span class="token number">1</span>       <span class="token number">1</span>       <span class="token number">1</span>       <span class="token number">1</span>       <span class="token number">2</span>       <span class="token number">2</span>       <span class="token number">2</span>       <span class="token number">2</span>       <span class="token number">2</span>
-</code></pre><div style="page-break-after:always;"></div>
-<h2 id="12-clase-pspactividadesu3a12_controlador">12. Clase psp.actividades.U3A12_Controlador </h2>
 <div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>La actividad 12 se hace a partir de la actividad <code>psp.actividades.U2A14_Controlador</code> que os he dejado como solución del tema 2.</p>
-<p>Debéis ver qué cambios son necesarios para cambiar el funcionamiento y pasar del uso de procesos al uso de hilos y adaptarla a la nueva actividad.</p>
+<p class="admonition-title">Productor-Consumidor</p>
+<p>Es importante que identifiques si hay productor y/o consumidor, y quién realiza cada rol en este ejercicio. No sólo eso, sino qué información tienen que compartir y cómo se va a compartir.</p>
+<p>Además, tendremos que controlar el acceso a la información compartida para que no haya problemas de concurrencia.</p>
+<p>Esto nos dará pistas de qué clases, métodos y estructuras de datos podemos usar para compartir la información y controlar el flujo de ejecución del programa.</p>
+<p>El número de jugadores se recibe como argumento de la clase principal.</p>
 </div>
-<p>Haz un programa que calcule</p>
-<p><img src="./Soluciones/Sumatorio.png" alt="Sumatorio de raíces cuadradas"></p>
-<p>El programa controlador recibe como parámetro el valor de n y, de forma opcional, también se le puede pasar la cantidad de operaciones a realizar por cada hilo (por defecto, si no se indica nada, 100).</p>
-<p>Va a dividir equitativamente el reparto entre (n/100)+1 hilos.</p>
+<p>Como extra, se pueden implementar mejoras al programa:</p>
 <ul>
-<li>Al primer hilo le asignará el cálculo desde 0 hasta 99,</li>
-<li>al 2º desde 100 hasta 199,</li>
-<li>al 3º desde 200 hasta 299,</li>
-<li>...</li>
-<li>al último le asignará los que queden hasta n.</li>
+<li>Evitar que se digan números que ya ha dicho otro jugador</li>
+<li>Programar el juego en Swing</li>
 </ul>
-<p>El programa recogerá el resultado que calcule cada hilo, los irá sumando y, cuando todos hayan acabado, mostrará el resultado final.</p>
-<blockquote>
-<p>La suma total de las raíces cuadradas desde 0 hasta 10875 es: 756105.62767</p>
-</blockquote>
-<div class="admonition question">
-<p class="admonition-title">Recuperar el resultado</p>
-<p>¿Qué debe hacer el hilo principal para obtener el resultado de cada hilo?</p>
-</div>
-<h3 id="clase-pspactividadesu3a12_calculador-hereda-de-thread">Clase psp.actividades.U3A12_Calculador (hereda de Thread) </h3>
-<p>Esta clase recibirá como argumentos el número de hilo que es, el valor inferior del cálculo que debe realizar y el valor superior.</p>
-<p>Con el número de hilo, se pondrá a sí misma un nombre (Calculador-X)</p>
-<div class="admonition question">
-<p class="admonition-title">Comunicación entre hilos</p>
-<p>¿Cómo podemos hacer que el hilo devuelva la información al hilo principal?</p>
-</div>
-<p>Calculad el tiempo que tarda en realizar los cálculos variando la cantidad de hilos creados.</p>
-<div class="admonition note">
-<p class="admonition-title">Tiempo de ejecución</p>
-<p>Para calcular el tiempo que tarda en ejecutarse un proceso / hilo podemos usar el método System.currentTimeMillis() de la siguiente forma</p>
-<pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token keyword keyword-long">long</span> t_comienzo<span class="token punctuation">,</span> t_fin<span class="token punctuation">;</span>
-t_comienzo <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// Código que queremos monitorizar</span>
-t_fin <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"El proceso ha tardado "</span> <span class="token operator">+</span> <span class="token punctuation">(</span>t_fin <span class="token operator">-</span> t_comienzo<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"ms"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-</code></pre></div>
 <div style="page-break-after:always;"></div>
-<h2 id="13-clase-pspactividadesu3a13_contador">13. Clase psp.actividades.U3A13_Contador </h2>
-<p>Implementa un programa que reciba como argumentos una lista de ficheros de texto y que cuente el número de caracteres, palabras y líneas que hay en cada uno.</p>
-<p>Para hacerlo, creará un hilo por cada archivo recibido que se encargará de procesar la información del archivo que reciba como parámetro.</p>
-<p>Junto con la información obtenida, cada hilo mostrará el tiempo que ha tardado en completar la tarea.</p>
-<h2 id="14-clase-pspactividadesu3a14_cronometro">14. Clase psp.actividades.U3A14_Cronometro </h2>
-<p>Crea una aplicación gráfica con Swing que simule un cronómetro.</p>
-<p>En el diseño tendremos en la parte central de la ventana unas etiquetas representando hh:mm:ss</p>
-<p>Tendremos un botón <code>Start / Resume</code> que comenzará / reanudará la cuenta del cronómetro. El valor mostrado se actualizará cada segundo.</p>
-<p>Piensa que no podemos dejar al proceso principal bloqueado, por lo que <em>alguien</em> tendrá que encargarse de actualizar el valor cada segundo.</p>
-<p>Tendremos un botón <code>Pause / Stop</code> que detendrá la cuenta del cronómetro pero mantendrá el valor actual. Si se vuelve a pulsar una segunda vez el botón reseteará el valor del cronómetro al valor inicial 00:00:00</p>
-<p>Un flujo de ejemplo del programa podría ser este</p>
+<h2 id="2-clase-pspproyectosu3p2_ascensor">2. Clase psp.proyectos.U3P2_Ascensor </h2>
+<p>En este ejercicio deberás simular el funcionamiento de un ascensor de un edificio de 8 plantas que dará servicio a distintos vecinos.</p>
+<p>Por las restricciones COVID, el ascensor sólo va a poder llevar a un único vecino a la vez.</p>
+<p>Sobre el ascensor, es importante conocer</p>
+<ul>
+<li>Si el ascensor está parado o en movimiento. Ten en cuenta que cuando alguien llama al ascensor desde un piso, el ascensor acudirá cuando pueda. Si el ascensor está parado, irá inmediatamente. En cambio, si el ascensor está en movimiento, acudirá cuando termine de subir o bajar como tenía previsto.</li>
+<li>El piso en el que se encuentra el ascensor.</li>
+<li>Que el ascensor iniciará la subida o bajada, cuando esté parado, pero no cambiará su destino mientras esté en movimiento. Entre piso y piso el ascensor tardará 300ms.</li>
+<li>Dada la posición del ascensor y el piso desde el que los usuarios hilos le llaman, controlar si el ascensor sube o baja. Ten en cuenta que varios usuarios pueden llamar al ascensor a la vez desde distintos sitios, pero el ascensor solo cambiará su movimiento cuando esté parado. (No vamos a gestionar un algoritmo de proximidad).</li>
+</ul>
+<p>Se deberá mostrar un mensaje que indique en qué piso se encuentra el ascensor en cada momento, qué dirección lleva y si lleva a algún usuario. Por ejemplo:</p>
 <blockquote>
-<p>Cronómetro a 00:00:00 → Start / Resume → Empieza cuenta → Pause / Stop →<br>
-Cronómetro a 00:00:37 → Start / Resume → Reanuda cuenta → Pause / Stop →<br>
-Cronómetro a 00:01:05 → Pause / Stop → Cronómetro a 00:00:00</p>
+<p><strong>Ascensor en el piso 2. Subiendo hasta el piso 8 (Juan)</strong>    --&gt; Está llevando a un vecino<br>
+<strong>Ascensor en el piso 7. Bajando hasta el piso 4 ( )</strong>        --&gt; Va a recoger a algún vecino</p>
 </blockquote>
+<p>Cuando el ascensor llegue al  destino también se deberá mostrar un mensaje indicando el nombre del usuario que ha llevado a su piso. Por ejemplo:</p>
+<blockquote>
+<p><strong>Ascensor parado en piso 8. Dejando a Pepe</strong>              --&gt; Ha llegado al destino con un vecino<br>
+<strong>Ascensor parado en piso 4. Recogiendo a Juan</strong>           --&gt; Ha llegado al origen a por un vecino</p>
+</blockquote>
+<p>Los vecinos comparten el ascensor. Estos llamarán al ascensor para que los recoja en un piso y los deje en otro. Por tanto un vecino llamará al ascensor para ir de un piso a otro. Cuando un vecino llame al ascensor se mostrará un mensaje advirtiendo de esta circunstancia. Por ejemplo:</p>
+<blockquote>
+<p><strong>Manolita está esperando en el piso 2 para subir al piso 5</strong><br>
+<strong>Juan está esperando en el piso 3 para bajar al piso 2</strong></p>
+</blockquote>
+<p>En nuestra simulación, cada vecino llamará al ascensor varias veces (defínelo como constante en el código, inicialmente con valor 3) para ver el comportamiento del ascensor cuando le llaman de forma simultánea.</p>
+<p>Entre llamadas el ascensor los vecinos dejarán pasar 1 segundo.</p>
+<p>Para realizar las pruebas vamos a tener a 3 vecinos “Manolita”, “Pepe” y “Juan”. Cada uno de los cuales se encontrará inicialmente en un determinado piso (al azar) e irán realizando llamadas para ir a diferentes pisos del edificio (también al azar). Ten en cuenta que el edificio consta de los pisos 0 al 8.</p>
+<div style="page-break-after:always;"></div>
+<h2 id="3-clase-pspproyectosu3p3_galaxia">3. Clase psp.proyectos.U3P3_Galaxia </h2>
+<p>La galaxia BOREAX está formada por un conjunto de varias estrellas, nubes de gas, planetas y polvo cósmico. Dos de estos planetas, PHINEAS y FERB están comunicados a través de un pasadizo interplanetario, construido por los primeros seres que habitaron estos planetas. Las criaturas de estos reinos planetarios se desplazan a través de naves.</p>
+<p>El pasadizo es muy estrecho y no permite el cruce de dos naves que circulen en sentidos contrarios. No es posible saber, debido a la insuficiente tecnología, si hay una nave empezando a cruzar el pasadizo desde el otro planeta.</p>
+<p>Se han instalado cuatro sensores y dos barreras. Dos sensores indican la llegada de aeronaves en cada dirección, emitiendo una señal por cada nave que pasa, y los otros dos indican las salidas respectivas del pasadizo. Las barreras bloquean las entradas al pasadizo, y cuando reciben una señal se levantan para permitir el paso de una aeronave (y sólo una); acto seguido se vuelven a cerrar.</p>
+<p>Diseña un programa concurrente que simule el sistema descrito, incluyendo un proceso que emplee las señales recibidas de los sensores para emitir señales apropiadas a las barreras, de manera que:</p>
+<ul>
+<li>Nunca crucen simultáneamente el pasadizo interplanetario dos aeronaves en sentidos opuestos.</li>
+<li>Ninguna aeronave espere eternamente a pasar.</li>
+<li>Todas las naves pasen lo más pronto posible salvo violación de las norma 1 o 2.</li>
+<li>Las señales de los sensores han de atenderse inmediatamente (o al menos lo más pronto posible), para no “perder” el paso de ninguna nave.</li>
+</ul>
+<p>Podemos resolver el problema modelizando el pasadizo interplanetario mediante un monitor, de manera que aseguremos que sus métodos sean ejecutados en exclusión mutua y pueda ser utilizado sin peligro por más de un hilo (aeronave) en ejecución.</p>
+<p>Ten en cuenta que las naves de un sentido deben esperar a un objeto y los del otro sentido a otro diferente. No tiene sentido poner a todas las aeronaves, sea cual sea su sentido, esperando en una misma cola para un único objeto.</p>
+<p>Podemos construir un objeto monitor (pasadizo) principal al que le pasemos dos auxiliares, uno para cada sentido. De esta forma podemos abstraernos desde la clase principal de esta peculiaridad en la implementación, y será el monitor principal el que se encargará de que todo funcione correctamente.</p>
+<p>Por otro lado, ten en cuenta que la ocupación máxima del pasadizo es de 5 naves y el número máximo de naves que pueden pasar seguidas es de 3.</p>
+<div style="page-break-after:always;"></div>
+<h2 id="4-clase-pspproyectosu3p4_carrera">4. Clase psp.proyectos.U3P4_Carrera </h2>
+<p>Crea una aplicación gráfica con Swing que simule una carrera entre 5 atletas.</p>
+<p>El avance de cada corredor se mostrará con una barra de progreso (valor máximo 1000).</p>
+<p>Los atletas irán avanzando en orden, es decir, uno detrás de otro, un número aleatorio entre 1 y 10, dejando 100ms entre movimientos.</p>
+<p>Cuando un corredor llegue a la meta, todos los demás deben dejar de correr.</p>
+<p>En el diseño tendremos además de las barras de progreso, controles para mostrar la información de cada corredor (avance total y último avance) junto con un botón que servirá para comenzar la carrera.</p>
+<p>También tendremos algún control que, una vez finalizada la carrera nos muestre cuál de los corredores ha sido el ganador.</p>
 
       </div>
       
