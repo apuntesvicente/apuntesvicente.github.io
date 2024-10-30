@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>SAD - U2.2. Criptografía Simétrica</title>
+      <title>SAD - U2.3. Funciones resumen</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -88,66 +88,69 @@
     
       <div class="crossnote markdown-preview  ">
       
-<h1 id="sad---u22-criptografía-simétrica">SAD - U2.2. Criptografía Simétrica </h1>
-<p><a href="./U2_2_Criptograf%C3%ADaSim%C3%A9trica.pdf">Descargar estos apuntes</a></p>
+<h1 id="sad---u23-funciones-resumen">SAD - U2.3. Funciones Resumen </h1>
+<p><a href="./U2_3_FuncionesResumen.pdf">Descargar estos apuntes</a></p>
 <h2 id="índice">Índice </h2>
 
 <div class="md-toc">
-<details style="padding:0;;padding-left:0px;" open="">
-        <summary class="md-toc-link-wrapper">
-          <a href="#1-criptografía-simétrica" class="md-toc-link"><ol>
-<li>Criptografía Simétrica</li>
+<div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#1-funciones-hash" class="md-toc-link">
+            <ol>
+<li>Funciones Hash</li>
 </ol>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#12-aplicaciones-de-funciones-hash-criptográficas" class="md-toc-link">
+            <p>1.2 Aplicaciones de funciones hash criptográficas</p>
+
+          </a></div><details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#13-funciones-hash-más-comunes" class="md-toc-link"><p>1.3 Funciones hash más comunes</p>
 </a>
           </summary>
         <div>
           <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#11-criptografía-simétrica-de-flujo" class="md-toc-link">
-            <p>1.1. Criptografía simétrica de flujo</p>
+          <a href="#131-md5-message-digest-algorithm-5" class="md-toc-link">
+            <p>1.3.1. MD5 (Message Digest Algorithm 5)</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#12-criptografía-simétrica-de-bloque" class="md-toc-link">
-            <p>1.2. Criptografía simétrica de bloque</p>
+          <a href="#132-sha-1-secure-hash-algorithm-1" class="md-toc-link">
+            <p>1.3.2. SHA-1 (Secure Hash Algorithm 1)</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#ecb-electronic-code-book" class="md-toc-link">
-            <p>ECB (Electronic Code Book)</p>
+          <a href="#133-sha-2-secure-hash-algorithm-256" class="md-toc-link">
+            <p>1.3.3. SHA-2 (Secure Hash Algorithm 256)</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#cbc-cipher-block-chaining" class="md-toc-link">
-            <p>CBC (Cipher Block Chaining)</p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#cfb-cipher-feedback" class="md-toc-link">
-            <p>CFB (Cipher Feedback)</p>
+          <a href="#134-sha-3-secure-hash-algorithm-3" class="md-toc-link">
+            <p>1.3.4. SHA-3 (Secure Hash Algorithm 3)</p>
 
           </a></div>
         </div>
       </details>
-    <details style="padding:0;;padding-left:0px;" open="">
-        <summary class="md-toc-link-wrapper">
-          <a href="#2-criptografía-simétrica-con-openssl" class="md-toc-link"><ol start="2">
-<li>Criptografía simétrica con OpenSSL</li>
-</ol>
-</a>
-          </summary>
-        <div>
-          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#21-instalación-de-openssl" class="md-toc-link">
-            <p>2.1. Instalación de OpenSSL</p>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#135-hmac-hash-based-message-authentication-code" class="md-toc-link">
+            <p>1.3.5 HMAC (Hash-based Message Authentication Code)</p>
 
-          </a></div>
-        </div>
-      </details>
-    <details style="padding:0;;padding-left:0px;" open="">
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#2-funciones-hash-con-openssl" class="md-toc-link">
+            <ol start="2">
+<li>Funciones HASH con OpenSSL</li>
+</ol>
+
+          </a></div><details style="padding:0;;padding-left:0px;" open="">
         <summary class="md-toc-link-wrapper">
-          <a href="#22-uso-de-openssl-para-cifrado-simétrico" class="md-toc-link"><p>2.2. Uso de OpenSSL para cifrado simétrico</p>
+          <a href="#22-uso-de-openssl-para-funciones-resumen" class="md-toc-link"><p>2.2. Uso de OpenSSL para funciones resumen</p>
 </a>
           </summary>
         <div>
           <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#221-cifrado-simétrico-de-bloque" class="md-toc-link">
-            <p>2.2.1. Cifrado simétrico de bloque</p>
+          <a href="#221-cálculo-de-resúmenes" class="md-toc-link">
+            <p>2.2.1. Cálculo de resúmenes</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#222-calculo-de-resúmenes-hmac" class="md-toc-link">
+            <p>2.2.2. Calculo de resúmenes HMAC</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
           <a href="#222-cifrado-simétrico-de-flujo" class="md-toc-link">
@@ -159,296 +162,123 @@
     
 </div>
 <div style="\&quot;page-break-after:always;\&quot;"></div>
-<h2 id="1-criptografía-simétrica">1. Criptografía Simétrica </h2>
+<h2 id="1-funciones-hash">1. Funciones Hash </h2>
 <div style="display: flex; justify-content: center; align-items: center; margin-top: 15px; margin-bottom: 15px">
-    <img height="400" src="https://securitcrs.wordpress.com/wp-content/uploads/2015/01/clave-simc3a9trica1.jpg">
+    <img height="300" src="recursos/1366_2000.webp">
 </div>
-<p>Los algoritmos de <strong>cifrado simétrico, o clave privada</strong>, utilizan la misma clave para encriptar y desencriptar datos. Los algoritmos implementan el conjunto de las operaciones matemáticas necesarias para encriptar un texto plano, o desencriptar un texto cifrado, utilizando una clave simétrica.</p>
-<p>Si bien las implementaciones de software piden una contraseña de cifrado, no se utiliza dicha contraseña directamente. Generan una clave de cifrado de determinada cantidad de bits utilizando de base la contraseña provista, y una función de derivación de clave.</p>
-<p>Así, si <code>Ana</code> quiere encriptar un dato:</p>
-<ol>
-<li>Introduce su contraseña.</li>
-<li>Se crea una clave de cifrado derivada de dicha contraseña.</li>
-<li>Se usa dicha clave para encriptar los datos.</li>
-<li><code>Ana</code> envía los datos cifrados a Bob.</li>
-<li><code>Bob</code> toma el dato cifrado, introduce la misma contraseña.</li>
-<li>La función de derivación de clave genere la misma clave que <code>Ana</code>.</li>
-<li>Se utiliza esta clave en el algoritmo para desencriptar el dato.</li>
-</ol>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Ahora bien, las primitivas de encriptación y de desencriptación pueden o no ser las mismas.</p>
-<p>Esto significa que el algoritmo de encriptación puede ser diferente al de desencriptación, pero ambos deben ser capaces de trabajar con la misma clave.</p>
-</div>
+<p>Una <strong>función hash criptográfica</strong> es un tipo especializado de <code>función resumen</code>  diseñada para su uso en diversas aplicaciones criptográficas, incluidas firmas digitales, códigos de autenticación de mensajes y otras formas de autenticación. Estas funciones desempeñan un papel crucial en las prácticas modernas de seguridad de la información, particularmente en protocolos como SSL/TLS.</p>
+<blockquote>
+<p>Es una función matemática unidireccional que opera sobre un documento digital, secuencia digital numérica, etc., todos de gran tamaño medido en bits, y brinda como resultado un valor más pequeño y de <strong>tamaño fijo, cualquiera sea su entrada</strong>, que se utiliza en aplicaciones criptográficas que protegen la integridad de la información.</p>
+</blockquote>
+<p>Las funciones hash criptográficas poseen varias propiedades esenciales que las distinguen de otras funciones hash:</p>
 <table>
 <thead>
 <tr>
-<th>Ventajas</th>
-<th>Inconvenientes</th>
+<th>Propiedad</th>
+<th>Descripción</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Son rápidos y eficientes.</td>
-<td>Exigen una clave diferente por cada pareja de interlocutores (el espacio de claves se incrementa enormemente conforme aumentan los interlocutores).</td>
+<td><strong>Determinista</strong></td>
+<td>El mismo mensaje de entrada siempre produce el mismo valor hash.</td>
 </tr>
 <tr>
-<td>Resultan apropiados para el cifrado de grandes volúmenes de datos.</td>
-<td>Requiere un control estricto sobre el intercambio seguro de la clave entre el emisor y el receptor.</td>
+<td><strong>Eficiencia</strong></td>
+<td>El valor hash se calcula rápidamente, independientemente del tamaño de entrada.</td>
 </tr>
 <tr>
-<td></td>
-<td>Son vulnerables a ataques por fuerza bruta, por lo que la fortaleza de la clave es fundamental.</td>
+<td><strong>Resistencia a la colisión</strong></td>
+<td>Es computacionalmente inviable encontrar dos mensajes diferentes que produzcan el mismo valor hash. No es imposible, pero sí improbable.</td>
+</tr>
+<tr>
+<td><strong>Resistencia a la preimagen</strong></td>
+<td>Dado un valor hash, no es factible crear un mensaje que produzca ese hash específico.</td>
+</tr>
+<tr>
+<td><strong>Efecto avalancha / Difusión</strong></td>
+<td>Pequeños cambios en el mensaje de entrada dan como resultado cambios significativos y aparentemente no correlacionados en el hash de salida.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="11-criptografía-simétrica-de-flujo">1.1. Criptografía simétrica de flujo </h3>
-<p>Supongamos que queremos cifrar la palabra <code>balmis</code> utilizando la clave <code>0123</code>. Para ello necesitamos un algoritmo de cifrado. En este caso, supongamos que el algoritmo de cifrado, es decir, el conjunto de tareas que toma un texto plano de entrada, y una clave simétrica, y devuelve un texto cifrado, es la realización de la operación XOR entre los bits del texto plano y de la clave.</p>
-<p>En nuestro caso, si traducimos los caracteres ASCII de la palabra <code>balmis</code> a su representación hexadecimal para facilitar la operación de bits, obtenemos lo siguiente:</p>
-<pre data-role="codeBlock" data-info="plaintext" class="language-plaintext plaintext"><code>ASCII:  b   a   l   m   i   s
-Hexa:   62  61  6C  6D  69  73
-</code></pre><p>Si hacemos lo mismo con la clave:</p>
-<pre data-role="codeBlock" data-info="plaintext" class="language-plaintext plaintext"><code>ASCII:  0   1   2   3
-Hexa:   30  31  32  33
-</code></pre><p>Ahora, procedemos a hacer el XOR entre cada valor hexadecimal.<br>
-Como la clave es más corta que la cadena, vamos a repetirla hasta completar el texto plano:</p>
-<pre data-role="codeBlock" data-info="plaintext" class="language-plaintext plaintext"><code>Texto plano:  balmis
-Hexa balmis:        62  61  6C  6D  69  73
-Hexa key "0123":    30  31  32  33  30  31
-Resultado XOR:      52  50  5E  5E  59  42
-ASCII cifrado:       R   P   ^   ^   Y   B
-</code></pre><p>En este caso, la cadena cifrada que le envía <code>Ana</code> a <code>Bob</code> sería <code>RP^^YB</code>.</p>
-<p>Ahora, veamos cómo descifrar el texto y obtener el mensaje original.</p>
-<p>En este caso particular, el algoritmo de cifrado, XOR, es simétrica (no confundir con el concepto de criptografía simétrica en general), por lo que utilizaremos el mismo algoritmo para descifrar el contenido. Hagamos la prueba:</p>
-<pre data-role="codeBlock" data-info="plaintext" class="language-plaintext plaintext"><code>Texto cifrado:      R   P   ^   ^   Y   B
-Hexa cifrado:       52  50  5E  5E  59  42
-Hexa key "0123":    30  31  32  33  30  31
-Resultado XOR:      62  61  6C  6D  69  73
-ASCII descifrado:   b   a   l   m   i   s
-</code></pre><p>A este tipo de algoritmos, que cifran pequeñas porciones de dato, como ser bytes, o words, se los denomina <strong>cifradores de flujo o de stream</strong>.</p>
-<p>Entre los <code>algoritmos de cifrado simétrico de stream</code> más conocidos se encuentran <strong>RC4, y Salsa20 y Chacha</strong>. En general se trata de algoritmos más eficientes que los de bloque. Igualmente, por su forma de trabajo, suelen ser más propensos a ataques, por ejemplo, RC4 hoy se considera obsoleto.</p>
-<div class="admonition info">
-<p class="admonition-title">Función simétrica</p>
-<p>Hemos utilizado la <strong>misma clave para cifrar</strong> el texto plano <strong>y para descifrar</strong> el texto cifrado.</p>
-<p>Además, las primitivas de encriptación y desencriptación de este algoritmo son la misma: la operación XOR.<br>
-XOR es una función simétrica <em>(no confundir con el concepto de criptografía simétrica en general)</em>, por lo que permite utilizar el mismo algoritmo para las dos operaciones.</p>
+<div class="admonition danger">
+<p class="admonition-title">No es cifrado</p>
+<p>Las funciones hash criptográficas <strong>no son algoritmos de cifrado</strong>, ya que no se pueden deshacer. Es decir, no se puede recuperar el mensaje original a partir del valor hash.</p>
+<p><strong>En cambio, se utilizan para verificar la integridad de los datos y garantizar que no se hayan modificado.</strong></p>
 </div>
-<h3 id="12-criptografía-simétrica-de-bloque">1.2. Criptografía simétrica de bloque </h3>
-<p>Existen otro tipo de cifradores simétricos que, en lugar de encriptar un flujo continuo de bits, dividen los datos en bloques de igual tamaño y los encriptan obteniendo bloques cifrados que luego se utilizarán para componer el texto cifrado.</p>
-<p>En este caso el texto cifrado se genera encriptando bloques de tamaño fijo del texto plano. Los tamaños comunes de bloque son 128b, 256b, 384b, y 512b.</p>
-<p>Estos cifradores generan, a partir de una contraseña y una función de derivación de clave, una clave del tamaño necesario para encriptar un bloque de datos. El tamaño de la clave, así, depende del tamaño del bloque seleccionado.</p>
-<p><img src="https://juncotic.com/wp-content/uploads/2022/09/bloques-2.jpg" alt="Criptosistema"></p>
-<blockquote>
-<p>Donde cada bloque de texto plano (M1, M2, …) genera texto cifrado (C1, C2, …) mediante el uso de un algoritmo de encriptación (E) y una clave simétrica. En la imagen de la derecha podemos ver el proceso con el algoritmo de desencriptación (D).</p>
-</blockquote>
-<p>Los <code>algoritmos de cifrado simétrico de bloque</code> más conocidos son <strong>AES, DES, 3DES, Twofish, y Blowfish</strong>.</p>
+<h2 id="12-aplicaciones-de-funciones-hash-criptográficas">1.2 Aplicaciones de funciones hash criptográficas </h2>
+<p>Las funciones hash criptográficas tienen numerosas aplicaciones en ciberseguridad:</p>
 <ul>
-<li>AES (Advanced Encryption Standard) es un estándar de criptografía industrial. Ofrece tres tipos de longitudes de claves: 128, 192 y 256 bits.</li>
-<li>Camellia Desarrollado en Japón, crea claves de 128, 192 y 256 bits. Es utilizado por TLS.</li>
-<li>Triple DES Diseñado para agrandar el largo de la clave sin necesidad de cambiar el algoritmo Data Encryption Standard (DES), tarjetas de crédito y otros medios de pago electrónicos tienen como estándar el algoritmo Triple DES pero está desapareciendo lentamente, siendo reemplazado por AES que es hasta 6 veces más rápido.</li>
-<li>Twofish El tamaño de bloque en Twofish es de 128 bits y el tamaño de clave puede llegar hasta 256 bits. Es rápido, flexible y eficiente y es utilizado en las herramientas de gestión de contraseñas y sistemas de pago seguros.</li>
+<li>Firmas digitales: se utiliza para crear un resumen de tamaño fijo de un mensaje, que luego se cifra con la clave privada del remitente.</li>
+<li>Verificación de la integridad del archivo: Los sitios web suelen publicar valores hash para archivos descargables, lo que permite a los usuarios verificar la integridad del archivo después de la descarga.</li>
+<li>Contraseña de Seguridad: Las contraseñas normalmente se almacenan como hashes en lugar de texto sin formato, lo que mejora la seguridad.</li>
+<li>Tecnología Blockchain: Las criptomonedas como Bitcoin utilizan funciones hash criptográficas (por ejemplo, SHA-256) para mantener la integridad y seguridad de los registros de transacciones.</li>
+<li>SSL /TLS Protocolos: Estos protocolos de comunicación seguros dependen en gran medida de funciones hash criptográficas para diversos mecanismos de seguridad.</li>
 </ul>
-<p>Estos cifradores suelen <strong>encadenar</strong> las operaciones de cifrado/descifrado de bloques de tal forma que se dificulte el trabajo a un atacante. Esta manera de encadenamiento se denomina <strong>modo de operación</strong> del algoritmo.</p>
-<p>Cada uno de estos modos poseen sus ventajas y desventajas, algunos son paralelizables mientras que otros no, algunos carecen de difusión (propiedad criptográfica) y otros no, etc.</p>
-<h3 id="ecb-electronic-code-book">ECB (Electronic Code Book) </h3>
-<p>En este modo, cada bloque de texto plano se encripta de forma independiente. Es decir, el primer bloque de texto plano se encripta con la clave y se obtiene un bloque de texto cifrado, el segundo bloque de texto plano se encripta con la misma clave y se obtiene un segundo bloque de texto cifrado, y así sucesivamente.</p>
-<p>Este modo es muy sencillo de implementar, pero presenta un problema: si dos bloques de texto plano son iguales, los bloques de texto cifrado resultantes también lo serán. Esto puede ser aprovechado por un atacante para obtener información sobre el texto plano.</p>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/ECB_encryption.svg/800px-ECB_encryption.svg.png" alt="ECB"></p>
-<span style="align: center;">
-<table align="center">
-<tbody><tr>
-<td>
-<div align="center">
-    <img height="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/196px-Tux.svg.png">
-</div>
-</td>
-<td>
-<div align="center">
-    <img height="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Tux_encrypted_ecb.png/196px-Tux_encrypted_ecb.png">
-</div>
-</td>
-<td>
-<div align="center">
-    <img height="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Tux_encrypted_ctr.png/196px-Tux_encrypted_ctr.png">
-</div>
-</td>
-</tr>
-</tbody></table>
-</span>
-<div class="admonition note">
-<p class="admonition-title">Difusión</p>
-<p>Se dice que este método carece de <strong>difusión</strong>. La difusión es una propiedad de los algoritmos criptográficos que implica modificar la mayor cantidad posible de bits del texto cifrado al cambiar un bit del texto plano.</p>
-</div>
-<h3 id="cbc-cipher-block-chaining">CBC (Cipher Block Chaining) </h3>
-<p>En este modo, cada bloque de texto plano se encripta con el bloque de texto cifrado anterior. Es decir, el primer bloque de texto plano se encripta con la clave y se obtiene un bloque de texto cifrado, el segundo bloque de texto plano se encripta con la clave y se obtiene un segundo bloque de texto cifrado, pero antes de encriptar este segundo bloque, se realiza una operación XOR entre el segundo bloque de texto plano y el primer bloque de texto cifrado.</p>
-<p>Este modo es más seguro que el modo ECB, ya que no se pueden obtener patrones en el texto cifrado. Además, es más difícil de paralelizar, lo que dificulta el trabajo de un atacante.</p>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/CBC_encryption.svg/800px-CBC_encryption.svg.png" alt="CBC"></p>
-<div class="admonition note">
-<p class="admonition-title">Difusión vs Paralelización</p>
-<p>La ventaja de este modo (y de todos los demás) es que genera diferentes bloques cifrados para dos bloques de texto plano iguales, lo que incrementa la difusión del algoritmo.</p>
-<p>Como desventaja, la encriptación en este modo no es paralelizable, por lo que el procesamiento es secuencial.</p>
-</div>
-<h3 id="cfb-cipher-feedback">CFB (Cipher Feedback) </h3>
-<p>En este modo, el cifrador se utiliza como un generador de secuencia de bits. El cifrador se inicializa con la clave y se encripta un bloque de texto plano. El resultado se encripta de nuevo con la clave y se obtiene un bloque de texto cifrado. Este bloque de texto cifrado se utiliza para encriptar el siguiente bloque de texto plano.</p>
-<p>Este modo es muy similar al modo CBC, pero en lugar de encriptar el bloque de texto plano, se encripta el bloque de texto cifrado anterior.</p>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/CFB_encryption.svg/800px-CFB_encryption.svg.png" alt="CFB"></p>
-<div class="admonition note">
-<p class="admonition-title">Otros modos</p>
-<p>Existen otros modos de operación, como <strong>OFB (Output Feedback)</strong>, <strong>CTR (Counter)</strong>, <strong>GCM (Galois/Counter Mode)</strong>, <strong>XTS (XEX-based tweaked-codebook mode with ciphertext stealing)</strong>, entre otros.</p>
-<p>Cada uno de estos modos posee sus ventajas y desventajas, algunos son paralelizables mientras que otros no, algunos carecen de difusión (propiedad criptográfica) y otros no, etc.</p>
-</div>
-<p>Podemos ver un extracto de los modos de operación de los cifradores de openssl en la siguiente imagen:</p>
-<p><img src="recursos/ssl_ciphers.png" alt="Modos de operación"></p>
-<div class="admonition question">
-<p class="admonition-title">Cifradores simétricos</p>
-<p><strong>Actividad U2.1</strong>: Calcula cuantas claves necesitan intercambiar un grupo de cuatro personas que se quieran enviar correos electrónicos cifrados entre ellas, tanto para el caso de utilizar criptografía simétrica como asimétrica. ¿Y si el grupo lo conforman seis personas? ¿Y si son mil?</p>
-<p><strong>Actividad U2.2</strong>: Investiga sobre los cifradores simétricos más utilizados en la actualidad. ¿Qué algoritmos son los más seguros? ¿Qué algoritmos son los más rápidos? ¿Qué algoritmos son los más eficientes? ¿Qué tamaño de clave permite cada uno de ellos? ¿Cuál es su principal uso?</p>
-<p>Crea una tabla comparativa con los resultados obtenidos.</p>
-</div>
-<h2 id="2-criptografía-simétrica-con-openssl">2. Criptografía simétrica con OpenSSL </h2>
+<h2 id="13-funciones-hash-más-comunes">1.3 Funciones hash más comunes </h2>
+<h3 id="131-md5-message-digest-algorithm-5">1.3.1. MD5 (Message Digest Algorithm 5) </h3>
+<p>MD5 es una función hash criptográfica que produce un valor hash de 128 bits. Aunque fue ampliamente utilizado en el pasado, MD5 se considera obsoleto y se ha demostrado que es vulnerable a colisiones, lo que significa que dos mensajes diferentes pueden producir el mismo valor hash.</p>
+<h3 id="132-sha-1-secure-hash-algorithm-1">1.3.2. SHA-1 (Secure Hash Algorithm 1) </h3>
+<p>SHA-1 es una función hash criptográfica que produce un valor hash de 160 bits. Al igual que MD5, SHA-1 se considera obsoleto y vulnerable a colisiones.</p>
+<h3 id="133-sha-2-secure-hash-algorithm-256">1.3.3. SHA-2 (Secure Hash Algorithm 256) </h3>
+<p>Una familia de funciones hash que producen resúmenes de varios tamaños: 224, 256, 384 o 512 bits.</p>
+<p>SHA-256 (versión de 256 bits) es la variante más utilizada y produce una salida hexadecimal de 64 caracteres.<br>
+Ampliamente adoptado en protocolos de seguridad como SSL/TLS.</p>
+<h3 id="134-sha-3-secure-hash-algorithm-3">1.3.4. SHA-3 (Secure Hash Algorithm 3) </h3>
+<p>SHA-3 es una función hash criptográfica que produce un valor hash de 224, 256, 384 o 512 bits. Es la última adición a la familia de funciones hash SHA y se considera seguro para su uso en aplicaciones criptográficas.</p>
+<h2 id="135-hmac-hash-based-message-authentication-code">1.3.5 HMAC (Hash-based Message Authentication Code) </h2>
+<p>En criptografía, un <strong>código de autenticación de mensaje (MAC)</strong>, es una información breve <code>(resumen)</code> que se utiliza para autenticar un mensaje; en otras palabras, para confirmar que el mensaje proviene del remitente indicado (su <code>autenticidad</code>) y que el mensaje no haya sido alterado.</p>
+<p>Los valores MAC se calculan mediante la aplicación de una función hash criptográfica con clave secreta K, que sólo conocen el remitente y destinatario, pero no los atacantes. <strong>El valor MAC protege tanto la <strong>integridad</strong> de los datos de un mensaje como su autenticidad</strong>, al permitir que los verificadores (que también poseen la clave secreta) detecten cualquier cambio en el contenido del mensaje.</p>
+<p>Los algoritmos MAC pueden construirse a partir de otras primitivas criptográficas, como las funciones criptográficas hash (como en el caso de HMAC ).</p>
+<p>El código de autenticación de mensaje basado en MAC <code>(HMAC)</code> es un algoritmo de autenticación de mensajes basado en funciones hash criptográficas. Combina un valor hash con una clave secreta para producir un código de autenticación de mensajes que se puede utilizar para verificar la <strong>integridad y la autenticidad</strong> de un mensaje.</p>
+<p>HMAC se utiliza en una variedad de aplicaciones de seguridad, incluidos protocolos de autenticación como OAuth y TLS.</p>
+<h2 id="2-funciones-hash-con-openssl">2. Funciones HASH con OpenSSL </h2>
 <p>OpenSSL es una biblioteca de software que implementa protocolos y algoritmos de cifrado seguros. Es ampliamente utilizada en aplicaciones de software para garantizar la seguridad de la información.</p>
-<h3 id="21-instalación-de-openssl">2.1. Instalación de OpenSSL </h3>
-<h4 id="211-instalación-en-windows">2.1.1. Instalación en Windows </h4>
-<p>WINDOWS<br>
-Para la instalación de OpenSSL en Windows, se debe de realizar correctamente los pasos que se describen a continuación. Además, al instalar OpenSSL puede que el sistema requiera usar Microsoft Visual C++ [<a href="https://support.microsoft.com/es-es/help/2977003/the-latest-supported-visual-c-downloads">Descarga</a>].</p>
-<ol>
+<h2 id="22-uso-de-openssl-para-funciones-resumen">2.2. Uso de OpenSSL para funciones resumen </h2>
+<p>Para proceder a cifrar o descifrar mensajes se hará uso del comando <code>dgst</code>. Este comando permite calcular el valor hash de un mensaje utilizando una función hash específica.</p>
+<p>El subcomando <code>dgst -list</code> lista los algoritmos simétricos disponibles en la instalación de OpenSSL.</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>$ openssl dgst <span class="token parameter variable">-list</span>
+Supported digests:
+<span class="token parameter variable">-blake2b512</span>                <span class="token parameter variable">-blake2s256</span>                <span class="token parameter variable">-md4</span>
+<span class="token parameter variable">-md5</span>                       -md5-sha1                  <span class="token parameter variable">-mdc2</span>
+<span class="token parameter variable">-ripemd</span>                    <span class="token parameter variable">-ripemd160</span>                 <span class="token parameter variable">-rmd160</span>
+<span class="token parameter variable">-sha1</span>                      <span class="token parameter variable">-sha224</span>                    <span class="token parameter variable">-sha256</span>
+-sha3-224                  -sha3-256                  -sha3-384
+-sha3-512                  <span class="token parameter variable">-sha384</span>                    <span class="token parameter variable">-sha512</span>
+-sha512-224                -sha512-256                <span class="token parameter variable">-shake128</span>
+<span class="token parameter variable">-shake256</span>                  <span class="token parameter variable">-sm3</span>                       -ssl3-md5
+-ssl3-sha1                 <span class="token parameter variable">-whirlpool</span>
+</code></pre><p>En esta lista pueden verse algunos datos importantes: <strong>algoritmos</strong> de resumen disponibles (MD5, SHA1, SHA2, SHA3, Blake, RIPMD, SHAKE) y <strong>longitud de bits</strong> de los resúmenes (128, 160, 224, 256,512).</p>
+<h3 id="221-cálculo-de-resúmenes">2.2.1. Cálculo de resúmenes </h3>
+<p>Para calcular el resumen de un mensaje, se utiliza el comando <code>dgst</code> seguido del algoritmo de resumen deseado y el archivo de entrada. Por ejemplo, para calcular el resumen SHA-256 de un archivo llamado <code>mensaje.txt</code>, se utiliza el siguiente comando:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>$ <span class="token builtin class-name">echo</span> <span class="token string">"Hola, mundo"</span> <span class="token operator">&gt;</span> mensaje.txt
+$ openssl dgst <span class="token parameter variable">-sha256</span> mensaje.txt
+SHA256<span class="token punctuation">(</span>mensaje.txt<span class="token punctuation">)</span><span class="token operator">=</span> b54e884a20812eb4b4b9653b673eddbec0b0d6ca25d12849b3d40275e99a97cb
+</code></pre><p>Podemos usar varios modificadores para personalizar la salida del comando <code>dgst</code>:</p>
+<ul>
+<li><code>-hex</code>: Muestra el resumen en formato hexadecimal (opción por defecto si no se indica ninguna).</li>
 <li>
-<p>Descargar la última versión de OpenSSL desde la página de <a href="https://slproweb.com/products/Win32OpenSSL.html">slproweb</a>.</p>
+<ul>
+<li><code>-r</code>: Muestra el resumen en formato coreutils.</li>
+</ul>
 </li>
-<li>
-<p>Ejecutar el archivo .exe descargado y mantener la configuración que aparece por defecto excepto cuando pida copiar las DLL de OpenSSL que se seleccionará la opción: <code>The OpenSSL binaries (/bin) directory</code>.</p>
-</li>
-<li>
-<p>Ejecutar la consola <code>sysdm.cpl</code> y en la penstaña de <em>Opciones Avanzadas</em></p>
-<ol>
-<li>Añadir <code>C:\Program Files\OpenSSL-Win64</code> y <code>C:\Program Files\OpenSSL-Win64\bin</code> al PATH del sistema.</li>
-<li>Crear una nueva variable de usuario llamada <code>OPENSSL_CONF</code> con el valor <code>C:\Program Files\OpenSSL-Win64\bin\cnf</code>.</li>
-<li>Abrir una nueva consola y ejecutar <code>openssl version</code> para comprobar que la instalación ha sido correcta.</li>
-</ol>
-</li>
-</ol>
-<h4 id="212-instalación-en-gnulinux">2.1.2. Instalación en GNU/Linux </h4>
-<p>En la mayoría de distribuciones GNU/Linux, las librerías y utilidades de OpenSSL ya vienen preinstaladas.</p>
-<p>En cualquier caso, para instalar OpenSSL en sistemas basados en Debian, como Ubuntu, realizamos las siguientes acciones:</p>
-<ol>
-<li>
-<p>Averiguar cuál es y descargar la última versión de OpenSSL:<br>
-Para averiguar cuál es la última versión de OpenSSL hay que acceder a <a href="https://www.openssl.org/source">https://www.openssl.org/source</a> y apuntar el nombre del fichero en la primera línea de la tabla de descargas</p>
-<p>A fecha de la última actualización de este documento la versión disponible es la <strong>openssl-3.4.0.tar.gz</strong> que es la que usaremos en este ejemplo.</p>
-</li>
-</ol>
-<div class="admonition warning">
-<p class="admonition-title">Entorno y librerías</p>
-<p>Para compilar OpenSSL necesitamos tener instalado el paquete <code>build-essential</code> y las librerías de desarrollo de <code>zlib</code>.<br>
-Si no están instaladas (falla el comando config del paso 3), podemos hacerlo con el siguiente comando:</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> <span class="token function">apt-get</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">apt-get</span> upgrade
-<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> build-essential checkinstall zlib1g-dev <span class="token parameter variable">-y</span>
-</code></pre></div>
-<ol start="2">
-<li>
-<p>Descargar, descomprimir e instalar la última versión de OpenSSL:</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token builtin class-name">cd</span> /tmp
-<span class="token function">wget</span> https://www.openssl.org/source/openssl-3.4.0.tar.gz
-<span class="token function">tar</span> xvf openssl-3.4.0.tar.gz
-</code></pre></li>
-<li>
-<p>Compilar, probar e instalar OpenSSL:</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token builtin class-name">cd</span> openssl-3.4.0
-<span class="token function">sudo</span> ./config <span class="token parameter variable">--prefix</span><span class="token operator">=</span>/usr/local/ssl <span class="token parameter variable">--openssldir</span><span class="token operator">=</span>/usr/local/ssl shared zlib
-<span class="token function">sudo</span> <span class="token function">make</span>
-<span class="token function">sudo</span> <span class="token function">make</span> <span class="token builtin class-name">test</span>
-<span class="token function">sudo</span> <span class="token function">make</span> <span class="token function">install</span>
-</code></pre></li>
-<li>
-<p>Configurar las librerías de OpenSSL:</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> <span class="token function">sh</span> <span class="token parameter variable">-c</span> <span class="token string">"echo /usr/local/ssl/lib &gt;&gt; /etc/ld.so.conf.d/openssl-3.4.0.conf"</span>
-<span class="token function">sudo</span> ldconfig <span class="token parameter variable">-v</span>
-</code></pre></li>
-<li>
-<p>Configurar el PATH añadiendo <code>/usr/local/ssl/bin</code> al principio de la variable de entorno PATH, esto hará que el comando openssl se busque antes en el directorio de nuestra instalación que en el ya existente (típicamente `/usr/bin):</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> <span class="token function">sh</span> <span class="token parameter variable">-c</span> <span class="token string">"echo <span class="token entity" title="\&quot;">\"</span>PATH=/usr/local/ssl:<span class="token environment constant">$PATH</span><span class="token entity" title="\&quot;">\"</span> &gt;&gt; /etc/profile"</span>
-</code></pre></li>
-<li>
-<p>Salir de la sesión y volver a entrar para que los cambios en el PATH surtan efecto. Una vez hecho esto, comprobamos que la instalación ha sido correcta:</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>openssl version
-</code></pre></li>
-</ol>
-<h2 id="22-uso-de-openssl-para-cifrado-simétrico">2.2. Uso de OpenSSL para cifrado simétrico </h2>
-<p>Para proceder a cifrar o descifrar mensajes se hará uso del comando <code>enc</code>. Se utiliza tanto para cifrados de bloque como de flujo, haciendo uso de <strong>claves basadas en contraseñas o claves proporcionadas explícitamente</strong> (clave y vector de inicialización, en su caso).</p>
-<p>El subcomando <code>enc -list</code> lista los algoritmos simétricos disponibles en la instalación de OpenSSL.</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>$ openssl enc <span class="token parameter variable">-list</span>
-aes-128-cbc               -aes-128-cfb               -aes-128-cfb1
--aes-128-cfb8              -aes-128-ctr               -aes-128-ecb
--aes-128-ofb               -aes-192-cbc               -aes-192-cfb
--aes-192-cfb1              -aes-192-cfb8              -aes-192-ctr
--aes-192-ecb               -aes-192-ofb               -aes-256-cbc
--aes-256-cfb               -aes-256-cfb1              -aes-256-cfb8
--aes-256-ctr               -aes-256-ecb               -aes-256-ofb
-<span class="token parameter variable">-aes128</span>                    -aes128-wrap               -aes128-wrap-pad
-<span class="token parameter variable">-aes192</span>                    -aes192-wrap               -aes192-wrap-pad
-<span class="token parameter variable">-aes256</span>                    -aes256-wrap               -aes256-wrap-pad
--aria-128-cbc              -aria-128-cfb              -aria-128-cfb1
--aria-128-cfb8             -aria-128-ctr              -aria-128-ecb
--aria-128-ofb              -aria-192-cbc              -aria-192-cfb
--aria-192-cfb1             -aria-192-cfb8             -aria-192-ctr
--aria-192-ecb              -aria-192-ofb              -aria-256-cbc
--aria-256-cfb              -aria-256-cfb1             -aria-256-cfb8
--aria-256-ctr              -aria-256-ecb              -aria-256-ofb
-<span class="token parameter variable">-aria128</span>                   <span class="token parameter variable">-aria192</span>                   <span class="token parameter variable">-aria256</span>
-<span class="token parameter variable">-bf</span>                        -bf-cbc                    -bf-cfb
--bf-ecb                    -bf-ofb                    <span class="token parameter variable">-blowfish</span>
--camellia-128-cbc          -camellia-128-cfb          -camellia-128-cfb1
--camellia-128-cfb8         -camellia-128-ctr          -camellia-128-ecb
--camellia-128-ofb          -camellia-192-cbc          -camellia-192-cfb
--camellia-192-cfb1         -camellia-192-cfb8         -camellia-192-ctr
--camellia-192-ecb          -camellia-192-ofb          -camellia-256-cbc
--camellia-256-cfb          -camellia-256-cfb1         -camellia-256-cfb8
--camellia-256-ctr          -camellia-256-ecb          -camellia-256-ofb
-<span class="token parameter variable">-camellia128</span>               <span class="token parameter variable">-camellia192</span>               <span class="token parameter variable">-camellia256</span>
-<span class="token parameter variable">-cast</span>                      -cast-cbc                  -cast5-cbc
--cast5-cfb                 -cast5-ecb                 -cast5-ofb
-<span class="token parameter variable">-chacha20</span>                  <span class="token parameter variable">-des</span>                       -des-cbc
--des-cfb                   -des-cfb1                  -des-cfb8
--des-ecb                   -des-ede                   -des-ede-cbc
--des-ede-cfb               -des-ede-ecb               -des-ede-ofb
--des-ede3                  -des-ede3-cbc              -des-ede3-cfb
--des-ede3-cfb1             -des-ede3-cfb8             -des-ede3-ecb
--des-ede3-ofb              -des-ofb                   <span class="token parameter variable">-des3</span>
--des3-wrap                 <span class="token parameter variable">-desx</span>                      -desx-cbc
--id-aes128-wrap            -id-aes128-wrap-pad        -id-aes192-wrap
--id-aes192-wrap-pad        -id-aes256-wrap            -id-aes256-wrap-pad
--id-smime-alg-CMS3DESwrap  <span class="token parameter variable">-idea</span>                      -idea-cbc
--idea-cfb                  -idea-ecb                  -idea-ofb
-<span class="token parameter variable">-rc2</span>                       -rc2-128                   -rc2-40
--rc2-40-cbc                -rc2-64                    -rc2-64-cbc
--rc2-cbc                   -rc2-cfb                   -rc2-ecb
--rc2-ofb                   <span class="token parameter variable">-rc4</span>                       -rc4-40
-<span class="token parameter variable">-seed</span>                      -seed-cbc                  -seed-cfb
--seed-ecb                  -seed-ofb                  <span class="token parameter variable">-sm4</span>
--sm4-cbc                   -sm4-cfb                   -sm4-ctr
--sm4-ecb                   -sm4-ofb
-</code></pre><p>En esta lista pueden verse algunos datos importantes: <strong>algoritmos</strong> (AES, CAST, DES, BF, etc.), muchos de ellos con sus <strong>tamaños de clave</strong> asociados (128, 192, 256, etc.) y, si se trata de cifradores simétricos de <strong>bloque</strong>, el <strong>modo de operación</strong> de dichos algoritmos (ECB, CBC, CTR, OFB, CFB, etc.).</p>
-<blockquote>
-<p><strong>Si no se especifica un modo de operación, se utilizará el modo ECB por defecto</strong>.</p>
-</blockquote>
-<p>Estos algoritmos son los que debemos elegir más adelante para encriptar y, posteriormente, desencriptar un archivo.</p>
-<div class="admonition info">
-<p class="admonition-title">Salt &amp; Pepper</p>
-<p>Cuando vamos a encriptar o desencriptar archivos usando herramientas como OpenSSL, introducimos una contraseña, o una passphrase, que solo nosotros y el destinatario del mensaje conocemos.</p>
-<p>Ahora bien, los algoritmos y sus claves son de un tamaño predeterminado: 128 bits, 256 bits, etc.<br>
-Si la clave que vamos a usar es de 128 bits, <strong>¿es requisito que nuestra contraseña de cifrado/descifrado tenga ese tamaño?</strong></p>
-<p>La realidad es que no, nosotros ponemos contraseñas complejas o simples, y la implementación criptográfica genera, mediante una <strong>función de derivación de clave</strong>, una clave de determinado tamaño para usar en el cifrado. Por supuesto, si a la función de derivación de clave le introducimos la misma contraseña, generará la misma clave.</p>
-<p>Esta función de derivación de clave, o KDF (Key Derivation Function) depende de la implementación de la aplicación criptográfica. Existen varias implementaciones, pero una de las más utilizadas es PBKDF2.</p>
-<p>key = pbkdf2(PRF, Pass, Salt, Iter, Size)</p>
-<blockquote>
-<p>PRF: Pseudo-Random Function / Pass: Contraseña / Salt: Sal criptográfica / Iter: Iteraciones (10000) / Size: Tamaño de la clave</p>
-</blockquote>
-<p>Cuando se cifra con contraseña, OpenSSL pasa esta contraseña, junto con 64 bits aleatorios de <code>sal criptográfica</code>, por un algoritmo de derivación de claves como el PBKDF1 (obsoleto) o el PBKDF2 (explicado en las "opciones de enc").</p>
-<p>Estos algoritmos utilizan funciones de resumen de forma recursiva para obtener suficientes bits para la clave de cifrado y para el vector de inicialización si es necesario. Esto permite que para una misma contraseña, se generen diferentes claves, al variar en cada caso la sal obtenida aleatoriamente.</p>
-<p><a href="https://www.expressvpn.com/blog/salt-hash-password-protection/">Salts and hashes: How apps and websites protect your passwords</a><br>
-<a href="https://en.wikipedia.org/wiki/Passwd#Shadow_file">Linux-style shadow file</a></p>
-</div>
-<h3 id="221-cifrado-simétrico-de-bloque">2.2.1. Cifrado simétrico de bloque </h3>
+<li><code>-c</code>: Muestra el resumen en formato <code>AA:BB:CC:.....</code>.</li>
+<li><code>binary</code>: Muestra el resumen en formato binario.</li>
+<li><code>-out archivo</code>: Guarda el resumen en un archivo.</li>
+</ul>
+<h3 id="222-calculo-de-resúmenes-hmac">2.2.2. Calculo de resúmenes HMAC </h3>
+<p>HMAC puede usarse para verificar simultáneamente la integridad de los datos y la autenticación de un mensaje, como con cualquier MAC. Cualquier función hash criptográfica, como SHA256 o SHA-3, puede ser utilizado en el cálculo de un HMAC; el algoritmo MAC resultante se denomina HMAC-X, donde X es la función hash utilizada (por ejemplo, HMAC-SHA256 o HMAC-SHA3).</p>
+<p>Para calcular un resumen HMAC, se utiliza el comando <code>dgst</code> seguido del algoritmo de resumen deseado y la clave secreta. Por ejemplo, para calcular el resumen HMAC-SHA256 de un archivo llamado <code>mensaje.txt</code> con la clave secreta <code>secreto</code>, se utiliza el siguiente comando:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>$ openssl dgst <span class="token parameter variable">-sha256</span> <span class="token parameter variable">-hmac</span> <span class="token string">"secreto"</span> mensaje.txt
+HMAC-SHA256<span class="token punctuation">(</span>mensaje.txt<span class="token punctuation">)</span><span class="token operator">=</span> e2207fafe0cc81dcfb8a648373851b1005148b4d9b226b6696d7fd243c80768a
+</code></pre><p>Ahora podríamos enviar al destinatario el mensaje.txt (cifrado o no), y el HMAC generado. El destinatario podrá realizar el mismo procedimiento de cálculo del HMAC (sobre el archivo no cifrado), y comparar la salida con el que enviamos.</p>
+<p>Si un atacante intercepta el mensaje, no podrá modificarlo ya que, al no poseer la clave de autenticación, no podrá regenerar un HMAC válido para que el destinatario verifique.</p>
+<p>Así, si el destinatario calcula el HMAC y da correcto, implica que:</p>
+<ul>
+<li>El mensaje no fue modificado, verifica <strong>integridad</strong>.</li>
+<li>El HMAC únicamente pudo haber sido generado por el origen, que dispone de la clave de autenticación, por lo que también verifica <strong>autenticidad</strong>.</li>
+<li>Además, como se supone que el origen es el único que tiene la clave de autenticación, no puede desentenderse de haber firmado el mensaje, así que verifica <strong>no repudio</strong> también.</li>
+</ul>
 <p>Para cifrar un archivo de texto plano, utilizamos el siguiente comando:</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>$ <span class="token builtin class-name">echo</span> <span class="token string">"Hola, mundo"</span> <span class="token operator">&gt;</span> mensaje.txt
 $ openssl enc <span class="token parameter variable">-e</span> -aes-256-cbc <span class="token parameter variable">-salt</span> <span class="token parameter variable">-in</span> mensaje.txt <span class="token parameter variable">-out</span> mensaje.enc
