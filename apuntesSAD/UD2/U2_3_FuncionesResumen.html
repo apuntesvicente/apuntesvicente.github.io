@@ -152,19 +152,15 @@
           <a href="#222-calculo-de-resúmenes-hmac" class="md-toc-link">
             <p>2.2.2. Calculo de resúmenes HMAC</p>
 
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#222-cifrado-simétrico-de-flujo" class="md-toc-link">
-            <p>2.2.2. Cifrado simétrico de flujo</p>
-
           </a></div>
         </div>
       </details>
     
 </div>
-<div style="\&quot;page-break-after:always;\&quot;"></div>
+<div style="page-break-after:always;"></div>
 <h2 id="1-funciones-hash">1. Funciones Hash </h2>
 <div style="display: flex; justify-content: center; align-items: center; margin-top: 15px; margin-bottom: 15px">
-    <img height="300" src="recursos/1366_2000.webp">
+    <img height="" src="recursos/FuncionesHash.png">
 </div>
 <p>Una <strong>función hash criptográfica</strong> es un tipo especializado de <code>función resumen</code>  diseñada para su uso en diversas aplicaciones criptográficas, incluidas firmas digitales, códigos de autenticación de mensajes y otras formas de autenticación. Estas funciones desempeñan un papel crucial en las prácticas modernas de seguridad de la información, particularmente en protocolos como SSL/TLS.</p>
 <blockquote>
@@ -279,97 +275,8 @@ HMAC-SHA256<span class="token punctuation">(</span>mensaje.txt<span class="token
 <li>El HMAC únicamente pudo haber sido generado por el origen, que dispone de la clave de autenticación, por lo que también verifica <strong>autenticidad</strong>.</li>
 <li>Además, como se supone que el origen es el único que tiene la clave de autenticación, no puede desentenderse de haber firmado el mensaje, así que verifica <strong>no repudio</strong> también.</li>
 </ul>
-<p>Para cifrar un archivo de texto plano, utilizamos el siguiente comando:</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>$ <span class="token builtin class-name">echo</span> <span class="token string">"Hola, mundo"</span> <span class="token operator">&gt;</span> mensaje.txt
-$ openssl enc <span class="token parameter variable">-e</span> -aes-256-cbc <span class="token parameter variable">-salt</span> <span class="token parameter variable">-in</span> mensaje.txt <span class="token parameter variable">-out</span> mensaje.enc
-enter aes-256-cbc encryption password:
-Verifying - enter aes-256-cbc encryption password:
+<p><img src="recursos/hmac.jpg" alt="HMAC"></p>
 
-*** WARNING <span class="token builtin class-name">:</span> deprecated key derivation used.
-Using <span class="token parameter variable">-iter</span> or <span class="token parameter variable">-pbkdf2</span> would be better.
-</code></pre><p>En este caso, el comando <code>enc</code> cifra <strong>(-e)</strong> el archivo <code>mensaje.txt</code> <strong>(-in)</strong> utilizando el algoritmo AES con una clave de 256 bits en modo CBC <strong>(-aes-256-cbc)</strong>. El archivo cifrado se guarda en <code>mensaje.enc</code> <strong>(-out)</strong>.</p>
-<p>Podemos observar el mensaje de que se está utilizando una derivación de clave obsoleta. Para evitarlo, podemos utilizar la opción <code>-pbkdf2</code> para usar la función de derivación de clave PBKDF2.</p>
-<p>Para descifrar el archivo cifrado, utilizamos el siguiente comando:</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>$ openssl enc <span class="token parameter variable">-d</span> <span class="token parameter variable">-p</span> -aes-256-cbc <span class="token parameter variable">-in</span> mensaje.enc <span class="token parameter variable">-out</span> mensaje.dec
-enter aes-256-cbc decryption password:
-<span class="token assign-left variable">salt</span><span class="token operator">=</span>86239987878B82C6
-<span class="token assign-left variable">key</span><span class="token operator">=</span>37081952A242A1720D09A0AB511DD7AE34F90AAF1EFAB9A90B76FA0C6044C95C
-iv <span class="token operator">=</span>629F89ACCDE7F852B54AD9A0AA4F2B0E
-</code></pre><p>En este caso, el comando <code>enc</code> descifra <strong>(-d)</strong> el archivo <code>mensaje.enc</code> <strong>(-in)</strong> utilizando el algoritmo AES con una clave de 256 bits en modo CBC <strong>(-aes-256-cbc)</strong>. El archivo descifrado se guarda en <code>mensaje.dec</code> <strong>(-out)</strong>. Además, hemos usado el modificador <code>-p</code> para que se muestre información adicional (Salt, Key, IV) sobre el proceso de cifrado/descifrado.</p>
-<p>El archivo <code>mensaje.enc</code> es un archivo binario que contiene el texto cifrado. Si intentamos abrirlo con un editor de texto, o con el comando <code>type</code> (windows) o <code>cat</code> (Linux) veremos caracteres extraños.</p>
-<p>Si queremos generar un archivo cifrado, pero que solo contenga caracteres ASCII, podemos utilizar la opción <code>-a</code> para que el archivo cifrado sea codificado en base64.</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>$ openssl enc <span class="token parameter variable">-e</span> -aes-256-cbc <span class="token parameter variable">-pbkdf2</span> <span class="token parameter variable">-a</span> <span class="token parameter variable">-in</span> mensaje.txt 
-enter aes-256-cbc encryption password:
-Verifying - enter aes-256-cbc encryption password:
-
-U2FsdGVkX1/bxhJnZxZH39gxnhOd7/QyB2yDcexnLE2nnlJ1+EZH3ka3z2oHOvMR
-TQk6dQ7CwLJ7tLIFeUId1jbvYVxgMTGE99kJHikaD4x8Kf8Jw3/LsQmRPLRHnUiZ
-</code></pre><p>En el ejemplo anterior ya se ha usado la opción <code>-kbkdf2</code> para evitar el mensaje de advertencia y suar un algoritmo de derivación de clave más seguro. También se ha usado la opción <code>-a</code> para que el archivo cifrado sea codificado en base64 y se ha omitido la opción <code>-out</code> para que el resultado se muestre por pantalla.</p>
-<h4 id="triple-des">TRIPLE DES </h4>
-<p>DES es el algoritmo prototipo del cifrado por bloques. Su clave es de 56 bits, lo que lo hace vulnerable a ataques de fuerza bruta. Para aumentar la seguridad, se creó <strong>3DES</strong>, que aplica DES tres veces a cada bloque de datos. Aunque es más seguro, es más lento que DES.</p>
-<p>La mayoría de las tarjetas de crédito y otros medios de pago electrónicos tienen como estándar el algoritmo <strong>Triple DES</strong> (anteriormente usaban el DES). Por su diseño, el DES y por lo tanto el 3DES son algoritmos lentos. AES puede llegar a ser hasta 6 veces más rápido y a la fecha no se ha encontrado ninguna vulnerabilidad</p>
-<p>Existen diferentes tipos de TDES, aunque el más utilizado es el EDE3 (Encrypt-Decrypt-Encrypt) con dos claves DES diferentes. En el siguiente ejemplo se cifra un archivo con 3DES:</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>openssl enc -des-ede3-cbc <span class="token parameter variable">-p</span> <span class="token parameter variable">-in</span> mensaje.txt <span class="token parameter variable">-out</span> des_ede3_cbc.enc
-
-<span class="token assign-left variable">salt</span><span class="token operator">=</span>AB5835474350C692
-<span class="token assign-left variable">key</span><span class="token operator">=</span>D9A1F0F149CB70901A2411C5607BEA89C9DFF9786B018DF7B2158967D42B0D4D
-iv <span class="token operator">=</span>4AE3E7B85BE8AE5C752187CFC0CC9672
-</code></pre><p>Y a continuación se descifra:</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>openssl enc <span class="token parameter variable">-d</span> -des-ede3-cbc <span class="token parameter variable">-p</span> <span class="token parameter variable">-in</span> des_ede3_cbc.enc
-
-<span class="token assign-left variable">salt</span><span class="token operator">=</span>AB5835474350C692
-<span class="token assign-left variable">key</span><span class="token operator">=</span>D9A1F0F149CB70901A2411C5607BEA89C9DFF9786B018DF7B2158967D42B0D4D
-iv <span class="token operator">=</span>4AE3E7B85BE8AE5C752187CFC0CC9672
-<span class="token string">"Hola, mundo"</span>
-</code></pre><div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>También podemos descifrar el mensaje sin conocer la contraseña, si conocemos el resto de los parámetros (salt, key, iv). Esto es útil para recuperar mensajes cifrados en caso de pérdida de la contraseña.</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>openssl enc <span class="token parameter variable">-d</span> -des-ede3-cbc <span class="token parameter variable">-in</span> des_ede3_cbc.enc <span class="token parameter variable">-K</span> D9A1F0F149CB70901A2411C5607BEA89C9DFF9786B018DF7B2158967D42B0D4D <span class="token parameter variable">-iv</span> 4AE3E7B85BE8AE5C752187CFC0CC9672
-ÃhÁs<span class="token punctuation">{</span>N╣µ·¦mtæ┬óh═åÅundo"
-</code></pre><p>Como vemos, el SALT que se ha añadido al mensaje cifrado, ha modificado el mensaje original. Assí que, para recuperar el mensaje original, necesitamos eliminar el SALT del mensaje cifrado.</p>
-<ul>
-<li>Editamos el archivo cifrado (es binario) en modo hexadecimal y eliminamos de la cabecera los primeros 8 bytes ("Salted__") y los siguientes 8 bytes (el valor del SALT).</li>
-<li>En linux lo podemos hacer con <code>dd</code>:<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">cat</span> des_ede3_cbc.cif <span class="token operator">|</span> <span class="token function">dd</span> <span class="token assign-left variable">ibs</span><span class="token operator">=</span><span class="token number">16</span> <span class="token assign-left variable">obs</span><span class="token operator">=</span><span class="token number">16</span> <span class="token assign-left variable">skip</span><span class="token operator">=</span><span class="token number">1</span> <span class="token operator">&gt;</span> des_ede3_cbc_nosalt.enc
-</code></pre></li>
-</ul>
-<p><img src="recursos/EncodedFileWithSalt.png" alt="Salt"></p>
-<p>Una vez eliminado el SALT, procedemos a descifrar el archivo usando la clave y el vector de inicialización.</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>openssl enc <span class="token parameter variable">-d</span> -des-ede3-cbc <span class="token parameter variable">-in</span> des_ede3_cbc_nosalt.enc <span class="token parameter variable">-K</span> D9A1F0F149CB70901A2411C5607BEA89C9DFF9786B018DF7B2158967D42B0D4D <span class="token parameter variable">-iv</span> 4AE3E7B85BE8AE5C752187CFC0CC9672
-
-<span class="token string">"Hola, mundo"</span>
-</code></pre></div>
-<h4 id="aes-advanced-encryption-standard">AES (Advanced Encryption Standard) </h4>
-<p>AES, también conocido como Rijndael (pronunciado "Rain Doll" en inglés), es un esquema de cifrado por bloques adoptado como un estándar de cifrado por el gobierno de los Estados Unidos. Desde 2006, el AES es uno de los algoritmos más populares usados en criptografía simétrica.</p>
-<div class="admonition info">
-<p class="admonition-title">Daemen &amp; Rijmen</p>
-<p>El cifrado fue desarrollado por dos criptólogos belgas, Joan Daemen y Vincent Rijmen, ambos estudiantes de la Katholieke Universiteit Leuven, y fue enviado al proceso de selección AES bajo el nombre "Rijndael".</p>
-<p>Fueron los ganares del concurso AES, y el algoritmo fue seleccionado como el estándar de cifrado simétrico por el Instituto Nacional de Estándares y Tecnología (NIST) en 2001.</p>
-<p>Se trata de un algoritmo del que <strong>todavía no se ha registrado ningún ataque factible hacia él</strong>, convirtiéndose en un estándar de cifrado para las principales organizaciones como bancos, gobiernos y sistemas de alta seguridad en todo el mundo. Además, es un estándar mucho más rápido que los vistos anteriormente.</p>
-</div>
-<p>Basado en la estructura de bloques de AES, el cambio de un solo bit, ya sea en la clave, o en el bloque de texto sin cifrado, da como resultado un bloque de texto cifrado completamente diferente. Este algoritmo tiene una <strong>longitud de bloque de 128 bits y longitudes de clave de 128, 192 y 256</strong>.</p>
-<p>En el primer ejemplo del apartado anterior, hemos cifrado un archivo de texto plano con AES y una clave de 256 bits en modo CBC.</p>
-<h3 id="222-cifrado-simétrico-de-flujo">2.2.2. Cifrado simétrico de flujo </h3>
-<p>Para algunas aplicaciones, tales como el cifrado de conversaciones telefónicas, el cifrado en bloques es inapropiada porque los flujos de datos se producen en tiempo real en pequeños fragmentos. Las muestras de datos pueden ser tan pequeñas como 8 bits o incluso de 1 bit, y sería un desperdicio rellenar el resto de los 64 bits antes de cifrar y transmitirlos.</p>
-<p>Los cifradores de flujo son algoritmos de cifrado que pueden realizar el cifrado incrementalmente, convirtiendo el texto en claro, en texto cifrado bit a bit, es decir, cada dígito de texto sin formato se cifra uno a la vez con el dígito correspondiente de la secuencia pseudoaleatoria, para dar un dígito del flujo de texto cifrado. Una secuencia pseudoaleatoria es una secuencia de bits de tamaño arbitrario que puede emplearse para oscurecer los contenidos de un flujo de datos combinando esta secuencia con el flujo de datos mediante la función XOR. Si la secuencia pseudoaleatoria es segura, el flujo de datos cifrados también lo será. Los bloques se cifran empleando una clave compartida por el emisor y el receptor.</p>
-<p>Uno de los algoritmos de flujo más utilizados es el RC4 (ya obsoleto), reemplazado en la actualidad por algoritmos más eficientes como el <strong>Chacha20</strong> y los modos de operación en flujo (OFB o CFB) de los cifradores de bloque como <strong>TDES</strong>, <strong>AES</strong>, etc.</p>
-<div class="admonition info">
-<p class="admonition-title">RC4</p>
-<p>Dentro de la criptografía RC4 o ARC4 es el sistema de cifrado de flujo Stream cipher más utilizado y se utilizó en algunos de los protocolos más populares como <strong>Secure Sockets Layer (SSL)</strong> para proteger el tráfico de Internet y <strong>Wired Equivalent Privacy (WEP)</strong> para añadir seguridad en las redes inalámbricas.</p>
-<p>En los últimos años, RC4 se ha excluido de los estándares de alta seguridad por sus debilidades. No está recomendado su uso en los nuevos sistemas y el estándar <strong>TLS de cifrado web</strong> y los protocolos <strong>WPA de cifrado en Wifi</strong> lo excluyen.</p>
-</div>
-<h4 id="chacha20">Chacha20 </h4>
-<p>Es un sistema de cifrado en flujo, que soporta <code>claves de 128 y 256 bits</code> y de alta velocidad creado por Bernstein en 2008. Salsa20 es el cifrado original creado también por Bernstein en 2007, el cuál mantiene una estrecha relación con su sucesor, ya que ambos cifrados se basan en una función pseudoaleatoria basada en operaciones add-rotate-xor (ARX). Salsa20 y ChaCha poseen la inusual ventaja de que el usuario puede buscar de manera eficiente cualquier posición en el flujo de claves en tiempo constante.</p>
-<p>La principal diferencia entre ellos, es que Chacha20 ofrece un aumento de la difusión por ronda y logra ligeramente un mejor rendimiento. Además, se considera que en implantaciones software es más eficiente y rápido que AES.</p>
-<p>Se cifra el texto.txt con Chacha20 usando esta vez la función -pass pass:password <strong>(desaconsejada)</strong>.</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>openssl enc <span class="token parameter variable">-chacha20</span> <span class="token parameter variable">-a</span> <span class="token parameter variable">-pbkdf2</span> <span class="token parameter variable">-pass</span> pass:balmis <span class="token parameter variable">-in</span> texto.txt <span class="token parameter variable">-out</span> chacha20.cif
-
-U2FsdGVkX19A+Yp7zsXDMD/VDIsgYsdM5nxu037Ku0a8zlyCocLhq9G6t+UPSDug
-N98wSwM0RPfBOUVyEKMk99hWwNFWKESgg0WCFLXi
-</code></pre><p>Para descifrar ejecutamos el siguiente comando incluyendo la contraseña como se hizo para cifrar:</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>openssl enc <span class="token parameter variable">-chacha20</span> <span class="token parameter variable">-d</span> <span class="token parameter variable">-a</span> <span class="token parameter variable">-pbkdf2</span> <span class="token parameter variable">-pass</span> pass:balmis <span class="token parameter variable">-in</span> chacha20.cif 
-
-<span class="token string">"Hola, mundo"</span>
-</code></pre>
       </div>
       
       
