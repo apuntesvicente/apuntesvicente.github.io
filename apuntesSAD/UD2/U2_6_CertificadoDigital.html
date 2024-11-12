@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>SAD - U2.5. Certificado Digital</title>
+      <title>SAD - U2.6. Certificado Digital</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -88,8 +88,8 @@
     
       <div class="crossnote markdown-preview  ">
       
-<h1 id="sad---u25-certificado-digital">SAD - U2.5. Certificado Digital </h1>
-<p><a href="./U2_5_CertificadoDigital.pdf">Descargar estos apuntes</a></p>
+<h1 id="sad---u26-certificado-digital">SAD - U2.6 Certificado Digital </h1>
+<p><a href="./U2_6_CertificadoDigital.pdf">Descargar estos apuntes</a></p>
 <h2 id="índice">Índice </h2>
 
 <div class="md-toc">
@@ -151,23 +151,23 @@
 </div>
 <p>El estándar X.509 solo define la sintaxis de los certificados, por lo que no está atado a ningún algoritmo en particular, y contempla los siguientes campos en su estructura:</p>
 <ul>
-<li>Version.<br>
+<li><strong>Version</strong>.<br>
 Especifica cuál de las tres versiones de x.509 se aplica a este certificado.</li>
-<li>Numero de serie.<br>
+<li><strong>Numero de serie</strong>.<br>
 Es un identificador único para todos los certificados de una misma CA.</li>
-<li>Identificador del algoritmo empleado para la firma digital.<br>
+<li><strong>Identificador del algoritmo empleado para la firma digital</strong>.<br>
 Qué algoritmo utilizó la CA del certificado para firmarlo.</li>
-<li>Nombre del certificador.<br>
+<li><strong>Nombre del certificador</strong>.<br>
 Nombre de la CA.</li>
-<li>Periodo de validez.<br>
+<li><strong>Periodo de validez</strong>.<br>
 Por seguridad, los certificados tiene un tiempo de vida.</li>
-<li>Nombre del sujeto.<br>
+<li><strong>Nombre del sujeto</strong>.<br>
 Nombre del dueño del certificado.</li>
-<li>Clave publica del sujeto.<br>
+<li><strong>Clave publica del sujeto</strong>.<br>
 Clave pública del dueño del certificado, y algoritmo asociado.</li>
-<li>Extensiones.<br>
+<li><strong>Extensiones</strong>.<br>
 Información adicional permitida por el estándar.</li>
-<li>Firma digital de todo lo anterior generada por el certificador.<br>
+<li><strong>Firma digital de todo lo anterior generada por el certificador</strong>.<br>
 Firma digital de la CA.</li>
 </ul>
 <p>Un ejemplo de certificado digital x.509 sería el siguiente:</p>
@@ -250,6 +250,17 @@ Es una extensión alternativa a la CRT pero siguiendo las convenciones de Micros
 <p><strong>KEY</strong><br>
 Esta extensión es utilizada tanto para la clave pública como la privada de los estándares PKCS. Estas claves pueden estar codificadas en formato binario DER o ASCII PEM.</p>
 </li>
+</ul>
+<p>####Uso de los certificados digitales</p>
+<p>Los certificados digitales suelen emplearse para:</p>
+<ul>
+<li>Sirven para identificarse ante terceros.</li>
+<li>Permiten tomar precauciones contra la suplantación de identidad.</li>
+<li>Los certificados digitales pueden garantizar:<br>
+la autentificación de las partes.<br>
+la integridad de la transacción.<br>
+la confidencialidad de la información.<br>
+el no repudio</li>
 </ul>
 <h2 id="2-certificados-digitales-x509-con-openssl">2. Certificados digitales X.509 con OpenSSL </h2>
 <p>Vamos a analizar cuatro formas básicas de manipular certificados digitales X.509 utilizando openssl. Estas son, ver el certificado, convertirlo, combinarlo, y extraer claves desde el mismo.</p>
