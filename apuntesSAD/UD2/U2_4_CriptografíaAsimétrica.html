@@ -142,12 +142,16 @@
           </summary>
         <div>
           <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#221-rsa-para-cifrar-y-firmar-mensajes" class="md-toc-link">
-            <p>2.2.1. RSA para cifrar y firmar mensajes</p>
+          <a href="#221-rsa-para-cifrar-y-descifrar-mensajes" class="md-toc-link">
+            <p>2.2.1. RSA para cifrar y descifrar mensajes</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#222-dsa-para-firmar-y-verificar-mensajes" class="md-toc-link">
-            <p>2.2.2. DSA para firmar y verificar mensajes</p>
+          <a href="#222-rsa-para-firmar-y-verificar-mensajes" class="md-toc-link">
+            <p>2.2.2. RSA para firmar y verificar mensajes</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#223-dsa-para-firmar-y-verificar-mensajes" class="md-toc-link">
+            <p>2.2.3. DSA para firmar y verificar mensajes</p>
 
           </a></div>
         </div>
@@ -238,7 +242,7 @@
 <li><code>pkeyutl</code>: Utiliza una clave pública o privada para cifrar o descifrar un mensaje.</li>
 <li><code>pkey</code>: Se utiliza para la manipulación tanto de claves públicas como privadas.</li>
 </ul>
-<p>Hay otros comandos más específicos que realizan las mismas funciones, pero están obsoletos y se recomienda no utilizarlos:</p>
+<p>Hay otros comandos más específicos que realizan las mismas funciones, pero <strong>están obsoletos y se recomienda no utilizarlos</strong>:</p>
 <ul>
 <li><code>genrsa</code>: Genera un par de claves RSA.</li>
 <li><code>rsa</code>: Se utiliza para la manipulación tanto de claves públicas como privadas.</li>
@@ -316,11 +320,15 @@ MwIDAQAB
 -----END PUBLIC KEY-----
 </code></pre><p>En este caso, el comando <code>pkey</code> extrae la clave pública del archivo <code>private.pem</code> y la guarda en el archivo <code>public.pem</code>.</p>
 <h3 id="212-dsa">2.1.2. DSA </h3>
-<p>Para generar un par de claves DSA, se utiliza alguno de los siguientes comandos:</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>$ openssl genpkey <span class="token parameter variable">-algorithm</span> DSA <span class="token parameter variable">-out</span> privateDSA.pem
-$ openssl genpkey <span class="token parameter variable">-algorithm</span> DSA <span class="token parameter variable">-outform</span> DER <span class="token parameter variable">-out</span> privateDSA.pem
-$ openssl genpkey <span class="token parameter variable">-algorithm</span> DSA <span class="token parameter variable">-aes256</span> <span class="token parameter variable">-out</span> privateDSA.pem <span class="token parameter variable">-pkeyopt</span> dsa_paramgen_bits:2048
-</code></pre><p>En este caso, el comando <code>genpkey</code> genera un par de claves DSA y lo guarda en el archivo <code>privateDSA.pem</code>. Por defecto, se generan claves de 2048 bits.</p>
+<p>Para generar un par de claves DSA, hay que realizar algunos pasos adicionales</p>
+<p>Se genera un fichero que contendrá los parámetros DSA en dsa.params.pem usando <code>-genparam</code>. Además se añade<br>
+<code>-pkeyopt</code> para especificar el tamaño en bits (2048) de la clave.</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>openssl genpkey <span class="token parameter variable">-genparam</span> <span class="token parameter variable">-algorithm</span> DSA <span class="token parameter variable">-out</span> dsa.params.pem <span class="token parameter variable">-pkeyopt</span> dsa_paramgen_bits:2048
+</code></pre><p>Y a continuación, se genera la clave DSA</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>$ openssl genpkey <span class="token parameter variable">-paramfile</span> dsa.params.pem <span class="token parameter variable">-out</span> privateDSA.pem
+$ openssl genpkey <span class="token parameter variable">-paramfile</span> dsa.params.pem <span class="token parameter variable">-outform</span> DER <span class="token parameter variable">-out</span> privateDSA.pem
+$ openssl genpkey <span class="token parameter variable">-aes256</span> <span class="token parameter variable">-paramfile</span> dsa.params.pem <span class="token parameter variable">-out</span> privateDSA.pem
+</code></pre><p>En este caso, el comando <code>genpkey</code> genera un par de claves DSA y lo guarda en el archivo <code>privateDSA.pem</code>. Por defecto, se generan claves de 2048 bits, aunque aquí se hará lo que se haya configurado en el archivo <code>dsa.params.pem</code>.</p>
 <p>Para ver la clave privada generada, se puede utilizar el comando <code>cat</code> (Linux) o <code>type</code> (Windows):</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>$ <span class="token function">cat</span> privateDSA.pem
 -----BEGIN ENCRYPTED PRIVATE KEY-----
@@ -354,7 +362,7 @@ J+D3spLNvz72gAvZJGLdP5BT/uIfAI40vvNx5csei9kqTQ2QLoL5bpvmV+d4uz6D
 1RNVIYJ4cAkg5AjRpP6kGWHGCx1GTc0MD34mCwNNW/ll
 -----END ENCRIPTED PRIVATE KEY-----
 </code></pre><p>Para obtener la clave pública a partir de la clave privada, se utiliza el siguiente comando:</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>$ openssl pkey <span class="token parameter variable">-in</span> privateDSA.pem <span class="token parameter variable">-out</span> publicDSA.pem <span class="token parameter variable">-pubout</span>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>$ openssl pkey <span class="token parameter variable">-in</span> privateDSA.pem <span class="token parameter variable">-pubout</span> <span class="token parameter variable">-out</span> publicDSA.pem
 $ <span class="token function">cat</span> publicDSA.pem
 -----BEGIN PUBLIC KEY-----
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvXck+2msWq8LEhX/AwJB
@@ -368,25 +376,55 @@ MwIDAQAB
 </code></pre><p>En este caso, el comando <code>pkey</code> extrae la clave pública del archivo <code>privateDSA.pem</code> y la guarda en el archivo <code>publicDSA.pem</code>.</p>
 <h2 id="22-uso-de-openssl-para-cifrar-y-firmar-mensajes">2.2. Uso de OpenSSL para cifrar y firmar mensajes </h2>
 <p>Una vez que disponemos de las claves, podemos cifrar y descifrar mensajes, firmar y verificar mensajes, etc.</p>
-<h3 id="221-rsa-para-cifrar-y-firmar-mensajes">2.2.1. RSA para cifrar y firmar mensajes </h3>
+<h3 id="221-rsa-para-cifrar-y-descifrar-mensajes">2.2.1. RSA para cifrar y descifrar mensajes </h3>
 <p>Suponiendo que tenemos la clave pública de una persona, podemos cifrar un mensaje con su clave pública y enviarlo.Sólo esa persona podrá después descifrar el mensaje con su clave privada.</p>
+<div class="admonition danger">
+<p class="admonition-title">Cifrado con clave asimétrica</p>
+<p>El cifrado asimétrico sólo se puede aplicar a "cosas pequeñas" como claves simétricas o resúmenes.<br>
+Cualquier intento de cifrar con RSA un fichero normal, de más de 200 caracteres, producirá un error de tipo "input too long".</p>
+<blockquote>
+<p>Public Key operation error 346F0000:error:0200006E:rsa routines:ossl_rsa_padding_add_PKCS1_type_2_ex:<strong>data too large for key size</strong>:crypto\rsa\rsa_pk1.c:133:</p>
+</blockquote>
+</div>
 <p>Para cifrar un mensaje con la clave pública, se utiliza el comando <code>pkeyutl</code> con la opción <code>-encrypt</code>:</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>$ <span class="token builtin class-name">echo</span> <span class="token string">"Hola, mundo"</span> <span class="token operator">&gt;</span> mensaje.txt
-$ openssl pkeyutl <span class="token parameter variable">-encrypt</span> <span class="token parameter variable">-inkey</span> publicaRSA.pem <span class="token parameter variable">-pubin</span> <span class="token parameter variable">-in</span> mensaje.txt <span class="token parameter variable">-out</span> mensaje.txt.rsa
+$ openssl pkeyutl <span class="token parameter variable">-encrypt</span> <span class="token parameter variable">-inkey</span> publicRSA.pem <span class="token parameter variable">-pubin</span> <span class="token parameter variable">-in</span> mensaje.txt <span class="token parameter variable">-out</span> mensaje.txt.rsa
 </code></pre><p>En este caso, el comando <code>pkeyutl</code> cifra <code>-encrypt</code> el archivo <code>mensaje.txt</code> utilizando la clave pública <code>-inkey -pubkey</code> y guarda el resultado en <code>mensaje.txt.rsa</code>.</p>
 <p>Para descifrar el mensaje cifrado, se utiliza el comando <code>pkeyutl</code> con la opción <code>-decrypt</code>:</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>$ openssl pkeyutl <span class="token parameter variable">-decrypt</span> <span class="token parameter variable">-inkey</span> privateRSA.pem <span class="token parameter variable">-in</span> mensaje.txt.rsa
 Hola, mundo
 </code></pre><p>En este caso, el comando <code>pkeyutl</code> descifra <code>-decrypt</code> el archivo <code>mensaje.txt.rsa</code> utilizando la clave privada <code>-inkey</code> y muestra el resultado por pantalla.</p>
-<p>El proceso inverso, cifrar con la clave privada y descifrar con la clave pública, se utiliza para firmar mensajes. Para firmar un mensaje con la clave privada, se utiliza el comando <code>pkeyutl</code> con la opción <code>-sign</code>:</p>
+<h3 id="222-rsa-para-firmar-y-verificar-mensajes">2.2.2. RSA para firmar y verificar mensajes </h3>
+<p><img src="recursos/firma_asimetrica.jpg" alt="Firma con clave asimética"></p>
+<p>El proceso inverso, cifrar con la clave privada y descifrar con la clave pública, se utiliza para <strong>firmar mensajes</strong>. Para firmar un mensaje con la clave privada, se utiliza el comando <code>pkeyutl</code> con la opción <code>-sign</code>:</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>$ openssl pkeyutl <span class="token parameter variable">-sign</span> <span class="token parameter variable">-inkey</span> privateRSA.pem <span class="token parameter variable">-in</span> mensaje.txt <span class="token parameter variable">-out</span> mensaje.txt.sig
 </code></pre><p>En este caso, el comando <code>pkeyutl</code> firma <code>-sign</code> el archivo <code>mensaje.txt</code> utilizando la clave privada <code>-inkey</code> y guarda el resultado en <code>mensaje.txt.sig</code>.</p>
-<p>Para verificar la firma del mensaje, se utiliza el comando <code>pkeyutl</code> con la opción <code>-verify</code>:</p>
+<p>Para verificar la firma del mensaje, el destinatario, usando la clave pública utiliza el comando <code>pkeyutl</code> con la opción <code>-verify</code>:</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>$ openssl pkeyutl <span class="token parameter variable">-verify</span> <span class="token parameter variable">-inkey</span> publicRSA.pem <span class="token parameter variable">-pubin</span> <span class="token parameter variable">-sigfile</span> mensaje.txt.sig <span class="token parameter variable">-in</span> mensaje.txt
 Signature Verified Successfully
 </code></pre><p>En este caso, el comando <code>pkeyutl</code> verifica <code>-verify</code> la firma del archivo <code>mensaje.txt</code> utilizando la clave pública <code>-inkey -pubin</code> y el archivo de firma <code>mensaje.txt.sig</code>.</p>
-<h3 id="222-dsa-para-firmar-y-verificar-mensajes">2.2.2. DSA para firmar y verificar mensajes </h3>
-<p>Una vez que disponemos de las claves, podemos cifrar y descifrar mensajes, firmar y verificar mensajes, etc.</p>
+<div class="admonition question">
+<p class="admonition-title">Integridad del mensaje</p>
+<p>¿Qué sucede si modificamos el mensaje <code>mensaje.txt</code> y volvemos a verificar la firma?</p>
+<p>¿Qué sucede si alguien intercepta el mensaje, lo modifica y lo firma con otra clave pública?</p>
+</div>
+<h3 id="223-dsa-para-firmar-y-verificar-mensajes">2.2.3. DSA para firmar y verificar mensajes </h3>
+<div class="admonition info">
+<p class="admonition-title">DSA no se utiliza para cifrar mensajes</p>
+<p>DSA no se utiliza para cifrar mensajes, ya que no proporciona confidencialidad. DSA se utiliza para firmar mensajes y garantizar la autenticidad e integridad de los mismos.</p>
+<p>En primer lugar, ya hemos comentado que el cifrado asimétrico no se utiliza para cifrar mensajes, principalmente porque no permite cifrar mensajes de gran tamaño.</p>
+<p>Además, si queremos enviar un mensaje firmado por nosotros para que se pueda comprobar la autenticidad del mensaje, lo lógico es que dicho mensaje se envíe en claro.</p>
+</div>
+<p>Una vez que disponemos de un par de claves DSA, podemos firmar y verificar mensajes de forma similar a como lo hemos hecho anteriormente, aunque en este caso, no vamos a cifrar el mensaje, sino su resumen.</p>
+<p>Realizamos el resumen del fichero "texto.txt" y lo guardamos en formato binario en el fichero de salida "resumen.sha".</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>$ openssl dgst <span class="token parameter variable">-sha512</span> <span class="token parameter variable">-binary</span> <span class="token parameter variable">-out</span> mensaje.sha mensaje.txt
+</code></pre><p>A continuación, firmamos el resumen del mensaje con la clave privada DSA:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>$ openssl pkeyutl <span class="token parameter variable">-sign</span> <span class="token parameter variable">-inkey</span> privateDSA.pem <span class="token parameter variable">-in</span> mensaje.sha <span class="token parameter variable">-out</span> mensaje.sha.sig
+</code></pre><p>Al destinatario le llegan los ficheros <strong>mensaje.txt y mensaje.sha.sig</strong>. Para verificar la firma del mensaje, el destinatario, usando la clave pública, verifica la firma del resumen del mensaje:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>$ openssl dgst <span class="token parameter variable">-sha512</span> <span class="token parameter variable">-binary</span> <span class="token parameter variable">-out</span> mensaje.sha mensaje.txt
+$ openssl pkeyutl <span class="token parameter variable">-verify</span> <span class="token parameter variable">-inkey</span> publicDSA.pem <span class="token parameter variable">-pubin</span> <span class="token parameter variable">-sigfile</span> mensaje.sha.sig <span class="token parameter variable">-in</span> mensaje.sha
+Signature Verified Successfully
+</code></pre><p>En este caso, el comando <code>pkeyutl</code> verifica <code>-verify</code> el resumen del archivo <code>mensaje.txt</code> <code>mensaje.sha</code> utilizando la clave pública <code>-inkey -pubin</code> y el archivo de firma <code>mensaje.sha.sig</code> recibido.</p>
 <div class="admonition question">
 <p class="admonition-title">Actividades</p>
 <ol>
@@ -405,7 +443,7 @@ Signature Verified Successfully
 <li>
 <p>Descarga los archivos recibidos y realiza las siguientes operaciones:</p>
 <ol>
-<li>Descifra el archivo recibido con la clave pública del compañero.</li>
+<li>Descifra/Verifica el archivo recibido con la clave pública del compañero.</li>
 <li>Verifica que la firma del documento es correcta.</li>
 </ol>
 </li>
@@ -413,7 +451,14 @@ Signature Verified Successfully
 <p>Modifica el documento recibido y vuelve a comprobar la firma</p>
 <ol>
 <li>¿Qué sucede?</li>
-<li>¿Se puede hacer una interceptación y modificación del mensaje en algún punto de la cadena?</li>
+</ol>
+</li>
+<li>
+<p>¿Se puede hacer una interceptación y modificación del mensaje en algún punto de la cadena?</p>
+<ol>
+<li>Intenta modificar el documento y vuelve a firmarlo con tu clave privada.</li>
+<li>Reenvíalo como si fuera el documento original (firmado por otra persona)</li>
+<li>¿Qué sucede?</li>
 </ol>
 </li>
 <li>
