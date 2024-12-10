@@ -111,6 +111,14 @@
           <a href="#actividad-3-defensa-ibérica" class="md-toc-link">
             <p>Actividad 3. Defensa ibérica</p>
 
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#actividad-4-contraseñas-de-windows" class="md-toc-link">
+            <p>Actividad 4. Contraseñas de Windows</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#actividad-5-contraseñas-de-linux" class="md-toc-link">
+            <p>Actividad 5. Contraseñas de Linux</p>
+
           </a></div>
         </div>
       </details>
@@ -139,6 +147,45 @@
 <a href="https://ophcrack.sourceforge.io/tables.php">Tablas rainbow</a></p>
 <h3 id="actividad-3-defensa-ibérica">Actividad 3. Defensa ibérica </h3>
 <p>Tomando el hash que se encuentra en el archivo defensa_iberica.txt, intenta obtener la contraseña del usuario con alguna de las herramientas vistas en clase.</p>
+<h3 id="actividad-4-contraseñas-de-windows">Actividad 4. Contraseñas de Windows </h3>
+<p>Configura la política de contraseñas de Windows para que cumpla con los siguientes requisitos:</p>
+<ul>
+<li>Longitud mínima de 8 caracteres</li>
+<li>Contraseñas complejas</li>
+<li>Historial de contraseñas para que no se puedan repetir las últimas 5 contraseñas</li>
+<li>Caducidad de la contraseña cada 90 días</li>
+<li>Bloqueo de la cuenta tras 3 intentos fallidos</li>
+<li>Duración de bloqueo de 10 minutos</li>
+<li>Restablecimiento el contador de intentos tras 1 minuto</li>
+</ul>
+<p><strong>Realiza varias pruebas y capturas de pantalla para comprobar que se cumplen las políticas establecidas.</strong></p>
+<p>a) Prueba a crear un usuario y a cambiar la contraseña para comprobar que se cumplen las políticas establecidas.</p>
+<blockquote>
+<p>Que se vea como se cumplen tanto las políticas de complejidad, como la caducidad de la contraseña y el historial de contraseñas.</p>
+</blockquote>
+<p>b) Prueba a bloquear la cuenta con 3 intentos fallidos, con una diferencia de más 1 minuto entre intentos.<br>
+c) Prueba a bloquear la cuenta con 3 intentos fallidos, intentando repetidas veces en menos de 1 minuto.</p>
+<h3 id="actividad-5-contraseñas-de-linux">Actividad 5. Contraseñas de Linux </h3>
+<p>Configura la política de contraseñas de Windows para que cumpla con los siguientes requisitos:</p>
+<ul>
+<li>Longitud mínima de 8 caracteres</li>
+<li>Contraseñas complejas con al menos un caracter de cada de los siguientes elementos: mayúsculas, minúsculas, números y caracteres especiales</li>
+<li>Historial de contraseñas para que no se puedan repetir las últimas 5 contraseñas</li>
+<li>Caducidad de la contraseña cada 180 días con aviso previo de 14 días.</li>
+</ul>
+<p><strong>Realiza varias pruebas y capturas de pantalla para comprobar que se cumplen las políticas establecidas.</strong></p>
+<p>a) Prueba a crear un usuario y a cambiar la contraseña para comprobar que se cumplen las políticas establecidas.</p>
+<blockquote>
+<p>Que se vea como se cumplen tanto las políticas de complejidad, como la caducidad de la contraseña y el historial de contraseñas.</p>
+</blockquote>
+<p>b) Para conseguir que también se cumplan las siguientes políticas:</p>
+<ul>
+<li>Bloqueo de la cuenta tras 3 intentos fallidos</li>
+<li>Duración de bloqueo de 10 minutos</li>
+<li>Restablecimiento el contador de intentos tras 1 minuto</li>
+</ul>
+<p>Investiga como conseguir bloquear la cuenta con 3 intentos fallidos en menos de un minuto.</p>
+<p>c) Para la configuración anterior, investiga como conseguir que la cuenta no se bloquee con 3 intentos fallidos, con una diferencia de más 1 minuto entre intentos.</p>
 
       </div>
       
