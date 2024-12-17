@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>PSP - U4 Actividades</title>
+      <title>SAD - U3.4. Access Control Lists</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -88,262 +88,241 @@
     
       <div class="crossnote markdown-preview  ">
       
-<h1 id="psp---u4-actividades">PSP - U4 Actividades </h1>
-<p><a href="./Actividades.pdf">Descargar estos apuntes</a></p>
+<h1 id="sad---u33-access-control-lists">SAD - U3.3. Access Control Lists </h1>
+<p><a href="./U3_4_AccessControlLists.pdf">Descargar estos apuntes</a></p>
 <h2 id="índice">Índice </h2>
 
 <div class="md-toc">
-<div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#1-actividad-u4a04_servidortiempo" class="md-toc-link">
-            <ol>
-<li>Actividad U4A04_ServidorTiempo</li>
+<details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#acls-windows" class="md-toc-link"><ol>
+<li>ACLs y permisos</li>
 </ol>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#acls-permisos-windows" class="md-toc-link">
+            <p>1.1. ACLs y permisos en windows</p>
 
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#2-actividad-u4a05_walkietalkie" class="md-toc-link">
-            <ol start="2">
-<li>Actividad U4A05_WalkieTalkie</li>
-</ol>
+          </a></div><details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#acls-permisos-linux" class="md-toc-link"><p>1.2. ACLs y permisos en Linux</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#121-limitaciones-de-los-permisos-en-linux" class="md-toc-link">
+            <p>1.2.1 Limitaciones de los permisos en Linux</p>
 
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#3-actividad-u4a06_chatduo" class="md-toc-link">
-            <ol start="3">
-<li>Actividad U4A06_ChatDuo</li>
-</ol>
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#122-listas-de-control-de-acceso-en-linux" class="md-toc-link">
+            <p>1.2.2 Listas de control de acceso en Linux</p>
 
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#4-actividad-u4_chatsimple" class="md-toc-link">
-            <ol start="4">
-<li>Actividad U4_ChatSimple</li>
-</ol>
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#123-configuración-de-acls-en-linux" class="md-toc-link">
+            <p>1.2.3 Configuración de ACLs en Linux</p>
 
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#5-actividad-u4a07_chatmultiple" class="md-toc-link">
-            <ol start="5">
-<li>Actividad U4A07_ChatMultiple</li>
-</ol>
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#124-uso-de-acls-en-linux" class="md-toc-link">
+            <p>1.2.4 Uso de ACLs en Linux</p>
 
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#6-actividad-u4a08_loginestados" class="md-toc-link">
-            <ol start="6">
-<li>Actividad U4A08_LoginEstados</li>
-</ol>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#7-actividad-u4_troyano" class="md-toc-link">
-            <ol start="7">
-<li>Actividad U4_Troyano</li>
-</ol>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#8-actividad-u4_lecturaficherosremotos" class="md-toc-link">
-            <ol start="8">
-<li>Actividad U4_LecturaFicherosRemotos</li>
-</ol>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#9-actividad-u4a09_spyware" class="md-toc-link">
-            <ol start="9">
-<li>Actividad U4A09_Spyware</li>
-</ol>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#10-actividad-u4_contadorudp" class="md-toc-link">
-            <ol start="10">
-<li>Actividad U4_ContadorUDP</li>
-</ol>
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#125-máscara-en-las-acls" class="md-toc-link">
+            <p>1.2.5 Máscara en las ACLs</p>
 
           </a></div>
+        </div>
+      </details>
+    
+        </div>
+      </details>
+    
 </div>
+<div style="\&quot;page-break-after:always;\&quot;"></div>
+<h2 id="acls-windows">1. ACLs y permisos </h2>
+<p>Ya hemos visto que, para acceder a la información almacenada en un sistema informático en primer lugar hay que superar las <strong>barreras físicas</strong> de acceso. Una vez superadas estas barreras, el siguiente paso en materia de seguridad será establecer unas <strong>barreras lógicas</strong> que impidan el acceso a nuestros datos.</p>
+<p>La primera barrera lógica que se puede establecer es la creación de mecanismos de control de acceso a la información. Para ello, en vez de que al encender los equipos se pueda acceder directamente a todos los datos almacenados en los mismos, una primera medida sería la <strong>creación de usuarios</strong> para organizar la información, de forma que cada usuario únicamente pudiera acceder a la información de la cuenta para la que dispone de autorización.</p>
+<p>Las cuentas de usuario permiten asignar a cada uno de ellos unos derechos y privilegios que restringirán las operaciones que este va a poder realizar dentro de un sistema informático, así como la posibilidad de rastrear<br>
+dichas operaciones. Como sistema de verificación de la identidad de cada uno de los usuarios se suele establecer la combinación entre un nombre identificativo (usuario, user, etc.), con la de una contraseña o password.</p>
+<p>Además, los equipos tienen instaladas distintas aplicaciones, respecto de las que se puede establecer un control de usuarios integrado con el del sistema operativo o independiente del mismo. En este caso, el acceso a las aplicaciones se realizará mediante un usuario y contraseña, que se verificarán en el sistema de autenticación de la aplicación.</p>
+<p>Si se trabaja en un entorno de red, es posible que, para acceder a algún recurso de la misma, se exijan unas credenciales determinadas, establecidas a través de las <strong>listas de control de acceso (ACL, Access Control List)</strong>. Además, en las redes, los dispositivos de red, como los routers, pueden servir de barrera lógica impidiendo el acceso a determinadas zonas de la red para algunos usuarios (asignándoles<br>
+un rango restrictivo de direcciones IP).</p>
+<h3 id="acls-permisos-windows">1.1. ACLs y permisos en windows </h3>
+<p>Las ACL de Windows se pueden configurar con <code>icacls</code> o con el <code>Explorador de archivos de Windows</code>. También puede usar el comando <code>Set-ACL</code> de PowerShell.</p>
 <div class="admonition info">
-<p class="admonition-title">Nombre del proyecto</p>
-<p>En estas actividades volvemos a usar la nomenclatura de clases y proyectos explicada en la hoja de <a href="https://apuntesvicente.github.io/actividadesPSP/UD2/ActividadesAutoEvaluaci%C3%B3n.html">actividades de autoevaluación de la U2</a></p>
+<p class="admonition-title">ACLs en AD</p>
+<p>Si el cliente está unido a un dominio o si el entorno tiene varios bosques de AD, no use el Explorador de Windows para configurar las ACL. En su lugar, use icacls. Esto se debe a que la configuración de ACL de Explorador de archivos de Windows requiere que el cliente esté unido al dominio de AD al que está unida la cuenta de almacenamiento.</p>
 </div>
-<div style="page-break-after:always;"></div>
-<h2 id="1-actividad-u4a04_servidortiempo">1. Actividad U4A04_ServidorTiempo </h2>
-<p><strong>Clases psp.actividades.U4A04_TiempoClient y Clase psp.actividades.U4A04_TiempoServer</strong></p>
-<p>Diseña y programa un cliente / servidor UDP (monohilo) que sirva como servidor de tiempo para una máquina cliente.</p>
-<p>El funcionamiento del protocolo es muy sencillo:</p>
+<p>Siga estos pasos para configurar las ACL mediante el Explorador de archivos de Windows.</p>
 <ol>
-<li>El cliente recogerá la hora local de su sistema.</li>
-<li>Hará una conexión con el servidor y esperará a que le envíe su hora.</li>
-<li>El cliente volverá a coger la hora local de su sistema.</li>
-<li>El cliente comprobará si la hora recibida del servidor está entre las horas cogidas de su sistema y mostrará un<br>
-mensaje informando de si la máquina cliente está en hora o no.
-<ul>
-<li>Si la hora del servidor está entre las dos horas cogidas por el cliente, mostrará un mensaje indicando que la máquina cliente está en hora.</li>
-<li>Si la hora del servidor no está entre las dos horas cogidas por el cliente, mostrará un mensaje indicando que la máquina cliente no está en hora.</li>
-<li>El cliente puede no recibir la hora del servidor si este no está disponible. En este caso, el cliente mostrará un mensaje indicando que no ha podido recibir la hora del servidor.</li>
-</ul>
+<li>Abra el Explorador de archivos de Windows, haga clic con el botón derecho en el archivo o directorio, y seleccione <strong>Propiedades</strong>.</li>
+<li>Seleccione la <strong>pestaña Seguridad</strong>.</li>
+<li>Para cambiar los permisos, seleccione <strong>Editar</strong>.</li>
+<li>Puede cambiar el permiso de los usuarios existentes o seleccionar <strong>Agregar...</strong> para conceder permisos a los nuevos usuarios.
+<ol>
+<li>En la ventana del símbolo del sistema para agregar nuevos usuarios, escriba el nombre de usuario de destino al que quiera conceder permisos en el cuadro Escriba los nombres de objeto que desea seleccionar</li>
+<li>seleccione <strong>Comprobar nombres</strong> para buscar el nombre UPN completo del usuario de destino. Es posible que tenga que especificar el nombre de dominio y el GUID de dominio para AD local. Esta información la pueden proporcionar un administrador de dominio o de cliente unido a una instancia local de AD.</li>
+</ol>
 </li>
+<li>Seleccione <strong>Aceptar</strong>.</li>
+<li>En la <strong>pestaña Seguridad</strong>, seleccione todos los permisos que desea conceder al nuevo usuario.</li>
+<li>Seleccione <strong>Aplicar</strong>.</li>
 </ol>
-<p>El formato en el que se genere y se reciba la hora se deja a libre elección del diseñador de la aplicación.</p>
-<div style="page-break-after:always;"></div>
-<h2 id="2-actividad-u4a05_walkietalkie">2. Actividad U4A05_WalkieTalkie </h2>
-<p><strong>Clase psp.actividades.U4A05_WalkieTalkie</strong></p>
-<p>Diseña y programa una clase que haga a la vez de cliente y servidor UDP (monohilo) que permita funcionar en modo Walkie-Talkie (<a href="https://es.wikipedia.org/wiki/Walkie-talkie">https://es.wikipedia.org/wiki/Walkie-talkie</a>) usando un protocolo de tipo PTT - Push To Talk (<a href="https://es.wikipedia.org/wiki/Pulsa_y_habla">https://es.wikipedia.org/wiki/Pulsa_y_habla</a>).</p>
-<p>En esta práctica vamos a trabajar enviando mensajes a la dirección de broadcast de nuestra red (no confundir con multicast). Estas aplicaciones sólo funcionan dentro de la red local, no funcionan más allá de nuestro router.</p>
+<h3 id="acls-permisos-linux">1.2. ACLs y permisos en Linux </h3>
+<p>Los permisos se aplican sobre elementos del sistema de archivos, tales como archivos regulares, directorios, sockets Unix, enlaces simbólicos, nodos de dispositivos, etc. Los tipos de permisos que puede administrar GNU/Linux, o permisos POSIX, son tres (aunque también existen los permisos especiales y los atributos):</p>
+<ul>
+<li><strong>Lectura</strong> <code>(r: Read)</code>: la entidad asociada podrá leer el elemento.</li>
+<li><strong>Escritura</strong> <code>(w: Write)</code>: la entidad asociada podrá escribir o modificar el elemento.</li>
+<li><strong>Ejecución</strong> <code>(x: eXecution)</code>: la entidad asociada podrá ejecutar el elemento.</li>
+</ul>
+<p>Las entidades sobre las que tienen vigencia estos permisos son:</p>
+<ul>
+<li>Usuario <strong>propietario</strong> <code>(u: User)</code>: usuario dueño del elemento en el sistema de archivos.</li>
+<li><strong>Grupo</strong> al que pertenece <code>(g: Group)</code>: grupo al que pertenece el elemento.</li>
+<li><strong>Otros</strong> usuarios <code>(o: Others)</code>: el resto de los usuarios del sistema que no son ni el dueño del elemento, ni pertenecen al grupo del elemento.</li>
+</ul>
+<p>Los permisos se pueden visualizar con el comando <code>ls -l</code> y se pueden modificar con el comando <code>chmod</code>. Por ejemplo, para dar permisos de lectura, escritura y ejecución al propietario del archivo, de lectura y ejecución al grupo y de lectura y ejecución a otros usuarios, se utilizaría cualquiera de estos comandos:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># chmod 755 archivo</span>
+<span class="token comment"># chmod u=rwx,g=rx,o=rx archivo</span>
+<span class="token comment"># ls -l /root</span>
+drwxr-x---  <span class="token number">35</span> root root  <span class="token number">4096</span> Jun  <span class="token number">7</span> <span class="token number">20</span>:45 root   
+</code></pre><p>Las líneas de esta salida tienen una estructura particular. De esta salida ahora nos interesa la primer columna, compuesta de 10 letras. En la primer columna, las letras que identifican los permisos de cada elemento. La primer letra de esta columna indica el tipo de elemento (d - directory), y luego sí tenemos 9 letras que identifican los permisos de lectura, escritura y ejecución en tres ternas: propietario, grupo, y los otros usuarios del sistema.</p>
+<p>En el caso de los <strong>directorios</strong>, los permisos de lectura y escritura permiten listar el contenido del directorio y crear o eliminar archivos y directorios en él, respectivamente. El permiso de ejecución permite acceder al contenido del directorio.</p>
+<p>En el caso de los <strong>archivos</strong>, los permisos de lectura permiten leer el contenido del archivo, los de escritura permiten modificar el contenido del archivo y los de ejecución permiten ejecutar el archivo si es un script o un programa.</p>
+<div class="admonition info">
+<p class="admonition-title">Permisos especiales en Linux</p>
+<p>Además de los permisos básicos, existen permisos especiales que se pueden aplicar a los archivos y directorios en Linux. Algunos de los permisos especiales más comunes son los siguientes:</p>
+<ul>
+<li><strong>Setuid (suid)</strong>: permite que un archivo se ejecute con los permisos del propietario del archivo en lugar de los permisos del usuario que lo ejecuta.</li>
+<li><strong>Setgid (sgid)</strong>: permite que un archivo se ejecute con los permisos del grupo del archivo en lugar de los permisos del grupo del usuario que lo ejecuta.</li>
+<li><strong>Sticky bit</strong>: permite que solo el propietario del archivo o directorio pueda eliminar o mover el archivo o directorio.</li>
+</ul>
+</div>
+<h4 id="121-limitaciones-de-los-permisos-en-linux">1.2.1 Limitaciones de los permisos en Linux </h4>
+<p>Aunque los permisos de los archivos y directorios en Linux son muy potentes y permiten controlar el acceso a los archivos y directorios de forma muy precisa, tienen algunas limitaciones. Algunas de las limitaciones más comunes de los permisos de los archivos y directorios en Linux son las siguientes:</p>
+<p>En el ejemplo anterior, si queremos que un usuario tenga permisos de escritura sobre el directorio, podemos tomar varias alternativas:</p>
+<ul>
+<li><strong>Cambiar el propietario del directorio</strong>: podemos cambiar el propietario del directorio al usuario que queremos que tenga permisos de escritura sobre el directorio. <code>Esto haría que el usuario root perdiese los permisos de escritura sobre el directorio.</code></li>
+<li><strong>Añadir el usuario al grupo del directorio</strong>: podemos añadir el usuario al grupo al que pertenece el directorio y además darle permisos de escritura a este grupo. <code>Esto haría que todos los usuarios del grupo root también tuviesen permisos de escritura sobre el directorio.</code></li>
+<li><strong>Dar permisos de escritura a otros usuarios</strong>: podemos dar permisos de escritura a otros usuarios sobre el directorio. <code>Esto haría que todos los usuarios del sistema tuviesen permisos de escritura sobre el directorio.</code></li>
+<li><strong>Crear un grupo nuevo y añadir al usuario al grupo</strong>: podemos crear un grupo nuevo, añadir al usuario al grupo y darle permisos de escritura al grupo. <code>Esto haría que los usuarios del grupo root perdiesen el acceso al directorio.</code></li>
+</ul>
+<p>La solución parece no ser sencilla. Lo mismo ocurriría si quisiéramos, por ejemplo, dar permisos de escritura a los usuarios de un grupo diferente a root, ya que no es el grupo al que pertenece el archivo, y nos ocasionaría problemas similares.</p>
 <blockquote>
-<p><em>Por ejemplo, si nuestra dirección es 10.0.100.1 con máscara 255.255.0.0 (/16), la dirección de broadcast será 10.0.255.255.</em></p>
+<p>Aquí es donde entran en juego las <strong>listas de control de acceso, o ACL (Access Control List)</strong>, en la administración de privilegios en GNU/Linux.</p>
 </blockquote>
-<p>Para probar la aplicación tendremos que ejecutarla en equipos diferentes</p>
-<p>El cliente, una vez iniciado va a crear un DatagramSocket que atienda peticiones en el puerto 9876. Además, tendrá que llamar al método socket.setBroadcast(true); para poder enviar broadcasts.</p>
-<p>En este caso, al ser un sistema en el que no hay servidor, no hay ningún protocolo preestablecido, por lo que tenemos que gestionar las lecturas y escrituras con hilos.</p>
-<p>Una vez creado el DatagramSocket,</p>
-<ul>
-<li>Crearemos un hilo que se encargará de leer todo el tiempo. Esperará a que llegue un<br>
-mensaje y mostrará por consola lo que reciba, precedido por la IP de origen del mensaje. Después volverá a quedarse esperando.</li>
-<li>Crearemos otro hilo que se encargará de enviar mensajes. Esperará a que se introduzca un mensaje por teclado y lo enviará a todos los equipos que estén a la escucha. Después volverá a esperar a que se introduzca otro mensaje. La dirección y el puerto de envío serán la dirección de broadcast y el puerto 9876.</li>
-</ul>
-<p>Si hay varios clientes y todos escriben a la vez, puede ser bastante complicado seguir una conversación. Así que como mejora del programa podemos seguir e implementar el protocolo PushToTalk (PPT) de comunicaciones por radio (<a href="https://www.tecnitran.es/como-usar-un-walkietalkie/">https://www.tecnitran.es/como-usar-un-walkietalkie/</a>).</p>
-<ol>
-<li>Cuando alguien quiere hablar, pulsa el botón del walkie (en nuestro caso envía el mensaje “PTT”).</li>
-<li>Ese cliente puede enviar tantos mensajes como quiera.</li>
-<li>Cuando quiera dejar de hablar, suelta el botón del walkie (en nuestro caso envía el mensaje “Cambio”).</li>
-<li>Los demás deben respetar el turno y permanecer en silencio (sin enviar mensajes). No es necesario controlarlo, aunque se puede forzar a que no puedan enviar viendo si ha llegado un “PTT” y no ha llegado un “Cambio”.</li>
-<li>Cuando un cliente quiere irse, apaga el walkie (en nuestro caso envía el mensaje “Corto”).</li>
-</ol>
+<h4 id="122-listas-de-control-de-acceso-en-linux">1.2.2 Listas de control de acceso en Linux </h4>
+<p>Las <strong>listas de control de acceso (ACL)</strong> son un mecanismo de control de acceso que permite a los administradores de sistemas establecer permisos más detallados y granulares en los archivos y directorios de un sistema Linux. Las ACL permiten a los administradores de sistemas establecer permisos de acceso a nivel de usuario y grupo, lo que les permite controlar con precisión quién puede acceder a qué archivos y directorios en un sistema Linux.</p>
 <div class="admonition info">
-<p class="admonition-title">prueba de aplicaciones</p>
-<p>Para probarlo, no se puede usar Telnet, ya que sólo funciona con TCP. Si instaláis <a href="https://nmap.org/ncat/">NetCat</a>, podéis usarlo como servidor UDP con el siguiente comando</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>$ ncat.exe <span class="token parameter variable">-u</span> <span class="token parameter variable">-l</span> <span class="token parameter variable">-p</span> <span class="token number">9876</span>
-</code></pre><p>y como cliente</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>$ ncat.exe <span class="token parameter variable">-u</span> localhost <span class="token number">9876</span> <span class="token punctuation">(</span>en vez de localhost se puede poner una IP<span class="token punctuation">)</span>.
-</code></pre><div class="admonition danger">
-<p class="admonition-title">ncat en Windows</p>
-<p>Windows Defender puede bloquear el uso de ncat. Si es así, tendréis que añadir una excepción y permitir el uso de ncat.<br>
-Normalmente lo detecta como un programa peligroso y un virus, pero no lo es.</p>
+<p class="admonition-title">ACLs y permisos POSIX</p>
+<p>Las ACL son representaciones de permisos para elementos del sistema de archivos, que extienden los permisos nativos POSIX.1 del sistema.</p>
+<p>De hecho, los permisos nativos también tienen su representación en ACL cuando éstas están activadas, es decir, los permisos nativos son representados por ACL’s, y además, podemos agregar ACL’s adicionales para otorgar permisos más granularizados a otras entidades del sistema de archivos.</p>
 </div>
-</div>
-<div style="page-break-after:always;"></div>
-<h2 id="3-actividad-u4a06_chatduo">3. Actividad U4A06_ChatDuo </h2>
-<p><strong>Clase psp.actividades.U4A06_ChatDuoClient y psp.actividades.U4A06_ChatDuoServer</strong></p>
-<p>Diseña y programa un <strong>servidor (multihilo)</strong> y un cliente TCP de forma que se permita establece un chat entre dos clientes usando al servidor de intermediario.</p>
-<p>El protocolo a implementar será un protocolo sencillo de envío / respuesta entre ambos clientes.</p>
-<p>La comunicación de los clientes con el servidor será una comunicación normal, en la que será el servidor el que inicie la comunicación enviando un mensaje a cada cliente cuando se hayan conectado los dos al servidor.</p>
-<p>El servidor, que hace de intermediario, tendrá que coordinar la comunicación entre ambos clientes.</p>
-<ul>
-<li>Por un lado, no dejará que se conecten más de dos clientes. Esta gestión la tendrá que hacer en el hilo principal.</li>
-<li>Además, deberá guardar los sockets de los dos clientes que se conecten.</li>
-<li>Creará un hilo (worker) para atender a cada cliente. Cada uno de los dos workers recibirá dos sockets en su constructor, el del cliente que controla ese hilo (origen) y el del cliente que controla el otro hilo (destino).</li>
-<li>Lo primero que hará cada worker es enviar un mensaje a su cliente indicándole que ya puede enviar mensajes.</li>
-<li>A continuación, cada worker se quedará en un bucle esperando a recibir un mensaje por el socket origen y reenviando el mismo mensaje por el socket destino.</li>
-<li>Cuando uno de los hilos envía o recibe el mensaje “EXIT”, se cierra la comunicación y el cliente finaliza su ejecución.</li>
-<li>El servidor, mientras tanto, se queda activo esperando otras dos conexiones para iniciar otro chat.</li>
-</ul>
-<p>Como <strong>mejora al proceso</strong>, se puede controlar que los dos clientes hagan acciones alternas, es decir, que cuando uno escriba un mensaje el otro esté esperando y viceversa.</p>
-<div class="admonition tip">
-<p class="admonition-title">Pista</p>
-<p>El primero que se conecte que empiece enviando y el segundo que empiece esperando.</p>
-</div>
-<h2 id="4-actividad-u4_chatsimple">4. Actividad U4_ChatSimple </h2>
-<p><strong>Clase psp.actividades.U4_ChatSimpleClient y psp.actividades.U4_ChatSimpleServer</strong></p>
-<p>Diseña y programa un <strong>servidor (multihilo)</strong> y un cliente TCP de forma que se permita establece un chat entre varios clientes.</p>
-<p>En el caso de este chat, el servidor va a ser un intermediario que va a recibir los mensajes de los clientes y los va a reenviar a clientes concretos.</p>
-<p>Vamos a empezar a trabajar con objetos compartidos entre los hilos. En este caso, el hilo principal va a tener una colección de sockets de los clientes conectados, asociados a su <code>NICK</code> en el chat.</p>
-<p>Cuando un cliente se conecta, envía un primer mensaje con el comando <code>ID</code> y el servidor lo guarda en la colección, junto con su socket.</p>
-<p>Para comunicarse con otro cliente, el servidor va a recibir dos mensajes:</p>
-<ol>
-<li>En el primer mensaje, el cliente le va a enviar el comando <code>NICK</code> seguido del nombre del usuario con el que quiere chatear.</li>
-<li>En el segundo mensaje, el cliente le va a enviar el texto que quiere enviar a ese usuario.</li>
-<li>El servidor va a buscar si ese usuario está conectado y, en caso afirmativo, le va a reenviar el contenido del segundo mensaje.</li>
-<li>El servidor también puede recibir un comando <code>LIST</code>. En ese caso, le devolverá al cliente la lista de usuarios conectados.</li>
-</ol>
-<p>En esta actividad, hay que gestionar de forma independiente la lectura y la escritura de los mensajes en el cliente. Como ahora el cliente puede enviar y recibir mensajes, los <strong>clientes también van a ser multihilo</strong> (como en el caso del walkie-talkie).</p>
-<p>En el servidor, cada worker va a recibir el socket de la conexión con su cliente y un objeto compartido entre todos los hilos (una colección) donde el hilo principal va a ir guardando todos los sockets de los clientes.<br>
-En esa colección tendrá que buscar el socket del cliente con el que se quiere conectar.</p>
-<div class="admonition question">
-<p class="admonition-title">Protocolo de comunicación</p>
-<p>Dibuja el protocolo de comunicación que se va a seguir en esta actividad.</p>
-</div>
-<p><img src="./Soluciones/ChatSimple.puml.png" alt="Plantilla de protocolo"></p>
-<h2 id="5-actividad-u4a07_chatmultiple">5. Actividad U4A07_ChatMultiple </h2>
-<p><strong>Clase psp.actividades.U4A07_ChatMultipleClient y psp.actividades.U4A07_ChatMultipleServer</strong></p>
-<p>Diseña y programa un servidor (multihilo) y un cliente TCP de forma que se permita establece un chat entre varios clientes usando al servidor de intermediario.</p>
-<p>A diferencia del ejercicio U4A06, ahora cada worker va a recibir el socket de la conexión con su cliente y un objeto compartido entre todos los hilos (una colección) donde el hilo principal va a ir guardando todos los sockets de los clientes.</p>
-<p>Cuando un worker recibe un mensaje, tiene que reenviarlo a todos los clientes menos al que lo ha enviado (a todos los sockets menos al que ese worker está conectado). Los mensajes se enviarán precedidos por la IP del cliente que los ha enviado (esa información está en el socket). <code>Vamos a simular un multicast con TCP</code>.</p>
-<p>Como ahora hay muchos clientes y no se pueden alternar los envíos y las lecturas, los clientes también van a ser multihilo (como en el caso del walkie-talkie):</p>
-<ul>
-<li>Podemos aprovechar el hilo principal, o crear uno específico, para que se encargue de leer del teclado y enviar los mensajes al servidor.</li>
-<li>Debemos crear un hilo que esté todo el tiempo leyendo del socket y mostrando por consola los mensajes que le vayan llegando.</li>
-</ul>
-<div style="page-break-after:always;"></div>
-<h2 id="6-actividad-u4a08_loginestados">6. Actividad U4A08_LoginEstados </h2>
-<p>Diseña y programa un servidor (multihilo) y un cliente TCP de forma que implementen el protocolo definido en el siguiente diagrama de secuencia.</p>
-<p><strong>Tal y como indica el nombre de la actividad, se pretende que lo solucionéis usando estados.</strong></p>
-<p><img src="./Soluciones/LoginUsuario.png" alt="menu"></p>
+<table>
+<thead>
+<tr>
+<th>Tipo de entrada</th>
+<th>Etiqueta de permisos</th>
+<th>Forma en texto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Owner (dueño) *</td>
+<td>ACL_USER_OBJ</td>
+<td>user::rwx ó u::rwx</td>
+</tr>
+<tr>
+<td>Named user (usuario nombrado)</td>
+<td>ACL_USER</td>
+<td>user:name:rwx ó u:name:rwx</td>
+</tr>
+<tr>
+<td>Owning group (grupo dueño) *</td>
+<td>ACL_GROUP_OBJ</td>
+<td>group::rwx ó g::rwx</td>
+</tr>
+<tr>
+<td>Named group (grupo nombrado)</td>
+<td>ACL_GROUP</td>
+<td>group:name:rwx ó g:name:rwx</td>
+</tr>
+<tr>
+<td>Mask (máscara)</td>
+<td>ACL_MASK</td>
+<td>mask::rwx ó m::rwx</td>
+</tr>
+<tr>
+<td>Others (otros) *</td>
+<td>ACL_OTHER</td>
+<td>other::rwx ó o::rwx</td>
+</tr>
+</tbody>
+</table>
+<p>Básicamente las ACL se conforman por un tipo (user, group, mask, other), una serie de calificadores (qué usuario, qué grupo, o ninguno), y los permisos en formato POSIX.1 estándar (mode).</p>
 <div class="admonition info">
-<p class="admonition-title">Diagrama de secuencia</p>
-<p>Hay que entender bien el diagrama para poder programar el protocolo.</p>
-<p>El diagrama debemos interpretarlo como un protocolo de comunicación, no como un diagrama de clases.</p>
-<p>Por lo tanto, <strong>las interacciones se producen en el orden, de arriba hacia abajo, que se indica en el diagrama. Y los intercambios se producen en el sentido que se indica para cada mensaje</strong>.</p>
+<p class="admonition-title">ACLs vs permisos</p>
+<p>Cuando se activan las ACL en un sistema de archivos, pasan a utilizarse como mecanismo predeterminado de gestión de permisos.</p>
+<p>Las ternas de permisos nativos POSIX mapean directamente a ACL’s, lo que da la posibilidad de gestionar estos permisos mediante ACL’s.</p>
+<p>Las ACL equivalentes a los permisos nativos de POSIX se las denomina <strong>ACL’s mínimas</strong>, y están marcadas con un (*) en la tabla anterior, y son tres.</p>
+<p><img src="recursos/acls_minimas.jpg" alt="ACLs mínimas"></p>
+<p>Cuando hablamos de las <strong>ACL mínimas <code>(sin máscara)</code></strong>, los permisos de las clases dueño, grupo y otros coinciden con los permisos nativos de usuario dueño, grupo y otros que vemos en la salida de comandos como ls -l.</p>
 </div>
-<h2 id="7-actividad-u4_troyano">7. Actividad U4_Troyano </h2>
-<p>Diseña y programa un servidor (<strong>monohilo</strong>) y un cliente TCP de forma que implementen un troyano que permita controlar un equipo de forma remota.</p>
-<p>El servidor será el que controle el troyano y el cliente será el que se conecte al servidor.</p>
-<div class="admonition info">
-<p class="admonition-title">Servidor interactivo</p>
-<p>No es una práctica común, ya que el servidor no suele ser interactivo, pero en este caso, el servidor va a ser interactivo y va a permitir al usuario controlar el equipo cliente.</p>
-</div>
-<p>El servidor la va a enviar comandos de consola al cliente, para que éste los ejecute en el equipo infectado. El cliente va a enviar la salida de esos comandos al servidor.</p>
-<p>Por lo tanto, el protocolo será muy sencillo.</p>
+<h4 id="123-configuración-de-acls-en-linux">1.2.3 Configuración de ACLs en Linux </h4>
+<p>Para poder utilizar las listas de control de acceso en los sistemas de archivos en Linux se requieren tres cosas:</p>
 <ul>
-<li>El cliente se conectará al servidor y se quedará a la espera de recibir un comando.</li>
-<li>El servidor le enviará un mensaje al cliente (introducido por teclado) con el comando que debe ejecutar. Por ejemplo <code>"dir c:\"</code>.</li>
-<li>El cliente ejecutará el comando de consola. <strong>Tiene que lanzar un proceso</strong> para que lo ejecute.</li>
-<li>El cliente recupera la salida del comando y se la envía al servidor.</li>
+<li>Que las ACL’s estén soportadas en los módulos de sistemas de archivos en el kernel Linux.</li>
+<li>Que el sistema de archivos sobre el que se vayan a implementar tenga activada la opción acl.</li>
+<li>Que se encuentren instaladas las utilidades para gestionar las ACL’s.</li>
 </ul>
-<p>Hay que establecer un protocolo para que el servidor sepa cuándo ha terminado de ejecutar el comando y cuándo ha terminado de enviar la salida.</p>
-<p>Si queremos que el troyano se ejecute en segundo plano, podemos crear un hilo, configurarlo como daemon y que el cliente se ejecute como un hilo.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p><strong>No se debe usar este programa para controlar equipos ajenos. Es una práctica ilegal y puede acarrear consecuencias legales.</strong></p>
-</div>
-<h2 id="8-actividad-u4_lecturaficherosremotos">8. Actividad U4_LecturaFicherosRemotos </h2>
-<p>Desarrollar una aplicación en Java que permita leer un fichero de texto ubicado en otro ordenador a través de sockets.</p>
-<p>Los pasos del proceso serán los siguientes:</p>
-<ol>
-<li>Programa cliente: solicita al usuario el nombre de un fichero incluyendo su ruta dentro del proyecto del servidor.</li>
-<li>Programa cliente: envía el nombre y la ruta del fichero al servidor.</li>
-<li>Programa servidor: lee el contenido del fichero y se lo envía al cliente.</li>
-<li>Programa cliente: muestra el contenido por la pantalla.</li>
-</ol>
-<p>Una vez finalizada su tarea, ambos procesos, cliente y servidor, finalizan su ejecución.</p>
-<p>Es importante establecer un protocolo de mensajes para que el servidor sepa cuándo ha terminado de enviar el fichero y cuándo ha terminado de recibirlo.</p>
-<h2 id="9-actividad-u4a09_spyware">9. Actividad U4A09_Spyware </h2>
-<p>Diseña y programa un servidor (multihilo) y un cliente TCP o UDP para simular el funcionamiento de un spyware instalado en un equipo.</p>
-<p>El funcionamiento es sencillo.</p>
-<ul>
-<li>En nuestro equipo (hacker) vamos a tener un servidor que estará esperando a recibir peticiones.</li>
-<li>En el equipo de la víctima vamos a tener un cliente. Este cliente hará una captura de pantalla cada X segundos (será uno de los <strong>argumentos que recibe el cliente</strong>) y enviará la captura al servidor.<br>
-Recuerda que a través de los streams o de los datagramas estamos enviando bytes.</li>
-<li>El servidor guardará las imágenes recibidas en una carpeta en la raíz del proyecto que tendrá por<br>
-nombre la IP del equipo espiado. A la imagen se le pondrá como nombre la fecha y hora de la<br>
-recepción del archivo.</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Clase AWT Robot</p>
-<p>Para hacer la captura, investigad los métodos de la clase java.awt.Robot</p>
-</div>
-<p><strong>Ya tenemos hecho el spyware, ahora sólo necesitamos saber cómo infectar a un equipo 😉</strong></p>
-<h2 id="10-actividad-u4_contadorudp">10. Actividad U4_ContadorUDP </h2>
-<p>Desarrolla una aplicación que transmita números desde un cliente a un servidor mediante el uso de sockets UDP.</p>
-<p>Los pasos a seguir se detallan a continuación:</p>
-<ul>
-<li>Programa cliente: Mediante un bucle genera y envía 10000 mensajes con el contenido "Mensaje n" donde n es el número de mensaje.</li>
-<li>Programa cliente: Envía un mensaje con el contenido "FIN" para indicar al servidor que ha terminado de enviar mensajes.</li>
-<li>Programa servidor: Recibe los mensajes y los almacena en un fichero.</li>
-<li>Programa servidor: Cuando recibe el mensaje "FIN" cierra el fichero y finaliza su ejecución.</li>
-</ul>
-<p>Una vez finalizada la ejecución, comprobar si han llegado todos los datagramas en el mismo orden en que se enviaron.</p>
-<div class="admonition info">
-<p class="admonition-title">Congestión y errores en la red</p>
-<p>Si la ejecución se realiza en un mismo ordenador, es probable que lleguen todos los mensajes y que lo hagan en orden.<br>
-Si la ejecución se realiza entre dos ordenadores, o entre ordenadores que están en redes diferentes, es probable que se pierda algún mensaje y/o que lleguen en desorden.</p>
-</div>
+<p>Para verificar si las ACL están soportadas por nuestro kernel tenemos dos formas. Si existe el archivo de configuración que se utilizó para compilar el núcleo en nuestra distribución, en general se encontrará dentro de /boot, y su nombre será config-&lt;version del núcleo Linux activo&gt;. En definitiva podríamos utilizar el siguiente comando para verificarlo:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">grep</span> ACL  /boot/config-<span class="token variable"><span class="token variable">$(</span><span class="token function">uname</span> <span class="token parameter variable">-r</span><span class="token variable">)</span></span>
+</code></pre><p>Para comprobar si el sistema de archivos tiene activada la opción acl, podemos utilizar el comando <code>tune2fs</code> para comprobar si la opción acl está activada en el sistema de archivos. Por ejemplo, para comprobar si la opción acl está activada en el sistema de archivos /dev/sda1, podemos utilizar el siguiente comando:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>tune2fs <span class="token parameter variable">-l</span> /dev/sda1 <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"Default mount options"</span>
+</code></pre><p>Por último, para instalar las utilidades para gestionar las ACL’s en Linux, podemos instalar el paquete <code>acl</code> y opcionalmente el paquete <code>e2fsprogs</code>. En Debian y derivados, como Ubuntu, podemos instalar el paquete acl con el siguiente comando:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> acl
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> e2fsprogs
+</code></pre><p><strong>El paquete acl, incluye varias herramientas (setfacl, getfacl, chacl)  que nos van a permitir gestionar las ACLs.</strong></p>
+<h4 id="124-uso-de-acls-en-linux">1.2.4 Uso de ACLs en Linux </h4>
+<p>El comando <code>getfacl</code> nos permite <strong>ver las ACL</strong> de un archivo o directorio. Por ejemplo, para ver las ACL de un directorio, podemos utilizar el siguiente comando:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>getfacl /ruta/directorio
+<span class="token comment"># file: /ruta/directorio</span>
+<span class="token comment"># owner: root</span>
+<span class="token comment"># group: root</span>
+user::rwx
+group::r-x
+other::r-x
+</code></pre><p>El comando <code>setfacl</code> permite <strong>crear o modificar</strong> una ACLs sobre un archivo o directorio, mediante el modificador -m o --modify de esta manera:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>setfacl <span class="token parameter variable">-m</span> u:uaa:rw- archivo.txt
+</code></pre><p>El dueño del archivo (o el usuario root) podrán fijar estos permisos. Ahora la ACL ha cambiado y se verá de la siguiente forma. Se aprecia también una entrada para la máscara, o mask.</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>getfacl archivo.txt
+<span class="token comment"># file: archivo.txt</span>
+<span class="token comment"># owner: root</span>
+<span class="token comment"># group: root</span>
+user::rw-
+user:uaa:rw-
+group::r--
+mask::rw-
+other::r--
+</code></pre><p>La sintaxis de <code>setfacl</code> especifica los permisos para usuarios o grupos utilizando la siguiente nomenclatura:</p>
 <blockquote>
-<p>Prueba a programar una utilidad (clase) que compruebe si el fichero generado por el servidor contiene todos los mensajes y si los ha guardado en el orden correcto.</p>
+<p>u:named_user:permission<br>
+g:named_group:permission</p>
 </blockquote>
+<p>Y se pueden otorgar varios permisos en la misma línea separando los mismos por coma, por ejemplo:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>setfacl <span class="token parameter variable">-m</span> u:usuario1:rw-,u:usuario2:r--,g:grupo1:r-- archivo.txt
+</code></pre><p>Para <strong>eliminar una ACL</strong> creada por error podemos utilizar el modificador -x o --remove. Por ejemplo, si la ACL creada para el usuario uaa fue creada por error, podemos eliminarla con el siguiente comando:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>setfacl <span class="token parameter variable">-x</span> u:uaa archivo.txt
+</code></pre><p>Dicho sea de paso, podemos eliminar todas las ACL’s creadas para un archivo o directorio utilizando el modificador -b (o --remove-all) de esta forma:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>setfacl <span class="token parameter variable">-b</span> archivo.txt
+</code></pre><h4 id="125-máscara-en-las-acls">1.2.5 Máscara en las ACLs </h4>
+<p>La máscara en las ACLs es un permiso especial que se utiliza para limitar los permisos que se pueden asignar a los usuarios y grupos en un archivo o directorio. La máscara en las ACLs se representa con la etiqueta mask:: en la salida del comando getfacl.</p>
+<p><img src="recursos/acls_extendidas.jpg" alt="ACLs con máscara"></p>
+<p>A partir de usar ACLs, la salida de <code>ls -l</code> se verá modificada, y se añadirá un signo <code>+</code> al final de la salida, indicando que el archivo o directorio tiene ACLs extendidas. Para ver las ACLs extendidas de un archivo o directorio, se puede utilizar el comando <code>getfacl</code>.</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">ls</span> <span class="token parameter variable">-l</span> archivo.txt
+-rw-rw-r--+ <span class="token number">1</span> root root <span class="token number">0</span> Jun  <span class="token number">7</span> <span class="token number">20</span>:45 archivo.txt
+</code></pre><p>El valor que vemos ahora para el grupo es el correspondiente al <strong>permiso máximo de la clase grupo</strong> que vemos en la imagen superior, y que está representado por el valor de la máscara.</p>
 
       </div>
       
