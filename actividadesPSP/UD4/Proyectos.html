@@ -287,6 +287,7 @@ c)	Implementación de la aplicación Servidor multihilo) (psp.proyectos.U4P1_Ser
 <div style="page-break-after:always;"></div>
 <h2 id="2-proyecto-u4p2_juegoadivinarnumero-modo-normal">2. Proyecto U4P2_JuegoAdivinarNumero (modo normal) </h2>
 <p>Implementad una aplicación cliente-servidor multihilo TCP, de manera que pueda aceptar peticiones de múltiples clientes. La aplicación consistirá en un simple juego de adivinar un número. El protocolo lo tenéis que terminar de diseñar vosotros para el cliente y para el servidor.</p>
+<p>La comunicación entre ambos es síncrona, es decir, el cliente envía un mensaje y espera la respuesta del servidor. El servidor no envía mensajes al cliente si no ha recibido un mensaje previo de este. Por lo tanto, <strong>servidor multihilo y cliente monohilo.</strong></p>
 <p>El servidor recibirá como parámetros: el número de intentos y el número máximo.</p>
 <p>El protocolo a desarrollar es el siguiente:</p>
 <ul>

@@ -173,11 +173,11 @@ mensaje informando de si la máquina cliente está en hora o no.
 <ul>
 <li>Si la hora del servidor está entre las dos horas cogidas por el cliente, mostrará un mensaje indicando que la máquina cliente está en hora.</li>
 <li>Si la hora del servidor no está entre las dos horas cogidas por el cliente, mostrará un mensaje indicando que la máquina cliente no está en hora.</li>
-<li>El cliente puede no recibir la hora del servidor si este no está disponible. En este caso, el cliente mostrará un mensaje indicando que no ha podido recibir la hora del servidor.</li>
+<li>El cliente puede no recibir la hora del servidor si este no está disponible. En este caso, el cliente mostrará un mensaje indicando que no ha podido recibir la hora del servidor. Para controlar cuándo no se recibe una respuesta del servidor, se puede usar un temporizador en el cliente mediante el método <code>socket.setSoTimeout(tiempo)</code>.</li>
 </ul>
 </li>
 </ol>
-<p>El formato en el que se genere y se reciba la hora se deja a libre elección del diseñador de la aplicación.</p>
+<p>El formato en el que se genere y se reciba la hora se deja a libre elección del diseñador de la aplicación, aunque en estos casos se trabaja con un formato tipo timestamp (número de segundos desde una fecha de referencia: <code>1 de enero de 1970 GMT</code>).</p>
 <div style="page-break-after:always;"></div>
 <h2 id="2-actividad-u4a05_walkietalkie">2. Actividad U4A05_WalkieTalkie </h2>
 <p><strong>Clase psp.actividades.U4A05_WalkieTalkie</strong></p>
@@ -279,7 +279,7 @@ En esa colección tendrá que buscar el socket del cliente con el que se quiere 
 <p>Por lo tanto, <strong>las interacciones se producen en el orden, de arriba hacia abajo, que se indica en el diagrama. Y los intercambios se producen en el sentido que se indica para cada mensaje</strong>.</p>
 </div>
 <h2 id="7-actividad-u4_troyano">7. Actividad U4_Troyano </h2>
-<p>Diseña y programa un servidor (<strong>monohilo</strong>) y un cliente TCP de forma que implementen un troyano que permita controlar un equipo de forma remota.</p>
+<p>Diseña y programa un servidor (<strong>monohilo</strong>) y un cliente (<strong>monohilo</strong>) TCP de forma que implementen un troyano que permita controlar un equipo de forma remota.</p>
 <p>El servidor será el que controle el troyano y el cliente será el que se conecte al servidor.</p>
 <div class="admonition info">
 <p class="admonition-title">Servidor interactivo</p>
@@ -290,7 +290,7 @@ En esa colección tendrá que buscar el socket del cliente con el que se quiere 
 <ul>
 <li>El cliente se conectará al servidor y se quedará a la espera de recibir un comando.</li>
 <li>El servidor le enviará un mensaje al cliente (introducido por teclado) con el comando que debe ejecutar. Por ejemplo <code>"dir c:\"</code>.</li>
-<li>El cliente ejecutará el comando de consola. <strong>Tiene que lanzar un proceso</strong> para que lo ejecute.</li>
+<li>El cliente ejecutará el comando de consola. <strong>Tiene que lanzar un proceso</strong> para que lo ejecute. Recordad que los comandos del sistema se lanzan con <code>cmd /c comando</code>.</li>
 <li>El cliente recupera la salida del comando y se la envía al servidor.</li>
 </ul>
 <p>Hay que establecer un protocolo para que el servidor sepa cuándo ha terminado de ejecutar el comando y cuándo ha terminado de enviar la salida.</p>
@@ -300,7 +300,7 @@ En esa colección tendrá que buscar el socket del cliente con el que se quiere 
 <p><strong>No se debe usar este programa para controlar equipos ajenos. Es una práctica ilegal y puede acarrear consecuencias legales.</strong></p>
 </div>
 <h2 id="8-actividad-u4_lecturaficherosremotos">8. Actividad U4_LecturaFicherosRemotos </h2>
-<p>Desarrollar una aplicación en Java que permita leer un fichero de texto ubicado en otro ordenador a través de sockets.</p>
+<p>Desarrollar una aplicación en Java que permita leer un fichero de texto ubicado en otro ordenador a través de sockets, usando un servidor multihilo y un cliente monohilo.</p>
 <p>Los pasos del proceso serán los siguientes:</p>
 <ol>
 <li>Programa cliente: solicita al usuario el nombre de un fichero incluyendo su ruta dentro del proyecto del servidor.</li>
@@ -308,8 +308,9 @@ En esa colección tendrá que buscar el socket del cliente con el que se quiere 
 <li>Programa servidor: lee el contenido del fichero y se lo envía al cliente.</li>
 <li>Programa cliente: muestra el contenido por la pantalla.</li>
 </ol>
-<p>Una vez finalizada su tarea, ambos procesos, cliente y servidor, finalizan su ejecución.</p>
+<p>Una vez finalizada su tarea, ambos extremos cliente y worker, finalizan su ejecución.</p>
 <p>Es importante establecer un protocolo de mensajes para que el servidor sepa cuándo ha terminado de enviar el fichero y cuándo ha terminado de recibirlo.</p>
+<p>El servidor es multihilo, ya que tiene que atender a varios clientes a la vez.</p>
 <h2 id="9-actividad-u4a09_spyware">9. Actividad U4A09_Spyware </h2>
 <p>Diseña y programa un servidor (multihilo) y un cliente TCP o UDP para simular el funcionamiento de un spyware instalado en un equipo.</p>
 <p>El funcionamiento es sencillo.</p>
