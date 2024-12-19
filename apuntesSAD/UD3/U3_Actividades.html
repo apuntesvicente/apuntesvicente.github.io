@@ -119,6 +119,10 @@
           <a href="#actividad-5-contraseñas-de-linux" class="md-toc-link">
             <p>Actividad 5. Contraseñas de Linux</p>
 
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#actividad-6-acls-en-linux" class="md-toc-link">
+            <p>Actividad 6. ACLs en Linux</p>
+
           </a></div>
         </div>
       </details>
@@ -186,6 +190,28 @@ c) Prueba a bloquear la cuenta con 3 intentos fallidos, intentando repetidas vec
 </ul>
 <p>Investiga como conseguir bloquear la cuenta con 3 intentos fallidos en menos de un minuto.</p>
 <p>c) Para la configuración anterior, investiga como conseguir que la cuenta no se bloquee con 3 intentos fallidos, con una diferencia de más 1 minuto entre intentos.</p>
+<h3 id="actividad-6-acls-en-linux">Actividad 6. ACLs en Linux </h3>
+<p>Crea un pequeño script <code>/tmp/script1.sh</code> que muestre la fecha y hora actual.</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"La fecha y hora actual es: <span class="token variable"><span class="token variable">$(</span><span class="token function">date</span><span class="token variable">)</span></span>"</span>
+</code></pre><p>Crea un usuario llamado <code>user1</code> y un grupo llamado <code>grupo1</code>. Haz al usuario y al grupo propietarios del archivo <code>/tmp/script1.sh</code> y asigna permisos de <strong>lectura, escritura y ejecución al propietario, de lectura y escritura al grupo y de lectura al resto de usuarios</strong>.</p>
+<p>Crea un usuario llamado <code>user2</code> y añádelo al grupo <code>grupo1</code>. Comprueba que <code>user2</code> puede leer y escribir en el fichero <code>/tmp/script1.sh</code>, pero <strong>no puede ejecutarlo</strong>.</p>
+<p>Crea un usuario llamado <code>user3</code> y añádelo al grupo <code>grupo3</code>. Comprueba que <code>user3</code> no puede modificar ni ejecutar el script <code>/tmp/script1.sh</code>, pero sí puede ver su contenido.</p>
+<p>Ahora, usando acls extendidas haz las siguientes configuraciones:</p>
+<ul>
+<li><code>user2</code>: asígnale permisos de lectura y ejecución sobre el sript <code>/tmp/script1.sh</code><br>
+¿Qué permisos tiene ahora <code>user2</code> sobre el script?<br>
+¿Puede modificarlo?<br>
+¿Qué ha pasado con sus permisos por pertenecer a group1?</li>
+<li><code>user3</code> añádele, a lo que ya tiene, permiso para modificar el script <code>/tmp/script1.sh</code> pero no ejecutarlo.<br>
+¿Qué permisos tiene ahora <code>user3</code> sobre el script?</li>
+<li><code>group3</code> podrá leer y ejecutar el script <code>/tmp/script1.sh</code><br>
+¿Qué permisos tiene ahora <code>user3</code> sobre el script?<br>
+¿Puede ejecutarlo? ¿Por qué?</li>
+<li>Cambia a <code>user2</code> de grupo (a <code>group2</code>) y comprueba si sigue pudiendo ejecutar el script.<br>
+¿Ha cambiado algo en sus permisos?</li>
+</ul>
+<p>Tras cada paso, muestra capturas de pantalla que muestren el comando ejecutado y el resultado obtenido, así como la configuración de ACLs.</p>
 
       </div>
       
