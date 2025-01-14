@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>SAD - U4.1. Seguridad en redes</title>
+      <title>SAD - U4.2. Seguridad en aplicaciones</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -88,44 +88,132 @@
     
       <div class="crossnote markdown-preview  ">
       
-<h1 id="sad---u41-seguridad-en-redes">SAD - U4.1. Seguridad en redes </h1>
-<p><a href="./U4_1_Introduccion.pdf">Descargar estos apuntes</a></p>
+<h1 id="sad---u42-seguridad-en-aplicaciones">SAD - U4.2. Seguridad en aplicaciones </h1>
+<p><a href="./U4_2_Aplicaciones.pdf">Descargar estos apuntes</a></p>
 <h2 id="índice">Índice </h2>
 
 <div class="md-toc">
 <details style="padding:0;;padding-left:0px;" open="">
         <summary class="md-toc-link-wrapper">
-          <a href="#seguridad-redes" class="md-toc-link"><ol>
-<li>Seguridad en redes</li>
+          <a href="#seguridad-aplicaciones" class="md-toc-link"><ol>
+<li>Seguridad en aplicaciones</li>
 </ol>
 </a>
           </summary>
         <div>
           <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#11-fases-de-un-ataque" class="md-toc-link">
-            <p>1.1. Fases de un ataque</p>
+          <a href="#11-seguridad-del-código" class="md-toc-link">
+            <p>1.1. Seguridad del código</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#12-inteligencia-de-fuentes-abiertas-osint" class="md-toc-link">
-            <p>1.2. Inteligencia de fuentes abiertas (OSINT)</p>
+          <a href="#12-seguridad-de-los-datos" class="md-toc-link">
+            <p>1.2. Seguridad de los datos</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#13-escaneo-de-dispositivos-y-servicios" class="md-toc-link">
-            <p>1.3. Escaneo de dispositivos y servicios</p>
+          <a href="#13-seguridad-de-las-comunicaciones" class="md-toc-link">
+            <p>1.3. Seguridad de las comunicaciones</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#21-inyección-de-código" class="md-toc-link">
+            <p>2.1. Inyección de código</p>
 
           </a></div>
         </div>
       </details>
-    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#14-escaneo-de-vulnerabilidades" class="md-toc-link">
-            <p>1.4. Escaneo de vulnerabilidades</p>
-
-          </a></div>
+    
 </div>
 <div style="\&quot;page-break-after:always;\&quot;"></div>
-<h2 id="seguridad-redes">1. Seguridad en redes </h2>
+<h2 id="seguridad-aplicaciones">1. Seguridad en aplicaciones </h2>
+<p>La <strong>seguridad en aplicaciones</strong> es una disciplina que se encarga de proteger las aplicaciones informáticas de posibles amenazas. La seguridad en aplicaciones abarca diferentes aspectos, como la seguridad del <strong>código</strong>, la seguridad de los <strong>datos</strong>, la seguridad de las <strong>comunicaciones</strong>, la seguridad de los <strong>usuarios</strong>, etc. La seguridad en aplicaciones es fundamental para garantizar la confidencialidad, la integridad y la disponibilidad de las aplicaciones informáticas.</p>
+<p>Las principales, aunque nos las únicas, aplicaciones que tienen que tener en cuenta la seguridad son las aplicaciones web, ya que están expuestas a Internet y son un objetivo común de los ciberdelincuentes. Las aplicaciones web pueden ser vulnerables a diferentes tipos de ataques, como la inyección de código, la fuga de información, la suplantación de identidad, la denegación de servicio, etc.</p>
+<p>Existe una entidad que se encarga de la seguridad en aplicaciones web, la <strong>OWASP</strong> (Open Web Application Security Project), que proporciona una serie de guías y herramientas para mejorar la seguridad de las aplicaciones web.</p>
+<p>La OWASP publica una <a href="https://owasp.org/www-project-top-ten/">lista de las 10 vulnerabilidades más críticas en las aplicaciones web</a>, como la inyección de código, la fuga de información, la autenticación y autorización débiles, etc.</p>
+<h3 id="11-seguridad-del-código">1.1. Seguridad del código </h3>
+<p>La <strong>seguridad del código</strong> es una disciplina que se encarga de proteger el código de las aplicaciones informáticas de posibles vulnerabilidades. La seguridad del código abarca diferentes aspectos, como la seguridad de las entradas, la seguridad de las salidas, la seguridad de las variables, la seguridad de las funciones, etc. La seguridad del código es fundamental para garantizar la confidencialidad, la integridad y la disponibilidad de las aplicaciones informáticas.</p>
+<p>Algunas de las vulnerabilidades más comunes en el código de las aplicaciones informáticas son:</p>
+<ul>
+<li><strong>Inyección de código</strong>: las vulnerabilidades de inyección de código permiten a un atacante ejecutar código malicioso en una aplicación, como SQL injection, XSS, CSRF, etc.</li>
+<li><strong>Fuga de información</strong>: las vulnerabilidades de fuga de información permiten a un atacante acceder a información sensible de una aplicación, como contraseñas, datos personales, etc.</li>
+<li><strong>Desbordamiento de búfer</strong>: las vulnerabilidades de desbordamiento de búfer permiten a un atacante sobrescribir la memoria de una aplicación y ejecutar código malicioso.</li>
+<li><strong>Autenticación y autorización débiles</strong>: las vulnerabilidades de autenticación y autorización débiles permiten a un atacante acceder a una aplicación sin autorización, como contraseñas débiles, permisos incorrectos, etc.</li>
+<li><strong>Vulnerabilidades de configuración</strong>: las vulnerabilidades de configuración permiten a un atacante acceder a una aplicación debido a una configuración incorrecta, como puertos abiertos, servicios activos, etc.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>La seguridad del código es fundamental para garantizar la confidencialidad, la integridad y la disponibilidad de las aplicaciones informáticas. Algunas de las prácticas recomendadas para mejorar la seguridad del código son:</p>
+<ul>
+<li>Validar las entradas de los usuarios para prevenir la inyección de código.</li>
+<li>Escapar las salidas de los usuarios para prevenir la fuga de información.</li>
+<li>Limitar los privilegios de los usuarios para prevenir el desbordamiento de búfer.</li>
+<li>Utilizar contraseñas seguras y cifradas para prevenir la autenticación y autorización débiles.</li>
+<li>Mantener actualizado el software y la configuración de la aplicación para prevenir las vulnerabilidades de configuración.</li>
+</ul>
+</div>
+<h3 id="12-seguridad-de-los-datos">1.2. Seguridad de los datos </h3>
+<p>La <strong>seguridad de los datos</strong> es una disciplina que se encarga de proteger los datos de las aplicaciones informáticas de posibles amenazas. La seguridad de los datos abarca diferentes aspectos, como la seguridad de los datos en reposo, la seguridad de los datos en tránsito, la seguridad de los datos en uso, la seguridad de los datos en copia de seguridad, etc. La seguridad de los datos es fundamental para garantizar la confidencialidad, la integridad y la disponibilidad de los datos de las aplicaciones informáticas.</p>
+<p>Algunas de las amenazas más comunes a la seguridad de los datos de las aplicaciones informáticas son:</p>
+<ul>
+<li><strong>Fuga de información</strong>: las fugas de información permiten a un atacante acceder a datos sensibles de una aplicación, como contraseñas, datos personales, etc.</li>
+<li><strong>Robo de información</strong>: el robo de información permite a un atacante robar datos sensibles de una aplicación, como contraseñas, datos personales, etc.</li>
+<li><strong>Pérdida de información</strong>: la pérdida de información permite a un atacante eliminar datos sensibles de una aplicación, como contraseñas, datos personales, etc.</li>
+<li><strong>Modificación de información</strong>: la modificación de información permite a un atacante modificar datos sensibles de una aplicación, como contraseñas, datos personales, etc.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>La seguridad de los datos es fundamental para garantizar la confidencialidad, la integridad y la disponibilidad de los datos de las aplicaciones informáticas. Algunas de las prácticas recomendadas para mejorar la seguridad de los datos son:</p>
+<ul>
+<li>Cifrar los datos en reposo para prevenir la fuga de información.</li>
+<li>Cifrar los datos en tránsito para prevenir el robo de información.</li>
+<li>Cifrar los datos en uso para prevenir la pérdida de información.</li>
+<li>Realizar copias de seguridad de los datos para prevenir la pérdida de información.</li>
+<li>Verificar la integridad de los datos para prevenir la modificación de información.</li>
+</ul>
+</div>
+<h3 id="13-seguridad-de-las-comunicaciones">1.3. Seguridad de las comunicaciones </h3>
+<p>La <strong>seguridad de las comunicaciones</strong> es una disciplina que se encarga de proteger las comunicaciones de las aplicaciones informáticas de posibles amenazas. La seguridad de las comunicaciones abarca diferentes aspectos, como la seguridad de las conexiones, la seguridad de los protocolos, la seguridad de los certificados, la seguridad de los cifrados, etc. La seguridad de las comunicaciones es fundamental para garantizar la confidencialidad, la integridad y la disponibilidad de las comunicaciones de las aplicaciones informáticas.</p>
+<p>Algunas de las amenazas más comunes a la seguridad de las comunicaciones de las aplicaciones informáticas son:</p>
+<ul>
+<li><strong>Intercepción de comunicaciones</strong>: la intercepción de comunicaciones permite a un atacante acceder a las comunicaciones de una aplicación, como contraseñas, datos personales, etc.</li>
+<li><strong>Modificación de comunicaciones</strong>: la modificación de comunicaciones permite a un atacante modificar las comunicaciones de una aplicación, como contraseñas, datos personales, etc.</li>
+<li><strong>Suplantación de identidad</strong>: la suplantación de identidad permite a un atacante hacerse pasar por otro usuario en las comunicaciones de una aplicación, como contraseñas, datos personales, etc.</li>
+<li><strong>Denegación de servicio</strong>: la denegación de servicio permite a un atacante interrumpir las comunicaciones de una aplicación, como contraseñas, datos personales, etc.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>La seguridad de las comunicaciones es fundamental para garantizar la confidencialidad, la integridad y la disponibilidad de las comunicaciones de las aplicaciones informáticas. Algunas de las prácticas recomendadas para mejorar la seguridad de las comunicaciones son:</p>
+<ul>
+<li>Utilizar conexiones seguras, como HTTPS, para prevenir la intercepción de comunicaciones.</li>
+<li>Utilizar protocolos seguros, como TLS, para prevenir la modificación de comunicaciones.</li>
+<li>Utilizar certificados seguros, como SSL, para prevenir la suplantación de identidad.</li>
+<li>Utilizar cifrados seguros, como AES, para prevenir la denegación de servicio.</li>
+</ul>
+</div>
 <p>La <strong>seguridad en redes</strong> es una disciplina que se encarga de proteger la información y los sistemas informáticos de posibles amenazas. La seguridad en redes abarca diferentes aspectos, como la seguridad física, la seguridad lógica, la seguridad de la información y la seguridad de los sistemas. La seguridad en redes es fundamental para garantizar la confidencialidad, la integridad y la disponibilidad de la información y los sistemas informáticos.</p>
-<h3 id="11-fases-de-un-ataque">1.1. Fases de un ataque </h3>
+<h3 id="21-inyección-de-código">2.1. Inyección de código </h3>
+<p>La <strong>inyección de código</strong> es una vulnerabilidad de seguridad que permite a un atacante ejecutar código malicioso en una aplicación.</p>
+<p>La inyección de código puede ocurrir en diferentes partes de una aplicación, como en las <strong>entradas de los usuarios</strong>, en las salidas de los usuarios, en las variables de la aplicación, en las funciones de la aplicación, etc. La inyección de código es una de las vulnerabilidades más comunes en las aplicaciones informáticas y puede tener graves consecuencias, como la ejecución de código malicioso, la fuga de información, la pérdida de información, etc.</p>
+<p>Algunos ejemplos de inyección de código son:</p>
+<ul>
+<li><strong>SQL injection</strong>: la inyección de código SQL permite a un atacante ejecutar código SQL malicioso en una aplicación para acceder a la base de datos, modificar los datos, eliminar los datos, etc.</li>
+<li><strong>XSS (Cross-Site Scripting)</strong>: la inyección de código XSS permite a un atacante ejecutar código JavaScript malicioso en una aplicación para robar información, modificar la página, redirigir a otra página, etc.</li>
+<li><strong>CSRF (Cross-Site Request Forgery)</strong>: la inyección de código CSRF permite a un atacante ejecutar código malicioso en una aplicación para realizar acciones no autorizadas, como enviar correos electrónicos, realizar transferencias bancarias, etc.</li>
+<li><strong>Shell injection</strong>: la inyección de código shell permite a un atacante ejecutar comandos del sistema operativo en una aplicación para obtener acceso al sistema, robar información, dañar los sistemas, etc.</li>
+</ul>
+<h4 id="211-sql-injection">2.1.1. SQL injection </h4>
+<p>La <strong>inyección de código SQL</strong> es una vulnerabilidad de seguridad que permite a un atacante ejecutar código SQL malicioso en una aplicación para acceder a la base de datos, modificar los datos, eliminar los datos, etc.</p>
+<p>La inyección de código SQL puede ocurrir en diferentes partes de una aplicación, como en los formularios de entrada, en las consultas de la base de datos, en las salidas de la aplicación, etc.</p>
+<p>Ejemplo de inyección de código SQL:</p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-SELECT">SELECT</span> <span class="token operator">*</span> <span class="token keyword keyword-FROM">FROM</span> users <span class="token keyword keyword-WHERE">WHERE</span> username <span class="token operator">=</span> <span class="token string">'admin'</span> <span class="token operator">AND</span> password <span class="token operator">=</span> <span class="token string">'password'</span> <span class="token operator">OR</span> <span class="token string">'1'</span><span class="token operator">=</span><span class="token string">'1'</span><span class="token punctuation">;</span>
+</code></pre><p>En este ejemplo, el atacante ha inyectado el código <code>' OR '1'='1</code> en el campo de la contraseña para acceder a la cuenta de administrador sin conocer la contraseña.</p>
+<div class="admonition warning">
+<p class="admonition-title">Conocimiento del SGBD que se quiere atacar</p>
+<p>Para realizar una inyección de código SQL es necesario conocer el sistema de gestión de bases de datos (SGBD) que se quiere atacar, como MySQL, PostgreSQL, SQL Server, Oracle, etc.</p>
+<p>En la web de PenTestMonkey podemos encontrar una lista de consultas básicas para posibles inyecciones de código SQL para diferentes SGBD en <a href="https://pentestmonkey.net/category/cheat-sheet/sql-injection">SQL Injection Cheat Sheet</a></p>
+<p>Además, se puede consultar la referencia básica de los comandos SQL para otros SGBD que no aparezcan en el enlace anterior</p>
+</div>
+<p>En Kali Linux tenemos herramientas como <code>sqlmap</code> que nos permiten realizar una inyección de código SQL en una aplicación para acceder a la base de datos, modificar los datos, eliminar los datos, etc.</p>
+<p>Podemos ver ejemplos de uso de <code>sqlmap</code> para realizar una inyección de código SQL en una aplicación en la web <a href="https://www.sqlmap.org/">SQL Injection</a>.</p>
+<h4 id="212-xss-cross-site-scripting">2.1.2. XSS (Cross-Site Scripting) </h4>
 <p>Un ataque informático es un intento de acceder, dañar o robar información de un sistema informático sin autorización. Los ataques informáticos pueden ser realizados por personas malintencionadas, como hackers, crackers o ciberdelincuentes, con el objetivo de obtener beneficios económicos, políticos o personales. Los ataques informáticos pueden ser realizados a través de diferentes métodos, como la ingeniería social, el phishing, el malware, el ransomware o la explotación de vulnerabilidades.</p>
 <p>Los ataques informáticos suelen seguir una serie de fases, que pueden variar en función del tipo de ataque y del objetivo del atacante. Algunas de las fases más comunes de un ataque informático son:</p>
 <ul>
@@ -138,80 +226,6 @@ Una vez conocidos algunos objetivos, el atacante identifica los puntos débiles 
 <li><strong>Comando y control</strong>: el atacante envía comandos al sistema objetivo para controlarlo, robar información, dañar los sistemas, etc.</li>
 <li><strong>Acciones sobre el objetivo</strong>: el atacante realiza acciones sobre el sistema objetivo, como robar información, dañar los sistemas, bloquear el acceso, etc.</li>
 </ul>
-<h3 id="12-inteligencia-de-fuentes-abiertas-osint">1.2. Inteligencia de fuentes abiertas (OSINT) </h3>
-<p>La inteligencia de fuentes abiertas (OSINT) es una disciplina que se encarga de recopilar, analizar y utilizar información de fuentes abiertas para obtener inteligencia sobre un objetivo. La inteligencia de fuentes abiertas se basa en la recopilación de información de fuentes públicas, como sitios web, redes sociales, foros, blogs, etc., para obtener información sobre un objetivo, como direcciones IP, nombres de dominio, usuarios, contraseñas, puertos abiertos, servicios activos, etc.</p>
-<p>Hay marcos de trabajo que permiten organizar y estructurar la información recopilada, como el ciclo de inteligencia de fuentes abiertas (OSINT), que entre otras, tiene las siguientes fases:</p>
-<ul>
-<li><strong>Recolección</strong>: recopilación de información de fuentes abiertas sobre un objetivo, como direcciones IP, nombres de dominio, usuarios, contraseñas, puertos abiertos, servicios activos, etc.</li>
-<li><strong>Análisis</strong>: análisis de la información recopilada para identificar patrones, tendencias, relaciones, etc., que permitan obtener inteligencia sobre el objetivo.</li>
-<li><strong>Producción</strong>: elaboración de informes, análisis, conclusiones, etc., que permitan utilizar la inteligencia obtenida para tomar decisiones, planificar acciones, etc.</li>
-</ul>
-<p>Podemos ver un conjunto de herramientas que permiten recopilar información de fuentes abiertas, como buscadores, motores de búsqueda, redes sociales, foros, blogs, etc., en la página de <a href="https://osintframework.com/">OSINT framework</a>.</p>
-<p>La distro Kali Linux también tiene preinstaladas algunas herramientas que nos ayudan con esta tarea.</p>
-<div class="admonition question">
-<p class="admonition-title">Actividad 4.1</p>
-<p>Accede a este curso <a href="https://plataforma.ciberaprende.com/course/view.php?id=4">SEGURIDAD: OSINT INVESTIGACIÓN EN FUENTES ABIERTAS</a> e investiga sobre las herramientas que se utilizan en la inteligencia de fuentes abiertas (OSINT).</p>
-<p>Completa al menos hasta el módulo 4.</p>
-<p>Documenta los Google Dorks que has utilizado en el módulo 3.<br>
-Haz un listado de las herramientas que has visto en el módulo 4.</p>
-</div>
-<h3 id="13-escaneo-de-dispositivos-y-servicios">1.3. Escaneo de dispositivos y servicios </h3>
-<p>El escaneo de dispositivos y servicios es una técnica que se utiliza para identificar los dispositivos y servicios activos en una red, como direcciones IP, nombres de dominio, puertos abiertos, servicios activos, etc. El escaneo de dispositivos y servicios se puede realizar mediante diferentes herramientas y técnicas, como el escaneo de puertos, el escaneo de servicios, el escaneo de vulnerabilidades, etc.</p>
-<p>Es práctica común entre los ciberdelincuentes escanear puertos para encontrar vulnerabilidades que aprovechar. A la hora de establecer un punto seguro en cualquier servidor o aplicación con acceso a la red debemos tener en cuenta lo siguiente:</p>
-<ul>
-<li>Abre exclusivamente los puertos necesarios.</li>
-<li>Cierra o silencia todos los puertos que no estés usando.</li>
-<li>Utiliza puertos que no sean un estándar.</li>
-<li>Protege todos los servicios susceptibles de ser atacados con sistemas de autentificación adecuados.</li>
-<li>Emplea cortafuegos.</li>
-<li>Oculta información.</li>
-<li>Información como versión del servicio que se está ejecutando, pantalla de acceso y/o registro de WordPress, , logs del servicio,- cambiar las rutas de acceso o administración, ...</li>
-<li>Manten el software actualizado.</li>
-<li>Mantente al día sobre las últimas mejoras de seguridad.</li>
-</ul>
-<p>A nivel global ya hemos visto como la web <a href="https://www.shodan.io/">Shodan</a> nos permite buscar dispositivos conectados a Internet y ver información sobre ellos, como direcciones IP, puertos abiertos, servicios activos, etc.</p>
-<p>Si nos centrarnos en una red local, podemos utilizar herramientas como <code>nmap</code> o <code>zenmap</code> para escanear los dispositivos y servicios activos en una red. En la distro Kali Linux también tenemos herramientas como <code>netdiscover</code> o <code>arp-scan</code> que nos permiten identificar los dispositivos activos en una red.</p>
-<div class="admonition question">
-<p class="admonition-title">Actividad 4.2 Escáner de red</p>
-<p>También se puede usar <strong>nmap</strong> con su interfaz gráfico <strong>Zenmap</strong> en Windows.</p>
-<p>Explica su principio básico de funcionamiento</p>
-<p>¿Qué utilidades no lícitas tiene esta herramienta?</p>
-</div>
-<p>Podemos ver ejemplos de uso de <code>nmap</code> para escanear los dispositivos y servicios activos en una red en la web <a href="https://www.redeszone.net/tutoriales/configuracion-puertos/nmap-escanear-puertos-comandos/">Uso básico de Nmap</a></p>
-<p>Además, también podemos usar el comando <code>netstat</code> para ver las conexiones activas en un sistema Windows. Podemos ver ejemplos de uso de <code>netstat</code> en la web <a href="https://www.redeszone.net/tutoriales/redes-cable/usar-comando-netstat-problemas-windows/">Uso básico de Netstat</a></p>
-<div class="admonition question">
-<p class="admonition-title">Actividad 4.3 Comprobación de puertos</p>
-<p>Comprueba los puertos abiertos en tu máquina con el comando <code>netstat</code> y realiza capturas de pantalla.</p>
-<p>a) Los puertos abiertos en tu máquina.<br>
-b) Las aplicaciones que se conectan al exterior.<br>
-c) Qué aplicaciones han iniciado un proceso en concreto.<br>
-d) Mostrar todas las conexiones.<br>
-e) Ver estadísticas de conexiones por protocolos.<br>
-f) Ver los puertos y direcciones de origen en formato numérico.<br>
-g) Ver conexiones solo del protocolo TCPv4.<br>
-h) Ver los puertos abiertos a la escucha.<br>
-i) Ver los puertos y conexiones establecidas.<br>
-j) Crear un informe de las conexiones establecidas.<br>
-k) Aplicaciones involucradas en conexiones con el exterior.</p>
-<blockquote>
-<p>Ayuda: <a href="https://norfipc.com/infografia/como-usar-netstat-conocer-conexiones-establecidas.html">Infografía netstat</a></p>
-</blockquote>
-</div>
-<h2 id="14-escaneo-de-vulnerabilidades">1.4. Escaneo de vulnerabilidades </h2>
-<p>El escaneo de vulnerabilidades es una técnica que se utiliza para identificar las vulnerabilidades de un sistema informático, como fallos de seguridad, errores de configuración, puertos abiertos, servicios activos, etc. El escaneo de vulnerabilidades se puede realizar mediante diferentes herramientas y técnicas, como el escaneo de puertos, el escaneo de servicios, el escaneo de vulnerabilidades, etc.</p>
-<p>Con nmap podemos realizar un escaneo de vulnerabilidades con el comando <code>nmap --script vuln &lt;dirección IP&gt;</code>. Este comando ejecuta los scripts de nmap que buscan vulnerabilidades en el sistema objetivo.</p>
-<p>En Kali tenemos scripts de nmap que buscan vulnerabilidades en sistemas Windows, Linux, Unix, etc. Estos scripts se encuentran en la carpeta <code>/usr/share/nmap/scripts/</code> y se pueden ejecutar con el comando <code>nmap --script &lt;script&gt; &lt;dirección IP&gt;</code>.</p>
-<p>Por ejemplo, podemos ejecutar el script <code>smb-vuln-ms17-010</code> para buscar la vulnerabilidad <code>MS17-010</code> en un sistema Windows con el comando <code>nmap --script smb-vuln-ms17-010 &lt;dirección IP&gt;</code>.</p>
-<p>En Kali Linux podemos usar herramientas como <code>OpenVAS</code> o "Nessus" que nos permiten realizar un escaneo de vulnerabilidades en un sistema objetivo. OpenVAS es un escáner de vulnerabilidades de código abierto que permite identificar las vulnerabilidades de un sistema informático y proporcionar recomendaciones para corregirlas.</p>
-<p>Podemos ver ejemplos de uso de <code>OpenVAS</code> para realizar un escaneo de vulnerabilidades en un sistema objetivo en la web <a href="https://www.openvas.org/">OpenVAS</a> y de Nessus en la web <a href="https://www.tenable.com/products/nessus">Nessus</a>.</p>
-<div class="admonition question">
-<p class="admonition-title">Actividad 4.4 Escáner de vulnerabilidades</p>
-<p>Realiza un escaneo de vulnerabilidades en tu máquina con la herramienta <code>OpenVAS</code> o <code>Nessus</code>.</p>
-<p>a) Instala la herramienta en tu máquina.<br>
-b) Realiza un escaneo de vulnerabilidades en tu máquina.<br>
-c) Documenta las vulnerabilidades encontradas.<br>
-d) Proporciona recomendaciones para corregir las vulnerabilidades encontradas.</p>
-</div>
 
       </div>
       
