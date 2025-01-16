@@ -104,8 +104,12 @@
             <p>Actividad 1. Usos de nmap</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#actividad-2-vulnerabilidades-en-owasp-juice-shop" class="md-toc-link">
-            <p>Actividad 2. Vulnerabilidades en OWASP Juice Shop</p>
+          <a href="#actividad-2-vulnerabilidades-de-inyección-sql-en-owasp-juice-shop" class="md-toc-link">
+            <p>Actividad 2. Vulnerabilidades de inyección SQL en OWASP Juice Shop</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#actividad-3-vulnerabilidades-de-xss-en-owasp-juice-shop" class="md-toc-link">
+            <p>Actividad 3. Vulnerabilidades de XSS en OWASP Juice Shop</p>
 
           </a></div>
         </div>
@@ -193,9 +197,9 @@ Si el paquete de solicitud no es filtrado o bloqueado por un firewall, entonces 
 <div class="admonition info">
 <p class="admonition-title">Prueba algún script contra alguno de los servicios o servidores que tengáis instalados de otros módulos.</p>
 </div>
-<h3 id="actividad-2-vulnerabilidades-en-owasp-juice-shop">Actividad 2. Vulnerabilidades en OWASP Juice Shop </h3>
+<h3 id="actividad-2-vulnerabilidades-de-inyección-sql-en-owasp-juice-shop">Actividad 2. Vulnerabilidades de inyección SQL en OWASP Juice Shop </h3>
 <p>Vamos a probar varias vulnerabilidades en la aplicación web OWASP Juice Shop. Para ello, necesitamos tener la aplicación instalada y funcionando. Puedes usar la versión online o instalarla en tu equipo.</p>
-<p>Si queremos usar la versión online de demo podemos acceder a <a href="https://juice-shop.herokuapp.com/">https://juice-shop.herokuapp.com/</a></p>
+<p>Si queremos usar la versión online de demo podemos acceder a <a href="https://demo.owasp-juice.shop/#/search">https://demo.owasp-juice.shop/#/search</a></p>
 <p>Por contra, si queremos instalarla en un servidor local, en una máquina Linux, ejecutamos los siguientes comandos:</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> <span class="token function">apt-get</span> update
 <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> juice-shop
@@ -227,10 +231,66 @@ Si el paquete de solicitud no es filtrado o bloqueado por un firewall, entonces 
 <p>Un atacante intentaría explotar la Inyección SQL para averiguar tanto como sea posible sobre el esquema de una base de datos. Esto permite SQL Injections mucho más dirigidos, sigilosos y devastadores, como recuperar una lista de todas las credenciales de usuario a través de la Inyección SQL.</p>
 <p>Descubre qué sistema de base de datos se está utilizando y dónde suele almacenar sus definiciones de esquema.</p>
 <p>Crea una cadena de ataque UNION SELECT para unir los datos relevantes de cualquier tabla del sistema identificada en el resultado original.</p>
+<p>Cuando intentamos hacer la inyección de código SQL, obtenemos la consulta que está dando error por haber introducido una <code>'</code> y a partir de ahí podemos inferir la siguiente cadena de ataque para obtener el esquema de la base de datos:</p>
+<blockquote>
+<p>'))-- Para hacer que la consulta no de error</p>
+</blockquote>
+<p>y a partir de ahí, podemos ir añadiendo más código SQL para obtener la información que necesitamos:</p>
+<blockquote>
+<p>')) UNION SELECT * FROM sqlite_master--<br>
+')) UNION SELECT 1 FROM sqlite_master WHERE type='table'--<br>
+')) UNION SELECT 1,2 FROM sqlite_master WHERE type='table'--<br>
+')) UNION SELECT 1,2,3 FROM sqlite_master WHERE type='table'--</p>
+</blockquote>
+<p>Así hasta que el UNION SELECT no de error y obtengamos la información que necesitamos.</p>
 <p>Es posible que debas abordar algunos problemas de sintaxis de consulta paso a paso, básicamente saltando de un error al siguiente.</p>
+<div class="admonition question">
+<p class="admonition-title">Actividad entregable</p>
+<p>Entrega las capturas de pantalla de los pasos realizados en la aplicación OWASP Juice Shop y Burp Suite.</p>
 <p><strong>Ejercicio7 : Obtener la lista de usuarios</strong></p>
-<p>En este caso, y usando el mismo método que en el ejercicio anterior, vamos a obtener la lista de usuarios de la base de datos.</p>
-<p>Obtén un listado de id, email y password de todos los usuarios de la base de datos.</p>
+<p>En este caso, partiendo de la información obtenida del <code>schema</code> de la BD y usando el mismo método que en el ejercicio anterior, vamos a obtener la lista de usuarios de la base de datos.</p>
+<p>Obtén el listado de id, email y password de todos los usuarios de la base de datos.</p>
+<p>Recuerda que debes capturar las peticiones y modificarlas con Burp Suite.</p>
+</div>
+<h3 id="actividad-3-vulnerabilidades-de-xss-en-owasp-juice-shop">Actividad 3. Vulnerabilidades de XSS en OWASP Juice Shop </h3>
+<p>Para realizar esta actividad, necesitamos tener la aplicación OWASP Juice Shop instalada y funcionando. Puedes usar la versión online o instalarla en tu equipo.</p>
+<p>Versión online: <a href="https://demo.owasp-juice.shop/#/search">https://demo.owasp-juice.shop/#/search</a></p>
+<p>En estas actividades vamos a probar varias vulnerabilidades de tipo XSS en la aplicación web OWASP Juice Shop.</p>
+<p>Lo primero que debemos fijarnos es que cuando introducimos un valor en el campo de búsqueda, este valor aparece como un título en la página de resultados. Si introducimos un valor con código HTML, este se ejecuta en la página.</p>
+<p>Challenge 1 : DOM XSS<br>
+<strong>Ejercicio1: Realiza un ataque de tipo DOM XSS</strong></p>
+<p>Para realizar un ataque de tipo DOM XSS, debemos introducir un valor en el campo de búsqueda que contenga código HTML que se ejecute en la página.</p>
+<p>Por ejemplo, si introducimos el siguiente valor en el campo de búsqueda:</p>
+<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript"><span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'XSS'</span><span class="token punctuation">)</span></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre><p>Al pulsar en buscar, se ejecutará el código JavaScript y se mostrará una alerta en la página.<br>
+Si no se muestra, es posible que tengamos que modificar la petición usando un iframe y un src con el código JavaScript.</p>
+<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>javascript:alert(`xss`)<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+</code></pre><p><strong>Ejercicio2 : Bonus Payload</strong></p>
+<p>Usa un iframe que cargue/ejecute un contenido multimedia.</p>
+<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>100%<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>166<span class="token punctuation">"</span></span> <span class="token attr-name">scrolling</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>no<span class="token punctuation">"</span></span> <span class="token attr-name">frameborder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>no<span class="token punctuation">"</span></span> <span class="token attr-name">allow</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>autoplay<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/771984076&amp;color=%23ff5500&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">&gt;</span></span> 
+</code></pre><p>Con este tipo de ataques, podemos hacer que se ejecute código JavaScript en la página, lo que puede ser peligroso si el atacante consigue que un usuario haga clic en un enlace malicioso.</p>
+<p><strong>Ejercicio3: Realiza un ataque de tipo Reflected XSS</strong></p>
+<p>Perform a reflected XSS attack with</p>
+<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>javascript:alert(`xss`)<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+</code></pre><p>Para completar este desafío, primero debemos realizar un pedido o acceder a uno de los pedidos realizados por un usuario.<br>
+A continuación iremos al Historial de pedidos y seleccionamos la opción de seguimiento que se mostrará con una URL similar a esta:</p>
+<pre data-role="codeBlock" data-info="html" class="language-html html"><code>https://demo.owasp-juice.shop/#/track-result?id=5267-c5e1891a3b3
+</code></pre><p>El parámetro <code>id</code> es el que vamos a modificar para realizar el ataque XSS, inyectando el código JavaScript en la URL.</p>
+<div class="admonition question">
+<p class="admonition-title">Actividad entregable</p>
+<p>Entrega las capturas de pantalla de los pasos realizados en la aplicación OWASP Juice Shop.</p>
+<p><strong>Ejercicio4: Realiza un ataque de tipo XSS del lado del servidor</strong></p>
+<p>Realiza un ataque de tipo XSS Persistente con <code>&lt;iframe src=”javascript:alert(</code>xss<code>)”&gt;</code> evitando un mecanismo de seguridad del lado del servidor.</p>
+<p>Para este desafío, primero intentamos encontrar el campo de entrada que es vulnerable o inyectable y luego intentamos inyectar el payload.</p>
+<p>Usaremos la sección de <code>Comentarios del Cliente (Customer Feedback)</code> donde tenemos un cuadro de comentarios que se puede usar para inyectar el payload.</p>
+<p>Ahora iniciaremos sesión en la cuenta de administrador y accederemos a la página de administración <a href="https://demo.owasp-juice.shop/#/administration">https://demo.owasp-juice.shop/#/administration</a> y debería saltar la alerta.</p>
+<p>Si el Payload no funciona, usaremos otro Payload o modificaremos el Payload. Podemos verificar la versión del paquete Sanitize aquí, que usa 1.4.2 y, según eso, usaremos nuestro Payload modificado, es decir,</p>
+<pre data-role="codeBlock" data-info="html" class="language-html html"><code>&lt;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>javascript:evil<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>iframe src="javascript:alert(`xss`)"&gt;
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">Ataque efectivo a todos los visitantes de la página</p>
+<p>Este último tipo de ataque es el más peligroso, ya que puede afectar a todos los usuarios que visiten la página, no solo al usuario que ha introducido el código malicioso.</p>
+</div>
 
       </div>
       

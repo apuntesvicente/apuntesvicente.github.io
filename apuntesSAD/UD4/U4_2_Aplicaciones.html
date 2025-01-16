@@ -214,19 +214,17 @@
 <p>En Kali Linux tenemos herramientas como <code>sqlmap</code> que nos permiten realizar una inyección de código SQL en una aplicación para acceder a la base de datos, modificar los datos, eliminar los datos, etc.</p>
 <p>Podemos ver ejemplos de uso de <code>sqlmap</code> para realizar una inyección de código SQL en una aplicación en la web <a href="https://www.sqlmap.org/">SQL Injection</a>.</p>
 <h4 id="212-xss-cross-site-scripting">2.1.2. XSS (Cross-Site Scripting) </h4>
-<p>Un ataque informático es un intento de acceder, dañar o robar información de un sistema informático sin autorización. Los ataques informáticos pueden ser realizados por personas malintencionadas, como hackers, crackers o ciberdelincuentes, con el objetivo de obtener beneficios económicos, políticos o personales. Los ataques informáticos pueden ser realizados a través de diferentes métodos, como la ingeniería social, el phishing, el malware, el ransomware o la explotación de vulnerabilidades.</p>
-<p>Los ataques informáticos suelen seguir una serie de fases, que pueden variar en función del tipo de ataque y del objetivo del atacante. Algunas de las fases más comunes de un ataque informático son:</p>
+<p>Cross-site scripting (also known as XSS) is a web security vulnerability that allows an attacker to compromise the interactions that users have with a vulnerable application. It allows an attacker to circumvent the same origin policy, which is designed to segregate different websites from each other.</p>
+<p>Cross-site scripting (también conocido como XSS) es una vulnerabilidad de seguridad web que permite a un atacante comprometer las interacciones que los usuarios tienen con una aplicación vulnerable. Permite a un atacante ejecutar código JavaScript malicioso en una aplicación para robar información, modificar la página, redirigir a otra página, etc.</p>
+<p>Tipos de XSS:</p>
 <ul>
-<li><strong>Reconocimiento</strong> y <strong>escaneo</strong>: el atacante recopila información sobre el sistema objetivo, como direcciones IP, nombres de dominio, usuarios, contraseñas, puertos abiertos, servicios activos, etc.<br>
-Una vez conocidos algunos objetivos, el atacante identifica los puntos débiles del sistema objetivo, como vulnerabilidades, puertos abiertos, servicios activos, etc.</li>
-<li><strong>Prepación</strong>: el atacante prepara los recursos necesarios para llevar a cabo el ataque, como herramientas, scripts, malware, etc.</li>
-<li><strong>Distribución</strong>: el atacante distribuye el malware o el ataque a través de diferentes medios, como correos electrónicos, mensajes, enlaces, etc.</li>
-<li><strong>Explotación</strong>: el atacante explota las vulnerabilidades del sistema objetivo para obtener acceso no autorizado, robar información o dañar los sistemas.</li>
-<li><strong>Instalación</strong>: el atacante instala el malware o el ataque en el sistema objetivo para mantener el acceso y control del sistema.</li>
-<li><strong>Comando y control</strong>: el atacante envía comandos al sistema objetivo para controlarlo, robar información, dañar los sistemas, etc.</li>
-<li><strong>Acciones sobre el objetivo</strong>: el atacante realiza acciones sobre el sistema objetivo, como robar información, dañar los sistemas, bloquear el acceso, etc.</li>
+<li><strong>Stored XSS</strong>: el XSS almacenado (también conocido como XSS persistente o de segundo orden) surge cuando una aplicación recibe datos de una fuente no confiable e incluye esos datos en sus respuestas HTTP posteriores de una manera insegura.</li>
+<li><strong>Reflected XSS</strong>: el XSS reflejado es la variedad más simple de cross-site scripting. Surge cuando una aplicación recibe datos en una solicitud HTTP e incluye esos datos en la respuesta inmediata de una manera insegura.</li>
+<li><strong>DOM-based XSS</strong>: el XSS basado en DOM (también conocido como DOM XSS) surge cuando una aplicación contiene algún JavaScript del lado del cliente que procesa datos de una fuente no confiable de una manera insegura, generalmente escribiendo los datos de nuevo en el DOM.</li>
 </ul>
-
+<p>Ejemplo de inyección de código XSS:</p>
+<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript"><span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'XSS'</span><span class="token punctuation">)</span></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
       </div>
       
       
