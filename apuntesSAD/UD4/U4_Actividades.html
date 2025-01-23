@@ -111,6 +111,10 @@
           <a href="#actividad-3-vulnerabilidades-de-xss-en-owasp-juice-shop" class="md-toc-link">
             <p>Actividad 3. Vulnerabilidades de XSS en OWASP Juice Shop</p>
 
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#actividad-4-squid-ejemplos-de-acls-ejercicios-de-entrenamiento" class="md-toc-link">
+            <p>Actividad 4. Squid, ejemplos de ACLs. Ejercicios de entrenamiento</p>
+
           </a></div>
         </div>
       </details>
@@ -291,7 +295,83 @@ A continuación iremos al Historial de pedidos y seleccionamos la opción de seg
 <p class="admonition-title">Ataque efectivo a todos los visitantes de la página</p>
 <p>Este último tipo de ataque es el más peligroso, ya que puede afectar a todos los usuarios que visiten la página, no solo al usuario que ha introducido el código malicioso.</p>
 </div>
+<h3 id="actividad-4-squid-ejemplos-de-acls-ejercicios-de-entrenamiento">Actividad 4. Squid, ejemplos de ACLs. Ejercicios de entrenamiento </h3>
+<ul>
+<li>
+<p>Sabiendo que Squid cuenta, entre otros, con los siguientes elementos de ACL:</p>
+<ul>
+<li>src: source (client) IP addresses</li>
+<li>dst: destination (server) IP addresses</li>
+<li>dstdomain: destination (server) domain name</li>
+<li>url_regex: URL regular expression pattern matching</li>
+<li>time: time of day, and day of week</li>
+</ul>
+</li>
+</ul>
+<p>Explique las siguientes configuraciones:</p>
+<p><strong>¿Quién podrá acceder a la web?</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>acl network172 src 172.16.5.0/24
+http_access allow network172
+</code></pre><p><strong>¿Qué está permitido y qué está denegado en la siguiente configuración?</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>acl Cooking1 url_regex cooking
+acl Recipe1 url_regex recipe
+acl myclients src 172.16.5.0/24
 
+http_access deny Cooking1
+http_access deny Recipe1
+
+http_access allow myclients
+http_access deny all
+</code></pre><p><strong>¿Qué está permitido y qué está denegado en la siguiente configuración?</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>acl Cooking2 dstdomain www.gourmet-chef.com
+
+http_access deny Cooking2
+http_access allow all
+</code></pre><p><strong>¿Qué está permitido y qué está denegado en la siguiente configuración?</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>acl ME src 10.0.0.1
+acl YOU src 10.0.0.2
+
+http_access allow ME YOU
+http_access deny all
+</code></pre><p><strong>¿Qué está permitido y qué está denegado en la siguiente configuración?</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>acl ME src 10.0.0.1
+acl YOU src 10.0.0.2
+
+http_access allow ME
+http_access allow YOU
+http_access deny all
+</code></pre><p><strong>¿Qué está permitido y qué está denegado en la siguiente configuración?</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>acl US src 10.0.0.1 10.0.0.2
+
+http_access allow !US
+http_access deny all
+</code></pre><p><strong>¿Qué está permitido y qué está denegado en la siguiente configuración?</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>acl GOOD dst 10.0.0.1
+
+http_access allow GOOD
+http_access deny all
+</code></pre><p><strong>¿Qué está permitido y qué está denegado en la siguiente configuración?</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>acl US src 10.0.0.1 10.0.0.2
+acl GOOD dst 10.0.0.5
+
+http_access allow GOOD US
+http_access deny all
+</code></pre><p><strong>¿Qué está permitido y qué está denegado en la siguiente configuración?</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>acl PornSites url_regex "/usr/local/squid/etc/pornlist"
+
+http_access deny !PornSites
+http_access deny all
+</code></pre><p><strong>¿Qué está permitido y qué está denegado en la siguiente configuración?</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>acl USER1 src 192.168.100.0/24
+acl USER2 src 192.168.200.0/24 192.168.201.0/24
+acl DAY time 06:00-18:00
+
+http_access allow USER1 DAY
+http_access deny USER1
+http_access allow USER2 !DAY
+http_access deny USER2
+http_access deny all
+</code></pre>
       </div>
       
       
