@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>SAD - U5 Alta disponibilidad</title>
+      <title>SAD - U7 Configuración de red con seguridad perimetral</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -88,107 +88,277 @@
     
       <div class="crossnote markdown-preview  ">
       
-<h1 id="sad---u5-alta-disponibilidad">SAD - U5 Alta disponibilidad </h1>
-<p><a href="./U5_Actividades.pdf">Descargar estas actividades</a></p>
+<h1 id="sad---u7-configuración-de-red-con-seguridad-perimetral">SAD - U7 Configuración de red con seguridad perimetral </h1>
+<p><a href="./U7_Proyecto.pdf">Descargar estas actividades</a></p>
 <h2 id="índice">Índice </h2>
 
 <div class="md-toc">
 <details style="padding:0;;padding-left:0px;" open="">
         <summary class="md-toc-link-wrapper">
-          <a href="#actividades-u5-altad-disponibilidad" class="md-toc-link"><p>Actividades U5 Altad disponibilidad</p>
+          <a href="#primera-parte-dmz-de-3-patas" class="md-toc-link"><p>Primera parte: DMZ de 3 patas</p>
 </a>
           </summary>
         <div>
           <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#actividad-1-copias-de-seguridad-con-cobian-reflector" class="md-toc-link">
-            <p>Actividad 1. Copias de seguridad con Cobian Reflector</p>
+          <a href="#referencias-y-ayuda" class="md-toc-link">
+            <p>Referencias y ayuda</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#actividad-2-plan-de-copias-de-seguridad" class="md-toc-link">
-            <p>Actividad 2. Plan de copias de seguridad</p>
+          <a href="#objetivos" class="md-toc-link">
+            <p>Objetivos</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#introducción" class="md-toc-link">
+            <p>Introducción</p>
+
+          </a></div><details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#requisitos-del-proyecto" class="md-toc-link"><p>Requisitos del proyecto</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#mapa-lógico-y-configuración-básica-de-pfsense-2-puntos" class="md-toc-link">
+            <p>Mapa lógico y configuración básica de PFSense (2 puntos)</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#actividad-3-riesgos-de-los-medios-de-almacenamiento" class="md-toc-link">
-            <p>Actividad 3. Riesgos de los medios de almacenamiento</p>
+          <a href="#configuración-de-la-dmz-4-puntos" class="md-toc-link">
+            <p>Configuración de la DMZ (4 puntos)</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#actividad-4-comparativa-de-soportes" class="md-toc-link">
-            <p>Actividad 4. Comparativa de soportes</p>
+          <a href="#comprobaciones-4-puntos" class="md-toc-link">
+            <p>Comprobaciones (4 puntos)</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#anexo-i---configuración-de-la-red-en-hypervisores" class="md-toc-link"><p>ANEXO I - Configuración de la red en hypervisores</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#nat-no-confundir-con-nat-network" class="md-toc-link">
+            <p>NAT (no confundir con "NAT Network")</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#actividad-5-cuestiones-sobre-raid" class="md-toc-link">
-            <p>Actividad 5. Cuestiones sobre RAID</p>
+          <a href="#adaptador-puente" class="md-toc-link">
+            <p>Adaptador puente</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#red-interna" class="md-toc-link">
+            <p>Red interna</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#red-solo-anfitrión" class="md-toc-link">
+            <p>Red solo-anfitrión</p>
 
           </a></div>
         </div>
       </details>
     
 </div>
-<div style="\&quot;page-break-after:always;\&quot;"></div>
-<h2 id="actividades-u5-altad-disponibilidad">Actividades U5 Altad disponibilidad </h2>
-<h3 id="actividad-1-copias-de-seguridad-con-cobian-reflector">Actividad 1. Copias de seguridad con Cobian Reflector </h3>
-<p>Descarga e instala la herramienta <a href="https://www.cobiansoft.com/cobianbackup.html">Cobian Backup Reflector</a>.</p>
-<p>Crea la siguiente jerarquía de archivos de prueba. Todo son ficheros de texto plano con contenido aleatorio.</p>
-<p><img src="./recursos/FileHierarchy.jpeg" alt="FileHierarchy"></p>
-<div class="admonition note">
-<p class="admonition-title">Capturas de pantalla</p>
-<p>Realiza capturas de pantalla de los pasos realizados en cada operación y explica qué se está haciendo en cada una de ellas.</p>
+<div style="page-break-after:always;"></div>
+<h2 id="primera-parte-dmz-de-3-patas">Primera parte: DMZ de 3 patas </h2>
+<div class="admonition warning">
+<p class="admonition-title">LEED CADA ENUNCIADO CON ATENCIÓN</p>
+<ul>
+<li>Los nombres de los equipos hosts en VirtualBox, el nombre del sistema cuando lo instaléis, los nombres de usuario, equipo, carpetas, etc. deben ser vuestro nombre+apellido. <strong>En TODAS las capturas debe verse vuestro nombre y apellidos</strong>. Si no se hace así, habrá que repetir TODA la práctica con las capturas adecuadas o no será tenida en cuenta.</li>
+<li><strong>Responder a todas las preguntas</strong>, si es necesario buscando información en los apuntes del módulo, en los manuales de las aplicaciones, archivos de ayuda y si no se encuentra la solución, incluso en Internet como último recurso.</li>
+<li>En las capturas debéis <strong>MARCAR con círculos o flechas la parte relevante</strong>. Estas capturas deben tener un contexto, es decir, saber de dónde salen. No hagáis mini-capturas ya que no sabré de dónde proviene la información. - Antes de comenzar <strong>podéis hacer un "snapshot" o instantánea de la máquina virtual</strong>. Esto hará que el estado actual de la máquina virtual se guarde y podáis hacer todos los cambios que queráis sin miedo a estropear algo. Ponedle de nombre "Antes de (la acción que vais a hacer)...". Al finalizar, deberéis revertir esta instantánea para volver al estado anterior.</li>
+<li>En general, debéis <strong>comprobar SIEMPRE que los cambios de configuración que hacéis producen el efecto deseado</strong> con el conjunto de pruebas necesario.</li>
+</ul>
 </div>
-<p>Ejecuta las siguientes operaciones</p>
-<ul>
-<li>Realiza un empaquetado total de la jerarquía.<br>
-Configura la copia para que se suba a un servidor de almacenamiento remoto (FTP), de manera comprimida y cifrada.</li>
-<li>Haz un cambio en un archivo, añade un nuevo archivo y elimina uno existente.<br>
-A continuación realiza un empaquetado incremental que implique sólo los cambios realizados.</li>
-</ul>
-<p>Restaura las copias de seguridad</p>
-<ul>
-<li>Extrae el contenido del archivo empaquetado total.</li>
-<li>Extrae el contenido del archivo empaquetado incremental</li>
-</ul>
-<p>¿Qué ocurre con el archivo borrado?. ¿Se recupera?.<br>
-¿Qué ocurre con el archivo añadido?. ¿Se recupera?.<br>
-¿Qué ocurre con el archivo modificado?. ¿Se recupera?. ¿Sigue teniendo los cambios realizados?</p>
-<h3 id="actividad-2-plan-de-copias-de-seguridad">Actividad 2. Plan de copias de seguridad </h3>
-<p>Con la siguiente planificación de copias de seguridad, que se realiza por las noches<br>
-<img src="./recursos/plan_copia1.png" alt="Plan de copia I"></p>
-<p>¿Que copias se necesitarían para restaurar los datos del viernes?</p>
-<p>¿Que copias se necesitarían para restaurar los datos del jueves?</p>
-<p>¿Cuando haya pasado una semana, qué copias se deberían conservar?</p>
-<h3 id="actividad-3-riesgos-de-los-medios-de-almacenamiento">Actividad 3. Riesgos de los medios de almacenamiento </h3>
-<p>Indica los riesgos en los que se puede incurrir al realizar una copia de seguridad en los siguientes soportes:</p>
-<ul>
-<li>Copia en otro directorio del disco duro en el que se encuentran los datos.</li>
-<li>Copia en otra partición del disco duro en el que se encuentran los datos.</li>
-<li>Copia en otra unidad de disco duro dentro del mismo ordenador en el que se encuentran los datos.</li>
-<li>Copia en un soporte removible.</li>
-<li>Envío de la copia mediante un servicio de almacenamiento en red.</li>
-</ul>
-<h3 id="actividad-4-comparativa-de-soportes">Actividad 4. Comparativa de soportes </h3>
-<p>Comenta las ventajas de los siguientes soportes en relación al almacenamiento de copias de seguridad:</p>
-<ul>
-<li>Cintas magnéticas</li>
-<li>Discos duros</li>
-<li>Unidades SSD</li>
-<li>Discos DVD</li>
-</ul>
-<p>Realiza una tabla con las ventajas e inconvenientes de cada uno de los soportes.</p>
-<h3 id="actividad-5-cuestiones-sobre-raid">Actividad 5. Cuestiones sobre RAID </h3>
-<p>Responde a las siguientes cuestiones sobre almacenamiento RAID, justificando tu respuesta adecuadamente.</p>
+<h3 id="referencias-y-ayuda">Referencias y ayuda </h3>
 <ul>
 <li>
-<p>¿Que sistemas RAID se pueden montar usando 4 discos de 100GB? (usando todos los discos en la configuración)<br>
-¿Qué capacidad de almacenamiento se obtiene con cada uno de los RAID anteriores?</p>
+<p>Descarga PFSense - <a href="https://www.pfsense.org/">PFSense</a></p>
 </li>
 <li>
-<p>¿Que capacidad de almacenamiento obtenemos si usamos 6 discos de 100GB (utilizando todos los discos) al montar un RAID 50?<br>
-Un RAID 50 es un RAID 5 en el primer nivel y un RAID 0 en el nivel superior.</p>
+<p>Documentación PFSense - <a href="https://docs.netgate.com/pfsense/en/latest/">Documentación</a></p>
 </li>
 <li>
-<p>En un RAID 5, ¿cuántos discos pueden fallar sin que se pierdan datos?<br>
-¿Cuántos discos harían falta para tener una capacidad de almacenamiento de 6TB en un RAID 1?</p>
+<p>Problemas con paquetes Pfsense - <a href="https://docs.netgate.com/pfsense/en/latest/troubleshooting/upgrades.html">Problemas</a></p>
+</li>
+<li>
+<p>GNS3 - <a href="https://www.gns3.com/">Descarga</a></p>
+</li>
+<li>
+<p>Documentación GNS3 - <a href="https://docs.gns3.com/docs/">Documentación</a></p>
+</li>
+<li>
+<p>Guías de uso de GNS3 - <a href="https://cyberlab.pacific.edu/courses/comp177/labs">Labs</a></p>
 </li>
 </ul>
+<h3 id="objetivos">Objetivos </h3>
+<p>El objetivo de este proyecto es crear una red más segura, familiarizarse con el concepto de DMZ y explorar las posibilidades de la distribución PFSense/Opnsense.</p>
+<h2 id="introducción">Introducción </h2>
+<p>En esta primera parte del proyecto deberéis realizar un montaje de una red DMZ con tres patas.</p>
+<p><img src="recursos/exercici-dmz-78aeab00.png" alt="DMZ sencilla"></p>
+<div class="admonition info">
+<p class="admonition-title">pfSense vs OPNsense</p>
+<ul>
+<li>
+<p><strong>pfSense/OPNsense</strong> son distribuciones FreeBSD (64 bits) que proporcionan diferentes servicios de red y funcionan como Firewall.</p>
+</li>
+<li>
+<p>Se puede configurar desde una interfaz web accesible desde la red LAN.</p>
+</li>
+<li>
+<p>Cuando configuramos el firewall, debemos pensar que <strong>las reglas se aplican a las peticiones de inicio de conexión</strong>. Las respuestas se permiten automáticamente si hay una conexión iniciada (porque se ha permitido el paquete de inicio).</p>
+</li>
+<li>
+<p>Recordad de <strong>comprobar el hash del fichero descargado</strong> antes de comenzar.</p>
+</li>
+<li></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Visibilidad de equipos desde el anfitrión</p>
+<p><strong>NOTA:</strong> Para poder ver desde el equipo anfitrión las máquinas internas, debéis añadir a la tabla de rutas del host anfitrión la red DMZ (192.168.200.0) y si es necesario desde la LAN (192.168.100.0). Su gateway será la IP del pfSense en la red WAN (mirad cuál os asigna). Para añadir una ruta a la tabla de rutas usad el comando:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">ip</span> route <span class="token function">add</span> <span class="token number">192.168</span>.200.0/24 via ip-externa-PFSense
+<span class="token function">ip</span> route <span class="token function">add</span> <span class="token number">192.168</span>.100.0/24 via ip-externa-PFSense
+// Para ver la table de rutas y comprobar que se han añadido
+<span class="token function">ip</span> route
+</code></pre></div>
+<h2 id="requisitos-del-proyecto">Requisitos del proyecto </h2>
+<h3 id="mapa-lógico-y-configuración-básica-de-pfsense-2-puntos">Mapa lógico y configuración básica de PFSense (2 puntos) </h3>
+<p>Nuestro firewall será un PFSense con 3 interfaces:</p>
+<ul>
+<li>Una externa conectada vía <strong>red puente</strong> que será 10.100.X.0/16 en el aula o bien quizás 192.168.0.0/24 en casa y que será automática (DHCP).</li>
+<li>Otra de tipo interna para la red LAN (192.168.100.0/24).</li>
+<li>Otra de tipo interna para la DMZ (192.168.200.0/24).</li>
+</ul>
+<ol>
+<li>
+<p>Elegid un programa para hacer mapas lógicos de red. Haced el mapa lógico de vuestro montaje. Haced constar:</p>
+<ul>
+<li>Las direcciones IP de todas las interfaces.</li>
+<li>Los nombres de los equipos, conteniendo el vuestro.</li>
+<li>Los servicios que se han puesto en marcha en cada equipo.</li>
+</ul>
+</li>
+<li>
+<p>El ordenador de la red LAN debe poder navegar por Internet.</p>
+</li>
+<li>
+<p>El servicio SSH y el servicio de administración web del Firewall deben estar permitidos en la interfaz WAN. La contraseña del administrador debe ser segura. Una vez hecho, podréis administrar el Firewall desde el equipo físico si lo preferís.</p>
+</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Interfaz de administración</p>
+<p>El <strong>PFSense no permite por defecto la configuración web desde la interfaz WAN</strong> y por tanto se debería configurar por una de las interfaces LAN (o sea, por ejemplo desde la máquina virtual Ubuntu Desktop).</p>
+<p>Una vez instalado PFSense se puede asignar la configuración de las interfaces y determinar la dirección IP. Desde un equipo de la red LAN se debe abrir un navegador web y abrir la aplicación web de administración de PFSense.</p>
+</div>
+<h3 id="configuración-de-la-dmz-4-puntos">Configuración de la DMZ (4 puntos) </h3>
+<p>Pondremos un equipo servidor en la DMZ y un cliente en la red local, similar a como se ve en la imagen del comienzo:</p>
+<ol>
+<li>
+<p><strong>Ubuntu Server</strong> con la dirección 10 de la red DMZ, configurado de forma estática NO por DHCP.</p>
+<ul>
+<li>Con un servicio ssh con banner personalizado.</li>
+<li>Con un servidor web seguro y no seguro con una página de inicio personalizada.</li>
+</ul>
+</li>
+<li>
+<p><strong>Un equipo cliente</strong> con la dirección 50 de la red LAN, que puede ser un Ubuntu Desktop.</p>
+<ul>
+<li>Tendrá el servicio ssh configurado con un banner personalizado.</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>Personalizado quiere decir que aparecerá vuestro nombre y apellidos en el banner.</p>
+</blockquote>
+<ol>
+<li>
+<p>Actualizad el mapa lógico.</p>
+</li>
+<li>
+<p>Configurad las opciones de Firewall-&gt;Rules:</p>
+<ul>
+<li>
+<p>El firewall debe <strong>permitir el tráfico iniciado desde la red interna hacia la DMZ</strong>, solo para los servicios que tenga el servidor de la DMZ. Debe llegar la respuesta (esto último es automático en PFSense).</p>
+</li>
+<li>
+<p>También debe <strong>permitir que los servidores de la DMZ accedan tanto a Internet como a la red externa</strong> que es del rango 172.16.101.0/24, y les llegue la respuesta.</p>
+</li>
+<li>
+<p>Se debe <strong>permitir acceder a los servidores de la DMZ desde la red externa, solo para los servicios que tenga el servidor de la DMZ</strong>. NO utilicéis NAT en la interfaz WAN, si no que debéis abrir los puertos necesarios ya que la IP de destino será la del servidor en la DMZ.</p>
+</li>
+</ul>
+<p><strong>No se debe permitir</strong>:</p>
+<ul>
+<li>el acceso directo de los equipos de la red interna hacia la red externa (ni internet), para ningún protocolo.</li>
+<li>el acceso directo de los equipos de la red externa (ni internet) a la red interna, para ningún protocolo.</li>
+<li><strong>No se debe permitir iniciar conexión desde la red DMZ hacia la red interna</strong>.</li>
+</ul>
+</li>
+</ol>
+<h3 id="comprobaciones-4-puntos">Comprobaciones (4 puntos) </h3>
+<p>El objetivo de la práctica es poder comprobar los siguientes puntos (más adelante configuraremos servicios y más limitaciones):</p>
+<p><strong>(4 puntos)</strong> Hacer comprobaciones que demuestren los puntos que siguen. <strong>En la captura, sin cortes, se debe ver los parámetros IP (la dirección, máscara, tabla de rutas) de la máquina desde la que se está haciendo la prueba</strong></p>
+<ol>
+<li>
+<p>Hacer comprobaciones que demuestren <strong>desde un equipo de la red interna</strong>:</p>
+<ul>
+<li>Poder hacer <strong>ping, tráfico ssh y acceso a servidores web</strong> hacia el servidor de la DMZ y la respuesta correspondiente.</li>
+<li>Hacer un mtr (mytraceroute) hacia 8.8.8.8 para ver por dónde pasan los paquetes. Probar a navegar por internet. ¿Se puede?</li>
+<li>Comprobar si se puede <strong>resolver nombres de dominio</strong> con nslookup <a href="http://www.microsoft.com">www.microsoft.com</a>.</li>
+<li>Hacer <strong>nmap hacia el servidor de la red DMZ</strong> para ver qué servicios os muestra (solo deberían ser los habilitados en el firewall).</li>
+</ul>
+</li>
+<li>
+<p>Hacer comprobaciones que demuestren <strong>desde un equipo de la red externa</strong> (equipo anfitrión)</p>
+<ul>
+<li>No poder hacer ping (ni tráfico) desde un equipo de la red externa (anfitrión) hacia los equipos de la red interna. Recordad que primero debéis configurar la tabla de rutas en el anfitrión para que sepa cómo llegar a la red interna y la DMZ.</li>
+<li>Poder hacer ping (y tráfico ssh y web) hacia la IP del servidor de la DMZ.</li>
+<li>Hacer nmap hacia el servidor de la red DMZ para ver qué servicios muestra.</li>
+</ul>
+</li>
+<li>
+<p>Hacer comprobaciones que demuestren, <strong>desde un equipo de la DMZ</strong></p>
+<ul>
+<li>No poder acceder hacia el equipo de la red interna. Se puede probar intentando conectar vía ssh al Desktop interno y hacer ping.</li>
+<li>Hacer un mtr hacia 8.8.8.8 para ver por dónde pasan los paquetes. Probar a navegar por internet.</li>
+<li>Comprobar si se puede resolver nombres de dominio con nslookup <a href="http://www.microsoft.com">www.microsoft.com</a>.</li>
+<li>Probar a navegar por Internet con un navegador en modo texto como lynx. ¿Se puede?</li>
+<li>Hacer nmap hacia el equipo de la red interna para ver qué servicios os muestra.</li>
+</ul>
+</li>
+</ol>
+<h2 id="anexo-i---configuración-de-la-red-en-hypervisores">ANEXO I - Configuración de la red en hypervisores </h2>
+<h3 id="nat-no-confundir-con-nat-network">NAT (no confundir con "NAT Network") </h3>
+<p>Permite que un equipo virtual tenga acceso a internet de forma fácil. Se crea un router virtual que implementa NAT y traduce las direcciones de los equipos invitados.</p>
+<p><img src="recursos/virtualbox-nat.png" alt="puente"></p>
+<p>Los equipos invitados no son accesibles directamente desde el anfitrión, pero se puede configurar el reenvío de puertos hacia la máquina invitada y así exponer servicios específicos de la máquina invitada.</p>
+<p>Si se necesita que los equipos invitados sean accesibles desde el anfitrión o desde otros equipos de la red, se puede configurar un reenvío de puertos. Por ejemplo, si se quiere acceder a un servidor web en un equipo invitado, se puede configurar un reenvío de puertos para que el tráfico que llegue al puerto 80 del anfitrión se redirija al puerto 80 del equipo invitado.</p>
+<h3 id="adaptador-puente">Adaptador puente </h3>
+<p>Permite que el equipo invitado tenga acceso a la red física directamente.</p>
+<p><img src="recursos/virtualbox-bridge.png" alt="puente"></p>
+<p>Se comportará como si fuera una máquina física más y tendrá una IP de la red física (si existe un servicio DHCP).<br>
+Se puede acceder desde la máquina anfitrión y desde cualquier equipo de la red física.</p>
+<h3 id="red-interna">Red interna </h3>
+<p>El equipo invitado se conecta a una red virtual interna. Los equipos invitados pueden comunicarse entre ellos, pero no pueden acceder a la red física ni a internet.</p>
+<p><img src="recursos/virtualbox-interna.png" alt="red interna"></p>
+<p>Habría que configurar otro invitado para hacer de router (con una tarjeta en modo puente o NAT), si se quiere dar acceso a internet.</p>
+<p>Tampoco se puede acceder al invitado desde el anfitrión.</p>
+<h3 id="red-solo-anfitrión">Red solo-anfitrión </h3>
+<p>La red solo-anfitrión es una red virtual que se crea en el equipo anfitrión. Los equipos invitados se conectan a esta red y pueden comunicarse entre ellos y con el anfitrión, pero no pueden acceder a la red física ni a internet.</p>
+<p>Se crea una nueva interfaz en el equipo físico que se conecta a la red "solo-anfitrión". Así podemos interactuar con los invitados desde el equipo físico, pero sin dar acceso desde la red física.</p>
+<p><img src="recursos/virtualbox-host-only.jpg" alt="red solo-anfitrión"></p>
+<div class="admonition tip">
+<p class="admonition-title">Hypervisores tipo 1 vs tipo 2</p>
+<ul>
+<li><strong>Hypervisor tipo 1</strong>: Es un software que se instala directamente en el hardware del servidor y no necesita un sistema operativo anfitrión. Por ejemplo, VMware ESXi, Citrix XenServer.</li>
+<li><strong>Hypervisor tipo 2</strong>: Es un software que se instala en un sistema operativo anfitrión. Por ejemplo, VirtualBox, VMware Workstation, VMware Player, Microsoft Hyper-V.</li>
+</ul>
+<p>Más información en <a href="https://aws.amazon.com/es/compare/the-difference-between-type-1-and-type-2-hypervisors/">AWS</a></p>
+</div>
 
       </div>
       
