@@ -254,6 +254,20 @@
 <p>El <strong>PFSense no permite por defecto la configuración web desde la interfaz WAN</strong> y por tanto se debería configurar por una de las interfaces LAN (o sea, por ejemplo desde la máquina virtual Ubuntu Desktop).</p>
 <p>Una vez instalado PFSense se puede asignar la configuración de las interfaces y determinar la dirección IP. Desde un equipo de la red LAN se debe abrir un navegador web y abrir la aplicación web de administración de PFSense.</p>
 </div>
+<div class="admonition danger">
+<p class="admonition-title">Administración a través de la WAN</p>
+<p><strong>No se debe permitir la administración del firewall a través de la WAN</strong>. Si se necesita administrar el firewall desde la WAN, se puede hacer a través de una VPN.</p>
+<p>En nuestro caso, vamos a permitirlo por la facilidad que nos ofrece a la hora de gestionar la configuración desde nuestro equipo físico, sin necesidad de arrancar una máquina virtual.</p>
+<h4>Activación de la interfaz de administración a través de la WAN</h4>
+<ul>
+<li>El primer paso es configurar una regla de firewall (Firewall -&gt; Rules -&gt; WAN) que permita el tráfico hacia el puerto 443 (HTTPS) y 22 (SSH) desde la WAN.</li>
+<li>A Continuación, si nos fijamos en las reglas de firewall que hay predefinidas, veremos que hay una regla que bloquea el tráfico desde IP's privadas (RFC 1918) a la WAN. Debemos desactivarla. Podemos hacerlo desde la propia regla que bloquea el tráfico o bien desde la configuración de la interfaz WAN, desmarcando la opción <strong><code>Block private networks</code></strong>.<br>
+<img src="recursos/opnsense_blockPrivateIP.png" alt="Block private networks"></li>
+<li>Si todavía seguimos teniendo problemas para acceder a la aplicación de administración, en entornos donde estemos usando una interfaz en modo Bridge, debemos desactivar la opción " Disable reply-to" desdde (Firewall -&gt; Settings -&gt; Advanced) marcando el check correspondiente.<br>
+<img src="recursos/opnsense_replyTo_Bridged.png" alt="Disable reply-to"></li>
+</ul>
+<p>Recuerda que tras cada cambio debes <em>Guardar los cambios</em> y <em>Aplicar los cambios</em>.</p>
+</div>
 <h3 id="configuración-de-la-dmz-4-puntos">Configuración de la DMZ (4 puntos) </h3>
 <p>Pondremos un equipo servidor en la DMZ y un cliente en la red local, similar a como se ve en la imagen del comienzo:</p>
 <ol>
