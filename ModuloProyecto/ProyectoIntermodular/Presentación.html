@@ -90,6 +90,15 @@
       
 <h1 id="pi-1---proyecto-intermodular">PI 1 - Proyecto Intermodular </h1>
 <p><a href="./Presentaci%C3%B3n.pdf">Descarga estos apuntes</a></p>
+<blockquote>
+<p><strong>RETO</strong><br>
+Considerando el ciclo de vida del SW y las fases de desarrollo de SW, se plantea:</p>
+<ul>
+<li>La realización de un análisis de una aplicación de gestión y el diseño del modelo E/R de la misma.<br>
+Cada grupo propondrá libremente su planteamiento y seleccionara una solución que resuelva el problema de gestión propuesto, agilice un proceso o proporcione un servicio.</li>
+<li>Se trabajará sobre una versión acotada del proyecto en cuanto a envergadura, complejidad y duración del mismo. Especificando las funcionalidades más importantes. De forma que se trabaje concretamente el análisis de la aplicación.</li>
+</ul>
+</blockquote>
 <div class="admonition question">
 <p class="admonition-title">Contexto</p>
 <p>Queremos analizar y diseñar un sistema para gestionar servicios de reparación e instalaciones, y venta de materiales de Fontanería. La venta es tanto física como online.</p>
@@ -97,7 +106,7 @@
 <p>Objetivos:<br>
 - Analizar y Diseñar una aplicación que permita gestionar el contexto definido.<br>
 - Presentar una propuesta de aplicación, a nivel de gestión de datos mediante un Modelo E/R y su correspondiente implementación en un SGDB.</p>
-<h2 id="11-situación-identificada">1.1. Situación identificada </h2>
+<h2 id="1-situación-identificada">1. Situación identificada </h2>
 <div class="admonition note">
 <p class="admonition-title">Análisis de mercado</p>
 <p>Existen en el mercado diferentes empresas que ofrecen aplicaciones de gestión para fontanería. Un ejemplo lo tenemos en <a href="https://fixner.com">Fixner</a> que incluye una herramienta de gestión de proyectos además del clásico CRM. El inconveniente en este caso lo tenemos en el precio. Para hasta  15 usuarios rebasa los 1000€/año.</p>
@@ -111,6 +120,126 @@
 <li>gestión de instalaciones y reparaciones: relacionarlo con los fontaneros que van a desempeñar dichas tareas y su disponibilidad.</li>
 <li>gestión de productos: bien sean en venta directa o incluidos como repuesto en reparaciones o como nuevo elemento a instalar, en nuevas instalaciones.</li>
 </ul>
+<p><img src="recursos/DiagramaCajas.jpg" alt="Diagrama de cajas"></p>
+<p>Los usuarios deben registrarse e iniciar sesión como primer paso. Una vez logueados, tienen la posibilidad de realizar una petición de instalación, reparación o solicitar un artículo.</p>
+<p>Después se contrastan las solicitudes y se permiten o deniegan. Así mismo, un usuario tiene la posibilidad de cancelar y devolver un pedido. O incluso modificar sus propios datos.</p>
+<p>Añadir que la gestión de Clientes, en este caso se plantea realizarla desde las propias instalaciones reparaciones o pedidos.</p>
+<p>Todas las operaciones <strong>CRUD</strong> (create, read, update y delete) deben poder realizarse. Si planteamos la posibilidad de gestionar permisos de usuario, deberíamos tratar las operativas a realizar en cada caso y categorizar los usuarios mediante otra tabla de permisos. Esta funcionalidad la vamos a proponer como un elemento de mejora.</p>
+<p>Cuando un cliente compra un producto, se le propone la posibilidad de incluir la instalación.</p>
+<p>Puede ocurrir que el cliente tenga asignada una instalación y tenga que añadir un producto a la instalación. Por otra parte, un cliente puede pedir una reparación que pueda conllevar una sustitución de piezas, las cuales se adjuntan a la reparación.</p>
+<p>Y el caso más claro corresponde a la venta directa de un producto. Sin instalación ni reparación asociada.</p>
+<p>Todos los fontaneros tienen un estado de disponibilidad que ha de establecerse cada vez que se les asigna una tarea. La posibilidad de que un fontanero pueda simultáneamente realizar dos tareas está contemplada. Solamente un fontanero estará disponible si no tiene ninguna tarea asignada.</p>
+<p>Por lo tanto, cada vez que gestionamos una tarea, podremos asignar clientes, fontaneros y productos.</p>
+<h2 id="2-entregables-del-reto">2. Entregables del reto </h2>
+<p>Se pide lo siguiente:</p>
+<div class="admonition tip">
+<p class="admonition-title">Documentación del proyecto</p>
+<p>Se puede seguir un índice de proyecto como el que se trabajo durante la primera evaluación. Aunque en este caso, podemos acotar el contenido a los siguientes apartados:</p>
+<ul>
+<li>ERS (documento Especificación Requisitos del SW)
+<ul>
+<li>Contexto</li>
+<li>Objetivos</li>
+<li>Análisis</li>
+<li>Diseño: Tratamiento de las distintas posibilidades</li>
+</ul>
+</li>
+<li>BBDD
+<ul>
+<li>Modelo Entidad-Relación (Análisis)</li>
+<li>Implementación de BBDD (Diseño)</li>
+</ul>
+</li>
+<li>Aplicación
+<ul>
+<li>Casos de uso</li>
+<li></li>
+</ul>
+</li>
+</ul>
+</div>
+<ol start="2">
+<li>ENTREGAS:<br>
+2.1.	ERS  (Documento Especificacion Requisitos del Software)<br>
+2.2.	Modelo Entidad-Relación<br>
+2.3.	MS Access / MariaDB</li>
+</ol>
+<h2 id="3-criterios-de-evaluación">3. Criterios de evaluación </h2>
+<ul>
+<li>El seguimiento del trabajo realizado mediante la entrega de tareas en AULES o seguimiento semanal en el aula 40% <em>(CUADERNO DE TRABAJO)</em></li>
+<li>Documentación y evidencias 40% - <em>(DOCUMENTACIÓN ESCRITA)</em></li>
+<li>Defensa y el dominio del proyecto %20 - <em>(DEFENSA ORAL)</em></li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Criterios de calificación</p>
+<p>Para superar el proyecto será imprescindible obtener un mínimo de 5 puntos en cada apartado.</p>
+</div>
+<h3 id="31-el-cuaderno-de-trabajo">3.1. El cuaderno de trabajo </h3>
+<p>Será un reflejo objetivo de las tareas realizadas cronológicamente. Las tareas han de estar correctamente detalladas y ofrecer un reflejo real del trabajo realizado.</p>
+<p>Se puntuará en una escala de NO APTO / APTO / SUPERA LO ESPERADO.</p>
+<h3 id="32-documentación-del-proyecto">3.2 Documentación del proyecto </h3>
+<p>A continuación se detallan la estructura, formato, entrega y contenido que la documentación ha de respetar.</p>
+<p><img src="recursos/R%C3%BAbricaDocumentaci%C3%B3n.png" alt="Rúbrica documentación"></p>
+<p>Por cada apartado no respetado se restará un punto de la documentación escrita. El Valor total serán 10 puntos. Se han de obtener mínimo 5 puntos.</p>
+<h3 id="33-defensa-oral">3.3 Defensa oral </h3>
+<p>La defensa oral computará los siguientes aspectos:</p>
+<table>
+<thead>
+<tr>
+<th>Concepto</th>
+<th>Descripción</th>
+<th>Puntuación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>CONCEPTOS (defensa oral)</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Calidad de la exposición. Claridad. Como oyente se entiende todo correctamente. Posibilidad de seguir al orador aún habiendo partes que no haya entendido.</td>
+<td>0-10</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Presentación estructurada en distintos apartados. Buena distribución</td>
+<td>0-10</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Ritmo y temporalización de la presentación: estructural y ascendente, de la idea general a las ideas concretas. Gestión del tiempo correcto</td>
+<td>0-10</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Presentación trabajada. El/la orador no lee prácticamente salvo para puntualizar detalles concretos. La presentación no es improvisada.</td>
+<td>0-10</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Control sobre el proyecto. Entiende perfectamente lo que explica y controla la estructura y el contenido a explicar domina perfectamente la materia</td>
+<td>(0-10)</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Valoración global de la presentación</strong></td>
+<td>(0-10)</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>Calidad del trabajo realizado. El alumno ha trabajado duro preparando el proyecto y la presentación es reflejo de ello…se merece un…</strong></td>
+<td>(0-10)</td>
+</tr>
+</tbody>
+</table>
+<p>Los 6 primeros conceptos listados suman 60 puntos. Para superar la defensa han de obtenerse 40 puntos como mínimo. Los conceptos 7 y 8 son reflejo de los 6 primeros conceptos.</p>
+<div class="admonition tip">
+<p class="admonition-title">Presentación oral</p>
+<p>PAra la presentación se puede usar un soporte multimedia (presentación en diapositivas) o cualquier otro recurso que se considere oportuno. Se valorará la calidad de la presentación y la claridad en la exposición.</p>
+<p>**Semipresencial: ** El alumnado de semipresencial preparará un vídeo con su presentación y lo compartirá en la entrega habilitada a tal efecto.</p>
+</div>
 <p>La Inteligencia Artificial impulsa la innovación, pero tiene consecuencias ambientales. Los servidores que alojan los datos que generamos y que nutren la IA crecen en número y tamaño, y dejan una huella ecológica cada vez mayor por su consumo de electricidad.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/sepe1-hRXt4?si=E3EO4uZxUYjVLsrL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
 <p>La experta en Ingeniería Multimedia Ruth Contreras nos explica el impacto ambiental que tiene la IA empleada en los videojuegos y nos pregunta cómo podríamos minimizarlo, tanto en este sector como en otros productos o servicios digitales.</p>
