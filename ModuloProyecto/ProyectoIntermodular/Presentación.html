@@ -95,7 +95,7 @@
 Considerando el ciclo de vida del SW y las fases de desarrollo de SW, se plantea:</p>
 <ul>
 <li>La realización de un análisis de una aplicación de gestión y el diseño del modelo E/R de la misma.<br>
-Cada grupo propondrá libremente su planteamiento y seleccionara una solución que resuelva el problema de gestión propuesto, agilice un proceso o proporcione un servicio.</li>
+Cada grupo/estudiante propondrá libremente su planteamiento y seleccionara una solución que resuelva el problema de gestión propuesto, agilice un proceso o proporcione un servicio.</li>
 <li>Se trabajará sobre una versión acotada del proyecto en cuanto a envergadura, complejidad y duración del mismo. Especificando las funcionalidades más importantes. De forma que se trabaje concretamente el análisis de la aplicación.</li>
 </ul>
 </blockquote>
@@ -113,7 +113,7 @@ Cada grupo propondrá libremente su planteamiento y seleccionara una solución q
 <p>Otra propuesta privada es <a href="https://www.albaibs.es">Albaibs</a>, que mediante diferentes planes ofrece multitud de posibilidades. Incluye la posibilidad de integración en tienda online.</p>
 <p>Para nuestro caso, vamos a reducir la visión de la multitud de posibilidades y diseñar el modelo del <a href="https://www.bbvaspark.com/contenido/es/noticias/mvp-emprender-que-es-producto-minimo-viable-como/">MPV</a> (mínimo producto viable).</p>
 </div>
-<p>Se trata de un negocio regentado por un trabajador autónomo en un pequeño local. Se dispone de muy poco presupuesto y no es factible la adquisición de licencias externas. La propuesta de este proyecto es el primer salto a la gestión parcial digital. Que en un futuro se prevé conllevará nuevas funcionalidades y mejoras.</p>
+<p>Se trata de un negocio regentado por un trabajador autónomo en un pequeño local. Se dispone de un presupuesto limitado y no es factible la adquisición de licencias externas. La propuesta de este proyecto es el primer salto a la gestión parcial digital. Que en un futuro se prevé conllevará nuevas funcionalidades y mejoras.</p>
 <p>Por lo tanto se nos propone como indispensable los siguientes apartados:</p>
 <ul>
 <li>gestión de usuarios de la aplicación</li>
@@ -123,7 +123,7 @@ Cada grupo propondrá libremente su planteamiento y seleccionara una solución q
 <p><img src="recursos/DiagramaCajas.jpg" alt="Diagrama de cajas"></p>
 <p>Los usuarios deben registrarse e iniciar sesión como primer paso. Una vez logueados, tienen la posibilidad de realizar una petición de instalación, reparación o solicitar un artículo.</p>
 <p>Después se contrastan las solicitudes y se permiten o deniegan. Así mismo, un usuario tiene la posibilidad de cancelar y devolver un pedido. O incluso modificar sus propios datos.</p>
-<p>Añadir que la gestión de Clientes, en este caso se plantea realizarla desde las propias instalaciones reparaciones o pedidos.</p>
+<p>A la gestión de los clientes, se podrá acceder de forma directa o bien desde las propias opciones de instalaciones, reparaciones o pedidos.</p>
 <p>Todas las operaciones <strong>CRUD</strong> (create, read, update y delete) deben poder realizarse. Si planteamos la posibilidad de gestionar permisos de usuario, deberíamos tratar las operativas a realizar en cada caso y categorizar los usuarios mediante otra tabla de permisos. Esta funcionalidad la vamos a proponer como un elemento de mejora.</p>
 <p>Cuando un cliente compra un producto, se le propone la posibilidad de incluir la instalación.</p>
 <p>Puede ocurrir que el cliente tenga asignada una instalación y tenga que añadir un producto a la instalación. Por otra parte, un cliente puede pedir una reparación que pueda conllevar una sustitución de piezas, las cuales se adjuntan a la reparación.</p>
@@ -141,29 +141,35 @@ Cada grupo propondrá libremente su planteamiento y seleccionara una solución q
 <li>Contexto</li>
 <li>Objetivos</li>
 <li>Análisis</li>
-<li>Diseño: Tratamiento de las distintas posibilidades</li>
 </ul>
 </li>
 <li>BBDD
 <ul>
 <li>Modelo Entidad-Relación (Análisis)</li>
-<li>Implementación de BBDD (Diseño)</li>
+<li>Implementación de BBDD en un DGBD (Diseño)</li>
 </ul>
 </li>
 <li>Aplicación
 <ul>
-<li>Casos de uso</li>
-<li></li>
+<li>Diagrama de Casos de Uso.</li>
+<li>Diagrama de Clases.</li>
+<li>Diagrama de Estados <em>(para la gestión de los fontaneros)</em>.</li>
+<li>Diagrama de Secuencia <em>(para la solicitud de una instalación con productos asociados)</em>.</li>
+<li>Diagrama de Actividad. <em>(para la gestión de los pedidos)</em>.</li>
+</ul>
+</li>
+<li>Desarrollo
+<ul>
+<li>Diseño de interfaces (mockups/bocetos/prototipos).</li>
+<li>Desarrollo de una web con el árbol de navegación y las pantallas principales (sin funcionalidad)</li>
 </ul>
 </li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">ERS (Documento Especificación Requisitos del Software)</p>
+<p>En el enunciado hemos proporcionado una ERS muy simple. Se pide que se amplíe y se detalle cada uno de los procesos, así como la información que consideréis necesaria. Este es el punto de partida para el análisis y diseño de la aplicación y todos los elementos que la componen.</p>
 </div>
-<ol start="2">
-<li>ENTREGAS:<br>
-2.1.	ERS  (Documento Especificacion Requisitos del Software)<br>
-2.2.	Modelo Entidad-Relación<br>
-2.3.	MS Access / MariaDB</li>
-</ol>
+</div>
 <h2 id="3-criterios-de-evaluación">3. Criterios de evaluación </h2>
 <ul>
 <li>El seguimiento del trabajo realizado mediante la entrega de tareas en AULES o seguimiento semanal en el aula 40% <em>(CUADERNO DE TRABAJO)</em></li>
@@ -182,6 +188,13 @@ Cada grupo propondrá libremente su planteamiento y seleccionara una solución q
 <p><img src="recursos/R%C3%BAbricaDocumentaci%C3%B3n.png" alt="Rúbrica documentación"></p>
 <p>Por cada apartado no respetado se restará un punto de la documentación escrita. El Valor total serán 10 puntos. Se han de obtener mínimo 5 puntos.</p>
 <h3 id="33-defensa-oral">3.3 Defensa oral </h3>
+<div class="admonition warning">
+<p class="admonition-title">Presentación con formato Pecha Kucha (máximo 10 minutos)</p>
+<p>La presentación oral no podrá exceder de 10 minutos (buscad información sobre el formato <a href="https://es.wikipedia.org/wiki/PechaKucha">Pecha Kucha</a>.<br>
+Los materiales de apoyo deben ajustarse a este tiempo.</p>
+<p>Si se realiza un vídeo de presentación, este tampoco podrá exceder de 10 minutos.</p>
+<p><strong>Si se excede el tiempo, se restará un punto por cada minuto o fracción de minuto.</strong></p>
+</div>
 <p>La defensa oral computará los siguientes aspectos:</p>
 <table>
 <thead>
@@ -223,6 +236,11 @@ Cada grupo propondrá libremente su planteamiento y seleccionara una solución q
 <td>(0-10)</td>
 </tr>
 <tr>
+<td>6</td>
+<td>Calidad de los medios digitales utilizados. (son adecuados para la presentación) Lo que se muestra, va estrechamente relacionado con lo que explica. Hay sintonía..El oyente ve lo que el orador está contando.</td>
+<td>(0-10)</td>
+</tr>
+<tr>
 <td>7</td>
 <td><strong>Valoración global de la presentación</strong></td>
 <td>(0-10)</td>
@@ -237,31 +255,9 @@ Cada grupo propondrá libremente su planteamiento y seleccionara una solución q
 <p>Los 6 primeros conceptos listados suman 60 puntos. Para superar la defensa han de obtenerse 40 puntos como mínimo. Los conceptos 7 y 8 son reflejo de los 6 primeros conceptos.</p>
 <div class="admonition tip">
 <p class="admonition-title">Presentación oral</p>
-<p>PAra la presentación se puede usar un soporte multimedia (presentación en diapositivas) o cualquier otro recurso que se considere oportuno. Se valorará la calidad de la presentación y la claridad en la exposición.</p>
-<p>**Semipresencial: ** El alumnado de semipresencial preparará un vídeo con su presentación y lo compartirá en la entrega habilitada a tal efecto.</p>
+<p>Para la presentación se puede usar un soporte multimedia (presentación en diapositivas) o cualquier otro recurso que se considere oportuno. Se valorará la calidad de la presentación y la claridad en la exposición.</p>
+<p><strong>Semipresencial:</strong> El alumnado de semipresencial preparará un vídeo con su presentación y lo compartirá en la entrega habilitada a tal efecto.</p>
 </div>
-<p>La Inteligencia Artificial impulsa la innovación, pero tiene consecuencias ambientales. Los servidores que alojan los datos que generamos y que nutren la IA crecen en número y tamaño, y dejan una huella ecológica cada vez mayor por su consumo de electricidad.</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/sepe1-hRXt4?si=E3EO4uZxUYjVLsrL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
-<p>La experta en Ingeniería Multimedia Ruth Contreras nos explica el impacto ambiental que tiene la IA empleada en los videojuegos y nos pregunta cómo podríamos minimizarlo, tanto en este sector como en otros productos o servicios digitales.</p>
-<h2 id="12-descripción-del-reto">1.2. Descripción del reto </h2>
-<p>En la era tecnológica actual, la innovación y el uso creciente de la inteligencia artificial han transformado nuestro mundo. Sin embargo, detrás de la aparente magia digital se esconde un impacto ambiental significativo.</p>
-<p><strong>¿Sabes que los datos digitales que nos rodean, que generamos y usamos, tienen un impacto ambiental?</strong></p>
-<p><strong>¿Los videojuegos o las inteligencias artificiales como ChatGPT dejan huellas ecológicas?</strong></p>
-<p>Los datos, generados, transmitidos y procesados, tienen consecuencias ecológicas que a menudo pasan desapercibidas. Las aplicaciones de IA, desde videojuegos realistas hasta asistentes virtuales como ChatGPT, dependen de servidores que consumen cantidades sustanciales de energía. Los servidores, el espacio físico donde se almacenan y procesa toda la información, necesitan una refrigeración constante para mantenerse a la temperatura adecuada y dejan una huella de carbono cada vez más elevada.</p>
-<p><strong>¿Puedes ayudar a diseñar un futuro donde la innovación y la sostenibilidad coexistan en armonía?</strong></p>
-<p>Este reto te invita a explorar como podemos utilizar la IA y las tecnologías de manera responsable y minimizar su impacto en el medio ambiente.</p>
-<h2 id="13-reto">1.3. Reto </h2>
-<div class="admonition note">
-<p class="admonition-title">Propuesta</p>
-<p>Desarrolla una iniciativa que contribuya a reducir el impacto ambiental del big data que generamos y del que se alimentan tecnologías como la inteligencia artificial.</p>
-</div>
-<p>Podéis tomar el caso de los videojuegos, o de cualquier otro producto o servicio digital</p>
-<div class="admonition info">
-<p class="admonition-title">¿Cómo lo haremos?</p>
-<p>El reto se organizará en <strong>fases</strong>, lo que nos permitirá abordar el proyecto de una manera estructurada y progresiva.</p>
-<p>Cada fase tendrá un conjunto de tareas y objetivos específicos que nos ayudarán a avanzar paso a paso hacia la resolución del reto. De esta manera, podrás centrarte en un objetivo a la vez y asegurarte de entender y completar cada etapa antes de pasar a la siguiente.</p>
-</div>
-<p><img src="recursos/FasesProyecto.png" alt="Fases del proyecto"></p>
 
       </div>
       
