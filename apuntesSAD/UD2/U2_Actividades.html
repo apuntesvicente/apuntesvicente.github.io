@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css">
       
       
       
@@ -19,7 +19,7 @@
   font-family: 'Catamaran';
   font-style: normal;
   font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/catamaran/v19/o-0bIpQoyXQa2RxT7-5B6Ryxs2E_6n1iPHjd5a7dvg.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/catamaran/v28/o-0bIpQoyXQa2RxT7-5B6Ryxs2E_6n1iPHjd5a7dvg.ttf) format('truetype');
 }
 .markdown-preview.markdown-preview .contenedor {
   display: flex;
@@ -123,6 +123,30 @@
           <a href="#actividad-6-algoritmos" class="md-toc-link">
             <p>Actividad 6. Algoritmos</p>
 
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#actividad-7-cifrado-simétrico-con-openssl" class="md-toc-link">
+            <p>Actividad 7. Cifrado simétrico con OpenSSL</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#actividad-8-funciones-resumen-con-openssl" class="md-toc-link">
+            <p>Actividad 8. Funciones resumen con OpenSSL</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#actividad-9-comparativa-de-algoritmos-de-cifrado-simétrico" class="md-toc-link">
+            <p>Actividad 9. Comparativa de algoritmos de cifrado simétrico</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#actividad-10-interpretación-de-errores-de-cifrado" class="md-toc-link">
+            <p>Actividad 10. Interpretación de errores de cifrado</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#actividad-11-interpretación-de-errores-de-funciones-resumen" class="md-toc-link">
+            <p>Actividad 11. Interpretación de errores de funciones resumen</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#actividad-12-propuesta-de-mejora-de-seguridad" class="md-toc-link">
+            <p>Actividad 12. Propuesta de mejora de seguridad</p>
+
           </a></div>
         </div>
       </details>
@@ -162,8 +186,7 @@
 <li>a) Descubre los secretos ocultos en las técnicas que tienen una "Custom Image para probar"</li>
 </ul>
 <h3 id="actividad-2-criptografía-híbrida">Actividad 2. Criptografía híbrida </h3>
-<p>La criptografia simètrica és més insegura ja que el fet de passar la clau és una gran vulnerabilitat, però es pot xifrar i desxifrar en menor temps del qual tarda la criptografia asimètrica, que és el principal inconvenient i és la raó per la qual existeix la criptografia híbrida.</p>
-<p>La criptografía simétrica es más insegura ya que el hecho de pasar la clave es una gran vulnerabilidad, pero se puede cifrar y descifrar muy rápidamente grandes cantidades de datos. Ese es el principal inconveniente de la criptografía asimétrica. Para aprovechar lo mejor de las dos técnicas, existe la criptografía híbrida.</p>
+<p>LLa criptografía simétrica es más insegura ya que el hecho de pasar la clave es una gran vulnerabilidad, pero se puede cifrar y descifrar muy rápidamente grandes cantidades de datos. Ese es el principal inconveniente de la criptografía asimétrica. Para aprovechar lo mejor de las dos técnicas, existe la criptografía híbrida.</p>
 <p>Para ello, la comunicación se divide en dos partes: <strong>intercambio de claves</strong> y <strong>intercambio de mensajes</strong>.</p>
 <p>El proceso para usar un sistema criptográfico híbrido es el siguiente (para enviar un archivo cifrado a un compañero):</p>
 <p><strong>Intercambio de claves</strong></p>
@@ -319,6 +342,46 @@
 </tr>
 </tbody>
 </table>
+<h3 id="actividad-7-cifrado-simétrico-con-openssl">Actividad 7. Cifrado simétrico con OpenSSL </h3>
+<p>a) Define con tus propias palabras qué es el cifrado simétrico y menciona un algoritmo que se puede usar con OpenSSL para este tipo de cifrado.<br>
+Pon un ejemplo de uso de ese algoritmo con OpenSSL.</p>
+<p>b) Escribe el comando básico que utilizarías en OpenSSL para cifrar un archivo usando AES-256-CBC y explica para qué sirve cada parámetro del comando.</p>
+<p>c) Escribe el comando básico que utilizarías en OpenSSL para descifrar el archivo anterior y explica para qué sirve cada parámetro del comando.</p>
+<p>d) Pásale a tu compañero de la derecha (si eres el último al primero de tu fila) el archivo cifrado para que intente descifrarlo sin pasarle la clave.</p>
+<p>e) Si no ha podido descifrarlo, pásale ahora la clave que has usado para cifrarlo. Pídele que lo descifre y te muestre el archivo descifrado. Comprueba que el archivo descifrado es igual al original.</p>
+<h3 id="actividad-8-funciones-resumen-con-openssl">Actividad 8. Funciones resumen con OpenSSL </h3>
+<p>a) Explica qué función tiene el comando openssl dgst -sha256 cuando se aplica a un archivo.</p>
+<p>b) ¿Para qué sirve calcular un hash de un archivo?</p>
+<p>c) Calcula el hash SHA-256 y MD5 de un archivo de texto (actividad8.txt) con OpenSSL. Compara los hashes generados.<br>
+Guarda los resultados en los archivos actividad8.sha256 y actividad8.md5 respectivamente.</p>
+<p>d) Modifica el archivo de texto (actividad8_d.txt) y vuelve a calcular los hashes.<br>
+Guarda los resultados en los archivos actividad8_d.sha256 y actividad8_d.md5 respectivamente.<br>
+¿Qué diferencias encuentras respecto a los hashes generados en el paso anterior?</p>
+<h3 id="actividad-9-comparativa-de-algoritmos-de-cifrado-simétrico">Actividad 9. Comparativa de algoritmos de cifrado simétrico </h3>
+<p>Cifra el mismo archivo usando dos algoritmos diferentes (por ejemplo AES-256-CBC y DES-CBC) y realiza las siguientes tareas:</p>
+<ol>
+<li>Compara el tamaño de los archivos cifrados resultantes</li>
+<li>Identifica las diferencias en los comandos utilizados para cada algoritmo</li>
+<li>Explica las ventajas y desventajas que observas entre ambos algoritmos</li>
+</ol>
+<h3 id="actividad-10-interpretación-de-errores-de-cifrado">Actividad 10. Interpretación de errores de cifrado </h3>
+<p>Intenta descifrar el archivo cifrado con AES-256-CBC en la actividad anterior realizando las siguientes modificaciones y explica qué sucede en cada caso:</p>
+<ul>
+<li>Usar una contraseña incorrecta</li>
+<li>Modificar un byte del archivo cifrado antes de descifrarlo</li>
+</ul>
+<p>Explica por qué ocurren los errores observados y qué implican para la seguridad del cifrado</p>
+<h3 id="actividad-11-interpretación-de-errores-de-funciones-resumen">Actividad 11. Interpretación de errores de funciones resumen </h3>
+<p>Dados dos archivos diferentes pero con contenido similar (por ejemplo, el mismo texto con un espacio extra), realiza las siguientes tareas:</p>
+<ul>
+<li>Calcula el hash SHA-256 de ambos archivos</li>
+</ul>
+<p>a) Explica por qué los hashes son diferentes aunque el contenido sea casi idéntico</p>
+<p>b) Describe qué características de las funciones hash se evidencian en este ejemplo</p>
+<h3 id="actividad-12-propuesta-de-mejora-de-seguridad">Actividad 12. Propuesta de mejora de seguridad </h3>
+<p>Imagina que necesitas proteger un documento importante con cifrado simétrico y asegurarte además de que no ha sido alterado.</p>
+<p>a) Describe qué técnicas usarías para conseguir tu objetivo.</p>
+<p>b) Especifica los comandos OpenSSL que necesitas, explicando cada paso y comando.</p>
 <h2 id="casos-prácticos">Casos prácticos </h2>
 <h3 id="caso-práctico-1-cifrado-de-unidades-de-almacenamiento">Caso práctico 1. Cifrado de unidades de almacenamiento </h3>
 <p><strong>Bitlocker</strong> es una herramienta de cifrado de unidades de almacenamiento que se utiliza en sistemas Windows.</p>
