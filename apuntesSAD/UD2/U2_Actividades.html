@@ -147,6 +147,18 @@
           <a href="#actividad-12-propuesta-de-mejora-de-seguridad" class="md-toc-link">
             <p>Actividad 12. Propuesta de mejora de seguridad</p>
 
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#actividad-13-cifrado-asimétrico-con-openssl" class="md-toc-link">
+            <p>Actividad 13. Cifrado asimétrico con OpenSSL</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#actividad-14-esquema-híbrido-cifrar-simétricamente-y-firmar-qué-se-protege" class="md-toc-link">
+            <p>Actividad 14. Esquema híbrido: cifrar simétricamente y firmar (qué se protege)</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#actividad-15-esquema-híbrido-práctico-cifrar-con-aes-proteger-la-clave-con-rsa-y-firmar-el-paquete" class="md-toc-link">
+            <p>Actividad 15. Esquema híbrido práctico: cifrar con AES, proteger la clave con RSA y firmar el paquete</p>
+
           </a></div>
         </div>
       </details>
@@ -382,6 +394,44 @@ Guarda los resultados en los archivos actividad8_d.sha256 y actividad8_d.md5 res
 <p>Imagina que necesitas proteger un documento importante con cifrado simétrico y asegurarte además de que no ha sido alterado.</p>
 <p>a) Describe qué técnicas usarías para conseguir tu objetivo.</p>
 <p>b) Especifica los comandos OpenSSL que necesitas, explicando cada paso y comando.</p>
+<h3 id="actividad-13-cifrado-asimétrico-con-openssl">Actividad 13. Cifrado asimétrico con OpenSSL </h3>
+<p>a) Generar par RSA y firmar (SHA-256), firmar el fichero con la clave privada y verificar la firma con la clave pública.</p>
+<p>b) Verificar que la firma falla si se modifica el mensaje<br>
+Verificar firma con el fichero original, modificar el fichero y volver a verificar (debe fallar).</p>
+<p>Realiza cada actividad, guarda los ficheros generados (clave_privada.pem, clave_publica.pem, mensaje.sig) anota los comandos y captura la salida de los distintos comandos.</p>
+<h3 id="actividad-14-esquema-híbrido-cifrar-simétricamente-y-firmar-qué-se-protege">Actividad 14. Esquema híbrido: cifrar simétricamente y firmar (qué se protege) </h3>
+<p>Pasos:</p>
+<ol>
+<li>Generar par de claves asimétricas (RSA 2048 bits).</li>
+<li>Cifra un fichero de imagen (jpg, png)con AES usando una contraseña/clave y firma tanto el archivo original como el cifrado en archivos separados.</li>
+<li>Verifica ambas firmas y explica qué garantiza cada firma (firmar plaintext vs firmar ciphertext) y cuándo es preferible cada opción.</li>
+</ol>
+<p>Documenta los comandos usados y los ficheros generados con capturas de pantalla de la salida de los comandos usados.</p>
+<h3 id="actividad-15-esquema-híbrido-práctico-cifrar-con-aes-proteger-la-clave-con-rsa-y-firmar-el-paquete">Actividad 15. Esquema híbrido práctico: cifrar con AES, proteger la clave con RSA y firmar el paquete </h3>
+<p><strong>Objetivo</strong>: aplicar un flujo real (clave simétrica protegida con clave pública; firma del ciphertext) y reproducir el proceso inverso.</p>
+<p>Pasos:</p>
+<ol>
+<li><strong>Pasos emisor:</strong> generar clave simétrica (texto) y cifrar con AES (password desde archivo)</li>
+<li>Cifrar la clave simétrica con la clave pública del receptor</li>
+<li>Firmar el archivo cifrado con la clave privada del emisor</li>
+<li><strong>Pasos receptor:</strong> Descifrar la clave simétrica</li>
+<li>Verificar la firma del archivo cifrado</li>
+<li>Descifrar el mensaje usando la clave recuperada</li>
+<li>Comprobar que el mensaje descifrado es igual al original</li>
+</ol>
+<p>Archivos generados:</p>
+<ul>
+<li>clave.txt (original)</li>
+<li>mensaje.txt (original)</li>
+<li>emisor_priv.pem (clave privada emisor)</li>
+<li>emisor_pub.pem (clave pública emisor)</li>
+<li>mensaje.enc (cifrado)</li>
+<li>clave.txt.enc (clave simétrica cifrada)</li>
+<li>mensaje.enc.sig (firma del mensaje cifrado)</li>
+<li>key.txt (clave simétrica recuperada)</li>
+<li>mensaje.dec (mensaje descifrado)</li>
+</ul>
+<p>Documenta los comandos usados y los ficheros generados con capturas de pantalla de la salida de los comandos usados.</p>
 <h2 id="casos-prácticos">Casos prácticos </h2>
 <h3 id="caso-práctico-1-cifrado-de-unidades-de-almacenamiento">Caso práctico 1. Cifrado de unidades de almacenamiento </h3>
 <p><strong>Bitlocker</strong> es una herramienta de cifrado de unidades de almacenamiento que se utiliza en sistemas Windows.</p>

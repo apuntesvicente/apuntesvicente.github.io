@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css">
       
       
       
@@ -19,7 +19,7 @@
   font-family: 'Catamaran';
   font-style: normal;
   font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/catamaran/v19/o-0bIpQoyXQa2RxT7-5B6Ryxs2E_6n1iPHjd5a7dvg.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/catamaran/v28/o-0bIpQoyXQa2RxT7-5B6Ryxs2E_6n1iPHjd5a7dvg.ttf) format('truetype');
 }
 .markdown-preview.markdown-preview .contenedor {
   display: flex;
@@ -251,7 +251,7 @@
 <li><code>dsa</code>: Utiliza una clave DSA para firmar o verificar un mensaje.</li>
 </ul>
 <h2 id="21-uso-de-openssl-para-crear-pares-de-claves">2.1. Uso de OpenSSL para crear pares de claves </h2>
-<p>Para generar pares de claves se hará uso del comando <code>genpkey</code>. Se utiliza tanto para generar una clave privada, a partir de la cual se obtiene la clave pública.</p>
+<p>Para generar pares de claves se hará uso del comando <code>genpkey</code>. Se utiliza para generar una clave privada, a partir de la cual se obtiene la clave pública.</p>
 <h3 id="211-rsa">2.1.1. RSA </h3>
 <p>Para generar un par de claves RSA, se utiliza alguno de los siguientes comandos:</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>$ openssl genpkey <span class="token parameter variable">-algorithm</span> RSA <span class="token parameter variable">-out</span> privateRSA.pem
