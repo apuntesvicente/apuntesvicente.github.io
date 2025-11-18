@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css">
       
       
       
@@ -19,7 +19,7 @@
   font-family: 'Catamaran';
   font-style: normal;
   font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/catamaran/v19/o-0bIpQoyXQa2RxT7-5B6Ryxs2E_6n1iPHjd5a7dvg.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/catamaran/v28/o-0bIpQoyXQa2RxT7-5B6Ryxs2E_6n1iPHjd5a7dvg.ttf) format('truetype');
 }
 .markdown-preview.markdown-preview .contenedor {
   display: flex;
@@ -322,11 +322,15 @@ Para la instalación de OpenSSL en Windows, se debe de realizar correctamente lo
 <p>Ejecutar la consola <code>sysdm.cpl</code> y en la penstaña de <em>Opciones Avanzadas</em></p>
 <ol>
 <li>Añadir <code>C:\Program Files\OpenSSL-Win64</code> y <code>C:\Program Files\OpenSSL-Win64\bin</code> al PATH del sistema.</li>
-<li>Crear una nueva variable de usuario llamada <code>OPENSSL_CONF</code> con el valor <code>C:\Program Files\OpenSSL-Win64\bin\cnf</code>.</li>
+<li>Crear una nueva variable de usuario llamada <code>OPENSSL_CONF</code> con el valor <code>C:\Program Files\OpenSSL-Win64\bin\openssl.cnf</code>.</li>
 <li>Abrir una nueva consola y ejecutar <code>openssl version</code> para comprobar que la instalación ha sido correcta.</li>
 </ol>
 </li>
 </ol>
+<blockquote>
+<p>Para el archivo openssl.cnf podemos descargar una copia desde <a href="https://raw.githubusercontent.com/openssl/openssl/master/apps/openssl.cnf">aquí</a>.<br>
+Guardarlo en <code>C:\Program Files\OpenSSL-Win64\bin\openssl.cnf</code>.</p>
+</blockquote>
 <h4 id="212-instalación-en-gnulinux">2.1.2. Instalación en GNU/Linux </h4>
 <p>En la mayoría de distribuciones GNU/Linux, las librerías y utilidades de OpenSSL ya vienen preinstaladas.</p>
 <p>En cualquier caso, para instalar OpenSSL en sistemas basados en Debian, como Ubuntu, realizamos las siguientes acciones:</p>

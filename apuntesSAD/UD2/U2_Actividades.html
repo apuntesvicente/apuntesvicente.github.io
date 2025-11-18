@@ -172,6 +172,10 @@
           <a href="#caso-práctico-1-cifrado-de-unidades-de-almacenamiento" class="md-toc-link">
             <p>Caso práctico 1. Cifrado de unidades de almacenamiento</p>
 
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#caso-práctico-2-uso-de-openssl-en-entornos-reales" class="md-toc-link">
+            <p>Caso práctico 2. Uso de OpenSSL en entornos reales</p>
+
           </a></div>
         </div>
       </details>
@@ -403,7 +407,7 @@ Verificar firma con el fichero original, modificar el fichero y volver a verific
 <p>Pasos:</p>
 <ol>
 <li>Generar par de claves asimétricas (RSA 2048 bits).</li>
-<li>Cifra un fichero de imagen (jpg, png)con AES usando una contraseña/clave y firma tanto el archivo original como el cifrado en archivos separados.</li>
+<li>Cifra un fichero de imagen (jpg, png) con AES usando una contraseña/clave y firma tanto el archivo original como el cifrado en archivos separados.</li>
 <li>Verifica ambas firmas y explica qué garantiza cada firma (firmar plaintext vs firmar ciphertext) y cuándo es preferible cada opción.</li>
 </ol>
 <p>Documenta los comandos usados y los ficheros generados con capturas de pantalla de la salida de los comandos usados.</p>
@@ -439,6 +443,10 @@ Verificar firma con el fichero original, modificar el fichero y volver a verific
 <p>Otra herramienta interesante es <strong>VeraCrypt</strong>, una herramienta de cifrado de código abierto que se puede utilizar en Windows, Linux y macOS.</p>
 <p>a) Investiga cómo usar Dislocker para cifrar una unidad USB con Bitlocker y cómo montarla en un sistema Linux para acceder a los datos de la unidad cifrada. Este es un mecanismo muy útil para compartir datos entre sistemas Windows y Linux de forma segura.</p>
 <p>b) Documenta los pasos necesarios para crear un contendedor cifrado con VeraCrypt en Windows y montarlo en una unidad del sistema.</p>
+<h3 id="caso-práctico-2-uso-de-openssl-en-entornos-reales">Caso práctico 2. Uso de OpenSSL en entornos reales </h3>
+<p>OpenSSL es una herramienta muy utilizada en entornos reales para gestionar certificados digitales, cifrar comunicaciones y proteger datos sensibles.</p>
+<p>a) Investiga cómo se utiliza OpenSSL para generar certificados digitales autofirmados y cómo se pueden utilizar estos certificados para cifrar comunicaciones en un servidor web (por ejemplo, un servidor Apache o Nginx).</p>
+<p>b) Documenta los pasos necesarios para generar un certificado autofirmado con OpenSSL y configurarlo en un servidor web para habilitar HTTPS.</p>
 
       </div>
       
