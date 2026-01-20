@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css">
       
       
       
@@ -19,7 +19,7 @@
   font-family: 'Catamaran';
   font-style: normal;
   font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/catamaran/v19/o-0bIpQoyXQa2RxT7-5B6Ryxs2E_6n1iPHjd5a7dvg.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/catamaran/v28/o-0bIpQoyXQa2RxT7-5B6Ryxs2E_6n1iPHjd5a7dvg.ttf) format('truetype');
 }
 .markdown-preview.markdown-preview .contenedor {
   display: flex;
@@ -216,6 +216,30 @@ Si el paquete de solicitud no es filtrado o bloqueado por un firewall, entonces 
 <p>Podrías tener suerte con un patrón de ataque dedicado incluso si no tienes ni idea de la dirección de correo electrónico del administrador.</p>
 <p>Si has obtenido el hash de la contraseña del administrador, puedes intentar atacar eso en lugar de usar la Inyección SQL.</p>
 <p>Lo mejor en este caso es resolver este desafío como un combo tratando de iniciar sesión con las credenciales de usuario del administrador sin cambiarlas previamente y aplicar el desafío de Inyección SQL.</p>
+<div class="admonition info">
+<p class="admonition-title">Inyección SQL en el campo de correo electrónico</p>
+<p>Para realizar la inyección SQL, primero debemos identificar un campo vulnerable.<br>
+En este caso podemos usar el campo de correo electrónico en la página de inicio de sesión.</p>
+<p>Intentamos hacer una inyección SQL básica para ver si el campo es vulnerable, provocando un error en la consulta SQL.<br>
+Para ello, primero probamos a iniciar sesión con cualquier correo electrónico y una comilla simple <code>'</code> como correo electrónico.</p>
+<p>Podemos abrir la <code>consola de desarrollador del navegador (F12)</code> y comprobar la petición que se envía al servidor al iniciar sesión junto con la respuesta del servidor.</p>
+<p>En este caso podemos ver que la respuesta del servidor indica un error en la consulta SQL, lo que confirma que el campo es vulnerable a la inyección SQL. Además, nos permite ver la consulta SQL que se está ejecutando en el servidor y el SGBD que se está utilizando (SQLite en este caso).</p>
+</div>
+<div class="admonition summary">
+<p class="admonition-title">Uso de Burp Suite</p>
+<p>Para interceptar y modificar las peticiones, podemos usar Burp Suite.</p>
+<p>Para no tocar la configuración del navegador, vamos a usar el navegador interno de Burp Suite.</p>
+<p>Una vez que tenemos Burp Suite abierto, ya está capturando e interceptando tráfico, tal cual podemos ver en la parte izquierda de la aplicación.</p>
+<p><img src="./recursos/BurpSuite_startscreen.png" alt="Inicio"></p>
+<p>Si ahora vamos al menú Target, podemos lanzar el navegador interno de Burp Suite haciendo clic en el botón "Open Browser" y empezar a navegar por la web que queremos analizar.</p>
+<p>Una vez hayamos realizado la navegación y, por ejemplo, hayamos realizado la primera inyección SQL para provocar un error, podemos ver la petición interceptada bien el menú Dashboard o en el menú Target.</p>
+<p><img src="./recursos/BurpSuite_intercept.png" alt="Interceptar petición"></p>
+<p>En este caso, con la inyección SQL realizada, podemos ver que la respuesta del servidor indica un error en la consulta SQL, lo que confirma que el campo es vulnerable a la inyección SQL.</p>
+<p><img src="./recursos/BurpSuite_response.png" alt="Respuesta del servidor"></p>
+<p>Ahora ya podemos seleccionar la petición interceptada y modificarla para intentar iniciar sesión como administrador. Para modificar la petición que se enviará al servidor, marcarcamos la petición y seleccionamos "Send to Repeater".</p>
+<p>Ahora, en el menú Repeater, podemos ver la petición que se enviará al servidor y modificarla como queramos para ver cómo responde el servidor ante diferentes inyecciones de código.</p>
+<p><img src="./recursos/BurpSuite_inyection.png" alt="Modificar petición"></p>
+</div>
 <p><strong>Ejercicio3: Accede con la cuenta del usuario Bender</strong></p>
 <p>Bender es un cliente habitual, pero se hace notar por poner reviews en la Juice Shop para trolearla por su falta de bebidas alcohólicas.</p>
 <p>La descripción del ejercicio debe darte una pista sobre la forma en que deberías atacar.</p>
@@ -235,25 +259,41 @@ Si el paquete de solicitud no es filtrado o bloqueado por un firewall, entonces 
 <p>Un atacante intentaría explotar la Inyección SQL para averiguar tanto como sea posible sobre el esquema de una base de datos. Esto permite SQL Injections mucho más dirigidos, sigilosos y devastadores, como recuperar una lista de todas las credenciales de usuario a través de la Inyección SQL.</p>
 <p>Descubre qué sistema de base de datos se está utilizando y dónde suele almacenar sus definiciones de esquema.</p>
 <p>Crea una cadena de ataque UNION SELECT para unir los datos relevantes de cualquier tabla del sistema identificada en el resultado original.</p>
-<p>Cuando intentamos hacer la inyección de código SQL, obtenemos la consulta que está dando error por haber introducido una <code>'</code> y a partir de ahí podemos inferir la siguiente cadena de ataque para obtener el esquema de la base de datos:</p>
+<div class="admonition warning">
+<p class="admonition-title">Campo de consulta url encoded</p>
+<p>Ten en cuenta que el campo de consulta está codificado en la URL, por lo que los caracteres especiales deben ser codificados.</p>
+<p>Por ejemplo, una comilla simple <code>'</code> debe ser codificada como <code>%27</code> y un espacio como <code>%20</code>.</p>
+<p>Por lo tanto, la cadena de ataque para obtener el esquema de la base de datos sería algo similar a:</p>
+<blockquote>
+<p>%27))%20UNION%20SELECT%20*%20FROM%20sqlite_master--</p>
+</blockquote>
+</div>
+<p>Cuando intentamos hacer la inyección de código SQL, obtenemos la consulta que está dando error por haber introducido  <code>'--</code> y a partir de ahí podemos inferir la siguiente cadena de ataque para obtener el esquema de la base de datos:</p>
 <blockquote>
 <p>'))-- Para hacer que la consulta no de error</p>
 </blockquote>
 <p>y a partir de ahí, podemos ir añadiendo más código SQL para obtener la información que necesitamos:</p>
 <blockquote>
 <p>')) UNION SELECT * FROM sqlite_master--<br>
-')) UNION SELECT 1 FROM sqlite_master WHERE type='table'--<br>
-')) UNION SELECT 1,2 FROM sqlite_master WHERE type='table'--<br>
-')) UNION SELECT 1,2,3 FROM sqlite_master WHERE type='table'--</p>
+')) UNION SELECT 1 FROM sqlite_master--<br>
+')) UNION SELECT 1,2 FROM sqlite_master--<br>
+')) UNION SELECT 1,2,3 FROM sqlite_master--</p>
 </blockquote>
-<p>Así hasta que el UNION SELECT no de error y obtengamos la información que necesitamos.</p>
+<div class="admonition tip">
+<p class="admonition-title">Número de columnas a probar</p>
+<p>Para saber el número de columnas que tiene la tabla, podemos ir añadiendo más columnas en el SELECT hasta que la consulta no de error.<br>
+Otra forma de hacerlo es viendo la respuesta que nos devuelve el servidor al buscar un producto cualquiera, donde podemos ver el número de columnas que se están devolviendo en la respuesta. Sabemos que el número de columnas de la tabla será, al menos, igual al número de columnas que se están devolviendo en la respuesta.</p>
+<p>Si tnemos problemas por el tipo de datos, podemos usar <code>NULL</code> en lugar de números para evitarlos.</p>
+</div>
+<p>Así hasta que el UNION SELECT no de error. En ese momento, si sabemos cuál es el SGBD y buscamos información sobre el schema y el formato de la tabla <code>sqlite_master</code>, podemos mostrar los registros de dicha tabla para obtener la información del esquema de la base de datos.</p>
 <p>Es posible que debas abordar algunos problemas de sintaxis de consulta paso a paso, básicamente saltando de un error al siguiente.</p>
 <div class="admonition question">
 <p class="admonition-title">Actividad entregable</p>
 <p>Entrega las capturas de pantalla de los pasos realizados en la aplicación OWASP Juice Shop y Burp Suite.</p>
 <p><strong>Ejercicio7 : Obtener la lista de usuarios</strong></p>
 <p>En este caso, partiendo de la información obtenida del <code>schema</code> de la BD y usando el mismo método que en el ejercicio anterior, vamos a obtener la lista de usuarios de la base de datos.</p>
-<p>Obtén el listado de id, email y password de todos los usuarios de la base de datos.</p>
+<p><strong>Obtén el listado de id, email y password de todos los usuarios de la base de datos.</strong></p>
+<p>Investiga cuál es el hash que se está usando para almacenar las contraseñas. <strong>Prueba a obtener la contraseña de alguno de los usuarios usando algún servicio online de cracking de hashes.</strong></p>
 <p>Recuerda que debes capturar las peticiones y modificarlas con Burp Suite.</p>
 </div>
 <h3 id="actividad-3-vulnerabilidades-de-xss-en-owasp-juice-shop">Actividad 3. Vulnerabilidades de XSS en OWASP Juice Shop </h3>
@@ -274,7 +314,7 @@ Si no se muestra, es posible que tengamos que modificar la petición usando un i
 <pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>100%<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>166<span class="token punctuation">"</span></span> <span class="token attr-name">scrolling</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>no<span class="token punctuation">"</span></span> <span class="token attr-name">frameborder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>no<span class="token punctuation">"</span></span> <span class="token attr-name">allow</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>autoplay<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/771984076&amp;color=%23ff5500&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">&gt;</span></span> 
 </code></pre><p>Con este tipo de ataques, podemos hacer que se ejecute código JavaScript en la página, lo que puede ser peligroso si el atacante consigue que un usuario haga clic en un enlace malicioso.</p>
 <p><strong>Ejercicio3: Realiza un ataque de tipo Reflected XSS</strong></p>
-<p>Perform a reflected XSS attack with</p>
+<p>Aprovechando el código JavaScript que hemos visto anteriormente, vamos a realizar un ataque de tipo Reflected XSS.</p>
 <pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>javascript:alert(`xss`)<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
 </code></pre><p>Para completar este desafío, primero debemos realizar un pedido o acceder a uno de los pedidos realizados por un usuario.<br>
 A continuación iremos al Historial de pedidos y seleccionamos la opción de seguimiento que se mostrará con una URL similar a esta:</p>
@@ -288,9 +328,11 @@ A continuación iremos al Historial de pedidos y seleccionamos la opción de seg
 <p>Para este desafío, primero intentamos encontrar el campo de entrada que es vulnerable o inyectable y luego intentamos inyectar el payload.</p>
 <p>Usaremos la sección de <code>Comentarios del Cliente (Customer Feedback)</code> donde tenemos un cuadro de comentarios que se puede usar para inyectar el payload.</p>
 <p>Ahora iniciaremos sesión en la cuenta de administrador y accederemos a la página de administración <a href="https://demo.owasp-juice.shop/#/administration">https://demo.owasp-juice.shop/#/administration</a> y debería saltar la alerta.</p>
-<p>Si el Payload no funciona, usaremos otro Payload o modificaremos el Payload. Podemos verificar la versión del paquete Sanitize aquí, que usa 1.4.2 y, según eso, usaremos nuestro Payload modificado, es decir,</p>
-<pre data-role="codeBlock" data-info="html" class="language-html html"><code>&lt;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>javascript:evil<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>iframe src="javascript:alert(`xss`)"&gt;
-</code></pre></div>
+<p>Si el Payload no funciona, usaremos otro Payload o modificaremos el Payload. Podemos verificar la versión del paquete Sanitize ejecutando <code>npm list</code>. Comprobamos que usa la versión 1.4.2.</p>
+<p>Ahora toca buscar en Internet si esa versión de la librería tiene alguna vulnerabilidad.<br>
+Una búsqueda nos ha ofrecido este resultado <a href="https://github.com/advisories/GHSA-3j7m-hmh3-9jmp">Cross-Site Scripting in sanitize-html</a> y, según eso, modificamos nuestro Payload para realizar el ataque XSS persistente.</p>
+<!-- <<iframe src="javascript:evil"/>iframe src="javascript:alert(`xss`)"> -->
+</div>
 <div class="admonition danger">
 <p class="admonition-title">Ataque efectivo a todos los visitantes de la página</p>
 <p>Este último tipo de ataque es el más peligroso, ya que puede afectar a todos los usuarios que visiten la página, no solo al usuario que ha introducido el código malicioso.</p>
